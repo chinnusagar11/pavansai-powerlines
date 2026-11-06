@@ -25,6 +25,15 @@ export default function ProductDetails() {
   const [copied, setCopied] = useState(false);
 
   const product = getProductById(productId);
+  const [selectedImage, setSelectedImage] = useState(product ? product.image : '');
+
+  // Reset selected image when productId changes
+  React.useEffect(() => {
+    if (product) {
+      setSelectedImage(product.image);
+      setImageError(false);
+    }
+  }, [productId, product]);
 
   const fallbackImage = "/images/products/pin-insulator.svg";
 
@@ -86,14 +95,14 @@ export default function ProductDetails() {
       <section className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-start">
           
-          {/* Left Column: Product Image */}
+          {/* Left Column: Product Image & Gallery */}
           <div className="lg:col-span-6 space-y-3">
             <div className="bg-slate-50 rounded-xl overflow-hidden border border-slate-200 aspect-[4/3] relative">
               <img
-                src={imageError ? fallbackImage : product.image}
+                src={imageError ? fallbackImage : (selectedImage || product.image)}
                 alt={product.name}
                 onError={() => setImageError(true)}
-                className="w-full h-full object-contain p-2"
+                className="w-full h-full object-contain p-2 transition-all duration-200"
               />
               <div className="absolute top-3 left-3">
                 <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[11px] sm:text-xs font-semibold bg-white/95 text-blue-800 shadow-xs border border-slate-200">
@@ -102,6 +111,33 @@ export default function ProductDetails() {
                 </span>
               </div>
             </div>
+
+            {/* Gallery Thumbnails (if available) */}
+            {product.gallery && product.gallery.length > 1 && (
+              <div className="flex items-center gap-2 overflow-x-auto pb-1 pt-0.5">
+                {product.gallery.map((imgUrl, idx) => (
+                  <button
+                    key={idx}
+                    type="button"
+                    onClick={() => {
+                      setSelectedImage(imgUrl);
+                      setImageError(false);
+                    }}
+                    className={`relative w-16 h-16 sm:w-20 sm:h-20 shrink-0 rounded-lg overflow-hidden border transition-all ${
+                      (selectedImage || product.image) === imgUrl
+                        ? 'border-blue-600 ring-2 ring-blue-500/40 shadow-xs'
+                        : 'border-slate-200 hover:border-slate-400 bg-white'
+                    }`}
+                  >
+                    <img
+                      src={imgUrl}
+                      alt={`${product.name} view ${idx + 1}`}
+                      className="w-full h-full object-contain p-1"
+                    />
+                  </button>
+                ))}
+              </div>
+            )}
 
             {/* Quick Share / Verification Bar */}
             <div className="flex items-center justify-between p-3 bg-slate-50 rounded-lg text-xs text-slate-600 border border-slate-200">

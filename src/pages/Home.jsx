@@ -110,13 +110,13 @@ export default function Home() {
 
             </div>
 
-            {/* Right Image Showcase Column (Using High-Res Local Substation Photo) */}
+            {/* Right Image Showcase Column (Using High-Res Authentic Transmission Photo) */}
             <div className="lg:col-span-5">
               <div className="relative rounded-2xl overflow-hidden border border-slate-200 shadow-sm bg-white p-2">
                 <div className="rounded-xl overflow-hidden aspect-[4/3] bg-slate-100">
                   <img
-                    src="/images/hero-substation.jpg"
-                    alt="High Voltage Electrical Power Transmission Infrastructure Substation"
+                    src="/images/hero-transmission-sunset.jpg"
+                    alt="High Voltage Electrical Power Transmission Infrastructure Tower at Sunset"
                     className="w-full h-full object-cover object-center"
                   />
                 </div>

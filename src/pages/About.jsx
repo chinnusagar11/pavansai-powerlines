@@ -77,12 +77,12 @@ export default function About() {
           <div className="lg:col-span-5">
             <div className="rounded-xl overflow-hidden border border-slate-200 shadow-sm bg-white p-2">
               <img
-                src="/images/hero-substation.jpg"
-                alt="Power Transmission Infrastructure Substation"
+                src="/images/products/psc-pole-installation.jpg"
+                alt="Overhead Power Distribution PSC Pole Installation with Cross Arms and Insulators"
                 className="w-full h-56 sm:h-72 object-cover rounded-lg"
               />
               <div className="p-2 sm:p-2.5 bg-white text-[11px] sm:text-xs text-slate-600 flex items-center justify-between">
-                <span className="font-semibold text-slate-900">PSPL Distribution Base</span>
+                <span className="font-semibold text-slate-900">PSPL Distribution Hardware</span>
                 <span className="text-blue-600 font-medium">Secunderabad</span>
               </div>
             </div>
