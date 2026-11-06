@@ -180,3 +180,4 @@ Each product item is an object adhering to this structure:
 
 ## 🛡️ Business Integrity & Compliance Note
 This website is crafted specifically to represent **Pavan Sai Power Lines** honestly and authentically. It contains no synthetic claims, fabricated customer testimonials, or fake order backends. Inquiries are dispatched through standard, accessible communication channels (WhatsApp click-to-chat, click-to-call, and direct email) directly to the company's desk in Secunderabad, Telangana.
+

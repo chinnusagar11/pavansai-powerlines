@@ -696,3 +696,4 @@ export function getRelatedProducts(currentProductId, limit = 3) {
     .filter(p => p.id !== currentProductId && p.categoryId === current.categoryId)
     .slice(0, limit);
 }
+

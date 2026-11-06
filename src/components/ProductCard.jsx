@@ -1,34 +1,32 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, MessageSquare, Zap, ExternalLink } from 'lucide-react';
+import { ArrowRight, MessageSquare, Zap } from 'lucide-react';
 import EnquiryModal from './EnquiryModal';
 
 export default function ProductCard({ product }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [imageError, setImageError] = useState(false);
 
-  // Fallback high quality electrical graphic if external image fails
   const fallbackImage = "https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&w=800&q=80";
 
   return (
     <>
-      <div className="group bg-white rounded-2xl overflow-hidden border border-slate-200/90 hover:border-sky-400 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full transform hover:-translate-y-1">
+      <div className="group bg-white rounded-xl overflow-hidden border border-slate-200 hover:border-blue-500 shadow-sm hover:shadow-md transition-all duration-200 flex flex-col h-full">
         
-        {/* Image Container with Category Badge */}
-        <div className="relative aspect-[16/10] overflow-hidden bg-slate-900">
+        {/* Clean Image Area */}
+        <div className="relative aspect-[16/10] overflow-hidden bg-slate-100 border-b border-slate-100">
           <img
             src={imageError ? fallbackImage : product.image}
             alt={product.name}
             onError={() => setImageError(true)}
             loading="lazy"
-            className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100"
+            className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
           
-          {/* Category Tag */}
+          {/* Crisp Category Badge */}
           <div className="absolute top-3 left-3">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-navy-950/80 backdrop-blur-md text-sky-300 border border-sky-400/30">
-              <Zap size={12} className="text-sky-400" />
+            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[11px] font-semibold bg-white/95 text-blue-800 shadow-sm border border-slate-200">
+              <Zap size={11} className="text-blue-600" />
               {product.category}
             </span>
           </div>
@@ -37,52 +35,51 @@ export default function ProductCard({ product }) {
         {/* Content Area */}
         <div className="p-5 flex-1 flex flex-col justify-between">
           <div>
-            <h3 className="font-bold text-lg text-navy-950 group-hover:text-sky-600 transition-colors line-clamp-1">
+            <h3 className="font-bold text-base md:text-lg text-slate-900 group-hover:text-blue-600 transition-colors line-clamp-1">
               {product.name}
             </h3>
 
-            <p className="text-slate-600 text-sm mt-2 line-clamp-2 leading-relaxed">
+            <p className="text-slate-600 text-xs md:text-sm mt-2 line-clamp-2 leading-relaxed">
               {product.shortDescription}
             </p>
 
-            {/* Quick spec indicators if available */}
+            {/* Clean Specifications Preview */}
             {product.specifications && Object.keys(product.specifications).length > 0 && (
-              <div className="mt-4 pt-3 border-t border-slate-100 flex flex-wrap gap-1.5">
+              <div className="mt-3.5 pt-3 border-t border-slate-100 flex flex-wrap gap-1.5">
                 {Object.entries(product.specifications).slice(0, 2).map(([key, val]) => (
                   <span 
                     key={key} 
-                    className="inline-block text-[11px] bg-slate-100 text-slate-700 px-2.5 py-0.5 rounded-md font-medium"
+                    className="inline-block text-[11px] bg-slate-100 text-slate-700 px-2.5 py-1 rounded-md font-medium"
                   >
-                    <strong className="text-navy-900">{key}:</strong> {val}
+                    <strong className="text-slate-900">{key}:</strong> {val}
                   </span>
                 ))}
               </div>
             )}
           </div>
 
-          {/* Action Buttons */}
-          <div className="mt-6 pt-4 border-t border-slate-100 grid grid-cols-2 gap-2.5">
+          {/* Clean Action Buttons */}
+          <div className="mt-5 pt-3.5 border-t border-slate-100 grid grid-cols-2 gap-2.5">
             <Link
               to={`/products/${product.id}`}
-              className="inline-flex items-center justify-center gap-1.5 px-3.5 py-2.5 text-xs font-semibold text-navy-900 bg-slate-100 hover:bg-slate-200 hover:text-navy-950 rounded-xl transition"
+              className="inline-flex items-center justify-center gap-1 px-3 py-2 text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 hover:text-slate-900 rounded-lg transition"
             >
-              <span>View Details</span>
-              <ArrowRight size={14} className="group-hover:translate-x-0.5 transition-transform" />
+              <span>Details</span>
+              <ArrowRight size={13} />
             </Link>
 
             <button
               onClick={() => setIsModalOpen(true)}
-              className="inline-flex items-center justify-center gap-1.5 px-3.5 py-2.5 text-xs font-semibold text-white bg-sky-600 hover:bg-sky-500 rounded-xl shadow-sm hover:shadow transition active:scale-95"
+              className="inline-flex items-center justify-center gap-1 px-3 py-2 text-xs font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition active:scale-95"
             >
-              <MessageSquare size={14} />
-              <span>Enquire</span>
+              <MessageSquare size={13} />
+              <span>Enquiry</span>
             </button>
           </div>
 
         </div>
       </div>
 
-      {/* Reusable Inquiry Modal */}
       <EnquiryModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}

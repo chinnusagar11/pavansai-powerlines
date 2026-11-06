@@ -7,7 +7,6 @@ import WhatsAppButton from '../components/WhatsAppButton';
 export default function MainLayout() {
   const { pathname } = useLocation();
 
-  // Scroll to top on route change
   useEffect(() => {
     window.scrollTo({
       top: 0,
@@ -16,7 +15,7 @@ export default function MainLayout() {
   }, [pathname]);
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50 text-slate-800 font-sans">
+    <div className="min-h-screen flex flex-col bg-white text-slate-800 font-sans">
       <Navbar />
       <main className="flex-grow">
         <Outlet />

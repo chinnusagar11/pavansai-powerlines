@@ -8,9 +8,7 @@ import {
   Eye, 
   CheckCircle2, 
   PhoneCall, 
-  Layers, 
   Zap, 
-  FileCheck, 
   ArrowRight,
   Cpu,
   Sliders,
@@ -26,70 +24,67 @@ export default function About() {
   const [isQuoteOpen, setIsQuoteOpen] = useState(false);
 
   return (
-    <div className="space-y-12 md:space-y-16 pb-16">
+    <div className="space-y-12 md:space-y-16 pb-14">
       
-      {/* 1. Page Header */}
-      <section className="bg-navy-950 text-white py-14 md:py-20 border-b border-navy-800 relative overflow-hidden">
-        <div className="absolute inset-0 bg-circuit-pattern opacity-20"></div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-3xl space-y-4">
-            <Breadcrumb items={[{ label: 'About Us' }]} />
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-500/20 border border-sky-400/30 text-sky-300 text-xs font-semibold uppercase tracking-wider">
-              Corporate Profile
-            </div>
-            <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight font-heading">
+      {/* 1. Clean Page Header */}
+      <section className="bg-gradient-to-b from-blue-50/60 to-white py-10 md:py-14 border-b border-slate-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Breadcrumb items={[{ label: 'About Us' }]} />
+          
+          <div className="max-w-3xl space-y-3 mt-2">
+            <span className="inline-block text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-100/70 px-2.5 py-1 rounded-md border border-blue-200">
+              Company Profile
+            </span>
+            <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 font-heading">
               About Pavan Sai Power Lines
             </h1>
-            <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
+            <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
               Electrical power transmission and distribution materials supplier established in Secunderabad, Telangana.
             </p>
           </div>
         </div>
       </section>
 
-      {/* 2. Company Introduction & Business Overview */}
+      {/* 2. Business Overview */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           
-          <div className="space-y-6">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sky-100 text-sky-800 text-xs font-bold uppercase tracking-wider">
-              Business Overview
-            </div>
-            
-            <h2 className="text-2xl sm:text-4xl font-extrabold text-navy-950 font-heading leading-tight">
-              A Dedicated Electrical Material Supplier Serving Power Sector Needs
+          <div className="lg:col-span-7 space-y-4">
+            <span className="text-xs font-bold uppercase tracking-wider text-blue-600">
+              Overview
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 font-heading">
+              A Dedicated Supply Partner for Electrical Contractors & Utilities
             </h2>
 
-            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-              <strong>Pavan Sai Power Lines (PSPL)</strong> operates from the key commercial distribution hub of Secunderabad, Telangana. The enterprise specializes in the trade, stocking, and supply of certified electrical hardware and structural materials used across overhead transmission networks, electrical substations, and industrial installations.
+            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
+              <strong>Pavan Sai Power Lines (PSPL)</strong> operates from Secunderabad, Telangana. The business focuses on the sourcing, stocking, and supply of certified electrical materials used in power transmission corridors, distribution networks, and industrial substations.
             </p>
 
-            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-              In the electrical infrastructure sector, material failure is not an option. From high tension insulators that maintain line integrity during lightning strikes to high-conductivity ACSR and AAAC conductors that deliver uninterrupted power, PSPL focuses strictly on verified, IS-compliant materials that contractors and engineers can deploy with complete confidence.
+            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
+              We stock and supply verified overhead line materials, insulators, conductors, gang-operated AB switches, earthing electrodes, and galvanized steel towers conforming to Indian Standard (IS) specifications.
             </p>
 
-            <div className="p-4 bg-slate-100 rounded-xl border border-slate-200">
-              <div className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-sky-600 shrink-0 mt-0.5" />
-                <div className="text-xs sm:text-sm text-slate-700">
-                  <strong className="text-navy-950 block">Strategic Secunderabad Presence</strong>
-                  Situated in Telangana's primary industrial trading belt with direct logistics access to state-wide electricity board projects, private turnkey EPC sites, and neighboring industrial corridors.
-                </div>
+            <div className="p-4 bg-slate-50 rounded-xl border border-slate-200 text-xs sm:text-sm text-slate-700 flex items-start gap-3">
+              <MapPin size={18} className="text-blue-600 shrink-0 mt-0.5" />
+              <div>
+                <strong className="text-slate-900 block">Secunderabad Supply Hub</strong>
+                Strategically positioned in Telangana's electrical trading zone with quick road transport access across Telangana and Andhra Pradesh.
               </div>
             </div>
           </div>
 
-          <div className="relative">
-            <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-xl border border-slate-200 bg-slate-900">
+          <div className="lg:col-span-5">
+            <div className="rounded-xl overflow-hidden border border-slate-200 shadow-sm bg-white p-2">
               <img
-                src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1000&q=80"
-                alt="Power Transmission Grid Lines"
-                className="w-full h-full object-cover"
+                src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=800&q=80"
+                alt="Power Transmission Lines"
+                className="w-full h-64 sm:h-72 object-cover rounded-lg"
               />
-            </div>
-            <div className="mt-4 p-4 bg-navy-900 text-white rounded-xl flex items-center justify-between text-xs">
-              <span className="font-semibold text-slate-200">Pavan Sai Power Lines (PSPL)</span>
-              <span className="text-sky-400">Secunderabad, Telangana</span>
+              <div className="p-2.5 bg-white text-xs text-slate-600 flex items-center justify-between">
+                <span className="font-semibold text-slate-900">PSPL Distribution</span>
+                <span className="text-blue-600 font-medium">Secunderabad</span>
+              </div>
             </div>
           </div>
 
@@ -97,207 +92,141 @@ export default function About() {
       </section>
 
       {/* 3. Products and Supply Capabilities */}
-      <section className="bg-slate-100/70 py-16 border-y border-slate-200">
+      <section className="bg-slate-50 py-12 md:py-16 border-y border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          <div className="max-w-3xl mb-12">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sky-100 text-sky-800 text-xs font-bold uppercase tracking-wider mb-2">
-              Supply Capabilities
-            </div>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-navy-950 font-heading">
-              Our 7 Core Material Divisions
+          <div className="max-w-2xl mb-8">
+            <span className="text-xs font-bold uppercase tracking-wider text-blue-600">
+              Capabilities
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 font-heading mt-0.5">
+              Our 7 Core Product Divisions
             </h2>
-            <p className="text-slate-600 text-sm sm:text-base mt-2">
-              Directly aligned with company distribution specializations:
-            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            
-            <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
-              <div className="flex items-center gap-3 mb-3">
-                <div className="w-10 h-10 rounded-lg bg-sky-50 text-sky-600 flex items-center justify-center">
-                  <Zap size={22} />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-xs">
+              <div className="flex items-center gap-2.5 mb-2.5">
+                <div className="w-8 h-8 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center">
+                  <Zap size={18} />
                 </div>
-                <h3 className="font-bold text-navy-950 text-base">HT/LT Overhead Line Materials</h3>
+                <h3 className="font-bold text-sm text-slate-900">HT/LT Overhead Line Materials</h3>
               </div>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                Pin insulators, disc insulators (70kN/120kN), PG clamps, stay wire sets, hardware fittings, and hot-dip galvanized cross arms.
+              <p className="text-xs text-slate-600 leading-relaxed">
+                Pin insulators, disc insulators, PG clamps, stay sets, hardware fittings, and hot-dip galvanized cross arms.
               </p>
             </div>
 
-            <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
-              <div className="flex items-center gap-3 mb-3">
-                <div className="w-10 h-10 rounded-lg bg-sky-50 text-sky-600 flex items-center justify-center">
-                  <Cpu size={22} />
+            <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-xs">
+              <div className="flex items-center gap-2.5 mb-2.5">
+                <div className="w-8 h-8 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center">
+                  <Cpu size={18} />
                 </div>
-                <h3 className="font-bold text-navy-950 text-base">Transformer Spares</h3>
+                <h3 className="font-bold text-sm text-slate-900">Transformer Spares</h3>
               </div>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                HT/LT porcelain bushings, crystal silica gel breathers, cork & nitrile gaskets (RC70C), explosion vents, and oil level indicators.
+              <p className="text-xs text-slate-600 leading-relaxed">
+                HT/LT bushings, silica gel breathers, cork & nitrile gaskets (RC70C), explosion vents, and oil level indicators.
               </p>
             </div>
 
-            <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
-              <div className="flex items-center gap-3 mb-3">
-                <div className="w-10 h-10 rounded-lg bg-sky-50 text-sky-600 flex items-center justify-center">
-                  <ToggleRight size={22} />
+            <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-xs">
+              <div className="flex items-center gap-2.5 mb-2.5">
+                <div className="w-8 h-8 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center">
+                  <ToggleRight size={18} />
                 </div>
-                <h3 className="font-bold text-navy-950 text-base">AB Switches</h3>
+                <h3 className="font-bold text-sm text-slate-900">AB Switches</h3>
               </div>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                11kV & 33kV outdoor gang-operated triple pole Air Break switches, Horn Gap fuse units, replacement copper jaws, and operating linkage rods.
+              <p className="text-xs text-slate-600 leading-relaxed">
+                11kV & 33kV outdoor gang-operated triple pole Air Break switches, Horn Gap fuse units, and replacement contacts.
               </p>
             </div>
 
-            <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
-              <div className="flex items-center gap-3 mb-3">
-                <div className="w-10 h-10 rounded-lg bg-sky-50 text-sky-600 flex items-center justify-center">
-                  <Activity size={22} />
+            <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-xs">
+              <div className="flex items-center gap-2.5 mb-2.5">
+                <div className="w-8 h-8 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center">
+                  <Activity size={18} />
                 </div>
-                <h3 className="font-bold text-navy-950 text-base">AAAC & ACSR Conductors</h3>
+                <h3 className="font-bold text-sm text-slate-900">AAAC & ACSR Conductors</h3>
               </div>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                Full drum supplies of Weasel, Rabbit, Dog, Panther ACSR conductors and high tensile AAAC conductors conforming to IS 398 standards.
+              <p className="text-xs text-slate-600 leading-relaxed">
+                Weasel, Rabbit, Dog, Panther ACSR conductors and high tensile AAAC conductors conforming to IS 398.
               </p>
             </div>
 
-            <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
-              <div className="flex items-center gap-3 mb-3">
-                <div className="w-10 h-10 rounded-lg bg-sky-50 text-sky-600 flex items-center justify-center">
-                  <ShieldCheck size={22} />
+            <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-xs">
+              <div className="flex items-center gap-2.5 mb-2.5">
+                <div className="w-8 h-8 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center">
+                  <ShieldCheck size={18} />
                 </div>
-                <h3 className="font-bold text-navy-950 text-base">Earthing Materials</h3>
+                <h3 className="font-bold text-sm text-slate-900">Earthing Materials</h3>
               </div>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                UL-standard copper bonded earth electrodes, perforated GI earthing pipes, hot-dip galvanized earth flats, and earth enhancement compounds.
+              <p className="text-xs text-slate-600 leading-relaxed">
+                Copper bonded electrodes, perforated GI earthing pipes, galvanized earth flats, and earth enhancement compounds.
               </p>
             </div>
 
-            <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
-              <div className="flex items-center gap-3 mb-3">
-                <div className="w-10 h-10 rounded-lg bg-sky-50 text-sky-600 flex items-center justify-center">
-                  <Sliders size={22} />
+            <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-xs">
+              <div className="flex items-center gap-2.5 mb-2.5">
+                <div className="w-8 h-8 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center">
+                  <Sliders size={18} />
                 </div>
-                <h3 className="font-bold text-navy-950 text-base">Industrial Electricals & Towers</h3>
+                <h3 className="font-bold text-sm text-slate-900">Industrial Electricals & Towers</h3>
               </div>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                LT distribution feeder boxes, cable glands, bimetallic crimping lugs, HRC fuses, and hot-dip galvanized lattice transmission towers & AIMS structures.
+              <p className="text-xs text-slate-600 leading-relaxed">
+                LT distribution feeder boxes, cable glands, lugs, HRC fuses, and hot-dip galvanized transmission lattice towers.
               </p>
             </div>
-
-          </div>
-
-          <div className="mt-8 text-center">
-            <Link
-              to="/products"
-              className="inline-flex items-center gap-2 text-sky-600 hover:text-sky-700 font-semibold text-sm group"
-            >
-              <span>Explore Full Technical Product Specifications</span>
-              <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-            </Link>
           </div>
 
         </div>
       </section>
 
-      {/* 4. Mission & Vision */}
+      {/* 4. Mission & Vision (Clean Cards) */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           
-          <div className="bg-gradient-to-br from-navy-900 to-navy-950 text-white p-8 sm:p-10 rounded-2xl border border-slate-800 shadow-xl">
-            <div className="w-12 h-12 rounded-xl bg-sky-500/20 text-sky-400 flex items-center justify-center mb-6">
-              <Target size={28} />
+          <div className="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-xs">
+            <div className="w-10 h-10 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center mb-4">
+              <Target size={22} />
             </div>
-            <h3 className="text-2xl font-bold font-heading mb-4 text-white">Our Mission</h3>
-            <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-              To supply electrical contractors, power utilities, and industrial clients with tested, durable, and standard-compliant transmission and distribution materials. We aim to ensure that every insulator, conductor, switch, and earthing component supplied from our Secunderabad facility upholds the highest degree of electrical safety and operational longevity.
+            <h3 className="text-xl font-bold font-heading text-slate-900 mb-2">Our Mission</h3>
+            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              To supply electrical contractors, power utilities, and industrial clients with tested, durable, and standard-compliant transmission and distribution materials that ensure electrical safety and long service life.
             </p>
           </div>
 
-          <div className="bg-gradient-to-br from-sky-900 to-navy-900 text-white p-8 sm:p-10 rounded-2xl border border-slate-800 shadow-xl">
-            <div className="w-12 h-12 rounded-xl bg-sky-400/20 text-sky-300 flex items-center justify-center mb-6">
-              <Eye size={28} />
+          <div className="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-xs">
+            <div className="w-10 h-10 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center mb-4">
+              <Eye size={22} />
             </div>
-            <h3 className="text-2xl font-bold font-heading mb-4 text-white">Our Vision</h3>
-            <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-              To be recognized as the most dependable and responsive supply partner for electrical infrastructure projects in Telangana and across South India, distinguished by straightforward commercial dealings, verified product quality, and uninterrupted inventory availability.
+            <h3 className="text-xl font-bold font-heading text-slate-900 mb-2">Our Vision</h3>
+            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              To be recognized as a dependable and responsive material supply partner for power infrastructure projects in Telangana, distinguished by verified product quality, straightforward commercial dealings, and timely order fulfillment.
             </p>
           </div>
 
         </div>
       </section>
 
-      {/* 5. Why Choose Pavan Sai Power Lines? */}
+      {/* 5. Contact CTA */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sky-100 text-sky-800 text-xs font-bold uppercase tracking-wider mb-2">
-            The PSPL Advantage
-          </div>
-          <h2 className="text-2xl sm:text-4xl font-extrabold text-navy-950 font-heading">
-            Why Choose Pavan Sai Power Lines?
-          </h2>
-          <p className="text-slate-600 text-sm sm:text-base mt-2">
-            A reliable supply chain focused on technical integrity and transparent commercial dealings.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          
-          <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
-            <div className="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center mb-4">
-              <CheckCircle2 size={22} />
-            </div>
-            <h4 className="font-bold text-base text-navy-950 mb-2">Verified Specifications</h4>
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-              Every item in our product line conforms to Indian Standard (IS) specifications, ensuring compatibility with state electrical boards and EPC contract requirements.
-            </p>
-          </div>
-
-          <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
-            <div className="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center mb-4">
-              <CheckCircle2 size={22} />
-            </div>
-            <h4 className="font-bold text-base text-navy-950 mb-2">Consolidated Bill of Materials</h4>
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-              Source all high-voltage fittings, earthing electrodes, transformer accessories, and conductors under a single consolidated purchase order.
-            </p>
-          </div>
-
-          <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
-            <div className="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center mb-4">
-              <CheckCircle2 size={22} />
-            </div>
-            <h4 className="font-bold text-base text-navy-950 mb-2">Responsive Support</h4>
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-              Direct access to our commercial desk for immediate price inquiries, proforma invoices, and dispatch schedules without bureaucratic delays.
-            </p>
-          </div>
-
-        </div>
-
-      </section>
-
-      {/* 6. Contact CTA */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-slate-900 text-white rounded-3xl p-8 sm:p-12 text-center max-w-4xl mx-auto space-y-5">
-          <h3 className="text-2xl sm:text-3xl font-extrabold font-heading">
-            Looking for Material Supply in Secunderabad?
+        <div className="bg-blue-50 border border-blue-200 rounded-2xl p-6 sm:p-8 text-center max-w-3xl mx-auto space-y-4">
+          <h3 className="text-xl sm:text-2xl font-bold font-heading text-slate-900">
+            Have an Inquiry or Need Stock Availability?
           </h3>
-          <p className="text-sm sm:text-base text-slate-300 max-w-2xl mx-auto">
-            Contact our sales desk directly with your product requirements, conductor drum lengths, or switch ratings.
+          <p className="text-xs sm:text-sm text-slate-600 max-w-xl mx-auto">
+            Contact our commercial sales desk in Secunderabad directly for price estimates and product information.
           </p>
-          <div className="pt-2 flex flex-wrap items-center justify-center gap-4">
+          <div className="pt-2 flex flex-wrap items-center justify-center gap-3">
             <button
               onClick={() => setIsQuoteOpen(true)}
-              className="bg-sky-500 hover:bg-sky-400 text-white font-semibold text-sm px-6 py-3 rounded-xl shadow transition"
+              className="bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs sm:text-sm px-5 py-2.5 rounded-lg shadow-xs transition"
             >
-              Request Price Quote
+              Request Quote
             </button>
             <Link
               to="/contact"
-              className="bg-navy-800 hover:bg-navy-700 text-white font-semibold text-sm px-6 py-3 rounded-xl border border-slate-700 transition"
+              className="bg-white hover:bg-slate-50 text-slate-800 border border-slate-300 font-semibold text-xs sm:text-sm px-5 py-2.5 rounded-lg transition"
             >
               Contact Sales Desk
             </Link>
@@ -305,7 +234,6 @@ export default function About() {
         </div>
       </section>
 
-      {/* Global Quote Modal */}
       <EnquiryModal
         isOpen={isQuoteOpen}
         onClose={() => setIsQuoteOpen(false)}

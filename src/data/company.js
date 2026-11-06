@@ -113,3 +113,4 @@ export const COMPANY_INFO = {
     }
   ]
 };
+
