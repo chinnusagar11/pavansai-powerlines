@@ -65,33 +65,33 @@ export default function Navbar() {
     <>
       <header className="sticky top-0 z-40 w-full bg-white">
         
-        {/* Desktop Top Contact Bar */}
-        <div className="bg-slate-100 text-slate-600 text-xs py-2 px-4 border-b border-slate-200 hidden md:block">
+        {/* Desktop Top Contact Bar (High-End Corporate Dark Accent Strip) */}
+        <div className="bg-slate-900 text-slate-300 text-xs py-2 px-4 border-b border-slate-800 hidden md:block">
           <div className="max-w-7xl mx-auto flex items-center justify-between">
             <div className="flex items-center gap-6">
-              <span className="flex items-center gap-1.5 text-slate-600">
-                <MapPin size={14} className="text-blue-600" />
+              <span className="flex items-center gap-1.5 text-slate-300">
+                <MapPin size={14} className="text-blue-400" />
                 <span>{COMPANY_INFO.location.city}, {COMPANY_INFO.location.state}, India</span>
               </span>
-              <span className="flex items-center gap-1.5 text-slate-600">
-                <Clock size={14} className="text-blue-600" />
-                <span>Mon - Sat: 9:30 AM - 7:30 PM</span>
+              <span className="flex items-center gap-1.5 text-slate-300">
+                <Clock size={14} className="text-blue-400" />
+                <span>Mon - Sat: 9:30 AM - 7:30 PM IST</span>
               </span>
             </div>
 
             <div className="flex items-center gap-6">
               <a 
                 href={`tel:${COMPANY_INFO.contact.primaryPhoneRaw}`} 
-                className="flex items-center gap-1.5 text-slate-700 hover:text-blue-600 font-medium transition"
+                className="flex items-center gap-1.5 text-slate-200 hover:text-white font-bold transition"
               >
-                <Phone size={14} className="text-blue-600" />
+                <Phone size={14} className="text-blue-400" />
                 <span>{COMPANY_INFO.contact.primaryPhone}</span>
               </a>
               <a 
                 href={`mailto:${COMPANY_INFO.contact.primaryEmail}`} 
-                className="flex items-center gap-1.5 text-slate-700 hover:text-blue-600 transition"
+                className="flex items-center gap-1.5 text-slate-200 hover:text-white transition"
               >
-                <Mail size={14} className="text-blue-600" />
+                <Mail size={14} className="text-blue-400" />
                 <span>{COMPANY_INFO.contact.primaryEmail}</span>
               </a>
             </div>
@@ -106,24 +106,19 @@ export default function Navbar() {
         }`}>
           <div className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 flex items-center justify-between">
             
-            {/* Logo & Company Name */}
-            <Link to="/" className="flex items-center gap-2.5 sm:gap-3 group focus:outline-none min-w-0">
-              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center shadow-sm group-hover:bg-blue-700 transition shrink-0">
-                <Zap className="w-4 h-4 sm:w-5 sm:h-5 fill-current" />
+            {/* Logo & Full Company Name in Big Text - Strictly One Line */}
+            <Link to="/" className="flex items-center gap-2.5 sm:gap-3.5 group focus:outline-none shrink-0 min-w-0">
+              <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-br from-blue-600 to-blue-700 text-white flex items-center justify-center shadow-md group-hover:from-blue-700 group-hover:to-blue-800 transition-all shrink-0">
+                <Zap className="w-5 h-5 sm:w-6 sm:h-6 fill-current text-white" />
               </div>
 
-              <div className="min-w-0">
-                <div className="flex items-center gap-1.5">
-                  <span className="font-extrabold text-base sm:text-xl text-slate-900 tracking-tight font-heading truncate">
-                    PAVAN SAI
-                  </span>
-                  <span className="text-[10px] sm:text-[11px] font-bold px-1.5 py-0.5 rounded bg-blue-100 text-blue-800 border border-blue-200 shrink-0">
-                    PSPL
-                  </span>
-                </div>
-                <div className="text-[10px] sm:text-[11px] font-medium text-slate-500 tracking-wide uppercase truncate">
-                  Power Lines &bull; Secunderabad
-                </div>
+              <div className="flex items-center gap-2 whitespace-nowrap min-w-0">
+                <span className="font-black text-sm sm:text-lg md:text-xl lg:text-[24px] xl:text-[26px] tracking-tight text-slate-900 font-heading whitespace-nowrap uppercase">
+                  PAVAN SAI <span className="text-blue-600">POWER LINES</span>
+                </span>
+                <span className="hidden xl:inline-flex text-[10px] font-extrabold px-1.5 py-0.5 rounded bg-blue-100 text-blue-800 border border-blue-200 shrink-0">
+                  PSPL
+                </span>
               </div>
             </Link>
 
@@ -180,10 +175,10 @@ export default function Navbar() {
             </div>
 
             {/* Quote Action & Mobile Menu Toggle */}
-            <div className="flex items-center gap-2 sm:gap-3">
+            <div className="flex items-center gap-2 sm:gap-3 shrink-0">
               <button
                 onClick={() => setIsQuoteModalOpen(true)}
-                className="hidden sm:inline-flex items-center gap-1.5 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs md:text-sm px-4 py-2.5 rounded-lg shadow-sm transition active:scale-95 focus:outline-none"
+                className="hidden sm:inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold text-xs md:text-sm px-4.5 py-2.5 rounded-xl shadow-md hover:shadow-lg transition-all active:scale-97 shrink-0"
               >
                 <Send size={14} />
                 <span>Get a Quote</span>
