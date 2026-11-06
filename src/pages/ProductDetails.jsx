@@ -71,24 +71,27 @@ export default function ProductDetails() {
   return (
     <div className="space-y-6 sm:space-y-10 pb-16">
       
-      {/* 1. Header & Breadcrumb */}
+      {/* 1. Header & Breadcrumb with Prominent Back Button */}
       <section className="bg-white border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 py-3">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-            <Breadcrumb 
-              items={[
-                { label: 'Products', href: '/products' },
-                { label: product.category, href: `/products?category=${product.categoryId}` },
-                { label: product.name }
-              ]} 
-            />
+          <div className="flex items-center justify-between gap-3">
+            <div className="min-w-0 flex-1">
+              <Breadcrumb 
+                items={[
+                  { label: 'Products', href: '/products' },
+                  { label: product.category, href: `/products?category=${product.categoryId}` },
+                  { label: product.name }
+                ]} 
+              />
+            </div>
 
             <button
-              onClick={() => navigate(-1)}
-              className="inline-flex items-center gap-1 text-xs text-slate-600 hover:text-blue-600 font-medium transition self-start sm:self-auto py-1"
+              onClick={() => navigate('/products')}
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 active:bg-blue-100 text-slate-800 text-xs sm:text-sm font-bold border border-slate-200 transition-all shadow-2xs shrink-0"
+              title="Return to Product Catalogue"
             >
-              <ArrowLeft size={13} />
-              <span>Back</span>
+              <ArrowLeft size={16} className="text-blue-600" />
+              <span>Back to Catalogue</span>
             </button>
           </div>
         </div>
@@ -96,6 +99,17 @@ export default function ProductDetails() {
 
       {/* 2. Main Product Info */}
       <section className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8">
+        {/* Mobile Quick Back Link */}
+        <div className="sm:hidden mb-3">
+          <button
+            onClick={() => navigate('/products')}
+            className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-slate-100 active:bg-blue-100 text-slate-800 text-xs font-bold border border-slate-200 shadow-2xs transition"
+          >
+            <ArrowLeft size={15} className="text-blue-600" />
+            <span>&larr; Back to All Products Catalogue</span>
+          </button>
+        </div>
+
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-start">
           
           {/* Left Column: Product Image & Gallery */}
@@ -336,36 +350,63 @@ export default function ProductDetails() {
         product={product}
       />
 
-      {/* High-Clarity Fullscreen Image Lightbox Modal */}
+      {/* High-Clarity Fullscreen Image Lightbox Modal with Prominent Back Buttons */}
       {isZoomOpen && (
         <div 
-          className="fixed inset-0 z-50 bg-slate-900/90 backdrop-blur-xs flex items-center justify-center p-3 sm:p-6"
+          className="fixed inset-0 z-50 bg-slate-950/90 backdrop-blur-sm flex items-center justify-center p-2.5 sm:p-6 animate-fade-in"
           onClick={() => setIsZoomOpen(false)}
         >
           <div 
-            className="relative max-w-4xl w-full bg-white rounded-2xl overflow-hidden p-3 sm:p-5 shadow-2xl flex flex-col items-center"
+            className="relative max-w-4xl w-full bg-white rounded-2xl overflow-hidden p-3.5 sm:p-5 shadow-2xl flex flex-col items-center border border-slate-200"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="w-full flex items-center justify-between pb-2 mb-2 border-b border-slate-100 text-xs text-slate-700">
-              <span className="font-bold text-slate-900 truncate pr-4 text-sm">{product.name}</span>
+            {/* Modal Header Bar with Explicit Back Button */}
+            <div className="w-full flex items-center justify-between pb-3 mb-2 border-b border-slate-100 text-xs">
               <button
                 onClick={() => setIsZoomOpen(false)}
-                className="p-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 transition"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 active:bg-blue-100 text-slate-800 font-bold transition shadow-2xs text-xs"
+              >
+                <ArrowLeft size={16} className="text-blue-600" />
+                <span>&larr; Back</span>
+              </button>
+
+              <span className="font-bold text-slate-900 truncate px-2 text-xs sm:text-sm text-center flex-1">
+                {product.name}
+              </span>
+
+              <button
+                onClick={() => setIsZoomOpen(false)}
+                className="p-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 transition"
                 aria-label="Close Preview"
+                title="Close Photo Preview"
               >
                 <X size={18} />
               </button>
             </div>
-            <div className="overflow-auto max-h-[75vh] flex items-center justify-center w-full py-2">
+
+            {/* High-Resolution Photo Display */}
+            <div className="overflow-auto max-h-[70vh] flex items-center justify-center w-full py-2 bg-slate-50/50 rounded-xl">
               <img
                 src={imageError ? fallbackImage : (selectedImage || product.image)}
                 alt={product.name}
-                className="max-h-[70vh] w-auto max-w-full object-contain drop-shadow-sm rounded-lg"
+                className="max-h-[68vh] w-auto max-w-full object-contain drop-shadow-sm rounded-lg"
               />
             </div>
-            <p className="text-[11px] text-slate-500 mt-2 text-center">
-              Authentic Equipment Photo &bull; Pavan Sai Power Lines, Secunderabad, Telangana
-            </p>
+
+            {/* Modal Footer with Confirmation and Back Button */}
+            <div className="w-full pt-3 mt-2 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-2.5">
+              <p className="text-[11px] text-slate-500 text-center sm:text-left">
+                Authentic Equipment Photo &bull; Pavan Sai Power Lines, Secunderabad, Telangana
+              </p>
+              
+              <button
+                onClick={() => setIsZoomOpen(false)}
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-5 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs shadow-sm transition"
+              >
+                <ArrowLeft size={14} />
+                <span>Back to Product Details</span>
+              </button>
+            </div>
           </div>
         </div>
       )}

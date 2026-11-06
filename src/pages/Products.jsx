@@ -1,10 +1,11 @@
 import React, { useState, useMemo, useEffect } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useSearchParams, Link } from 'react-router-dom';
 import { 
   Search, 
   X, 
   RefreshCw,
-  CheckCircle2
+  CheckCircle2,
+  ArrowLeft
 } from 'lucide-react';
 import { COMPANY_INFO } from '../data/company';
 import { PRODUCTS } from '../data/products';
@@ -59,7 +60,18 @@ export default function Products() {
       {/* 1. Page Header */}
       <section className="bg-gradient-to-b from-blue-50/60 to-white py-8 sm:py-12 border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Breadcrumb items={[{ label: 'Products & Supplies' }]} />
+          <div className="flex items-center justify-between gap-3">
+            <Breadcrumb items={[{ label: 'Products & Supplies' }]} />
+            
+            <Link
+              to="/"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white hover:bg-slate-50 active:bg-slate-100 text-slate-800 text-xs font-bold border border-slate-200 transition shadow-2xs shrink-0"
+              title="Return to Home Page"
+            >
+              <ArrowLeft size={14} className="text-blue-600" />
+              <span>Back to Home</span>
+            </Link>
+          </div>
           
           <div className="max-w-3xl space-y-2 mt-2">
             <span className="inline-block text-[11px] font-bold uppercase tracking-wider text-blue-600 bg-blue-100/70 px-2.5 py-1 rounded-md border border-blue-200">

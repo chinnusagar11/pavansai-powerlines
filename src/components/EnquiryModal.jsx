@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, MessageCircle, Mail, CheckCircle2 } from 'lucide-react';
+import { X, MessageCircle, Mail, CheckCircle2, ArrowLeft } from 'lucide-react';
 import { COMPANY_INFO } from '../data/company';
 
 export default function EnquiryModal({ isOpen, onClose, product = null }) {
@@ -62,22 +62,31 @@ export default function EnquiryModal({ isOpen, onClose, product = null }) {
     <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-900/60 backdrop-blur-xs animate-fade-in">
       <div className="bg-white rounded-2xl shadow-2xl max-w-lg w-full max-h-[92vh] flex flex-col border border-slate-200 overflow-hidden">
         
-        {/* Clean Header */}
-        <div className="bg-blue-600 text-white p-4 sm:p-5 flex items-start justify-between shrink-0">
-          <div>
-            <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-blue-200">
-              Commercial Enquiry
-            </span>
-            <h3 className="text-base sm:text-lg font-bold mt-0.5 leading-snug">
-              Request Price Quote & Availability
+        {/* Clean Header with Back Button */}
+        <div className="bg-blue-600 text-white p-4 sm:p-5 flex items-center justify-between shrink-0">
+          <button
+            type="button"
+            onClick={onClose}
+            className="inline-flex items-center gap-1.5 bg-white/15 hover:bg-white/25 active:bg-white/30 text-white px-2.5 py-1.5 rounded-xl text-xs font-bold transition shadow-2xs"
+            aria-label="Back / Close"
+          >
+            <ArrowLeft size={15} />
+            <span>&larr; Back</span>
+          </button>
+
+          <div className="text-center flex-1 px-2 min-w-0">
+            <h3 className="text-sm sm:text-base font-bold leading-tight truncate">
+              Request Price Quote
             </h3>
-            <p className="text-[11px] sm:text-xs text-blue-100 mt-0.5">
-              Pavan Sai Power Lines &bull; Secunderabad, Telangana
+            <p className="text-[10px] text-blue-200 truncate">
+              Pavan Sai Power Lines &bull; Secunderabad
             </p>
           </div>
+
           <button
+            type="button"
             onClick={onClose}
-            className="text-white/80 hover:text-white bg-white/10 hover:bg-white/20 p-2 rounded-lg transition"
+            className="text-white/80 hover:text-white bg-white/10 hover:bg-white/20 p-2 rounded-xl transition shrink-0"
             aria-label="Close modal"
           >
             <X size={18} />
@@ -174,23 +183,34 @@ export default function EnquiryModal({ isOpen, onClose, product = null }) {
           </div>
 
           {/* Action buttons */}
-          <div className="pt-2 border-t border-slate-100 flex flex-col sm:flex-row gap-2.5">
-            <button
-              type="button"
-              onClick={handleWhatsAppSend}
-              className="flex-1 flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20ba59] active:scale-98 text-white py-3 px-4 rounded-xl font-semibold text-sm shadow-sm transition"
-            >
-              <MessageCircle size={18} className="fill-current" />
-              <span>Send via WhatsApp</span>
-            </button>
+          <div className="pt-2 border-t border-slate-100 flex flex-col gap-2">
+            <div className="flex flex-col sm:flex-row gap-2">
+              <button
+                type="button"
+                onClick={handleWhatsAppSend}
+                className="flex-1 flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20ba59] active:scale-98 text-white py-2.5 px-4 rounded-xl font-semibold text-xs sm:text-sm shadow-xs transition"
+              >
+                <MessageCircle size={16} className="fill-current" />
+                <span>Send via WhatsApp</span>
+              </button>
+
+              <button
+                type="button"
+                onClick={handleEmailSend}
+                className="flex-1 flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 active:scale-98 text-white py-2.5 px-4 rounded-xl font-semibold text-xs sm:text-sm shadow-xs transition"
+              >
+                <Mail size={16} />
+                <span>Send via Email</span>
+              </button>
+            </div>
 
             <button
               type="button"
-              onClick={handleEmailSend}
-              className="flex-1 flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 active:scale-98 text-white py-3 px-4 rounded-xl font-semibold text-sm shadow-sm transition"
+              onClick={onClose}
+              className="w-full flex items-center justify-center gap-1.5 py-2 px-3 rounded-xl bg-slate-100 hover:bg-slate-200 active:bg-slate-300 text-slate-700 text-xs font-semibold transition"
             >
-              <Mail size={18} />
-              <span>Send via Email</span>
+              <ArrowLeft size={13} />
+              <span>Back / Close</span>
             </button>
           </div>
 
