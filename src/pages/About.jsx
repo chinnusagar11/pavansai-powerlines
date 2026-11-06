@@ -116,72 +116,84 @@ export default function About() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-xs">
-              <div className="flex items-center gap-2.5 mb-2.5">
-                <div className="w-8 h-8 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center">
-                  <Zap size={18} />
+            {/* Division 1: Electric Blue */}
+            <div className="group relative bg-gradient-to-br from-blue-50/90 via-sky-50/30 to-white p-5 rounded-2xl border-2 border-blue-200 hover:border-blue-500 shadow-xs hover:shadow-xl transition-all duration-300 overflow-hidden">
+              <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-blue-600 to-sky-500"></div>
+              <div className="flex items-center gap-2.5 mb-2.5 pt-0.5">
+                <div className="w-9 h-9 rounded-xl bg-blue-600 text-white flex items-center justify-center shadow-md shadow-blue-500/25 group-hover:scale-108 transition-transform">
+                  <Zap size={18} className="fill-white" />
                 </div>
-                <h3 className="font-bold text-sm text-slate-900">HT/LT Overhead Line Materials</h3>
+                <h3 className="font-extrabold text-sm text-slate-900">HT/LT Overhead Line Materials</h3>
               </div>
               <p className="text-xs text-slate-600 leading-relaxed">
                 Pin insulators, disc insulators, PG clamps, stay sets, hardware fittings, and hot-dip galvanized cross arms.
               </p>
             </div>
 
-            <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-xs">
-              <div className="flex items-center gap-2.5 mb-2.5">
-                <div className="w-8 h-8 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center">
+            {/* Division 2: Purple */}
+            <div className="group relative bg-gradient-to-br from-purple-50/90 via-indigo-50/30 to-white p-5 rounded-2xl border-2 border-purple-200 hover:border-purple-500 shadow-xs hover:shadow-xl transition-all duration-300 overflow-hidden">
+              <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-purple-600 to-indigo-600"></div>
+              <div className="flex items-center gap-2.5 mb-2.5 pt-0.5">
+                <div className="w-9 h-9 rounded-xl bg-purple-600 text-white flex items-center justify-center shadow-md shadow-purple-500/25 group-hover:scale-108 transition-transform">
                   <Cpu size={18} />
                 </div>
-                <h3 className="font-bold text-sm text-slate-900">Transformer Spares</h3>
+                <h3 className="font-extrabold text-sm text-slate-900">Transformer Spares</h3>
               </div>
               <p className="text-xs text-slate-600 leading-relaxed">
                 HT/LT bushings, silica gel breathers, cork & nitrile gaskets (RC70C), explosion vents, and oil level indicators.
               </p>
             </div>
 
-            <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-xs">
-              <div className="flex items-center gap-2.5 mb-2.5">
-                <div className="w-8 h-8 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center">
+            {/* Division 3: Amber */}
+            <div className="group relative bg-gradient-to-br from-amber-50/90 via-orange-50/30 to-white p-5 rounded-2xl border-2 border-amber-200 hover:border-amber-500 shadow-xs hover:shadow-xl transition-all duration-300 overflow-hidden">
+              <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-amber-500 to-orange-500"></div>
+              <div className="flex items-center gap-2.5 mb-2.5 pt-0.5">
+                <div className="w-9 h-9 rounded-xl bg-amber-500 text-white flex items-center justify-center shadow-md shadow-amber-500/25 group-hover:scale-108 transition-transform">
                   <ToggleRight size={18} />
                 </div>
-                <h3 className="font-bold text-sm text-slate-900">AB Switches</h3>
+                <h3 className="font-extrabold text-sm text-slate-900">AB Switches</h3>
               </div>
               <p className="text-xs text-slate-600 leading-relaxed">
                 11kV & 33kV outdoor gang-operated triple pole Air Break switches, Horn Gap fuse units, and replacement contacts.
               </p>
             </div>
 
-            <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-xs">
-              <div className="flex items-center gap-2.5 mb-2.5">
-                <div className="w-8 h-8 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center">
+            {/* Division 4: Sky Blue */}
+            <div className="group relative bg-gradient-to-br from-sky-50/90 via-blue-50/30 to-white p-5 rounded-2xl border-2 border-sky-200 hover:border-sky-500 shadow-xs hover:shadow-xl transition-all duration-300 overflow-hidden">
+              <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-sky-500 to-blue-600"></div>
+              <div className="flex items-center gap-2.5 mb-2.5 pt-0.5">
+                <div className="w-9 h-9 rounded-xl bg-sky-500 text-white flex items-center justify-center shadow-md shadow-sky-500/25 group-hover:scale-108 transition-transform">
                   <Activity size={18} />
                 </div>
-                <h3 className="font-bold text-sm text-slate-900">AAAC & ACSR Conductors</h3>
+                <h3 className="font-extrabold text-sm text-slate-900">AAAC & ACSR Conductors</h3>
               </div>
               <p className="text-xs text-slate-600 leading-relaxed">
                 Weasel, Rabbit, Dog, Panther ACSR conductors and high tensile AAAC conductors conforming to IS 398.
               </p>
             </div>
 
-            <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-xs">
-              <div className="flex items-center gap-2.5 mb-2.5">
-                <div className="w-8 h-8 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center">
+            {/* Division 5: Emerald */}
+            <div className="group relative bg-gradient-to-br from-emerald-50/90 via-teal-50/30 to-white p-5 rounded-2xl border-2 border-emerald-200 hover:border-emerald-500 shadow-xs hover:shadow-xl transition-all duration-300 overflow-hidden">
+              <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-emerald-600 to-teal-500"></div>
+              <div className="flex items-center gap-2.5 mb-2.5 pt-0.5">
+                <div className="w-9 h-9 rounded-xl bg-emerald-600 text-white flex items-center justify-center shadow-md shadow-emerald-500/25 group-hover:scale-108 transition-transform">
                   <ShieldCheck size={18} />
                 </div>
-                <h3 className="font-bold text-sm text-slate-900">Earthing Materials</h3>
+                <h3 className="font-extrabold text-sm text-slate-900">Earthing Materials</h3>
               </div>
               <p className="text-xs text-slate-600 leading-relaxed">
                 Copper bonded electrodes, perforated GI earthing pipes, galvanized earth flats, and earth enhancement compounds.
               </p>
             </div>
 
-            <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-xs">
-              <div className="flex items-center gap-2.5 mb-2.5">
-                <div className="w-8 h-8 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center">
+            {/* Division 6: Rose / Red */}
+            <div className="group relative bg-gradient-to-br from-rose-50/90 via-pink-50/30 to-white p-5 rounded-2xl border-2 border-rose-200 hover:border-rose-500 shadow-xs hover:shadow-xl transition-all duration-300 overflow-hidden">
+              <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-rose-500 to-red-500"></div>
+              <div className="flex items-center gap-2.5 mb-2.5 pt-0.5">
+                <div className="w-9 h-9 rounded-xl bg-rose-500 text-white flex items-center justify-center shadow-md shadow-rose-500/25 group-hover:scale-108 transition-transform">
                   <Sliders size={18} />
                 </div>
-                <h3 className="font-bold text-sm text-slate-900">Industrial Electricals & Towers</h3>
+                <h3 className="font-extrabold text-sm text-slate-900">Industrial Electricals & Towers</h3>
               </div>
               <p className="text-xs text-slate-600 leading-relaxed">
                 LT distribution feeder boxes, cable glands, lugs, HRC fuses, and hot-dip galvanized transmission lattice towers.

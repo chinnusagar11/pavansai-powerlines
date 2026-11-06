@@ -133,14 +133,14 @@ export default function Products() {
 
           {/* Bottom Row: Category Filter Tabs (Swipeable on Mobile) */}
           <div className="pt-2 border-t border-slate-100">
-            <div className="flex items-center gap-1.5 overflow-x-auto pb-1.5 scrollbar-none -mx-1 px-1">
+            <div className="flex items-center gap-2 overflow-x-auto pb-1.5 scrollbar-none -mx-1 px-1">
               
               <button
                 onClick={() => handleCategorySelect('all')}
-                className={`px-3 py-2 rounded-lg text-xs font-semibold whitespace-nowrap transition-colors shrink-0 ${
+                className={`px-3.5 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-all shrink-0 ${
                   selectedCategory === 'all'
-                    ? 'bg-blue-600 text-white shadow-xs'
-                    : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
+                    ? 'bg-blue-600 text-white shadow-md shadow-blue-500/30'
+                    : 'bg-slate-100 text-slate-700 hover:bg-blue-50 hover:text-blue-700 border border-slate-200/80'
                 }`}
               >
                 All Categories ({PRODUCTS.length})
@@ -150,14 +150,24 @@ export default function Products() {
                 const count = PRODUCTS.filter(p => p.categoryId === cat.id).length;
                 const isSelected = selectedCategory === cat.id;
 
+                const categoryActiveClasses = {
+                  'overhead-lines': 'bg-blue-600 text-white shadow-md shadow-blue-500/30',
+                  'transformer-spares': 'bg-purple-600 text-white shadow-md shadow-purple-500/30',
+                  'ab-switches': 'bg-amber-500 text-white shadow-md shadow-amber-500/30',
+                  'conductors': 'bg-sky-600 text-white shadow-md shadow-sky-500/30',
+                  'earthing': 'bg-emerald-600 text-white shadow-md shadow-emerald-500/30',
+                  'industrial-electricals': 'bg-rose-600 text-white shadow-md shadow-rose-500/30',
+                  'towers': 'bg-slate-800 text-white shadow-md shadow-slate-700/30',
+                };
+
                 return (
                   <button
                     key={cat.id}
                     onClick={() => handleCategorySelect(cat.id)}
-                    className={`px-3 py-2 rounded-lg text-xs font-semibold whitespace-nowrap transition-colors shrink-0 ${
+                    className={`px-3.5 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-all shrink-0 ${
                       isSelected
-                        ? 'bg-blue-600 text-white shadow-xs'
-                        : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
+                        ? (categoryActiveClasses[cat.id] || 'bg-blue-600 text-white shadow-md')
+                        : 'bg-slate-100 text-slate-700 hover:bg-blue-50 hover:text-blue-700 border border-slate-200/80'
                     }`}
                   >
                     {cat.name} ({count})

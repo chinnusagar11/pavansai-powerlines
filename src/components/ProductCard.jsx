@@ -9,6 +9,16 @@ export default function ProductCard({ product }) {
 
   const fallbackImage = "/images/products/pin-insulator-polymer-11kv.png";
 
+  const categoryBadgeColors = {
+    'overhead-lines': 'bg-blue-600 text-white shadow-sm shadow-blue-500/25',
+    'transformer-spares': 'bg-purple-600 text-white shadow-sm shadow-purple-500/25',
+    'ab-switches': 'bg-amber-500 text-white shadow-sm shadow-amber-500/25',
+    'conductors': 'bg-sky-600 text-white shadow-sm shadow-sky-500/25',
+    'earthing': 'bg-emerald-600 text-white shadow-sm shadow-emerald-500/25',
+    'industrial-electricals': 'bg-rose-600 text-white shadow-sm shadow-rose-500/25',
+    'towers': 'bg-slate-700 text-white shadow-sm shadow-slate-600/25',
+  };
+
   return (
     <>
       <div className="group bg-white rounded-2xl overflow-hidden border-2 border-slate-200/90 hover:border-blue-500 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col h-full relative">
@@ -23,10 +33,10 @@ export default function ProductCard({ product }) {
             className="w-full h-full object-contain transition-transform duration-500 ease-out group-hover:scale-106 drop-shadow-sm"
           />
           
-          {/* Category Badge */}
+          {/* Vibrant Category Badge */}
           <div className="absolute top-3 left-3">
-            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[10px] sm:text-[11px] font-semibold bg-white/95 text-blue-900 shadow-xs border border-slate-200/80 backdrop-blur-xs max-w-[200px] truncate">
-              <Zap size={11} className="text-blue-600 shrink-0" />
+            <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-[10px] sm:text-[11px] font-bold shadow-xs max-w-[200px] truncate ${categoryBadgeColors[product.categoryId] || 'bg-blue-600 text-white'}`}>
+              <Zap size={11} className="fill-white text-white shrink-0" />
               <span className="truncate">{product.category}</span>
             </span>
           </div>
@@ -57,9 +67,9 @@ export default function ProductCard({ product }) {
                 {Object.entries(product.specifications).slice(0, 2).map(([key, val]) => (
                   <span 
                     key={key} 
-                    className="inline-flex items-center text-[10px] sm:text-[11px] bg-slate-50 border border-slate-200/90 text-slate-700 px-2 py-0.5 rounded-md font-medium max-w-full"
+                    className="inline-flex items-center text-[10px] sm:text-[11px] bg-blue-50/70 border border-blue-200/80 text-blue-900 px-2.5 py-0.5 rounded-md font-medium max-w-full"
                   >
-                    <strong className="text-slate-900 mr-1 shrink-0">{key}:</strong>
+                    <strong className="text-blue-950 mr-1 shrink-0">{key}:</strong>
                     <span className="truncate">{val}</span>
                   </span>
                 ))}

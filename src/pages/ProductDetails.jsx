@@ -265,16 +265,17 @@ export default function ProductDetails() {
       {/* 3. Verified Technical Specifications Section */}
       {product.specifications && Object.keys(product.specifications).length > 0 && (
         <section className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-xs">
-            <div className="bg-slate-50 border-b border-slate-200 p-3.5 sm:p-4 flex items-center justify-between">
+          <div className="bg-white rounded-2xl border-2 border-blue-200 overflow-hidden shadow-xs hover:shadow-md transition-shadow">
+            <div className="h-1.5 w-full bg-gradient-to-r from-blue-600 to-indigo-600"></div>
+            <div className="bg-gradient-to-r from-blue-50/90 to-sky-50/70 border-b border-blue-200 p-3.5 sm:p-4 flex items-center justify-between">
               <div>
-                <h3 className="font-bold text-xs sm:text-sm text-slate-900">Verified Technical Specifications</h3>
-                <p className="text-[11px] text-slate-500">
+                <h3 className="font-extrabold text-xs sm:text-sm text-slate-900">Verified Technical Specifications</h3>
+                <p className="text-[11px] text-blue-900/80 font-medium">
                   Standard compliance and engineering ratings
                 </p>
               </div>
-              <span className="text-[10px] sm:text-[11px] bg-blue-100 text-blue-800 font-semibold px-2 py-0.5 rounded border border-blue-200 shrink-0">
-                IS Standard
+              <span className="text-[10px] sm:text-[11px] bg-blue-600 text-white font-bold px-2.5 py-1 rounded-lg shadow-xs shrink-0">
+                IS Standard Verified
               </span>
             </div>
 
@@ -283,12 +284,12 @@ export default function ProductDetails() {
                 {Object.entries(product.specifications).map(([key, value]) => (
                   <div 
                     key={key} 
-                    className="flex items-center justify-between p-2.5 sm:p-3 rounded-xl bg-slate-50/80 border border-slate-200 gap-2.5 text-xs min-w-0"
+                    className="flex items-center justify-between p-2.5 sm:p-3 rounded-xl bg-gradient-to-r from-blue-50/40 via-white to-white border border-blue-100 hover:border-blue-300 gap-2.5 text-xs min-w-0 transition-colors"
                   >
-                    <span className="font-semibold text-slate-600 text-[11px] sm:text-xs shrink-0">
+                    <span className="font-bold text-slate-700 text-[11px] sm:text-xs shrink-0">
                       {key}
                     </span>
-                    <span className="font-bold text-slate-900 text-[11px] sm:text-xs text-right break-words min-w-0">
+                    <span className="font-extrabold text-blue-950 text-[11px] sm:text-xs text-right break-words min-w-0">
                       {value}
                     </span>
                   </div>

@@ -105,118 +105,122 @@ export default function Contact() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
           
-          {/* Card 1: Office Address */}
-          <div className="bg-white p-4 sm:p-5 rounded-xl border border-slate-200 shadow-xs flex flex-col justify-between">
+          {/* Card 1: Office Address - Amber Theme */}
+          <div className="group relative bg-gradient-to-br from-amber-50/90 via-orange-50/30 to-white p-5 rounded-2xl border-2 border-amber-200 hover:border-amber-500 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden">
+            <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-amber-500 to-orange-500"></div>
             <div>
-              <div className="w-10 h-10 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center mb-3">
+              <div className="w-10 h-10 rounded-xl bg-amber-500 text-white flex items-center justify-center mb-3 shadow-md shadow-amber-500/25 group-hover:scale-108 transition-transform">
                 <MapPin size={20} />
               </div>
-              <h3 className="font-bold text-sm text-slate-900 mb-1">Office Location</h3>
+              <h3 className="font-extrabold text-sm text-slate-900 mb-1">Office Location</h3>
               <p className="text-xs text-slate-600 leading-relaxed">
-                <strong>{COMPANY_INFO.name}</strong><br />
+                <strong className="text-slate-900">{COMPANY_INFO.name}</strong><br />
                 {COMPANY_INFO.location.fullAddress}
               </p>
             </div>
-            <div className="pt-3 mt-3 border-t border-slate-100">
+            <div className="pt-3 mt-3 border-t border-amber-100">
               <a
                 href={COMPANY_INFO.location.googleMapsDirectionsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 text-xs text-blue-600 hover:text-blue-800 font-semibold"
+                className="inline-flex items-center gap-1 text-xs text-amber-800 hover:text-amber-900 font-bold"
               >
-                <span>Directions</span>
+                <span>Directions on Google Maps</span>
                 <ExternalLink size={12} />
               </a>
             </div>
           </div>
 
-          {/* Card 2: Phone Numbers */}
-          <div className="bg-white p-4 sm:p-5 rounded-xl border border-slate-200 shadow-xs flex flex-col justify-between">
+          {/* Card 2: Phone Numbers - Electric Blue Theme */}
+          <div className="group relative bg-gradient-to-br from-blue-50/90 via-sky-50/30 to-white p-5 rounded-2xl border-2 border-blue-200 hover:border-blue-500 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden">
+            <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-blue-600 to-sky-500"></div>
             <div>
-              <div className="w-10 h-10 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center mb-3">
+              <div className="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center mb-3 shadow-md shadow-blue-500/25 group-hover:scale-108 transition-transform">
                 <Phone size={20} />
               </div>
-              <h3 className="font-bold text-sm text-slate-900 mb-1">Phone Contacts</h3>
+              <h3 className="font-extrabold text-sm text-slate-900 mb-1">Phone Contacts</h3>
               <div className="space-y-1 text-xs text-slate-600">
                 <p>
                   <strong className="text-slate-900">Primary:</strong>{' '}
-                  <a href={`tel:${COMPANY_INFO.contact.primaryPhoneRaw}`} className="text-blue-600 hover:underline">
+                  <a href={`tel:${COMPANY_INFO.contact.primaryPhoneRaw}`} className="text-blue-600 font-bold hover:underline">
                     {COMPANY_INFO.contact.primaryPhone}
                   </a>
                 </p>
                 <p>
                   <strong className="text-slate-900">Secondary:</strong>{' '}
-                  <a href={`tel:${COMPANY_INFO.contact.secondaryPhoneRaw}`} className="text-blue-600 hover:underline">
+                  <a href={`tel:${COMPANY_INFO.contact.secondaryPhoneRaw}`} className="text-blue-600 font-bold hover:underline">
                     {COMPANY_INFO.contact.secondaryPhone}
                   </a>
                 </p>
               </div>
             </div>
-            <div className="pt-3 mt-3 border-t border-slate-100 flex items-center justify-between">
+            <div className="pt-3 mt-3 border-t border-blue-100 flex items-center justify-between">
               <a
                 href={`tel:${COMPANY_INFO.contact.primaryPhoneRaw}`}
-                className="text-xs text-blue-600 hover:text-blue-800 font-semibold"
+                className="text-xs text-blue-600 hover:text-blue-800 font-bold"
               >
                 Click to Call
               </a>
               <button
                 onClick={copyPhoneNumber}
-                className="text-xs text-slate-400 hover:text-slate-600 p-1"
+                className="text-xs text-slate-500 hover:text-blue-600 p-1 rounded-md hover:bg-blue-50 transition"
                 title="Copy phone"
               >
-                {copiedPhone ? <Check size={14} className="text-emerald-600" /> : <Copy size={14} />}
+                {copiedPhone ? <Check size={14} className="text-emerald-600 font-bold" /> : <Copy size={14} />}
               </button>
             </div>
           </div>
 
-          {/* Card 3: WhatsApp Inquiry */}
-          <div className="bg-white p-4 sm:p-5 rounded-xl border border-slate-200 shadow-xs flex flex-col justify-between">
+          {/* Card 3: WhatsApp Inquiry - Emerald Theme */}
+          <div className="group relative bg-gradient-to-br from-emerald-50/90 via-teal-50/30 to-white p-5 rounded-2xl border-2 border-emerald-200 hover:border-emerald-500 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden">
+            <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-emerald-600 to-teal-500"></div>
             <div>
-              <div className="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center mb-3">
+              <div className="w-10 h-10 rounded-xl bg-emerald-600 text-white flex items-center justify-center mb-3 shadow-md shadow-emerald-500/25 group-hover:scale-108 transition-transform">
                 <MessageCircle size={20} />
               </div>
-              <h3 className="font-bold text-sm text-slate-900 mb-1">WhatsApp Chat</h3>
+              <h3 className="font-extrabold text-sm text-slate-900 mb-1">WhatsApp Chat</h3>
               <p className="text-xs text-slate-600 leading-relaxed">
                 Connect directly for price estimates and quick stock questions.
               </p>
-              <p className="text-xs font-semibold text-emerald-700 mt-1.5">
+              <p className="text-xs font-extrabold text-emerald-800 mt-1.5">
                 {COMPANY_INFO.contact.whatsappDisplay}
               </p>
             </div>
-            <div className="pt-3 mt-3 border-t border-slate-100">
+            <div className="pt-3 mt-3 border-t border-emerald-100">
               <a
                 href={`https://wa.me/${COMPANY_INFO.contact.whatsappNumber.replace(/[^0-9]/g, '')}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 text-xs text-emerald-600 hover:text-emerald-700 font-semibold"
+                className="inline-flex items-center gap-1 text-xs text-emerald-700 hover:text-emerald-900 font-bold"
               >
-                <span>Open WhatsApp</span>
+                <span>Open WhatsApp Chat &rarr;</span>
                 <ExternalLink size={12} />
               </a>
             </div>
           </div>
 
-          {/* Card 4: Business Hours */}
-          <div className="bg-white p-4 sm:p-5 rounded-xl border border-slate-200 shadow-xs flex flex-col justify-between">
+          {/* Card 4: Business Hours & Email - Purple Theme */}
+          <div className="group relative bg-gradient-to-br from-purple-50/90 via-indigo-50/30 to-white p-5 rounded-2xl border-2 border-purple-200 hover:border-purple-500 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden">
+            <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-purple-600 to-indigo-600"></div>
             <div>
-              <div className="w-10 h-10 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center mb-3">
+              <div className="w-10 h-10 rounded-xl bg-purple-600 text-white flex items-center justify-center mb-3 shadow-md shadow-purple-500/25 group-hover:scale-108 transition-transform">
                 <Clock size={20} />
               </div>
-              <h3 className="font-bold text-sm text-slate-900 mb-1">Business Hours</h3>
+              <h3 className="font-extrabold text-sm text-slate-900 mb-1">Business Hours</h3>
               <div className="space-y-1 text-xs text-slate-600 leading-relaxed">
-                <p><strong>Mon - Sat:</strong> 9:30 AM - 7:30 PM</p>
-                <p><strong>Sunday:</strong> Emergency via WhatsApp</p>
-                <p className="text-[11px] text-slate-500 pt-0.5 break-all">
+                <p><strong className="text-slate-900">Mon - Sat:</strong> 9:30 AM - 7:30 PM</p>
+                <p><strong className="text-slate-900">Sunday:</strong> Emergency via WhatsApp</p>
+                <p className="text-[11px] text-purple-900 font-semibold pt-0.5 break-all">
                   <strong>Email:</strong> {COMPANY_INFO.contact.primaryEmail}
                 </p>
               </div>
             </div>
-            <div className="pt-3 mt-3 border-t border-slate-100">
+            <div className="pt-3 mt-3 border-t border-purple-100">
               <a
                 href={`mailto:${COMPANY_INFO.contact.primaryEmail}`}
-                className="text-xs text-blue-600 hover:text-blue-800 font-semibold"
+                className="text-xs text-purple-700 hover:text-purple-900 font-bold flex items-center gap-1"
               >
-                Send Email &rarr;
+                <span>Send Email Directly &rarr;</span>
               </a>
             </div>
           </div>

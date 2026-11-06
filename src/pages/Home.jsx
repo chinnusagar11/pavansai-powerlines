@@ -66,14 +66,73 @@ export default function Home() {
     },
   };
 
+  const categoryTheme = {
+    'overhead-lines': {
+      border: 'border-blue-200/90 hover:border-blue-500 hover:shadow-blue-500/20',
+      bg: 'bg-gradient-to-b from-blue-50/70 via-white to-white',
+      accentBar: 'bg-gradient-to-r from-blue-600 to-sky-500',
+      iconBg: 'bg-blue-600 text-white shadow-sm shadow-blue-500/30',
+      badge: 'bg-blue-100/90 text-blue-800 border-blue-200',
+      linkText: 'text-blue-600 group-hover:text-blue-700',
+    },
+    'transformer-spares': {
+      border: 'border-purple-200/90 hover:border-purple-500 hover:shadow-purple-500/20',
+      bg: 'bg-gradient-to-b from-purple-50/70 via-white to-white',
+      accentBar: 'bg-gradient-to-r from-purple-600 to-indigo-500',
+      iconBg: 'bg-purple-600 text-white shadow-sm shadow-purple-500/30',
+      badge: 'bg-purple-100/90 text-purple-800 border-purple-200',
+      linkText: 'text-purple-600 group-hover:text-purple-700',
+    },
+    'ab-switches': {
+      border: 'border-amber-200/90 hover:border-amber-500 hover:shadow-amber-500/20',
+      bg: 'bg-gradient-to-b from-amber-50/70 via-white to-white',
+      accentBar: 'bg-gradient-to-r from-amber-500 to-orange-500',
+      iconBg: 'bg-amber-500 text-white shadow-sm shadow-amber-500/30',
+      badge: 'bg-amber-100/90 text-amber-900 border-amber-200',
+      linkText: 'text-amber-700 group-hover:text-amber-800',
+    },
+    'conductors': {
+      border: 'border-sky-200/90 hover:border-sky-500 hover:shadow-sky-500/20',
+      bg: 'bg-gradient-to-b from-sky-50/70 via-white to-white',
+      accentBar: 'bg-gradient-to-r from-sky-500 to-blue-500',
+      iconBg: 'bg-sky-500 text-white shadow-sm shadow-sky-500/30',
+      badge: 'bg-sky-100/90 text-sky-800 border-sky-200',
+      linkText: 'text-sky-600 group-hover:text-sky-700',
+    },
+    'earthing': {
+      border: 'border-emerald-200/90 hover:border-emerald-500 hover:shadow-emerald-500/20',
+      bg: 'bg-gradient-to-b from-emerald-50/70 via-white to-white',
+      accentBar: 'bg-gradient-to-r from-emerald-600 to-teal-500',
+      iconBg: 'bg-emerald-600 text-white shadow-sm shadow-emerald-500/30',
+      badge: 'bg-emerald-100/90 text-emerald-800 border-emerald-200',
+      linkText: 'text-emerald-600 group-hover:text-emerald-700',
+    },
+    'industrial-electricals': {
+      border: 'border-rose-200/90 hover:border-rose-500 hover:shadow-rose-500/20',
+      bg: 'bg-gradient-to-b from-rose-50/70 via-white to-white',
+      accentBar: 'bg-gradient-to-r from-rose-500 to-red-500',
+      iconBg: 'bg-rose-500 text-white shadow-sm shadow-rose-500/30',
+      badge: 'bg-rose-100/90 text-rose-800 border-rose-200',
+      linkText: 'text-rose-600 group-hover:text-rose-700',
+    },
+    'towers': {
+      border: 'border-slate-300 hover:border-slate-700 hover:shadow-slate-500/20',
+      bg: 'bg-gradient-to-b from-slate-100/80 via-white to-white',
+      accentBar: 'bg-gradient-to-r from-slate-700 to-slate-900',
+      iconBg: 'bg-slate-700 text-white shadow-sm shadow-slate-600/30',
+      badge: 'bg-slate-200 text-slate-800 border-slate-300',
+      linkText: 'text-slate-800 group-hover:text-slate-900',
+    },
+  };
+
   const categoryIcons = {
-    'overhead-lines': <Zap className="w-5 h-5 text-blue-600" />,
-    'transformer-spares': <Cpu className="w-5 h-5 text-blue-600" />,
-    'ab-switches': <ToggleRight className="w-5 h-5 text-blue-600" />,
-    'conductors': <Activity className="w-5 h-5 text-blue-600" />,
-    'earthing': <ShieldCheck className="w-5 h-5 text-blue-600" />,
-    'industrial-electricals': <Sliders className="w-5 h-5 text-blue-600" />,
-    'towers': <Maximize className="w-5 h-5 text-blue-600" />,
+    'overhead-lines': <Zap className="w-4 h-4 text-white fill-white" />,
+    'transformer-spares': <Cpu className="w-4 h-4 text-white" />,
+    'ab-switches': <ToggleRight className="w-4 h-4 text-white" />,
+    'conductors': <Activity className="w-4 h-4 text-white" />,
+    'earthing': <ShieldCheck className="w-4 h-4 text-white" />,
+    'industrial-electricals': <Sliders className="w-4 h-4 text-white" />,
+    'towers': <Maximize className="w-4 h-4 text-white" />,
   };
 
   return (
@@ -301,24 +360,28 @@ export default function Home() {
           {COMPANY_INFO.categories.map((cat) => {
             const preview = categoryPreviews[cat.id];
             const productCount = PRODUCTS.filter(p => p.categoryId === cat.id).length;
+            const theme = categoryTheme[cat.id] || categoryTheme['overhead-lines'];
 
             return (
               <Link
                 key={cat.id}
                 to={`/products?category=${cat.id}`}
-                className="group bg-white rounded-2xl border-2 border-slate-200/90 hover:border-blue-500 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden"
+                className={`group relative bg-white rounded-2xl border-2 ${theme.border} shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden`}
               >
+                {/* Top Division Color Accent Stripe */}
+                <div className={`h-1.5 w-full ${theme.accentBar}`}></div>
+
                 <div>
                   {/* Category Image Header */}
                   {preview && (
-                    <div className="relative aspect-[16/10] bg-slate-50 border-b border-slate-100 flex items-center justify-center p-3 overflow-hidden">
+                    <div className="relative aspect-[16/10] bg-slate-50/80 border-b border-slate-100 flex items-center justify-center p-3.5 overflow-hidden">
                       <img
                         src={preview.image}
                         alt={cat.name}
                         className="w-full h-full object-contain group-hover:scale-108 transition-transform duration-500 drop-shadow-2xs"
                       />
                       <div className="absolute top-2.5 right-2.5">
-                        <span className="inline-block text-[10px] font-bold bg-white/95 text-blue-700 px-2 py-0.5 rounded-md shadow-xs border border-slate-200">
+                        <span className={`inline-block text-[10px] font-extrabold px-2 py-0.5 rounded-md shadow-xs border ${theme.badge}`}>
                           {productCount} {productCount === 1 ? 'Product' : 'Products'}
                         </span>
                       </div>
@@ -326,8 +389,8 @@ export default function Home() {
                   )}
 
                   <div className="p-4 sm:p-5">
-                    <div className="flex items-center gap-2 mb-2">
-                      <div className="w-8 h-8 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center shrink-0">
+                    <div className="flex items-center gap-2.5 mb-2">
+                      <div className={`w-8 h-8 rounded-xl ${theme.iconBg} flex items-center justify-center shrink-0`}>
                         {categoryIcons[cat.id] || <Zap size={16} />}
                       </div>
                       <h3 className="font-bold text-sm sm:text-base text-slate-900 group-hover:text-blue-600 transition-colors line-clamp-2 min-h-[42px] flex items-center leading-snug">
@@ -341,8 +404,8 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div className="px-4 sm:px-5 pb-4 pt-2 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-blue-600 group-hover:text-blue-700">
-                  <span>Browse Category</span>
+                <div className={`px-4 sm:px-5 pb-4 pt-2.5 border-t border-slate-100 flex items-center justify-between text-xs font-bold ${theme.linkText}`}>
+                  <span>Browse Division</span>
                   <ChevronRight size={15} className="group-hover:translate-x-1 transition-transform" />
                 </div>
               </Link>
@@ -350,12 +413,13 @@ export default function Home() {
           })}
 
           {/* Quick BOQ Quote Card */}
-          <div className="bg-gradient-to-br from-blue-600 to-blue-700 text-white p-5 sm:p-6 rounded-2xl shadow-md flex flex-col justify-between">
+          <div className="relative bg-gradient-to-br from-blue-700 via-blue-600 to-indigo-700 text-white p-5 sm:p-6 rounded-2xl shadow-lg border-2 border-blue-400 flex flex-col justify-between overflow-hidden group">
+            <div className="absolute -top-10 -right-10 w-32 h-32 bg-white/10 rounded-full blur-xl pointer-events-none group-hover:scale-125 transition-transform duration-700"></div>
             <div>
-              <div className="w-10 h-10 rounded-xl bg-white/15 backdrop-blur-xs flex items-center justify-center mb-3">
+              <div className="w-10 h-10 rounded-xl bg-white/20 backdrop-blur-xs flex items-center justify-center mb-3 shadow-md ring-2 ring-white/30">
                 <FileCheck size={20} className="text-white" />
               </div>
-              <h3 className="font-bold text-base text-white">
+              <h3 className="font-extrabold text-base text-white">
                 Have a Bill of Quantities (BOQ)?
               </h3>
               <p className="text-xs text-blue-100 mt-2 leading-relaxed">
@@ -365,9 +429,10 @@ export default function Home() {
 
             <button
               onClick={() => setIsQuoteModalOpen(true)}
-              className="mt-5 w-full bg-white hover:bg-blue-50 text-blue-700 py-2.5 px-3 rounded-xl text-xs font-bold transition-all shadow-xs"
+              className="mt-5 w-full bg-white hover:bg-blue-50 text-blue-700 py-3 px-4 rounded-xl text-xs font-black transition-all shadow-md hover:shadow-lg active:scale-98 flex items-center justify-center gap-1.5"
             >
-              Submit Material Schedule &rarr;
+              <span>Submit Material Schedule</span>
+              <span>&rarr;</span>
             </button>
           </div>
         </div>
@@ -425,11 +490,13 @@ export default function Home() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-xs hover:border-blue-500 hover:shadow-lg transition-all duration-300">
-            <div className="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center mb-4">
+          {/* Advantage 1: Emerald Theme */}
+          <div className="group relative bg-gradient-to-br from-emerald-50/95 via-teal-50/40 to-white p-6 rounded-2xl border-2 border-emerald-200 hover:border-emerald-500 shadow-xs hover:shadow-xl transition-all duration-300 overflow-hidden">
+            <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-emerald-600 to-teal-500"></div>
+            <div className="w-12 h-12 rounded-xl bg-emerald-600 text-white flex items-center justify-center mb-4 shadow-md shadow-emerald-500/30 group-hover:scale-108 transition-transform">
               <ShieldCheck size={24} />
             </div>
-            <h3 className="font-bold text-base text-slate-900 mb-2">
+            <h3 className="font-extrabold text-base text-slate-900 mb-2">
               DISCOM & REC Standards
             </h3>
             <p className="text-xs text-slate-600 leading-relaxed">
@@ -437,11 +504,13 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-xs hover:border-blue-500 hover:shadow-lg transition-all duration-300">
-            <div className="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center mb-4">
+          {/* Advantage 2: Electric Blue Theme */}
+          <div className="group relative bg-gradient-to-br from-blue-50/95 via-sky-50/40 to-white p-6 rounded-2xl border-2 border-blue-200 hover:border-blue-500 shadow-xs hover:shadow-xl transition-all duration-300 overflow-hidden">
+            <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-blue-600 to-sky-500"></div>
+            <div className="w-12 h-12 rounded-xl bg-blue-600 text-white flex items-center justify-center mb-4 shadow-md shadow-blue-500/30 group-hover:scale-108 transition-transform">
               <Truck size={24} />
             </div>
-            <h3 className="font-bold text-base text-slate-900 mb-2">
+            <h3 className="font-extrabold text-base text-slate-900 mb-2">
               Secunderabad Supply Hub
             </h3>
             <p className="text-xs text-slate-600 leading-relaxed">
@@ -449,11 +518,13 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-xs hover:border-blue-500 hover:shadow-lg transition-all duration-300">
-            <div className="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center mb-4">
+          {/* Advantage 3: Indigo Theme */}
+          <div className="group relative bg-gradient-to-br from-indigo-50/95 via-purple-50/40 to-white p-6 rounded-2xl border-2 border-indigo-200 hover:border-indigo-500 shadow-xs hover:shadow-xl transition-all duration-300 overflow-hidden">
+            <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-indigo-600 to-purple-600"></div>
+            <div className="w-12 h-12 rounded-xl bg-indigo-600 text-white flex items-center justify-center mb-4 shadow-md shadow-indigo-500/30 group-hover:scale-108 transition-transform">
               <Layers size={24} />
             </div>
-            <h3 className="font-bold text-base text-slate-900 mb-2">
+            <h3 className="font-extrabold text-base text-slate-900 mb-2">
               Complete BOQ Consolidation
             </h3>
             <p className="text-xs text-slate-600 leading-relaxed">
@@ -461,11 +532,13 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-xs hover:border-blue-500 hover:shadow-lg transition-all duration-300">
-            <div className="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center mb-4">
+          {/* Advantage 4: Amber Theme */}
+          <div className="group relative bg-gradient-to-br from-amber-50/95 via-orange-50/40 to-white p-6 rounded-2xl border-2 border-amber-200 hover:border-amber-500 shadow-xs hover:shadow-xl transition-all duration-300 overflow-hidden">
+            <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-amber-500 to-orange-500"></div>
+            <div className="w-12 h-12 rounded-xl bg-amber-500 text-white flex items-center justify-center mb-4 shadow-md shadow-amber-500/30 group-hover:scale-108 transition-transform">
               <FileCheck size={24} />
             </div>
-            <h3 className="font-bold text-base text-slate-900 mb-2">
+            <h3 className="font-extrabold text-base text-slate-900 mb-2">
               Routine Test Certificates
             </h3>
             <p className="text-xs text-slate-600 leading-relaxed">
@@ -491,68 +564,86 @@ export default function Home() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           
-          <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xs hover:shadow-lg transition-all duration-300 flex flex-col">
+          <div className="group relative bg-white rounded-2xl border-2 border-blue-200 hover:border-blue-500 overflow-hidden shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col">
+            <div className="h-1.5 w-full bg-gradient-to-r from-blue-600 to-sky-500"></div>
             <div className="aspect-[16/10] bg-slate-900 overflow-hidden">
               <img
                 src="/images/products/transmission-tower.jpg"
                 alt="Overhead Power Transmission Towers"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                className="w-full h-full object-cover group-hover:scale-106 transition-transform duration-500"
               />
             </div>
             <div className="p-5 flex-1 flex flex-col justify-between">
               <div>
-                <h3 className="font-bold text-base text-slate-900">Overhead Power Corridors (HT/LT)</h3>
+                <span className="inline-block px-2.5 py-0.5 rounded-md text-[10px] font-extrabold bg-blue-100 text-blue-800 border border-blue-200 mb-2">
+                  11kV – 400kV Grid
+                </span>
+                <h3 className="font-extrabold text-base text-slate-900 group-hover:text-blue-600 transition-colors">
+                  Overhead Power Corridors (HT/LT)
+                </h3>
                 <p className="text-xs text-slate-600 mt-2 leading-relaxed">
                   11kV and 33kV distribution lines, ACSR/AAAC conductors, polymer pin insulators, V-cross arms, and guy wire stay sets.
                 </p>
               </div>
-              <Link to="/products?category=overhead-lines" className="mt-4 text-xs font-semibold text-blue-600 flex items-center gap-1 hover:text-blue-700">
+              <Link to="/products?category=overhead-lines" className="mt-4 text-xs font-bold text-blue-600 flex items-center gap-1 group-hover:text-blue-700">
                 <span>View Overhead Hardware</span>
-                <ChevronRight size={14} />
+                <ChevronRight size={14} className="group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
           </div>
 
-          <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xs hover:shadow-lg transition-all duration-300 flex flex-col">
+          <div className="group relative bg-white rounded-2xl border-2 border-amber-200 hover:border-amber-500 overflow-hidden shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col">
+            <div className="h-1.5 w-full bg-gradient-to-r from-amber-500 to-orange-500"></div>
             <div className="aspect-[16/10] bg-slate-50 flex items-center justify-center p-3 border-b border-slate-100">
               <img
                 src="/images/products/ab-switch-gang-operated.png"
                 alt="11kV 3-Phase Gang-Operated Air Break Switch"
-                className="w-full h-full object-contain hover:scale-105 transition-transform duration-500"
+                className="w-full h-full object-contain group-hover:scale-106 transition-transform duration-500"
               />
             </div>
             <div className="p-5 flex-1 flex flex-col justify-between">
               <div>
-                <h3 className="font-bold text-base text-slate-900">Substations & Switchgear</h3>
+                <span className="inline-block px-2.5 py-0.5 rounded-md text-[10px] font-extrabold bg-amber-100 text-amber-900 border border-amber-200 mb-2">
+                  Substation Control
+                </span>
+                <h3 className="font-extrabold text-base text-slate-900 group-hover:text-amber-700 transition-colors">
+                  Substations & Switchgear
+                </h3>
                 <p className="text-xs text-slate-600 mt-2 leading-relaxed">
                   3-phase gang operated AB switches, 33kV line disconnector isolators, horn gap fuse units, and transformer spare parts.
                 </p>
               </div>
-              <Link to="/products?category=ab-switches" className="mt-4 text-xs font-semibold text-blue-600 flex items-center gap-1 hover:text-blue-700">
+              <Link to="/products?category=ab-switches" className="mt-4 text-xs font-bold text-amber-700 flex items-center gap-1 group-hover:text-amber-800">
                 <span>View Switchgear Supplies</span>
-                <ChevronRight size={14} />
+                <ChevronRight size={14} className="group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
           </div>
 
-          <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xs hover:shadow-lg transition-all duration-300 flex flex-col">
+          <div className="group relative bg-white rounded-2xl border-2 border-emerald-200 hover:border-emerald-500 overflow-hidden shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col">
+            <div className="h-1.5 w-full bg-gradient-to-r from-emerald-600 to-teal-500"></div>
             <div className="aspect-[16/10] bg-slate-50 flex items-center justify-center p-3 border-b border-slate-100">
               <img
                 src="/images/products/copper-bonded-earth-rods.jpg"
                 alt="Copper-Bonded Chemical Earth Electrodes"
-                className="w-full h-full object-contain hover:scale-105 transition-transform duration-500"
+                className="w-full h-full object-contain group-hover:scale-106 transition-transform duration-500"
               />
             </div>
             <div className="p-5 flex-1 flex flex-col justify-between">
               <div>
-                <h3 className="font-bold text-base text-slate-900">Substation & Plant Earthing</h3>
+                <span className="inline-block px-2.5 py-0.5 rounded-md text-[10px] font-extrabold bg-emerald-100 text-emerald-800 border border-emerald-200 mb-2">
+                  Surge & Lightning Protection
+                </span>
+                <h3 className="font-extrabold text-base text-slate-900 group-hover:text-emerald-700 transition-colors">
+                  Substation & Plant Earthing
+                </h3>
                 <p className="text-xs text-slate-600 mt-2 leading-relaxed">
                   Molecular copper-bonded rods, perforated GI earthing pipes, flanged cast iron pipes, and pure bare copper wire coils.
                 </p>
               </div>
-              <Link to="/products?category=earthing" className="mt-4 text-xs font-semibold text-blue-600 flex items-center gap-1 hover:text-blue-700">
+              <Link to="/products?category=earthing" className="mt-4 text-xs font-bold text-emerald-700 flex items-center gap-1 group-hover:text-emerald-800">
                 <span>View Earthing Systems</span>
-                <ChevronRight size={14} />
+                <ChevronRight size={14} className="group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
           </div>
