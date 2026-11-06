@@ -1,56 +1,89 @@
 /**
  * Products Database for Pavan Sai Power Lines (PSPL)
  * 
- * Organized by the 7 primary business categories supplied by PSPL in Secunderabad, Telangana.
- * All image assets are stored locally in /images/products/ using authentic, verified
- * industrial photographs provided directly for PSPL.
+ * STRICT DIRECTIVE:
+ * 100% powered ONLY by authentic, verified industrial equipment photographs 
+ * provided directly by PSPL in Secunderabad, Telangana.
+ * ZERO placeholders, ZERO stock images, ZERO vector SVG illustrations.
  */
 
 export const PRODUCTS = [
-  // -------------------------------------------------------------
-  // 1. HT/LT OVERHEAD LINE MATERIALS
-  // -------------------------------------------------------------
+  // =============================================================
+  // 1. HT/LT OVERHEAD LINE MATERIALS (overhead-lines)
+  // =============================================================
   {
-    id: "ht-pin-insulators",
-    name: "HT Pin Insulators (11kV & 33kV Polymer & Porcelain)",
+    id: "pin-insulator-polymer-11kv",
+    name: "11kV Composite Polymer Pin Insulators with Stems",
     category: "HT/LT Overhead Line Materials",
     categoryId: "overhead-lines",
-    shortDescription: "High-grade polymer and glazed porcelain pin insulators with galvanized steel pins for 11kV and 33kV lines.",
-    fullDescription: "Pavan Sai Power Lines supplies premium composite silicone polymer and glazed porcelain pin insulators complete with hot-dip galvanized mild steel pins. Designed to withstand severe electrical flashovers, high cantilever mechanical stresses, and atmospheric pollution along overhead distribution feeders.",
+    shortDescription: "3-Shed high-dielectric silicone polymer pin insulators with hot-dip galvanized mounting shank.",
+    fullDescription: "Manufactured from high-grade hydrophobic composite silicone rubber over a high-tensile fiberglass reinforced plastic (FRP) rod. Features a 3-shed aerodynamic profile designed for 11kV distribution feeders, complete with a forged mild steel hot-dip galvanized mounting pin and locking nut.",
     image: "/images/products/pin-insulator-polymer-11kv.png",
     gallery: [
       "/images/products/pin-insulator-polymer-11kv.png",
       "/images/products/pin-insulator-polymer-33kv.png",
-      "/images/products/psc-pole-installation.jpg",
-      "/images/products/pin-insulator.jpg"
+      "/images/products/psc-pole-installation.jpg"
     ],
     features: [
-      "Manufactured with high creepage distance suitable for polluted environments",
-      "Supplied complete with hot-dip galvanized mild steel pins, spring washers, and nuts",
-      "High mechanical cantilever strength conforming strictly to IS & REC specifications",
-      "Hydrophobic silicone polymer sheds water and resists surface leakage tracking"
+      "Hydrophobic silicone rubber housing naturally repels water droplets and prevents pollution flashover",
+      "Supplied complete with hot-dip galvanized steel mounting pin (IS 2629 / IS 2633 compliant)",
+      "High mechanical cantilever strength designed for distribution cross-arm mounting",
+      "Extremely lightweight compared to traditional porcelain, eliminating transit breakage"
     ],
     specifications: {
-      "Voltage Class": "11 kV / 33 kV",
-      "Material Options": "Silicone Composite Polymer / Glazed Electrical Porcelain",
-      "Pin Diameter": "20 mm / 24 mm Standard Shank",
-      "Cantilever Strength": "5 kN / 10 kN",
-      "Standard Compliance": "IS 1445 / IS 731 / IEC 60383 / REC Standards",
-      "Creepage Distance": "320 mm (11kV) / 900 mm (33kV)"
+      "Rated Voltage": "11 kV",
+      "Highest System Voltage": "12 kV",
+      "Cantilever Failing Load": "5 kN / 10 kN",
+      "Creepage Distance": "320 mm minimum",
+      "Impulse Withstand Voltage": "75 kV Peak",
+      "Standard Compliance": "IS 1445 / IEC 61109 / REC Standards"
     },
     applications: [
-      "11kV and 33kV rural and urban distribution lines",
-      "Substation feeder busbar supports and take-off structures",
-      "Overhead line tangent and angle pole supports"
+      "11kV urban and rural overhead power distribution lines",
+      "Distribution transformer substation incoming line supports",
+      "Section and intermediate tangent pole line structures"
     ]
   },
   {
-    id: "disc-insulators-strain-suspension",
-    name: "HT Polymer Disc Insulator Strings (70kN / 120kN)",
+    id: "pin-insulator-polymer-33kv",
+    name: "33kV Multi-Shed Composite Polymer Pin Insulators",
     category: "HT/LT Overhead Line Materials",
     categoryId: "overhead-lines",
-    shortDescription: "Composite polymer disc insulators and string assemblies for high tension strain, tension, and suspension spans.",
-    fullDescription: "Supplied in standard 70kN, 90kN, and 120kN electro-mechanical failing loads for high tension overhead lines. Available in Ball & Socket (B&S) and Tongue & Clevis (T&C) configurations to form reliable suspension and tension strings for 11kV, 33kV, and higher voltage corridors.",
+    shortDescription: "8-Shed heavy-duty composite polymer pin insulators engineered for 33kV high tension networks.",
+    fullDescription: "Engineered specifically for 33kV distribution and sub-transmission networks. Features an 8-shed composite silicone rubber envelope, high-voltage top groove conductor saddle collar, and heavy threaded steel mounting base. Provides superior withstand performance in high humidity, coastal, and heavily polluted industrial zones.",
+    image: "/images/products/pin-insulator-polymer-33kv.png",
+    gallery: [
+      "/images/products/pin-insulator-polymer-33kv.png",
+      "/images/products/pin-insulator-polymer-11kv.png",
+      "/images/products/psc-pole-installation.jpg"
+    ],
+    features: [
+      "Multi-shed alternating profile provides extra-long creepage distance against surface leakage",
+      "Precision-machined top saddle allows secure conductor wire binding without slip",
+      "Solid-core FRP rod ensures immense bending and cantilever strength",
+      "Hot-dip galvanized threaded stud ensures rigid bolting to channel cross-arms"
+    ],
+    specifications: {
+      "Rated Voltage": "33 kV",
+      "Highest System Voltage": "36 kV",
+      "Cantilever Failing Load": "10 kN",
+      "Creepage Distance": "900 mm minimum",
+      "Impulse Withstand Voltage": "170 kV Peak",
+      "Standard Compliance": "IS 1445 / IEC 61109 / IS 731"
+    },
+    applications: [
+      "33kV sub-transmission lines and 33/11kV primary substation entries",
+      "Express industrial supply feeders and heavy power corridors",
+      "High-pollution and chemical zone electrical lines"
+    ]
+  },
+  {
+    id: "polymer-disc-insulators-string",
+    name: "HT Polymer Disc Insulator Tension Strings (70kN / 120kN)",
+    category: "HT/LT Overhead Line Materials",
+    categoryId: "overhead-lines",
+    shortDescription: "Composite silicone polymer disc insulators for high tension overhead line tension and suspension strings.",
+    fullDescription: "Manufactured for heavy mechanical loads on high-tension transmission and distribution lines. Featuring a silicone rubber housing, fiberglass core, and drop-forged hot-dip galvanized metal end fittings (Tongue & Clevis / Ball & Socket). Engineered to absorb extreme conductor tensile tension without puncture or mechanical failure.",
     image: "/images/products/polymer-disc-insulators-string.jpg",
     gallery: [
       "/images/products/polymer-disc-insulators-string.jpg",
@@ -58,62 +91,62 @@ export const PRODUCTS = [
       "/images/products/psc-pole-installation.jpg"
     ],
     features: [
-      "High dielectric puncture strength in oil and atmospheric air",
-      "Forged steel fittings with uniform hot-dip galvanizing for long lifespan",
-      "Lightweight composite construction reduces line weight and transport damage",
-      "Ideal for terminal dead-ends, line angles, and suspension strings"
+      "High electro-mechanical failing load rating (70 kN / 90 kN / 120 kN)",
+      "Zero internal puncture risk in aggressive atmospheric conditions",
+      "Hot-dip galvanized malleable steel end fittings tested to IS 2486",
+      "High strength-to-weight ratio simplifies line erection and reduces tower load"
     ],
     specifications: {
-      "Failing Load": "70 kN / 90 kN / 120 kN",
-      "Coupling Type": "Ball & Socket / Tongue & Clevis (IS 2486)",
-      "Standard Compliance": "IS 731 / IS 3188 / IEC 60305 / REC Specifications",
-      "Core Material": "High Strength Fiberglass Reinforced Epoxy Resin (FRP)",
-      "Housing": "High Temperature Vulcanized (HTV) Silicone Rubber"
+      "Failing Load Rating": "70 kN / 90 kN / 120 kN",
+      "Coupling Configuration": "Ball & Socket / Tongue & Clevis",
+      "Standard Compliance": "IS 731 / IEC 61109 / IS 3188",
+      "Housing Material": "High-Temperature Vulcanized (HTV) Silicone Rubber",
+      "Core Rod": "Boron-Free E-CR Fiberglass Reinforced Epoxy Rod"
     },
     applications: [
-      "Dead-end terminal poles and tension strain points",
-      "Overhead highway, railway, and river span crossings",
-      "33kV and 11kV double circuit suspension strings"
+      "Tension strain points, terminal poles, and dead-end towers",
+      "Overhead highway, railway, and river span crossing points",
+      "33kV and 11kV suspension strings on double-circuit towers"
     ]
   },
   {
     id: "polymer-disc-tension-clamp",
-    name: "Polymer Tension Insulators & Overhead Strain Clamps",
+    name: "Polymer Tension Insulator & Bolted Strain Clamp Assemblies",
     category: "HT/LT Overhead Line Materials",
     categoryId: "overhead-lines",
-    shortDescription: "Complete tension insulator assemblies integrated with bolted aluminium strain clamps for dead-end conductor anchoring.",
-    fullDescription: "Supplied by PSPL for overhead conductor strain terminations. Consists of a silicone polymer tension insulator linked to a heavy-duty bolted strain tension clamp fabricated from high-tensile aluminium alloy and galvanized steel hardware. Provides slip-free grip on ACSR and AAAC conductors without damaging conductor strands.",
+    shortDescription: "Pre-assembled polymer tension insulator linked to heavy-duty bolted aluminium alloy strain clamp.",
+    fullDescription: "Supplied by Pavan Sai Power Lines for rapid overhead line conductor anchoring. Features a composite polymer strain insulator coupled directly to an aluminium alloy bolted tension strain clamp. Provides firm, non-slip mechanical grip on ACSR and AAAC conductors without deforming the outer conductor strands.",
     image: "/images/products/polymer-disc-tension-clamp.jpg",
     gallery: [
       "/images/products/polymer-disc-tension-clamp.jpg",
-      "/images/products/abc-hardware-tension-clamps.jpg",
-      "/images/products/polymer-disc-insulators-string.jpg"
+      "/images/products/polymer-disc-insulators-string.jpg",
+      "/images/products/abc-hardware-tension-clamps.jpg"
     ],
     features: [
-      "High mechanical holding strength exceeding 95% of conductor rated breaking strength",
-      "Corrosion-resistant aluminium alloy clamp body with contoured wire grooves",
-      "Supplied with Grade 8.8 galvanized U-bolts, nuts, and flat washers",
-      "Excellent electrical tracking resistance and long UV weather endurance"
+      "Holding strength exceeds 95% of the conductor's rated breaking strength (RBS)",
+      "High-strength cast aluminium alloy body with bell-mouthed conductor grooves",
+      "Hot-dip galvanized Grade 8.8 steel U-bolts, lock washers, and hex nuts",
+      "Complete integrated unit eliminates assembly errors at the installation site"
     ],
     specifications: {
-      "Conductor Compatibility": "Rabbit, Weasel, Dog, Panther ACSR / AAAC",
+      "Conductor Compatibility": "Squirrel, Weasel, Rabbit, Dog, Panther (ACSR / AAAC)",
       "Holding Load": "45 kN to 90 kN",
-      "Clamp Material": "High Strength Aluminium Alloy A6 / Forged Steel",
+      "Clamp Material": "Aluminium Alloy A6 / Grade 8.8 Galvanized Hardware",
       "Standard Compliance": "IS 2486 / IS 5561 / REC Specifications"
     },
     applications: [
-      "Overhead section and dead-end tension terminations",
-      "Distribution substation line entry bay anchoring",
-      "Steep grade and long-span line angle structures"
+      "Dead-end conductor terminations on PSC poles and lattice towers",
+      "Substation feeder entry bays and take-off gantries",
+      "Angle poles and strain towers in distribution networks"
     ]
   },
   {
-    id: "pg-clamps-hardware",
-    name: "Parallel Groove (PG) Clamps & Line Hardware",
+    id: "abc-hardware-tension-clamps",
+    name: "Overhead Line Hardware & Suspension Tension Clamps",
     category: "HT/LT Overhead Line Materials",
     categoryId: "overhead-lines",
-    shortDescription: "High-conductivity extruded aluminium and bimetallic PG clamps for secure conductor tapping and jointing.",
-    fullDescription: "High mechanical integrity PG clamps fabricated from corrosion-resistant aluminium alloy with high-tensile hot-dip galvanized bolts and spring washers. Ensures constant contact pressure and minimal joint resistance across ACSR and AAAC conductor joints without strand deformation.",
+    shortDescription: "Hot-dip galvanized and aluminium line hardware, suspension clamps, and line tension fittings.",
+    fullDescription: "Complete line hardware fittings for overhead distribution lines. Includes heavy-duty aluminium alloy suspension clamps with neoprene liners, dead-end wedge tension clamps, pole mounting brackets, and corrosion-resistant fasteners designed for smooth conductor support and minimal vibration wear.",
     image: "/images/products/abc-hardware-tension-clamps.jpg",
     gallery: [
       "/images/products/abc-hardware-tension-clamps.jpg",
@@ -121,60 +154,60 @@ export const PRODUCTS = [
       "/images/products/vibration-damper.jpg"
     ],
     features: [
-      "Supplied with friction-reduction anti-oxidant jointing compound",
-      "Corrosion-resistant aluminium alloy body with high conductivity",
-      "Grade 8.8 galvanized steel bolts with bell-mouthed conductor entries",
-      "Available in 2-bolt, 3-bolt, and bimetallic configurations"
+      "Precision-machined aluminium body resists weathering and atmospheric corrosion",
+      "High mechanical holding power with gentle contoured clamps protecting conductor insulation",
+      "All steel components hot-dip galvanized to IS 2629 standards",
+      "Compatible with standard DISCOM and REC pole mounting practices"
     ],
     specifications: {
-      "Conductor Range": "Squirrel, Weasel, Rabbit, Dog, Panther, Zebra",
-      "Material": "High Strength Aluminium Alloy A6 / Forged Brass / Bimetal",
-      "Hardware Bolt Finish": "Hot-dip galvanized / Dacromet coated",
-      "Temperature Rise": "Conforms to IS 5561 specifications"
+      "Material": "Extruded / Cast Aluminium Alloy with Neoprene Cushions",
+      "Fasteners": "Hot-dip galvanized Grade 5.6 / 8.8 Steel Bolts",
+      "Messenger Range": "25 mm² to 95 mm² Insulated / Bare Messengers",
+      "Standard Compliance": "IS 14255 / REC Specifications / IS 2486"
     },
     applications: [
-      "Loop connections on strain towers and section poles",
-      "T-off taps from main overhead feeders",
-      "Jumper connections between feeder lines"
+      "Overhead line suspension and tangent support points",
+      "Aerial bundled cable (ABC) straight run installations",
+      "Conductor angle turns and tension dead-ends"
     ]
   },
   {
-    id: "stockbridge-vibration-dampers",
+    id: "stockbridge-vibration-damper",
     name: "Stockbridge Vibration Dampers for Overhead Conductors",
     category: "HT/LT Overhead Line Materials",
     categoryId: "overhead-lines",
-    shortDescription: "Precision-engineered Stockbridge 4-resonance vibration dampers with galvanized messenger cable and clamp.",
-    fullDescription: "Vibration dampers designed to absorb and dissipate wind-induced aeolian vibrations and oscillations on overhead transmission and distribution conductors. Features hot-dip galvanized cast iron weights, multi-strand flexible steel messenger cable, and high-strength aluminium alloy conductor clamp.",
+    shortDescription: "4-Resonance Stockbridge vibration damper with clamp, messenger cable, and resonant weights.",
+    fullDescription: "Stockbridge vibration dampers engineered to dissipate wind-induced aeolian vibrations and high-frequency oscillations on overhead conductors. Features bell-mouthed aluminium conductor clamp, multi-strand flexible steel messenger cable, and calibrated galvanized weights protecting ACSR and AAAC conductors from fatigue failure.",
     image: "/images/products/vibration-damper.jpg",
     gallery: [
       "/images/products/vibration-damper.jpg",
       "/images/products/abc-hardware-tension-clamps.jpg"
     ],
     features: [
-      "Prevents conductor strand fatigue failure at suspension clamps and supports",
-      "Four-resonance frequency design covering wide wind velocity spectra",
-      "Supplied with bell-mouthed aluminium clamp protecting conductor outer strands",
-      "All steel parts hot-dip galvanized conforming to IS 2629 / IS 2633"
+      "Absorbs high-frequency aeolian vibration energy across broad wind velocity ranges",
+      "Bell-mouthed clamp design prevents stress concentration on outer conductor strands",
+      "Galvanized cast iron damper weights permanently locked onto messenger cable",
+      "Protects transmission and distribution lines from strand breakage at support clamps"
     ],
     specifications: {
       "Conductor Diameter Range": "10.0 mm to 35.0 mm",
       "Damper Weights": "Galvanized Cast Iron / Forged Steel",
-      "Messenger Cable": "High-tensile galvanized 19-strand steel wire",
+      "Messenger Cable": "19-Strand High-Tensile Galvanized Steel Cable",
       "Standard Compliance": "IS 9782 / IEC 61897"
     },
     applications: [
-      "Long-span overhead transmission lines crossing open fields, rivers, and highways",
+      "Long-span transmission lines crossing open flat terrain, highways, and rivers",
       "High-tension 33kV, 66kV, and 132kV overhead conductor corridors",
-      "Substation terminal span damping"
+      "Substation terminal take-off spans"
     ]
   },
   {
-    id: "stay-sets-stay-wire",
+    id: "stay-sets-hardware",
     name: "Complete Stay Sets & Stay Wire Assemblies",
     category: "HT/LT Overhead Line Materials",
     categoryId: "overhead-lines",
-    shortDescription: "Heavy-duty stay assemblies with galvanized stay rod, anchor bow, base plate, thimbles, and stay wire.",
-    fullDescription: "Robust stay set assemblies for guy-wire anchoring of overhead HT/LT distribution poles. Each set includes a hot-dip galvanized stay rod, stay bow with ratchet nut, heavy anchor plate, thimbles, and high-tensile stranded galvanized steel stay wire.",
+    shortDescription: "Galvanized stay rod, stay bow with ratchet nut, heavy anchor plate, and stay wire fittings.",
+    fullDescription: "Pavan Sai Power Lines supplies complete, certified stay set assemblies for guy-wire anchoring of overhead distribution poles. Includes a hot-dip galvanized high-tensile stay rod, stay bow with smooth ratchet nut, cast iron or fabricated steel anchor plate, thimbles, and high-tensile stranded stay wire.",
     image: "/images/products/stay-sets-hardware.jpg",
     gallery: [
       "/images/products/stay-sets-hardware.jpg",
@@ -182,21 +215,20 @@ export const PRODUCTS = [
       "/images/products/psc-pole-installation.jpg"
     ],
     features: [
-      "Heavy uniform hot-dip galvanizing exceeding IS 2633 standards (minimum 80 microns)",
-      "Deep thread engagement on stay bow for precise line tensioning",
-      "Cast iron or fabricated mild steel anchor plates",
-      "High tensile stranded galvanized steel stay wire (7/8 SWG, 7/10 SWG, 7/12 SWG)"
+      "Uniform hot-dip galvanizing exceeding 80 microns (IS 2633 compliant) for underground corrosion resistance",
+      "Precision thread cutting on stay bow allows accurate on-site conductor tension adjustment",
+      "Heavy cast iron base plate ensures firm subterranean mechanical anchoring against ground pull",
+      "Compatible with 7/8 SWG, 7/10 SWG, and 7/12 SWG high-tensile galvanized stay wire"
     ],
     specifications: {
-      "Stay Rod Length": "1.8 Meter / 2.4 Meter (6 ft / 8 ft)",
-      "Rod Diameter": "16 mm / 20 mm / 25 mm",
+      "Stay Rod Dimensions": "1.8 Meter / 2.4 Meter Length (16 mm / 20 mm / 25 mm Dia)",
       "Anchor Plate Size": "200 x 200 x 6 mm / 300 x 300 x 8 mm",
-      "Wire Specifications": "IS 2141 galvanized stay wire",
-      "Zinc Coating": "Minimum 80 microns hot-dip galvanized"
+      "Zinc Coating": "Minimum 80 Microns Hot-Dip Galvanized",
+      "Standard Compliance": "IS 2141 / IS 2629 / REC Construction Standards"
     },
     applications: [
       "Dead-end tension anchoring of PSC and steel tubular poles",
-      "Angle poles and corner pole guy line reinforcement",
+      "Angle and corner distribution pole guy line reinforcement",
       "Substation terminal support guy anchoring"
     ]
   },
@@ -205,38 +237,38 @@ export const PRODUCTS = [
     name: "Galvanized Stay Wire Thimbles & Guy Dead-End Grips",
     category: "HT/LT Overhead Line Materials",
     categoryId: "overhead-lines",
-    shortDescription: "High-tensile hot-dip galvanized steel thimbles and guy dead-end grips for stay wire terminations.",
-    fullDescription: "Supplied in large quantities for overhead line construction and pole anchoring. Heavy open-pattern and closed-pattern galvanized steel thimbles prevent stay wire crushing and kink formation at the stay bow and pole clamp connection points.",
+    shortDescription: "Drop-forged hot-dip galvanized steel thimbles and guy dead-end grips for stay wire loops.",
+    fullDescription: "Heavy open-pattern and closed-pattern galvanized steel thimbles and preformed dead-end grips. Engineered to protect stranded galvanized stay wire loops from sharp bends, crushing, kink formation, and abrasive wear at the stay bow and pole clamp connection points.",
     image: "/images/products/stay-wire-thimbles-grips.jpg",
     gallery: [
       "/images/products/stay-wire-thimbles-grips.jpg",
       "/images/products/stay-sets-hardware.jpg"
     ],
     features: [
-      "Deep rope groove prevents stay wire slippage and sharp bends",
-      "Smooth rounded inner edges eliminate wire abrasion",
-      "Heavy zinc coating provides decades of underground and atmospheric rust protection",
-      "Conforms strictly to IS 2141 and DISCOM standard utility drawings"
+      "Smooth contoured wire rope groove prevents crushing of individual stay wire strands",
+      "Drop-forged carbon steel body hot-dip galvanized to IS 2629",
+      "Resists decades of continuous outdoor weathering and soil moisture",
+      "Manufactured strictly according to DISCOM and REC utility drawings"
     ],
     specifications: {
-      "Compatible Stay Wire": "7/8 SWG (4.0mm), 7/10 SWG (3.15mm), 7/12 SWG (2.5mm)",
-      "Material": "Drop Forged Carbon Steel / Formed Structural Steel",
-      "Finish": "Hot-dip galvanized to IS 2629",
+      "Stay Wire Compatibility": "7/8 SWG (4.0mm), 7/10 SWG (3.15mm), 7/12 SWG (2.5mm)",
+      "Material": "Drop-Forged Carbon Steel",
+      "Coating": "Hot-Dip Galvanized to IS 2629 (Minimum 80 Microns)",
       "Standard Compliance": "IS 2486 (Part II)"
     },
     applications: [
-      "Stay set rod turnbuckle and bow connections",
-      "Pole top stay clamp loop attachments",
-      "Guy wire dead-end terminations"
+      "Stay rod ratchet turnbuckle loop connections",
+      "Pole-top stay clamp attachment loops",
+      "Guy wire tension dead-end terminations"
     ]
   },
   {
-    id: "gi-cross-arms-top-brackets",
-    name: "GI V-Cross Arms & Top Brackets (11kV & 33kV)",
+    id: "v-cross-arms-galvanized",
+    name: "Hot-Dip Galvanized V-Cross Arms & Top Brackets",
     category: "HT/LT Overhead Line Materials",
     categoryId: "overhead-lines",
-    shortDescription: "Heavy channel and angle iron hot-dip galvanized V-cross arms and top brackets for PSC pole structures.",
-    fullDescription: "Fabricated from prime structural steel channels and angles conforming to IS 2062, hot-dip galvanized to protect against rust and oxidation. Pre-punched for accurate fitting of pin insulators, disc tension hardware, and line earthing terminals on concrete PSC and steel poles.",
+    shortDescription: "Heavy structural steel V-cross arms and top brackets with heavy hot-dip galvanized rust protection.",
+    fullDescription: "Fabricated from prime structural mild steel channels and angle sections conforming to IS 2062. Heavy-duty hot-dip galvanizing provides complete atmospheric rust protection. Features CNC pre-punched hole patterns for direct mounting of 11kV/33kV pin insulators, disc tension hardware, and pole clamping bolts.",
     image: "/images/products/v-cross-arms-galvanized.png",
     gallery: [
       "/images/products/v-cross-arms-galvanized.png",
@@ -245,61 +277,91 @@ export const PRODUCTS = [
       "/images/products/psc-pole-installation.jpg"
     ],
     features: [
-      "Hot-dip galvanized coating of minimum 610 g/m² (85+ microns)",
-      "CNC punched hole spacing compatible with standard state DISCOM drawings",
-      "Supplied with back clamps, bolts, and lock washers",
-      "V-shape, horizontal channel, and vertical bracket configurations available"
+      "Heavy uniform zinc coating exceeding 610 g/m² (85+ microns) resisting corrosion",
+      "CNC punched hole spacing matching Telangana and AP DISCOM construction standards",
+      "V-shape geometry provides optimal electrical phase clearance between conductors",
+      "Supplied with galvanized pole back clamps and high-tensile mounting bolts"
     ],
     specifications: {
       "Steel Grade": "IS 2062 Grade E250 Mild Steel",
-      "Channel Sizes": "75x40 mm, 100x50 mm, 125x65 mm",
+      "Channel Section": "75 x 40 x 4.8 mm / 100 x 50 x 5.0 mm",
       "Length": "1070 mm / 1500 mm / 2200 mm",
-      "Galvanizing": "IS 2629 / IS 4759"
+      "Galvanizing Standard": "IS 2629 / IS 4759"
     },
     applications: [
-      "11kV and 33kV intermediate distribution poles",
+      "11kV and 33kV overhead intermediate distribution poles",
       "Double pole (DP) transformer mounting structures",
-      "Section and terminal line pole assemblies"
+      "Tangent and angle pole line assemblies"
+    ]
+  },
+  {
+    id: "v-cross-arms-red-oxide",
+    name: "MS Structural V-Cross Arms (Red Oxide Primer Finish)",
+    category: "HT/LT Overhead Line Materials",
+    categoryId: "overhead-lines",
+    shortDescription: "High-strength mild steel V-cross arms pre-coated in anti-rust red oxide primer.",
+    fullDescription: "Supplied in red-oxide protective primer finish for contractor customization or field painting. Fabricated from certified IS 2062 Grade E250 structural steel with high weld integrity, smooth deburred edges, and pre-punched holes for swift field assembly onto PSC concrete distribution poles.",
+    image: "/images/products/v-cross-arms-red-oxide.jpg",
+    gallery: [
+      "/images/products/v-cross-arms-red-oxide.jpg",
+      "/images/products/v-cross-arms-galvanized.png",
+      "/images/products/channel-cross-arms.jpg"
+    ],
+    features: [
+      "Uniform double-coat red oxide primer protects against oxidation in storage and transit",
+      "Fabricated from structural channel and angle steel conforming to IS 2062",
+      "Pre-drilled mounting holes for insulator pins and pole back clamps",
+      "Cost-effective solution for large-scale rural electrification projects"
+    ],
+    specifications: {
+      "Steel Section": "75 x 40 mm Channel / 50 x 50 x 6 mm Angle",
+      "Coating": "Anti-Rust Synthetic Red Oxide Primer",
+      "Standard Compliance": "IS 2062 / REC Construction Standards"
+    },
+    applications: [
+      "Rural distribution feeder construction projects",
+      "Agricultural power line extension schemes",
+      "Temporary and contractor-customized line structures"
     ]
   },
   {
     id: "channel-cross-arms",
-    name: "MS & GI Heavy Channel Cross Arms",
+    name: "Heavy MS & GI Structural Channel Cross Arms",
     category: "HT/LT Overhead Line Materials",
     categoryId: "overhead-lines",
-    shortDescription: "Precision-cut mild steel and galvanized structural channels for distribution cross-arms and pole structures.",
-    fullDescription: "Supplied in red-oxide primed or hot-dip galvanized finishes. Manufactured with accurate hole patterns conforming to REC and state power utility standards for quick pole mounting of pin insulators, surge arresters, and gang switches.",
+    shortDescription: "Precision-cut mild steel and galvanized structural channels for distribution cross-arms and DP structures.",
+    fullDescription: "Heavy hot-rolled structural steel channels manufactured with accurate hole patterns conforming to REC and state power utility drawings. Widely used for horizontal conductor support, double-pole (DP) transformer mounting beds, and line switchgear mounting.",
     image: "/images/products/channel-cross-arms.jpg",
     gallery: [
       "/images/products/channel-cross-arms.jpg",
-      "/images/products/v-cross-arms-red-oxide.jpg",
-      "/images/products/v-cross-arms-galvanized.png"
+      "/images/products/v-cross-arms-galvanized.png",
+      "/images/products/v-cross-arms-red-oxide.jpg"
     ],
     features: [
-      "Made from prime structural steel sections conforming to IS 2062",
-      "Pre-drilled mounting holes for pole back clamps and insulator pins",
-      "Available in customized lengths and drilling templates on request",
-      "Deburred edges and high mechanical rigidity under heavy conductor spans"
+      "Heavy load-bearing capacity under high mechanical conductor spans",
+      "Available in hot-dip galvanized or red oxide primer finishes",
+      "Pre-drilled mounting holes for pin insulators, surge arresters, and clamps",
+      "Deburred ends and clean square cuts ensure rapid on-site fitment"
     ],
     specifications: {
-      "Channel Dimensions": "75 x 40 x 4.8 mm / 100 x 50 x 5.0 mm",
+      "Channel Sizes": "75 x 40 x 4.8 mm / 100 x 50 x 5.0 mm / 125 x 65 x 5.3 mm",
       "Length Options": "1.0 Meter, 1.2 Meter, 1.5 Meter, 2.2 Meter",
-      "Finish": "Hot-Dip Galvanized / Red-Oxide Primer Coated",
-      "Standard Compliance": "IS 2062 / REC Construction Standards"
+      "Steel Grade": "IS 2062 Grade E250 Mild Steel",
+      "Standard Compliance": "IS 2062 / IS 2629 / REC Standards"
     },
     applications: [
-      "Overhead distribution line support cross arms",
-      "DP structure horizontal bracing and transformer mounting beds",
-      "Substation bus support gantry channels"
+      "Overhead distribution cross arms and horizontal brackets",
+      "Double pole (DP) transformer mounting beds and surge arrester channels",
+      "Substation busbar support gantry channels"
     ]
   },
   {
     id: "pole-hardware-fittings",
-    name: "Galvanized Pole Hardware, Clamps & Shackle Fittings",
+    name: "Galvanized Pole Hardware, Clamps & Insulator Pins",
     category: "HT/LT Overhead Line Materials",
     categoryId: "overhead-lines",
-    shortDescription: "Pole back clamps, shackle insulator hardware, cross-arm clamps, and galvanized line accessories.",
-    fullDescription: "Complete assortment of pole line mounting hardware manufactured from high-tensile mild steel with hot-dip galvanizing. Includes PSC pole clamps, cross-arm back clamps, D-shackle straps, earth wire clamps, and mounting brackets.",
+    shortDescription: "Pole back clamps, shackle fittings, insulator pins, bolts, and galvanized mounting straps.",
+    fullDescription: "Complete line hardware fittings manufactured from high-tensile mild steel with hot-dip galvanizing. Includes PSC pole clamps, cross-arm back clamps, D-shackle straps, earth wire clamps, forged insulator pins, and mounting bolts.",
     image: "/images/products/pole-hardware-fittings.jpg",
     gallery: [
       "/images/products/pole-hardware-fittings.jpg",
@@ -308,28 +370,28 @@ export const PRODUCTS = [
     ],
     features: [
       "Accurately contoured to fit standard 8.0m, 9.0m, and 9.5m concrete PSC poles",
+      "Heavy uniform zinc coating of minimum 80 microns resisting outdoor corrosion",
       "Supplied complete with hot-dip galvanized Grade 5.6 hex bolts, nuts, and spring washers",
-      "Heavy uniform zinc coating resisting corrosive outdoor elements",
-      "High tensile load capacity preventing slippage or deformation"
+      "High mechanical yield strength prevents slipping or deformation under line tension"
     ],
     specifications: {
-      "Steel Section": "50x6 mm / 65x6 mm / 75x8 mm Flat & Angle Bars",
-      "Fasteners": "M16 x 200 mm / M16 x 250 mm Galvanized Bolts",
+      "Steel Section": "50 x 6 mm / 65 x 6 mm / 75 x 8 mm Flat & Angle Bars",
+      "Bolt Sizes": "M16 x 200 mm / M16 x 250 mm Galvanized Bolts",
       "Galvanizing": "Minimum 80 Microns as per IS 2629 / IS 4759",
       "Standard Compliance": "IS 2486 / REC Guidelines"
     },
     applications: [
-      "PSC and rail pole line hardware mounting",
-      "Cross arm and top bracket pole clamping",
-      "Low tension and high tension distribution line assemblies"
+      "Concrete PSC and steel tubular pole hardware mounting",
+      "Cross-arm and top bracket pole clamping",
+      "Distribution line hardware assembly"
     ]
   },
   {
-    id: "psc-pole-installation-assemblies",
-    name: "PSC Pole Structure Assemblies & Line Mounting Systems",
+    id: "psc-pole-installation",
+    name: "Prestressed Concrete (PSC) Pole Structure Assemblies",
     category: "HT/LT Overhead Line Materials",
     categoryId: "overhead-lines",
-    shortDescription: "Complete integrated line hardware kits for 8m and 9m Prestressed Concrete (PSC) distribution poles.",
+    shortDescription: "Complete structural line hardware package for 8m and 9m concrete PSC distribution poles.",
     fullDescription: "Pavan Sai Power Lines packages complete structural mounting hardware sets for 11kV and LT overhead lines. Includes V-cross arms, top brackets, pole clamps, pin insulators, disc tension sets, earth bonding flats, and stay set assemblies ready for immediate site erection.",
     image: "/images/products/psc-pole-installation.jpg",
     gallery: [
@@ -339,12 +401,12 @@ export const PRODUCTS = [
     ],
     features: [
       "All-in-one packaging eliminates mismatched hardware on installation sites",
-      "Verified fitment on standard 8.0 Meter (140 kg / 200 kg) and 9.0 Meter (300 kg) PSC poles",
+      "Verified fitment on standard 8.0m (140 kg / 200 kg) and 9.0m (300 kg) PSC poles",
       "Adheres strictly to Telangana and Andhra Pradesh DISCOM construction practices",
       "Supplied with certified test reports and standard factory warranties"
     ],
     specifications: {
-      "Pole Class Compatibility": "8.0 Meter (140 kg / 200 kg WL) & 9.0 Meter (300 kg WL) PSC Poles",
+      "Pole Class Compatibility": "8.0 Meter (140/200 kg WL) & 9.0 Meter (300 kg WL) PSC Poles",
       "Operating Voltage": "11 kV Three-Phase / 415 V LT Three-Phase 4-Wire",
       "Hardware Grade": "Hot-Dip Galvanized Structural Steel",
       "Standard Compliance": "REC Construction Standards / IS 2062"
@@ -356,132 +418,48 @@ export const PRODUCTS = [
     ]
   },
 
-  // -------------------------------------------------------------
-  // 2. TRANSFORMER SPARES
-  // -------------------------------------------------------------
+  // =============================================================
+  // 2. TRANSFORMER SPARES (transformer-spares)
+  // =============================================================
   {
-    id: "transformer-bushings-ht-lt",
-    name: "HT & LT Transformer Bushings (1kV, 11kV, 22kV, 33kV)",
+    id: "transformer-bushings-polymer-33kv",
+    name: "HT & LT Transformer Bushings (11kV & 33kV)",
     category: "Transformer Spares",
     categoryId: "transformer-spares",
-    shortDescription: "High-voltage porcelain and polymer bushings with brass and electrolytic copper conductor stem rods.",
-    fullDescription: "Pavan Sai Power Lines supplies a full line of HT and LT transformer porcelain and composite bushings conforming to DIN and IS specifications. Complete with tin-plated electrolytic copper or brass stem rods, sealing rubber gaskets, washers, and terminal connector palms for distribution and power transformers.",
+    shortDescription: "High-dielectric polymer and porcelain bushings with copper/brass stems for distribution transformers.",
+    fullDescription: "Pavan Sai Power Lines supplies certified high-dielectric composite polymer and glazed electrical porcelain bushings for distribution and power transformers. Features high-purity electrolytic copper conductor stems, weather-shed silicone rubber profiles, and oil-resistant nitrile sealing washers conforming to IS 3347.",
     image: "/images/products/pin-insulator-polymer-33kv.png",
     gallery: [
       "/images/products/pin-insulator-polymer-33kv.png",
-      "/images/products/transformer-bushings.svg"
+      "/images/products/pin-insulator-polymer-11kv.png",
+      "/images/products/psc-pole-installation.jpg"
     ],
     features: [
-      "High dielectric porcelain insulator bodies tested for thermal shocks",
-      "Available for 1kV LT, 11kV HT, 22kV HT, and 33kV HT ratings",
-      "Current ratings from 250A up to 3150A for heavy LT duty",
-      "Complete assembly with nitrile O-rings and brass hardware"
+      "Superior puncture and thermal withstand strength under continuous oil operating temperatures",
+      "Supplied complete with copper stem rods, brass terminal nuts, and washers",
+      "Available for 1.1kV LT, 11kV HT, 22kV HT, and 33kV HT transformer ratings",
+      "Hydrophobic silicone sheds protect against moisture tracking and flashovers"
     ],
     specifications: {
-      "Voltage Ratings": "1.1 kV (LT) / 12 kV (HT) / 24 kV / 36 kV (HT)",
-      "Current Ratings": "250 A, 630 A, 1000 A, 2000 A, 3150 A",
-      "Standards": "IS 3347 / DIN 42530 / DIN 42531",
-      "Stem Material": "Electrolytic Grade Copper / Extruded Brass"
+      "Voltage Ratings": "1.1 kV (LT) / 11 kV (HT) / 22 kV / 33 kV (HT)",
+      "Current Ratings": "250 A, 630 A, 1000 A, 2000 A",
+      "Standard Compliance": "IS 3347 / DIN 42530 / DIN 42531",
+      "Stem Conductor": "High-Conductivity Electrolytic Copper / Brass"
     },
     applications: [
-      "Distribution transformer HT and LT terminal bushings",
+      "Distribution transformer HT and LT terminal bushings (25 kVA - 2500 kVA)",
       "Power transformer tertiary and neutral leads",
       "Transformer rewinding and repair workshops"
     ]
   },
-  {
-    id: "silica-gel-breathers",
-    name: "Transformer Silica Gel Breathers",
-    category: "Transformer Spares",
-    categoryId: "transformer-spares",
-    shortDescription: "Industrial crystal silica gel dehydrating breathers with oil seal cups for transformer moisture protection.",
-    fullDescription: "Robust dehydrating silica gel breathers with clear UV-resistant view cylinders, aluminium casting body, and oil-bath dust trap. Effectively absorbs atmospheric moisture entering the transformer conservator tank during thermal breathing cycles, safeguarding transformer oil dielectric strength.",
-    image: "/images/products/silica-breather.svg",
-    gallery: [
-      "/images/products/silica-breather.svg"
-    ],
-    features: [
-      "Indicates moisture saturation through self-indicating blue-to-pink silica gel",
-      "Heavy aluminum top casting with oil bath cup at bottom",
-      "Threaded and flanged mounting connections for rapid replacement",
-      "Protects oil insulation from degradation and moisture contamination"
-    ],
-    specifications: {
-      "Capacities": "0.5 kg, 1.0 kg, 2.0 kg, 3.0 kg, 5.0 kg",
-      "Mounting Flange": "1/2 inch, 3/4 inch, 1 inch BSP / Flanged Type",
-      "Body Material": "Cast Aluminium Alloy & Shatterproof Polycarbonate / Borosilicate",
-      "Desiccant Media": "Activated Indicating Silica Gel (IS 3401)"
-    },
-    applications: [
-      "Oil-immersed distribution transformers (25 kVA - 2500 kVA)",
-      "Power transformers and conservator systems",
-      "Substation transformer maintenance replacements"
-    ]
-  },
-  {
-    id: "transformer-gaskets-oil-indicators",
-    name: "Transformer Gaskets & Oil Level Gauges (MOG)",
-    category: "Transformer Spares",
-    categoryId: "transformer-spares",
-    shortDescription: "High-grade nitrile rubber cork gaskets (RC70C) and magnetic/prismatic oil level indicators.",
-    fullDescription: "Specialized transformer sealing solutions including oil-resistant nitrile bonded cork sheets (conforming to IS 4253 Part II Type RC70C), molded O-rings, and conservator oil level indicators. Prevents transformer oil leakage while resisting transformer mineral oil at high operating temperatures.",
-    image: "/images/products/transformer-gaskets.svg",
-    gallery: [
-      "/images/products/transformer-gaskets.svg"
-    ],
-    features: [
-      "Excellent resistance to transformer oil (IS 335) and elevated temperatures",
-      "Low compression set ensuring leak-proof sealing over years of service",
-      "Available in sheets, cut gaskets for bushing flanges, and inspection covers",
-      "Accurate dial and prismatic oil level indicators for conservator tanks"
-    ],
-    specifications: {
-      "Gasket Material": "Rubber Bonded Cork Sheet (RC 70-C / RC 80)",
-      "Thickness Range": "3 mm, 5 mm, 6 mm, 8 mm, 10 mm",
-      "Operating Temp": "-20°C to +120°C continuous in mineral oil",
-      "Standards": "IS 4253 (Part II)"
-    },
-    applications: [
-      "Transformer tank top cover, radiator flanges, and conservator joints",
-      "HT/LT bushing flange leak sealing",
-      "Inspection hole and tap switch cover seals"
-    ]
-  },
-  {
-    id: "explosion-vents-prv",
-    name: "Explosion Vents & Pressure Relief Valves (PRV)",
-    category: "Transformer Spares",
-    categoryId: "transformer-spares",
-    shortDescription: "Diaphragm explosion vent pipes and spring-loaded pressure relief devices for transformer tank safety.",
-    fullDescription: "Safety relief devices designed to rapidly discharge sudden internal tank pressure build-up caused by electrical faults or internal short circuits. Protects transformer tanks from rupture and explosive oil spills.",
-    image: "/images/products/explosion-vent.svg",
-    gallery: [
-      "/images/products/explosion-vent.svg"
-    ],
-    features: [
-      "Precision-calibrated bakelite/aluminium diaphragm burst pressure",
-      "Optional electrical limit switches for SCADA trip signaling",
-      "Galvanized pipe body with double-diaphragm protection against moisture ingress",
-      "Robust cast aluminum housing on spring-loaded PRV models"
-    ],
-    specifications: {
-      "Pipe Diameter": "3 inch (80 mm) / 4 inch (100 mm) / 6 inch (150 mm)",
-      "Relief Pressure": "0.35 bar to 0.70 bar (Factory calibrated)",
-      "Mounting": "Standard companion flange mounting"
-    },
-    applications: [
-      "Distribution and power transformer tank overpressure protection",
-      "Substation safety compliance upgrades"
-    ]
-  },
 
-  // -------------------------------------------------------------
-  // 3. AB SWITCHES (AIR BREAK)
-  // -------------------------------------------------------------
+  // =============================================================
+  // 3. AB SWITCHES (AIR BREAK) (ab-switches)
+  // =============================================================
   {
-    id: "ab-switches-11kv-400a",
-    name: "11kV Air Break (AB) Switch (200A / 400A Gang-Operated)",
-    category: "AB Switches",
+    id: "ab-switch-gang-operated",
+    name: "11kV Gang-Operated Air Break (AB) Switch (200A / 400A)",
+    category: "AB Switches (Air Break)",
     categoryId: "ab-switches",
     shortDescription: "Triple Pole outdoor gang-operated Air Break disconnector switch for 11kV line sectionalizing.",
     fullDescription: "Heavy-duty 11kV 3-pole gang-operated outdoor Air Break switch mounted on hot-dip galvanized channel base. Features electrolytic copper contacts with hard silver plating, phosphor bronze backup springs, and smooth rotating operating mechanism for safe overhead line isolation.",
@@ -512,9 +490,9 @@ export const PRODUCTS = [
     ]
   },
   {
-    id: "ab-switches-33kv-630a",
-    name: "33kV Gang-Operated AB Switch (630A / 800A Heavy Duty)",
-    category: "AB Switches",
+    id: "ab-switch-isolator",
+    name: "33kV Gang-Operated AB Switch Disconnector (630A / 800A)",
+    category: "AB Switches (Air Break)",
     categoryId: "ab-switches",
     shortDescription: "Heavy transmission grade 33kV outdoor disconnector isolator with robust gang-operating linkage.",
     fullDescription: "Engineered for 33kV sub-transmission networks and 33/11kV substations. Designed with reinforced structural galvanized channel base, dual/triple post insulator stacks, self-aligning high-pressure finger contacts, and heavy downpipe operating mechanism with padlock arrangement.",
@@ -544,11 +522,11 @@ export const PRODUCTS = [
     ]
   },
   {
-    id: "horn-gap-fuse-units",
-    name: "Horn Gap (HG) Fuse Sets (11kV & 33kV)",
-    category: "AB Switches",
+    id: "ab-switch-horn-gap",
+    name: "Horn Gap (HG) Fuse Units (11kV & 33kV)",
+    category: "AB Switches (Air Break)",
     categoryId: "ab-switches",
-    shortDescription: "Outdoor channel mounted horn gap fuse units for distribution transformer short-circuit protection.",
+    shortDescription: "Outdoor channel-mounted horn gap fuse units for distribution transformer short-circuit protection.",
     fullDescription: "Reliable overhead fault protection assembly designed to mount directly below or beside AB switches on two-pole or four-pole transformer structures. Consists of heavy copper horns, terminal clamps, and replaceable fuse wire channels engineered to safely interrupt short-circuit overcurrents.",
     image: "/images/products/ab-switch-horn-gap.jpg",
     gallery: [
@@ -574,16 +552,16 @@ export const PRODUCTS = [
     ]
   },
   {
-    id: "ab-switch-spare-contacts-accessories",
-    name: "AB Switch Spare Contacts, Arcing Horns & Operating Linkages",
-    category: "AB Switches",
+    id: "ab-switch-disconnector-assembly",
+    name: "Air Break Switch Disconnector Mechanism & Spare Parts",
+    category: "AB Switches (Air Break)",
     categoryId: "ab-switches",
     shortDescription: "Genuine replacement male/female copper contacts, arcing horns, and operating handles for AB switches.",
     fullDescription: "Pavan Sai Power Lines maintains comprehensive stock of replacement parts for field maintenance of 11kV and 33kV air break switches. Includes silver-plated moving blades, fixed jaw contacts, tension springs, flexible copper braids, and heavy padlockable operating handles.",
     image: "/images/products/ab-switch.jpg",
     gallery: [
       "/images/products/ab-switch.jpg",
-      "/images/products/switch-contacts.svg"
+      "/images/products/ab-switch-gang-operated.png"
     ],
     features: [
       "High grade electrolytic copper with uniform silver plating for low contact resistance",
@@ -603,15 +581,15 @@ export const PRODUCTS = [
     ]
   },
 
-  // -------------------------------------------------------------
-  // 4. AAAC & ACSR CONDUCTORS
-  // -------------------------------------------------------------
+  // =============================================================
+  // 3. AAAC & ACSR CONDUCTORS (conductors)
+  // =============================================================
   {
-    id: "acsr-conductors-distribution-transmission",
-    name: "ACSR Conductors (Weasel, Rabbit, Dog, Panther, Zebra)",
+    id: "acsr-conductor-drums",
+    name: "ACSR Conductors in Wooden Drums (Squirrel to Zebra)",
     category: "AAAC & ACSR Conductors",
     categoryId: "conductors",
-    shortDescription: "Aluminium Conductor Steel Reinforced supplied in wooden drums for high-tensile power transmission.",
+    shortDescription: "Aluminium Conductor Steel Reinforced supplied in heavy wooden drums for high-tensile power transmission.",
     fullDescription: "Pavan Sai Power Lines supplies full drums of high-conductivity ACSR conductors. Constructed with concentric strands of high-purity EC grade aluminium wrapped around a central core of galvanized high-tensile steel wire. Combines superior electrical conductivity with optimal mechanical tensile strength for overhead spans.",
     image: "/images/products/acsr-conductor-drums.jpg",
     gallery: [
@@ -638,7 +616,7 @@ export const PRODUCTS = [
     ]
   },
   {
-    id: "aaac-conductors-all-aluminium-alloy",
+    id: "aaac-conductors-drum-banner",
     name: "AAAC Conductors (All Aluminium Alloy Conductors)",
     category: "AAAC & ACSR Conductors",
     categoryId: "conductors",
@@ -669,8 +647,8 @@ export const PRODUCTS = [
     ]
   },
   {
-    id: "aerial-bundled-cables-lt-abc",
-    name: "LT Aerial Bundled Cables (ABC) & Suspension Clamps",
+    id: "aerial-bundled-cable-abc",
+    name: "LT Aerial Bundled Cables (ABC) with Messenger Neutral",
     category: "AAAC & ACSR Conductors",
     categoryId: "conductors",
     shortDescription: "Weatherproof XLPE insulated self-supporting LT ABC conductors with neutral messenger for safe distribution.",
@@ -730,7 +708,7 @@ export const PRODUCTS = [
     ]
   },
   {
-    id: "conductor-comparison-aac-aaac-acsr",
+    id: "aac-aaac-acsr-comparison",
     name: "AAC, AAAC & ACSR Conductor Cross-Section Series",
     category: "AAAC & ACSR Conductors",
     categoryId: "conductors",
@@ -760,11 +738,11 @@ export const PRODUCTS = [
     ]
   },
 
-  // -------------------------------------------------------------
-  // 5. EARTHING MATERIALS
-  // -------------------------------------------------------------
+  // =============================================================
+  // 4. EARTHING MATERIALS (earthing)
+  // =============================================================
   {
-    id: "copper-bonded-chemical-earth-electrodes",
+    id: "copper-bonded-earth-rods",
     name: "Copper Bonded Chemical Earth Electrodes & Rods",
     category: "Earthing Materials",
     categoryId: "earthing",
@@ -795,8 +773,38 @@ export const PRODUCTS = [
     ]
   },
   {
-    id: "gi-perforated-earthing-pipes-funnels",
-    name: "GI Perforated Earthing Pipes with Funnels & Driving Points",
+    id: "chemical-earth-electrodes",
+    name: "Heavy-Duty Chemical Pipe-in-Pipe Earth Electrodes",
+    category: "Earthing Materials",
+    categoryId: "earthing",
+    shortDescription: "Dual-pipe pipe-in-pipe chemical earth electrodes pre-filled with crystalline conductive minerals.",
+    fullDescription: "Maintenance-free pipe-in-pipe chemical grounding electrodes. The space between the inner conductor and outer perforated pipe is filled with non-soluble crystalline conductive compound that continuously leaches moisture-retaining ions into the surrounding soil, keeping earth resistance low year-round.",
+    image: "/images/products/chemical-earth-electrodes.png",
+    gallery: [
+      "/images/products/chemical-earth-electrodes.png",
+      "/images/products/copper-bonded-earth-rods.jpg"
+    ],
+    features: [
+      "Zero periodic watering or charcoal/salt refilling needed",
+      "Delivers steady low earth resistance regardless of seasonal heat or drought",
+      "Available with copper coating or heavy hot-dip galvanized steel tubes",
+      "Flat terminal with multi-hole pattern for connecting multiple grounding conductors"
+    ],
+    specifications: {
+      "Outer Diameter": "50 mm / 80 mm / 100 mm",
+      "Length": "2.0 Meter / 3.0 Meter",
+      "Current Carrying Capacity": "Up to 50 kA for 1 second",
+      "Standard Compliance": "IEEE 80 / IS 3043 / NBC 2016"
+    },
+    applications: [
+      "Data centers, telecom towers, and hospital electrical systems",
+      "High soil resistivity rocky hills and arid landscapes",
+      "Commercial solar power plants and wind turbine generators"
+    ]
+  },
+  {
+    id: "gi-perforated-earthing-pipes",
+    name: "GI Perforated Earthing Pipes with Funnels & Driving Tips",
     category: "Earthing Materials",
     categoryId: "earthing",
     shortDescription: "Heavy hot-dip galvanized perforated Class-B earthing pipes fitted with wire mesh funnels and driving cones.",
@@ -886,7 +894,7 @@ export const PRODUCTS = [
     ]
   },
   {
-    id: "bare-copper-grounding-wire-coils",
+    id: "copper-earth-wire",
     name: "Bare Electrolytic Copper Grounding Wire & Coils",
     category: "Earthing Materials",
     categoryId: "earthing",
@@ -915,42 +923,12 @@ export const PRODUCTS = [
       "Sensitive computer and telecom equipment earth bonding"
     ]
   },
-  {
-    id: "chemical-earth-electrodes",
-    name: "Heavy-Duty Chemical Earth Electrodes & Enhancing Compounds",
-    category: "Earthing Materials",
-    categoryId: "earthing",
-    shortDescription: "Dual-pipe pipe-in-pipe chemical earth electrodes pre-filled with crystalline conductive minerals.",
-    fullDescription: "Maintenance-free pipe-in-pipe chemical grounding electrodes. The space between the inner conductor and outer perforated pipe is filled with non-soluble crystalline conductive compound that continuously leaches moisture-retaining ions into the surrounding soil, keeping earth resistance low year-round.",
-    image: "/images/products/chemical-earth-electrodes.png",
-    gallery: [
-      "/images/products/chemical-earth-electrodes.png",
-      "/images/products/copper-bonded-earth-rods.jpg"
-    ],
-    features: [
-      "Zero periodic watering or charcoal/salt refilling needed",
-      "Delivers steady low earth resistance regardless of seasonal heat or drought",
-      "Available with copper coating or heavy hot-dip galvanized steel tubes",
-      "Flat terminal with multi-hole pattern for connecting multiple grounding conductors"
-    ],
-    specifications: {
-      "Outer Diameter": "50 mm / 80 mm / 100 mm",
-      "Length": "2.0 Meter / 3.0 Meter",
-      "Current Carrying Capacity": "Up to 50 kA for 1 second",
-      "Standard Compliance": "IEEE 80 / IS 3043 / NBC 2016"
-    },
-    applications: [
-      "Data centers, telecom towers, and hospital electrical systems",
-      "High soil resistivity rocky hills and arid landscapes",
-      "Commercial solar power plants and wind turbine generators"
-    ]
-  },
 
-  // -------------------------------------------------------------
-  // 6. INDUSTRIAL ELECTRICALS
-  // -------------------------------------------------------------
+  // =============================================================
+  // 5. INDUSTRIAL ELECTRICALS & CABLES (industrial-electricals)
+  // =============================================================
   {
-    id: "ht-xlpe-armoured-power-cables",
+    id: "ht-xlpe-power-cable",
     name: "HT XLPE Armoured Power Cables (11kV & 33kV Grade)",
     category: "Industrial Electricals",
     categoryId: "industrial-electricals",
@@ -981,100 +959,12 @@ export const PRODUCTS = [
       "Solar farm collector feeder circuits to pooling stations"
     ]
   },
-  {
-    id: "industrial-distribution-boxes-feeder-pillars",
-    name: "LT Distribution Boxes & Feeder Pillars",
-    category: "Industrial Electricals",
-    categoryId: "industrial-electricals",
-    shortDescription: "Weatherproof CRCA / FRP outdoor LT distribution boxes and multi-circuit feeder pillars.",
-    fullDescription: "Outdoor floor-mounted and pole-mounted LT distribution boxes engineered for industrial plants and DISCOM distribution networks. Fabricated from sheet steel or FRP with electrostatic powder coating, IP55 weatherproof sealing, electrolytic copper/aluminium busbars, and internal cable spreaders.",
-    image: "/images/products/feeder-pillar.svg",
-    gallery: [
-      "/images/products/feeder-pillar.svg"
-    ],
-    features: [
-      "Sheet steel enclosure with 7-tank powder-coat pre-treatment",
-      "Pre-fitted with high conductivity busbars and fuse bases",
-      "Slanted canopy roof to shed rain and dust accumulation",
-      "Internal barrier shrouds for personnel safety during operation"
-    ],
-    specifications: {
-      "Enclosure Protection": "IP54 / IP55 Weatherproof Outdoor Rated",
-      "Sheet Thickness": "2.0 mm CRCA / 3.0 mm FRP Compound",
-      "Busbar Capacity": "200A, 400A, 630A, 1000A Aluminium / Copper",
-      "Standard Compliance": "IS 5039 / IS 8623"
-    },
-    applications: [
-      "Industrial estate low-voltage power distribution",
-      "Distribution transformer secondary protection and metering",
-      "Township and municipal infrastructure feeder switching"
-    ]
-  },
-  {
-    id: "cable-lugs-glands-accessories",
-    name: "Industrial Cable Glands, Bimetallic Lugs & Terminals",
-    category: "Industrial Electricals",
-    categoryId: "industrial-electricals",
-    shortDescription: "Heavy-duty brass double compression cable glands, bimetallic crimping lugs, and copper terminals.",
-    fullDescription: "Comprehensive industrial termination hardware for XLPE armoured and unarmoured power cables. Features nickel-plated brass double compression cable glands with flameproof weatherproof seals and heavy-duty electrolytic copper and bimetallic crimping lugs for secure cable terminations.",
-    image: "/images/products/cable-glands-lugs.svg",
-    gallery: [
-      "/images/products/cable-glands-lugs.svg",
-      "/images/products/galvanized-fasteners-structural.jpg"
-    ],
-    features: [
-      "Glands provide mechanical cable clamping and armour continuity earthing",
-      "Bimetallic friction-welded lugs prevent galvanic corrosion between copper busbars and aluminium conductors",
-      "Accurate barrel internal dimensions for standard hydraulic crimping dies",
-      "Tin plated for high atmospheric corrosion resistance"
-    ],
-    specifications: {
-      "Gland Types": "Double Compression Brass (Weatherproof IP66 / Flameproof)",
-      "Lug Range": "1.5 sq.mm up to 1000 sq.mm (Single & Double Hole)",
-      "Lug Materials": "EC Grade Copper (99.9%) / Friction-Welded Bimetallic",
-      "Standards": "IS 12943 / BS 6121 / IS 8309"
-    },
-    applications: [
-      "Motor terminal box and switchgear terminations",
-      "Transformer LT cable box terminations",
-      "Control panel internal wiring and power feed junctions"
-    ]
-  },
-  {
-    id: "hrc-fuse-links-bases",
-    name: "HRC Fuse Links, Ceramic Bases & Disconnectors",
-    category: "Industrial Electricals",
-    categoryId: "industrial-electricals",
-    shortDescription: "High Rupturing Capacity (HRC) DIN & BS fuse links and heavy-duty ceramic fuse bases.",
-    fullDescription: "Industrial-grade HRC fuse links engineered to provide fast-acting short-circuit and overload protection for low voltage systems. Tested for breaking capacities up to 80kA and 120kA at 415V/500V AC.",
-    image: "/images/products/hrc-fuse.svg",
-    gallery: [
-      "/images/products/hrc-fuse.svg"
-    ],
-    features: [
-      "Silver-plated pure silver/copper fuse elements with high rupturing capacity",
-      "High-grade ceramic bodies with low thermal expansion and high mechanical resistance",
-      "Reliable trip indicator pin for rapid blown-fuse detection",
-      "Silver-plated contact blades for minimum watt loss"
-    ],
-    specifications: {
-      "Voltage Rating": "415 V / 500 V / 690 V AC",
-      "Breaking Capacity": "80 kA / 120 kA rms",
-      "Current Ratings": "6A, 16A, 32A, 63A, 100A, 160A, 250A, 400A, 630A, 800A",
-      "Standards": "IS 13703 / IEC 60269"
-    },
-    applications: [
-      "Industrial motor starter protection panels",
-      "Main LT switchboards and feeder pillar outgoing circuits",
-      "Capacitor bank and power factor correction panel protection"
-    ]
-  },
 
-  // -------------------------------------------------------------
-  // 7. AIMS & GI TOWERS
-  // -------------------------------------------------------------
+  // =============================================================
+  // 6. AIMS & GI TOWERS (towers)
+  // =============================================================
   {
-    id: "hot-dip-galvanized-transmission-towers",
+    id: "transmission-tower",
     name: "Hot-Dip Galvanized Lattice Transmission Towers",
     category: "AIMS & GI Towers",
     categoryId: "towers",
@@ -1163,37 +1053,6 @@ export const PRODUCTS = [
       "Lineman climbing access on transmission tower legs",
       "Anti-theft protection for lower tower lattice panels",
       "Substation structure vibration-proof fastening"
-    ]
-  },
-  {
-    id: "substation-gantry-structures-aims",
-    name: "Substation Gantry Structures & AIMS Assemblies",
-    category: "AIMS & GI Towers",
-    categoryId: "towers",
-    shortDescription: "Air Insulated Modular Structures (AIMS), busbar gantries, and equipment support structures.",
-    fullDescription: "Complete modular structural assemblies for 33kV, 132kV, and 220kV outdoor switchyards. Includes galvanized gantry column towers, cross beams, line drop supports, transformer take-off towers, and equipment support stands for CT/PTs, lightning arresters, and circuit breakers.",
-    image: "/images/products/psc-pole-installation.jpg",
-    gallery: [
-      "/images/products/psc-pole-installation.jpg",
-      "/images/products/transmission-tower.jpg",
-      "/images/products/substation-gantry.svg"
-    ],
-    features: [
-      "Modular AIMS design facilitates swift on-site bolted assembly without welding",
-      "Pre-drilled mounting baseplates and equipment support cleats",
-      "Complete assembly drawings and marked piece-part identification for rapid erection",
-      "Galvanized tower foundation stubs and leg cleat assemblies included"
-    ],
-    specifications: {
-      "Substation Ratings": "33 kV, 66 kV, 132 kV, 220 kV Switchyards",
-      "Structure Types": "Tower Columns, Gantry Beams, CT/PT/LA Support Stands",
-      "Zinc Coating": "Minimum 610 g/m² (IS 2629)",
-      "Hardware Grade": "Hot-dip galvanized Grade 5.6 / 8.8 Bolts & Nuts"
-    },
-    applications: [
-      "33/11kV and 132/33kV electric substation switchyards",
-      "Industrial captive power plant step-up substations",
-      "Renewable energy pooling substations"
     ]
   }
 ];

@@ -372,11 +372,11 @@ export default function Home() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-xs hover:shadow-sm transition">
-            <div className="aspect-[16/10] bg-slate-50 p-2 border-b border-slate-100">
+            <div className="aspect-[16/10] bg-white p-2.5 border-b border-slate-100 flex items-center justify-center">
               <img
-                src="/images/products/transmission-tower.svg"
+                src="/images/products/transmission-tower.jpg"
                 alt="Overhead Power Transmission Towers"
-                className="w-full h-full object-contain"
+                className="w-full h-full object-cover rounded-lg"
               />
             </div>
             <div className="p-4">
@@ -388,33 +388,33 @@ export default function Home() {
           </div>
 
           <div className="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-xs hover:shadow-sm transition">
-            <div className="aspect-[16/10] bg-slate-50 p-2 border-b border-slate-100">
+            <div className="aspect-[16/10] bg-white p-2.5 border-b border-slate-100 flex items-center justify-center">
               <img
-                src="/images/products/transformer-bushings.svg"
-                alt="Substation Transformer Spares"
+                src="/images/products/ab-switch-gang-operated.png"
+                alt="11kV 3-Phase Gang-Operated Air Break Switch"
                 className="w-full h-full object-contain"
               />
             </div>
             <div className="p-4">
-              <h3 className="font-bold text-sm text-slate-900">Substations & Transformers</h3>
+              <h3 className="font-bold text-sm text-slate-900">Substations & Switchgear</h3>
               <p className="text-xs text-slate-500 mt-1.5 leading-relaxed">
-                Transformer bushings, silica gel breathers, AB switches, and horn gap fuses.
+                Gang-operated Air Break (AB) switches, isolators, and horn gap fuse sets.
               </p>
             </div>
           </div>
 
           <div className="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-xs hover:shadow-sm transition">
-            <div className="aspect-[16/10] bg-slate-50 p-2 border-b border-slate-100">
+            <div className="aspect-[16/10] bg-white p-2.5 border-b border-slate-100 flex items-center justify-center">
               <img
-                src="/images/products/copper-earth-rod.svg"
-                alt="Industrial Earthing Materials"
-                className="w-full h-full object-contain"
+                src="/images/products/copper-bonded-earth-rods.jpg"
+                alt="Copper-Bonded Chemical Earth Electrodes"
+                className="w-full h-full object-cover rounded-lg"
               />
             </div>
             <div className="p-4">
-              <h3 className="font-bold text-sm text-slate-900">Industrial Plants & Earthing</h3>
+              <h3 className="font-bold text-sm text-slate-900">Substation & Plant Earthing</h3>
               <p className="text-xs text-slate-500 mt-1.5 leading-relaxed">
-                Copper-bonded electrodes, GI flats, distribution boxes, cable glands, and lugs.
+                Copper-bonded electrodes, perforated GI pipes, cast iron pipes, and grounding coils.
               </p>
             </div>
           </div>

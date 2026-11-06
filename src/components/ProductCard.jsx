@@ -7,20 +7,20 @@ export default function ProductCard({ product }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [imageError, setImageError] = useState(false);
 
-  const fallbackImage = "/images/products/pin-insulator.svg";
+  const fallbackImage = "/images/products/pin-insulator-polymer-11kv.png";
 
   return (
     <>
       <div className="group bg-white rounded-xl overflow-hidden border border-slate-200 hover:border-blue-500 shadow-xs hover:shadow-md transition-all duration-200 flex flex-col h-full">
         
-        {/* Clean Image Area */}
-        <div className="relative aspect-[16/10] overflow-hidden bg-slate-50 border-b border-slate-100 flex items-center justify-center p-2">
+        {/* Clean Image Area with Crisp White Background */}
+        <div className="relative aspect-[16/10] overflow-hidden bg-white border-b border-slate-100 flex items-center justify-center p-3">
           <img
             src={imageError ? fallbackImage : product.image}
             alt={product.name}
             onError={() => setImageError(true)}
             loading="lazy"
-            className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
+            className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300 drop-shadow-xs"
           />
           
           {/* Crisp Category Badge */}

@@ -9,7 +9,9 @@ import {
   Share2, 
   ChevronRight,
   Zap,
-  Info
+  Info,
+  Maximize2,
+  X
 } from 'lucide-react';
 import { getProductById, getRelatedProducts } from '../data/products';
 import { COMPANY_INFO } from '../data/company';
@@ -21,6 +23,7 @@ export default function ProductDetails() {
   const { productId } = useParams();
   const navigate = useNavigate();
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isZoomOpen, setIsZoomOpen] = useState(false);
   const [imageError, setImageError] = useState(false);
   const [copied, setCopied] = useState(false);
 
@@ -35,7 +38,7 @@ export default function ProductDetails() {
     }
   }, [productId, product]);
 
-  const fallbackImage = "/images/products/pin-insulator.svg";
+  const fallbackImage = "/images/products/pin-insulator-polymer-11kv.png";
 
   if (!product) {
     return (
@@ -97,12 +100,16 @@ export default function ProductDetails() {
           
           {/* Left Column: Product Image & Gallery */}
           <div className="lg:col-span-6 space-y-3">
-            <div className="bg-slate-50 rounded-xl overflow-hidden border border-slate-200 aspect-[4/3] relative">
+            <div 
+              className="bg-white rounded-xl overflow-hidden border border-slate-200 aspect-[4/3] relative flex items-center justify-center p-3 sm:p-4 shadow-xs group cursor-pointer"
+              onClick={() => setIsZoomOpen(true)}
+              title="Click to view full image in high resolution"
+            >
               <img
                 src={imageError ? fallbackImage : (selectedImage || product.image)}
                 alt={product.name}
                 onError={() => setImageError(true)}
-                className="w-full h-full object-contain p-2 transition-all duration-200"
+                className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-102"
               />
               <div className="absolute top-3 left-3">
                 <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[11px] sm:text-xs font-semibold bg-white/95 text-blue-800 shadow-xs border border-slate-200">
@@ -110,32 +117,43 @@ export default function ProductDetails() {
                   {product.category}
                 </span>
               </div>
+
+              {/* Click to Zoom Pill */}
+              <div className="absolute bottom-3 right-3 opacity-90 group-hover:opacity-100 transition-opacity">
+                <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-[10px] sm:text-xs font-semibold bg-slate-900/80 text-white backdrop-blur-xs shadow-xs">
+                  <Maximize2 size={12} />
+                  <span>Zoom Photo</span>
+                </span>
+              </div>
             </div>
 
             {/* Gallery Thumbnails (if available) */}
             {product.gallery && product.gallery.length > 1 && (
-              <div className="flex items-center gap-2 overflow-x-auto pb-1 pt-0.5">
-                {product.gallery.map((imgUrl, idx) => (
-                  <button
-                    key={idx}
-                    type="button"
-                    onClick={() => {
-                      setSelectedImage(imgUrl);
-                      setImageError(false);
-                    }}
-                    className={`relative w-16 h-16 sm:w-20 sm:h-20 shrink-0 rounded-lg overflow-hidden border transition-all ${
-                      (selectedImage || product.image) === imgUrl
-                        ? 'border-blue-600 ring-2 ring-blue-500/40 shadow-xs'
-                        : 'border-slate-200 hover:border-slate-400 bg-white'
-                    }`}
-                  >
-                    <img
-                      src={imgUrl}
-                      alt={`${product.name} view ${idx + 1}`}
-                      className="w-full h-full object-contain p-1"
-                    />
-                  </button>
-                ))}
+              <div className="space-y-1.5">
+                <span className="text-[11px] font-medium text-slate-500">Available Views & Technical Photos:</span>
+                <div className="flex items-center gap-2 overflow-x-auto pb-1 pt-0.5">
+                  {product.gallery.map((imgUrl, idx) => (
+                    <button
+                      key={idx}
+                      type="button"
+                      onClick={() => {
+                        setSelectedImage(imgUrl);
+                        setImageError(false);
+                      }}
+                      className={`relative w-16 h-16 sm:w-20 sm:h-20 shrink-0 rounded-lg overflow-hidden border transition-all ${
+                        (selectedImage || product.image) === imgUrl
+                          ? 'border-blue-600 ring-2 ring-blue-500/40 shadow-xs bg-white'
+                          : 'border-slate-200 hover:border-slate-400 bg-white'
+                      }`}
+                    >
+                      <img
+                        src={imgUrl}
+                        alt={`${product.name} view ${idx + 1}`}
+                        className="w-full h-full object-contain p-1"
+                      />
+                    </button>
+                  ))}
+                </div>
               </div>
             )}
 
@@ -317,6 +335,40 @@ export default function ProductDetails() {
         onClose={() => setIsModalOpen(false)}
         product={product}
       />
+
+      {/* High-Clarity Fullscreen Image Lightbox Modal */}
+      {isZoomOpen && (
+        <div 
+          className="fixed inset-0 z-50 bg-slate-900/90 backdrop-blur-xs flex items-center justify-center p-3 sm:p-6"
+          onClick={() => setIsZoomOpen(false)}
+        >
+          <div 
+            className="relative max-w-4xl w-full bg-white rounded-2xl overflow-hidden p-3 sm:p-5 shadow-2xl flex flex-col items-center"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="w-full flex items-center justify-between pb-2 mb-2 border-b border-slate-100 text-xs text-slate-700">
+              <span className="font-bold text-slate-900 truncate pr-4 text-sm">{product.name}</span>
+              <button
+                onClick={() => setIsZoomOpen(false)}
+                className="p-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 transition"
+                aria-label="Close Preview"
+              >
+                <X size={18} />
+              </button>
+            </div>
+            <div className="overflow-auto max-h-[75vh] flex items-center justify-center w-full py-2">
+              <img
+                src={imageError ? fallbackImage : (selectedImage || product.image)}
+                alt={product.name}
+                className="max-h-[70vh] w-auto max-w-full object-contain drop-shadow-sm rounded-lg"
+              />
+            </div>
+            <p className="text-[11px] text-slate-500 mt-2 text-center">
+              Authentic Equipment Photo &bull; Pavan Sai Power Lines, Secunderabad, Telangana
+            </p>
+          </div>
+        </div>
+      )}
 
     </div>
   );
