@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f0f7ff"/>
+    </linearGradient>
+    <linearGradient id="blueAccent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1d4ed8"/>
+      <stop offset="100%" stop-color="#0ea5e9"/>
+    </linearGradient>
+    <linearGradient id="porcelainBrown" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4a2511"/>
+      <stop offset="35%" stop-color="#7c3f1d"/>
+      <stop offset="70%" stop-color="#9a5327"/>
+      <stop offset="100%" stop-color="#4a2511"/>
+    </linearGradient>
+    <linearGradient id="steelGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#94a3b8"/>
+      <stop offset="50%" stop-color="#cbd5e1"/>
+      <stop offset="100%" stop-color="#64748b"/>
+    </linearGradient>
+    <linearGradient id="copperGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#b45309"/>
+      <stop offset="40%" stop-color="#f59e0b"/>
+      <stop offset="75%" stop-color="#d97706"/>
+      <stop offset="100%" stop-color="#92400e"/>
+    </linearGradient>
+    <linearGradient id="aluGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#cbd5e1"/>
+      <stop offset="40%" stop-color="#f1f5f9"/>
+      <stop offset="80%" stop-color="#e2e8f0"/>
+      <stop offset="100%" stop-color="#94a3b8"/>
+    </linearGradient>
+    <linearGradient id="brassGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ca8a04"/>
+      <stop offset="50%" stop-color="#fde047"/>
+      <stop offset="100%" stop-color="#a16207"/>
+    </linearGradient>
+    <pattern id="gridPattern" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#e2e8f0" stroke-width="0.8"/>
+    </pattern>
+    <filter id="cardShadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="400" fill="url(#bgGrad)"/>
+  <rect width="600" height="400" fill="url(#gridPattern)" opacity="0.6"/>
+
+  <!-- Blueprint Header Strip -->
+  <rect x="0" y="0" width="600" height="42" fill="#ffffff" opacity="0.95"/>
+  <line x1="0" y1="42" x2="600" y2="42" stroke="#e2e8f0" stroke-width="1.5"/>
+  
+  <!-- PSPL Logo & Category Header -->
+  <rect x="24" y="11" width="20" height="20" rx="4" fill="#2563eb"/>
+  <path d="M 34 14 L 29 22 L 33 22 L 31 28 L 39 19 L 34 19 Z" fill="#ffffff"/>
+  <text x="52" y="25" font-family="Inter, sans-serif" font-size="11" font-weight="800" fill="#0f172a" letter-spacing="0.5">PAVAN SAI POWER LINES</text>
+  <text x="200" y="25" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#64748b">• AB SWITCHES</text>
+
+  <!-- Spec Tag Pill -->
+  <rect x="440" y="10" width="136" height="22" rx="11" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <circle cx="452" cy="21" r="3.5" fill="#2563eb"/>
+  <text x="462" y="25" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#1e40af">IS 9921 CHANNEL BASE</text>
+
+  <!-- Central Technical Drawing Area -->
+  <g transform="translate(0, 20)">
+    <!-- Channel Base -->
+  <rect x="150" y="270" width="300" height="20" rx="3" fill="url(#steelGrad)" stroke="#334155" stroke-width="2"/>
+  
+  <!-- Dual Post Insulators -->
+  <rect x="180" y="150" width="32" height="120" rx="4" fill="url(#porcelainBrown)" stroke="#2c1508" stroke-width="2"/>
+  <line x1="175" y1="180" x2="215" y2="180" stroke="#2c1508" stroke-width="4"/>
+  <line x1="175" y1="215" x2="215" y2="215" stroke="#2c1508" stroke-width="4"/>
+
+  <rect x="388" y="150" width="32" height="120" rx="4" fill="url(#porcelainBrown)" stroke="#2c1508" stroke-width="2"/>
+  <line x1="383" y1="180" x2="423" y2="180" stroke="#2c1508" stroke-width="4"/>
+  <line x1="383" y1="215" x2="423" y2="215" stroke="#2c1508" stroke-width="4"/>
+
+  <!-- Diverging Copper Horns -->
+  <path d="M 196 150 C 196 110, 240 70, 270 55" fill="none" stroke="url(#copperGrad)" stroke-width="6" stroke-linecap="round"/>
+  <path d="M 404 150 C 404 110, 360 70, 330 55" fill="none" stroke="url(#copperGrad)" stroke-width="6" stroke-linecap="round"/>
+
+  <!-- Fuse Wire Connection -->
+  <line x1="196" y1="145" x2="404" y2="145" stroke="#94a3b8" stroke-width="2.5" stroke-dasharray="4,2"/>
+  
+  <text x="300" y="45" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#d97706" text-anchor="middle">Divergent Spark Horns</text>
+  <text x="300" y="135" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="#1e40af" text-anchor="middle">Tinned Fuse Wire Element</text>
+  </g>
+
+  <!-- Bottom Title Card Strip -->
+  <rect x="24" y="342" width="552" height="44" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1" filter="url(#cardShadow)"/>
+  <rect x="24" y="342" width="4" height="44" rx="2" fill="#2563eb"/>
+  <text x="40" y="363" font-family="Poppins, Inter, sans-serif" font-size="13" font-weight="700" fill="#0f172a">Horn Gap (HG) Fuse Sets (11kV & 33kV)</text>
+  <text x="40" y="377" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="#64748b">Verified Utility Specification • Secunderabad, Telangana Supply</text>
+  <rect x="490" y="352" width="74" height="24" rx="6" fill="#2563eb"/>
+  <text x="527" y="368" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">PSPL CERT</text>
+</svg>

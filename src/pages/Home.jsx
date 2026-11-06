@@ -110,13 +110,13 @@ export default function Home() {
 
             </div>
 
-            {/* Right Image Showcase Column */}
+            {/* Right Image Showcase Column (Using High-Res Local Substation Photo) */}
             <div className="lg:col-span-5">
               <div className="relative rounded-2xl overflow-hidden border border-slate-200 shadow-md bg-white p-2">
                 <div className="rounded-xl overflow-hidden aspect-[4/3] bg-slate-100">
                   <img
-                    src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=800&q=80"
-                    alt="High Voltage Power Transmission Infrastructure"
+                    src="/images/hero-substation.jpg"
+                    alt="High Voltage Electrical Power Transmission Infrastructure Substation"
                     className="w-full h-full object-cover object-center"
                   />
                 </div>
@@ -201,7 +201,7 @@ export default function Home() {
       </section>
 
 
-      {/* 3. FEATURED PRODUCTS (Clean White Grid) */}
+      {/* 3. FEATURED PRODUCTS (Clean White Grid with Local Verified Images) */}
       <section className="bg-slate-50 py-12 md:py-16 border-y border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
@@ -234,7 +234,7 @@ export default function Home() {
       </section>
 
 
-      {/* 4. COMPANY OVERVIEW (Clean Two-Column Layout) */}
+      {/* 4. COMPANY OVERVIEW */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           
@@ -284,12 +284,12 @@ export default function Home() {
           <div className="lg:col-span-6">
             <div className="rounded-xl overflow-hidden border border-slate-200 shadow-sm bg-white p-2">
               <img
-                src="https://images.unsplash.com/photo-1541888946425-d0fbb186c5f7?auto=format&fit=crop&w=800&q=80"
-                alt="Pavan Sai Power Lines Materials Warehouse"
+                src="/images/products/ab-switch.jpg"
+                alt="11kV Gang Operated Air Break Switch PSPL"
                 className="w-full h-72 sm:h-80 object-cover rounded-lg"
               />
               <div className="p-3 text-xs text-slate-600 flex items-center justify-between">
-                <span className="font-semibold text-slate-900">Commercial Distribution Base</span>
+                <span className="font-semibold text-slate-900">Verified Equipment Supply</span>
                 <span className="text-blue-600 font-medium">Secunderabad, Telangana</span>
               </div>
             </div>
@@ -299,7 +299,7 @@ export default function Home() {
       </section>
 
 
-      {/* 5. WHY CHOOSE US (Clean White Cards) */}
+      {/* 5. WHY CHOOSE US */}
       <section className="bg-slate-50 py-12 md:py-16 border-y border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
@@ -358,7 +358,7 @@ export default function Home() {
       </section>
 
 
-      {/* 6. BUSINESS APPLICATIONS */}
+      {/* 6. BUSINESS APPLICATIONS (Using Local Dedicated SVGs) */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="text-center max-w-xl mx-auto mb-10">
@@ -372,11 +372,11 @@ export default function Home() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-xs hover:shadow-sm transition">
-            <div className="aspect-[16/9] bg-slate-100">
+            <div className="aspect-[16/10] bg-slate-50 p-2 border-b border-slate-100">
               <img
-                src="https://images.unsplash.com/photo-1509390144018-eeaf65052242?auto=format&fit=crop&w=600&q=80"
-                alt="Transmission Lines"
-                className="w-full h-full object-cover"
+                src="/images/products/transmission-tower.svg"
+                alt="Overhead Power Transmission Towers"
+                className="w-full h-full object-contain"
               />
             </div>
             <div className="p-4">
@@ -388,11 +388,11 @@ export default function Home() {
           </div>
 
           <div className="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-xs hover:shadow-sm transition">
-            <div className="aspect-[16/9] bg-slate-100">
+            <div className="aspect-[16/10] bg-slate-50 p-2 border-b border-slate-100">
               <img
-                src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=600&q=80"
-                alt="Substation Transformers"
-                className="w-full h-full object-cover"
+                src="/images/products/transformer-bushings.svg"
+                alt="Substation Transformer Spares"
+                className="w-full h-full object-contain"
               />
             </div>
             <div className="p-4">
@@ -404,11 +404,11 @@ export default function Home() {
           </div>
 
           <div className="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-xs hover:shadow-sm transition">
-            <div className="aspect-[16/9] bg-slate-100">
+            <div className="aspect-[16/10] bg-slate-50 p-2 border-b border-slate-100">
               <img
-                src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80"
-                alt="Industrial Earthing"
-                className="w-full h-full object-cover"
+                src="/images/products/copper-earth-rod.svg"
+                alt="Industrial Earthing Materials"
+                className="w-full h-full object-contain"
               />
             </div>
             <div className="p-4">

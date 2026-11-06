@@ -7,7 +7,7 @@ export default function ProductCard({ product }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [imageError, setImageError] = useState(false);
 
-  const fallbackImage = "https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&w=800&q=80";
+  const fallbackImage = "/images/products/pin-insulator.svg";
 
   return (
     <>

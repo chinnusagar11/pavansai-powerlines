@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f0f7ff"/>
+    </linearGradient>
+    <linearGradient id="blueAccent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1d4ed8"/>
+      <stop offset="100%" stop-color="#0ea5e9"/>
+    </linearGradient>
+    <linearGradient id="porcelainBrown" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4a2511"/>
+      <stop offset="35%" stop-color="#7c3f1d"/>
+      <stop offset="70%" stop-color="#9a5327"/>
+      <stop offset="100%" stop-color="#4a2511"/>
+    </linearGradient>
+    <linearGradient id="steelGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#94a3b8"/>
+      <stop offset="50%" stop-color="#cbd5e1"/>
+      <stop offset="100%" stop-color="#64748b"/>
+    </linearGradient>
+    <linearGradient id="copperGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#b45309"/>
+      <stop offset="40%" stop-color="#f59e0b"/>
+      <stop offset="75%" stop-color="#d97706"/>
+      <stop offset="100%" stop-color="#92400e"/>
+    </linearGradient>
+    <linearGradient id="aluGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#cbd5e1"/>
+      <stop offset="40%" stop-color="#f1f5f9"/>
+      <stop offset="80%" stop-color="#e2e8f0"/>
+      <stop offset="100%" stop-color="#94a3b8"/>
+    </linearGradient>
+    <linearGradient id="brassGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ca8a04"/>
+      <stop offset="50%" stop-color="#fde047"/>
+      <stop offset="100%" stop-color="#a16207"/>
+    </linearGradient>
+    <pattern id="gridPattern" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#e2e8f0" stroke-width="0.8"/>
+    </pattern>
+    <filter id="cardShadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="400" fill="url(#bgGrad)"/>
+  <rect width="600" height="400" fill="url(#gridPattern)" opacity="0.6"/>
+
+  <!-- Blueprint Header Strip -->
+  <rect x="0" y="0" width="600" height="42" fill="#ffffff" opacity="0.95"/>
+  <line x1="0" y1="42" x2="600" y2="42" stroke="#e2e8f0" stroke-width="1.5"/>
+  
+  <!-- PSPL Logo & Category Header -->
+  <rect x="24" y="11" width="20" height="20" rx="4" fill="#2563eb"/>
+  <path d="M 34 14 L 29 22 L 33 22 L 31 28 L 39 19 L 34 19 Z" fill="#ffffff"/>
+  <text x="52" y="25" font-family="Inter, sans-serif" font-size="11" font-weight="800" fill="#0f172a" letter-spacing="0.5">PAVAN SAI POWER LINES</text>
+  <text x="200" y="25" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#64748b">• HT/LT OVERHEAD LINE MATERIALS</text>
+
+  <!-- Spec Tag Pill -->
+  <rect x="440" y="10" width="136" height="22" rx="11" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <circle cx="452" cy="21" r="3.5" fill="#2563eb"/>
+  <text x="462" y="25" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#1e40af">IS 731 / IEC 60305</text>
+
+  <!-- Central Technical Drawing Area -->
+  <g transform="translate(0, 20)">
+    <!-- Upper Hardware Cap -->
+  <path d="M 270 70 L 330 70 L 325 110 L 275 110 Z" fill="url(#steelGrad)" stroke="#475569" stroke-width="2"/>
+  <circle cx="300" cy="55" r="14" fill="url(#steelGrad)" stroke="#475569" stroke-width="2"/>
+  <circle cx="300" cy="55" r="6" fill="#f8fafc"/>
+  
+  <!-- Main Porcelain Disc Bell -->
+  <ellipse cx="300" cy="150" rx="140" ry="32" fill="url(#porcelainBrown)" stroke="#381c0c" stroke-width="2.5"/>
+  <ellipse cx="300" cy="144" rx="130" ry="24" fill="#a45a2a" opacity="0.6"/>
+  <!-- Corrugated Under-ribs -->
+  <path d="M 200 162 Q 300 180 400 162" fill="none" stroke="#2c1508" stroke-width="3"/>
+  <path d="M 230 172 Q 300 190 370 172" fill="none" stroke="#2c1508" stroke-width="2.5"/>
+
+  <!-- Cement Joint & Pin -->
+  <rect x="282" y="175" width="36" height="25" rx="3" fill="#94a3b8" stroke="#475569" stroke-width="1.5"/>
+  <!-- Ball Pin Shank -->
+  <path d="M 292 200 L 292 250 L 285 255 L 285 275 L 315 275 L 315 255 L 308 250 L 308 200 Z" fill="url(#steelGrad)" stroke="#334155" stroke-width="2"/>
+  <circle cx="300" cy="285" r="12" fill="url(#steelGrad)" stroke="#334155" stroke-width="2"/>
+  <!-- Split Pin Clip -->
+  <path d="M 275 100 L 325 100" stroke="#f59e0b" stroke-width="3" stroke-linecap="round"/>
+  
+  <!-- Technical Annotations -->
+  <text x="70" y="140" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#1e40af">Glazed Porcelain Disc</text>
+  <line x1="160" y1="140" x2="220" y2="148" stroke="#2563eb" stroke-dasharray="3,3"/>
+  <text x="70" y="240" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#1e40af">Forged Steel Pin (70kN)</text>
+  <line x1="175" y1="240" x2="285" y2="245" stroke="#2563eb" stroke-dasharray="3,3"/>
+  <text x="440" y="90" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#1e40af">Galvanized Cap</text>
+  <line x1="435" y1="90" x2="330" y2="85" stroke="#2563eb" stroke-dasharray="3,3"/>
+  </g>
+
+  <!-- Bottom Title Card Strip -->
+  <rect x="24" y="342" width="552" height="44" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1" filter="url(#cardShadow)"/>
+  <rect x="24" y="342" width="4" height="44" rx="2" fill="#2563eb"/>
+  <text x="40" y="363" font-family="Poppins, Inter, sans-serif" font-size="13" font-weight="700" fill="#0f172a">HT Disc Insulator (70kN / 120kN)</text>
+  <text x="40" y="377" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="#64748b">Verified Utility Specification • Secunderabad, Telangana Supply</text>
+  <rect x="490" y="352" width="74" height="24" rx="6" fill="#2563eb"/>
+  <text x="527" y="368" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">PSPL CERT</text>
+</svg>

@@ -2,7 +2,7 @@
  * Products Database for Pavan Sai Power Lines (PSPL)
  * 
  * Organized by the 7 primary business categories supplied by PSPL in Secunderabad, Telangana.
- * This structure makes it effortless to add, update, or remove products without a backend.
+ * All image assets are stored locally in /images/products/ ensuring 100% reliable zero-breakage rendering.
  */
 
 export const PRODUCTS = [
@@ -16,7 +16,7 @@ export const PRODUCTS = [
     categoryId: "overhead-lines",
     shortDescription: "High-grade glazed porcelain and polymer pin insulators engineered for 11kV and 33kV distribution networks.",
     fullDescription: "Pavan Sai Power Lines supplies premium porcelain and composite silicone polymer pin insulators with galvanized steel pins. Designed to withstand severe environmental stress, high mechanical cantilever loads, and electrical surges on overhead transmission and distribution lines.",
-    image: "https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&w=800&q=80",
+    image: "/images/products/pin-insulator.jpg",
     features: [
       "Manufactured with high creepage distance suitable for polluted environments",
       "Supplied complete with hot-dip galvanized mild steel pins and nuts",
@@ -44,7 +44,7 @@ export const PRODUCTS = [
     categoryId: "overhead-lines",
     shortDescription: "Ball & Socket and Tongue & Clevis disc insulators for high tension tension and suspension strings.",
     fullDescription: "Supplied in standard 70kN, 90kN, and 120kN electro-mechanical failing loads for high tension overhead lines. Available in Ball & Socket (B&S) and Tongue & Clevis (T&C) configurations to form reliable suspension and tension strings for 11kV, 33kV, and higher voltage corridors.",
-    image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=800&q=80",
+    image: "/images/products/disc-insulator.svg",
     features: [
       "High dielectric puncture strength in oil and air",
       "Heavy-duty galvanized malleable iron cap and forged steel pin",
@@ -71,7 +71,7 @@ export const PRODUCTS = [
     categoryId: "overhead-lines",
     shortDescription: "High-conductivity extruded aluminium and bimetallic PG clamps for secure conductor tapping and jointing.",
     fullDescription: "High mechanical integrity PG clamps fabricated from corrosion-resistant aluminium alloy with high-tensile hot-dip galvanized bolts and spring washers. Ensures constant contact pressure and minimal joint resistance across ACSR and AAAC conductor joints without strand deformation.",
-    image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80",
+    image: "/images/products/pg-clamp.svg",
     features: [
       "Supplied with friction-reduction anti-oxidant jointing compound",
       "Corrosion-resistant aluminium alloy body with high conductivity",
@@ -97,7 +97,7 @@ export const PRODUCTS = [
     categoryId: "overhead-lines",
     shortDescription: "Complete stay assemblies with heavy anchor bow, stay rod, cast iron base plate, and high tensile stay wire.",
     fullDescription: "Robust stay set assemblies for guy-wire anchoring of overhead HT/LT distribution poles. Each set includes a hot-dip galvanized stay rod, stay bow with ratchet nut, heavy anchor plate, thimbles, and high-tensile stranded galvanized steel stay wire.",
-    image: "https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=800&q=80",
+    image: "/images/products/stay-set.svg",
     features: [
       "Heavy uniform hot-dip galvanizing exceeding IS 2633 standards",
       "Deep thread engagement on stay bow for precise line tensioning",
@@ -124,7 +124,7 @@ export const PRODUCTS = [
     categoryId: "overhead-lines",
     shortDescription: "Heavy channel and angle iron hot-dip galvanized cross arms fabricated for 11kV/33kV pole line structures.",
     fullDescription: "Fabricated from prime structural steel channels and angles conforming to IS 2062, hot-dip galvanized to protect against rust and oxidation. Pre-punched for accurate fitting of pin insulators, disc tension hardware, and line earthing terminals.",
-    image: "https://images.unsplash.com/photo-1541888946425-d0fbb186c5f7?auto=format&fit=crop&w=800&q=80",
+    image: "/images/products/cross-arm.svg",
     features: [
       "Hot-dip galvanized coating of minimum 610 g/m² (85+ microns)",
       "CNC punched hole spacing compatible with standard state DISCOM drawings",
@@ -154,7 +154,7 @@ export const PRODUCTS = [
     categoryId: "transformer-spares",
     shortDescription: "High-voltage and low-voltage porcelain bushings with brass and copper conductor rod assemblies.",
     fullDescription: "Pavan Sai Power Lines supplies a full line of HT and LT transformer porcelain bushings conforming to DIN and IS specifications. Complete with tin-plated electrolytic copper or brass stem rods, sealing rubber gaskets, washers, and terminal connector palms for distribution and power transformers.",
-    image: "https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=800&q=80",
+    image: "/images/products/transformer-bushings.svg",
     features: [
       "High dielectric porcelain insulator bodies tested for thermal shocks",
       "Available for 1kV LT, 11kV HT, 22kV HT, and 33kV HT ratings",
@@ -180,7 +180,7 @@ export const PRODUCTS = [
     categoryId: "transformer-spares",
     shortDescription: "Industrial crystal silica gel dehydrating breathers with oil seal cups for transformer moisture protection.",
     fullDescription: "Robust dehydrating silica gel breathers with clear UV-resistant view cylinders, aluminium casting body, and oil-bath dust trap. Effectively absorbs atmospheric moisture entering the transformer conservator tank during thermal breathing cycles, safeguarding transformer oil dielectric strength.",
-    image: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=800&q=80",
+    image: "/images/products/silica-breather.svg",
     features: [
       "Indicates moisture saturation through self-indicating blue-to-pink silica gel",
       "Heavy aluminum top casting with oil bath cup at bottom",
@@ -206,7 +206,7 @@ export const PRODUCTS = [
     categoryId: "transformer-spares",
     shortDescription: "High-grade nitrile rubber cork gaskets (RC70C) and magnetic/prismatic oil level indicators.",
     fullDescription: "Specialized transformer sealing solutions including oil-resistant nitrile bonded cork sheets (conforming to IS 4253 Part II Type RC70C), molded O-rings, and conservator oil level indicators. Prevents transformer oil leakage while resisting transformer mineral oil at high operating temperatures.",
-    image: "https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=800&q=80",
+    image: "/images/products/transformer-gaskets.svg",
     features: [
       "Excellent resistance to transformer oil (IS 335) and elevated temperatures",
       "Low compression set ensuring leak-proof sealing over years of service",
@@ -232,7 +232,7 @@ export const PRODUCTS = [
     categoryId: "transformer-spares",
     shortDescription: "Diaphragm explosion vent pipes and spring-loaded pressure relief devices for transformer tank safety.",
     fullDescription: "Safety relief devices designed to rapidly discharge sudden internal tank pressure build-up caused by electrical faults or internal short circuits. Protects transformer tanks from rupture and explosive oil spills.",
-    image: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=800&q=80",
+    image: "/images/products/explosion-vent.svg",
     features: [
       "Precision-calibrated bakelite/aluminium diaphragm burst pressure",
       "Optional electrical limit switches for SCADA trip signaling",
@@ -260,7 +260,7 @@ export const PRODUCTS = [
     categoryId: "ab-switches",
     shortDescription: "Triple Pole outdoor gang-operated Air Break disconnector switch for 11kV line sectionalizing.",
     fullDescription: "Heavy-duty 11kV 3-pole gang-operated outdoor Air Break switch mounted on hot-dip galvanized channel base. Features electrolytic copper contacts with hard silver plating, phosphor bronze backup springs, and smooth rotating operating mechanism for safe overhead line isolation.",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80",
+    image: "/images/products/ab-switch.jpg",
     features: [
       "Electrolytic copper fixed and moving jaw contacts with silver plating",
       "High mechanical endurance porcelain or polymer post insulator supports",
@@ -288,7 +288,7 @@ export const PRODUCTS = [
     categoryId: "ab-switches",
     shortDescription: "Heavy transmission grade 33kV outdoor disconnector isolator with robust gang-operating linkage.",
     fullDescription: "Engineered for 33kV sub-transmission networks and 33/11kV substations. Designed with reinforced structural galvanized channel base, dual/triple post insulator stacks, self-aligning high-pressure finger contacts, and heavy downpipe operating mechanism with padlock arrangement.",
-    image: "https://images.unsplash.com/photo-1498084393753-b411b2d26b34?auto=format&fit=crop&w=800&q=80",
+    image: "/images/products/ab-switch-33kv.svg",
     features: [
       "Self-cleaning, high-pressure line contacts to prevent oxidation",
       "Sturdy hot-dip galvanized steel chassis resists mechanical torsion during operation",
@@ -316,7 +316,7 @@ export const PRODUCTS = [
     categoryId: "ab-switches",
     shortDescription: "Outdoor channel mounted horn gap fuse units for distribution transformer short-circuit protection.",
     fullDescription: "Reliable overhead fault protection assembly designed to mount directly below or beside AB switches on two-pole or four-pole transformer structures. Consists of heavy copper horns, terminal clamps, and replaceable fuse wire channels engineered to safely interrupt short-circuit overcurrents.",
-    image: "https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&w=800&q=80",
+    image: "/images/products/horn-gap-fuse.svg",
     features: [
       "Robust divergence arc-horns quench the break arc quickly in atmospheric air",
       "Pre-assembled on hot-dip galvanized steel channel frames",
@@ -342,7 +342,7 @@ export const PRODUCTS = [
     categoryId: "ab-switches",
     shortDescription: "Genuine replacement male/female copper contacts, arcing horns, and operating handles for AB switches.",
     fullDescription: "Pavan Sai Power Lines maintains comprehensive stock of replacement parts for field maintenance of 11kV and 33kV air break switches. Includes silver-plated moving blades, fixed jaw contacts, tension springs, flexible copper braids, and heavy padlockable operating handles.",
-    image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80",
+    image: "/images/products/switch-contacts.svg",
     features: [
       "High grade electrolytic copper with uniform silver plating for low contact resistance",
       "Phosphor bronze / stainless steel pressure springs",
@@ -371,7 +371,7 @@ export const PRODUCTS = [
     categoryId: "conductors",
     shortDescription: "Aluminium Conductor Steel Reinforced for long-span high tensile power transmission and distribution.",
     fullDescription: "Pavan Sai Power Lines supplies full drums of high-conductivity ACSR conductors. Constructed with concentric strands of high-purity EC grade aluminium wrapped around a central core of galvanized high-tensile steel wire. Combines superior electrical conductivity with optimal mechanical tensile strength for overhead spans.",
-    image: "https://images.unsplash.com/photo-1509390144018-eeaf65052242?auto=format&fit=crop&w=800&q=80",
+    image: "/images/products/acsr-conductor.svg",
     features: [
       "Core wire hot-dip galvanized with Class A / Heavy zinc coating",
       "EC grade aluminium wires with 61.2% IACS conductivity",
@@ -397,7 +397,7 @@ export const PRODUCTS = [
     categoryId: "conductors",
     shortDescription: "High-strength Al-Mg-Si alloy conductors providing superior corrosion resistance and reduced power loss.",
     fullDescription: "Constructed entirely from heat-treated Aluminium-Magnesium-Silicon (Almelec) alloy strands. AAAC conductors offer identical electrical resistance to equivalent ACSR sizes while eliminating the galvanic corrosion inherent in steel cores, resulting in superior performance in coastal, industrial, and humid terrains.",
-    image: "https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&w=800&q=80",
+    image: "/images/products/aaac-conductor.svg",
     features: [
       "No internal galvanic corrosion between steel and aluminium",
       "Lighter weight allowing longer spans and reduced pole/tower loading",
@@ -427,7 +427,7 @@ export const PRODUCTS = [
     categoryId: "earthing",
     shortDescription: "Molecularly bonded copper steel grounding electrodes with eco-friendly chemical compound.",
     fullDescription: "Engineered grounding electrodes manufactured by molecularly bonding 99.9% pure electrolytic copper over high-tensile carbon steel cores (minimum 254 microns / 10 mil copper thickness). Delivers superior fault dissipation and exceptional underground service life without flaking or corrosion.",
-    image: "https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=800&q=80",
+    image: "/images/products/copper-earth-rod.svg",
     features: [
       "Molecular copper bonding exceeds UL 467 & IEEE 80 standards",
       "High tensile steel core allows deep pneumatic driving into hard soil",
@@ -453,7 +453,7 @@ export const PRODUCTS = [
     categoryId: "earthing",
     shortDescription: "Hot-dip galvanized perforated earthing pipes, heavy GI plates, and structural earth flats.",
     fullDescription: "Pavan Sai Power Lines supplies certified GI earthing equipment for utility and substation ground rings. Includes Class-B perforated earthing pipes with welded terminal flanges, heavy gauge cast iron / mild steel earth plates, and continuous hot-dip galvanized earth flats in various cross sections.",
-    image: "https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=800&q=80",
+    image: "/images/products/gi-earthing-pipe.svg",
     features: [
       "Perforated GI pipes ensure moisture absorption and backfill contact",
       "Heavy zinc coating of 80+ microns resists underground electrolytic decay",
@@ -479,7 +479,7 @@ export const PRODUCTS = [
     categoryId: "earthing",
     shortDescription: "Low-resistivity carbon-based ground enhancing material and heavy-duty FRP earth pit inspection chambers.",
     fullDescription: "Specially formulated moisture-retaining conductive compound that dramatically lowers soil resistivity around earth electrodes. Paired with high-strength FRP / concrete earth pit inspection chambers with locking covers for straightforward maintenance testing.",
-    image: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=800&q=80",
+    image: "/images/products/earth-pit-compound.svg",
     features: [
       "Does not wash away, dissolve, or decompose over time",
       "Maintains constant ground resistance despite dry or seasonal climatic shifts",
@@ -509,7 +509,7 @@ export const PRODUCTS = [
     categoryId: "industrial-electricals",
     shortDescription: "Weatherproof CRCA / FRP outdoor LT distribution boxes and multi-circuit feeder pillars.",
     fullDescription: "Outdoor floor-mounted and pole-mounted LT distribution boxes engineered for industrial plants and DISCOM distribution networks. Fabricated from sheet steel or FRP with electrostatic powder coating, IP55 weatherproof sealing, electrolytic copper/aluminium busbars, and internal cable spreaders.",
-    image: "https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&w=800&q=80",
+    image: "/images/products/feeder-pillar.svg",
     features: [
       "Sheet steel enclosure with 7-tank powder-coat pre-treatment",
       "Pre-fitted with high conductivity busbars and fuse bases",
@@ -535,7 +535,7 @@ export const PRODUCTS = [
     categoryId: "industrial-electricals",
     shortDescription: "Heavy-duty brass double compression cable glands, bimetallic crimping lugs, and copper terminals.",
     fullDescription: "Comprehensive industrial termination hardware for XLPE armoured and unarmoured power cables. Features nickel-plated brass double compression cable glands with flameproof weatherproof seals and heavy-duty electrolytic copper and bimetallic crimping lugs for secure cable terminations.",
-    image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80",
+    image: "/images/products/cable-glands-lugs.svg",
     features: [
       "Glands provide mechanical cable clamping and armour continuity earthing",
       "Bimetallic friction-welded lugs prevent galvanic corrosion between copper busbars and aluminium conductors",
@@ -561,7 +561,7 @@ export const PRODUCTS = [
     categoryId: "industrial-electricals",
     shortDescription: "High Rupturing Capacity (HRC) DIN & BS fuse links and heavy-duty ceramic fuse bases.",
     fullDescription: "Industrial-grade HRC fuse links engineered to provide fast-acting short-circuit and overload protection for low voltage systems. Tested for breaking capacities up to 80kA and 120kA at 415V/500V AC.",
-    image: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=800&q=80",
+    image: "/images/products/hrc-fuse.svg",
     features: [
       "Silver-plated pure silver/copper fuse elements with high rupturing capacity",
       "High-grade ceramic bodies with low thermal expansion and high mechanical resistance",
@@ -591,7 +591,7 @@ export const PRODUCTS = [
     categoryId: "towers",
     shortDescription: "Engineered structural lattice transmission towers and gantry structures fabricated from prime steel.",
     fullDescription: "Pavan Sai Power Lines supplies high-strength hot-dip galvanized transmission tower structures fabricated from certified structural angle iron (IS 2062 Grade E250 / E350). Designed to withstand severe wind zones and high tensile conductor mechanical tensions across power grid transmission corridors.",
-    image: "https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&w=800&q=80",
+    image: "/images/products/transmission-tower.svg",
     features: [
       "Manufactured with CNC punching, shearing, and stamping for exact fitment",
       "Heavy uniform hot-dip galvanizing exceeding 610 g/m² (minimum 86 microns)",
@@ -617,7 +617,7 @@ export const PRODUCTS = [
     categoryId: "towers",
     shortDescription: "Air Insulated Modular Structures (AIMS), busbar gantries, and equipment support structures.",
     fullDescription: "Complete modular structural assemblies for 33kV, 132kV, and 220kV outdoor switchyards. Includes galvanized gantry column towers, cross beams, line drop supports, transformer take-off towers, and equipment support stands for CT/PTs, lightning arresters, and circuit breakers.",
-    image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=800&q=80",
+    image: "/images/products/substation-gantry.svg",
     features: [
       "Modular AIMS design facilitates swift on-site bolted assembly without welding",
       "Pre-drilled mounting baseplates and equipment support cleats",
@@ -643,7 +643,7 @@ export const PRODUCTS = [
     categoryId: "towers",
     shortDescription: "Foundation stub angles, cleat plates, step bolts, and hot-dip galvanized structural tower fasteners.",
     fullDescription: "Essential structural accessories for lattice tower erection and foundation casting. Supplies heavy stub angle sections with factory-welded cleat plates for concrete encasement, along with hot-dip galvanized step bolts with locknuts for safe lineman climbing access.",
-    image: "https://images.unsplash.com/photo-1541888946425-d0fbb186c5f7?auto=format&fit=crop&w=800&q=80",
+    image: "/images/products/tower-stubs-bolts.svg",
     features: [
       "Accurately angled stubs to match tower leg inclinations exactly",
       "Heavy duty step bolts with non-slip heads for lineman safety",
@@ -664,7 +664,6 @@ export const PRODUCTS = [
   }
 ];
 
-// Helper functions for easy filtering and searching
 export function getAllProducts() {
   return PRODUCTS;
 }
@@ -696,4 +695,3 @@ export function getRelatedProducts(currentProductId, limit = 3) {
     .filter(p => p.id !== currentProductId && p.categoryId === current.categoryId)
     .slice(0, limit);
 }
-

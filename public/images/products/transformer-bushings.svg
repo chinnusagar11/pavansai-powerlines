@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f0f7ff"/>
+    </linearGradient>
+    <linearGradient id="blueAccent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1d4ed8"/>
+      <stop offset="100%" stop-color="#0ea5e9"/>
+    </linearGradient>
+    <linearGradient id="porcelainBrown" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4a2511"/>
+      <stop offset="35%" stop-color="#7c3f1d"/>
+      <stop offset="70%" stop-color="#9a5327"/>
+      <stop offset="100%" stop-color="#4a2511"/>
+    </linearGradient>
+    <linearGradient id="steelGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#94a3b8"/>
+      <stop offset="50%" stop-color="#cbd5e1"/>
+      <stop offset="100%" stop-color="#64748b"/>
+    </linearGradient>
+    <linearGradient id="copperGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#b45309"/>
+      <stop offset="40%" stop-color="#f59e0b"/>
+      <stop offset="75%" stop-color="#d97706"/>
+      <stop offset="100%" stop-color="#92400e"/>
+    </linearGradient>
+    <linearGradient id="aluGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#cbd5e1"/>
+      <stop offset="40%" stop-color="#f1f5f9"/>
+      <stop offset="80%" stop-color="#e2e8f0"/>
+      <stop offset="100%" stop-color="#94a3b8"/>
+    </linearGradient>
+    <linearGradient id="brassGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ca8a04"/>
+      <stop offset="50%" stop-color="#fde047"/>
+      <stop offset="100%" stop-color="#a16207"/>
+    </linearGradient>
+    <pattern id="gridPattern" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#e2e8f0" stroke-width="0.8"/>
+    </pattern>
+    <filter id="cardShadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="400" fill="url(#bgGrad)"/>
+  <rect width="600" height="400" fill="url(#gridPattern)" opacity="0.6"/>
+
+  <!-- Blueprint Header Strip -->
+  <rect x="0" y="0" width="600" height="42" fill="#ffffff" opacity="0.95"/>
+  <line x1="0" y1="42" x2="600" y2="42" stroke="#e2e8f0" stroke-width="1.5"/>
+  
+  <!-- PSPL Logo & Category Header -->
+  <rect x="24" y="11" width="20" height="20" rx="4" fill="#2563eb"/>
+  <path d="M 34 14 L 29 22 L 33 22 L 31 28 L 39 19 L 34 19 Z" fill="#ffffff"/>
+  <text x="52" y="25" font-family="Inter, sans-serif" font-size="11" font-weight="800" fill="#0f172a" letter-spacing="0.5">PAVAN SAI POWER LINES</text>
+  <text x="200" y="25" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#64748b">• TRANSFORMER SPARES</text>
+
+  <!-- Spec Tag Pill -->
+  <rect x="440" y="10" width="136" height="22" rx="11" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <circle cx="452" cy="21" r="3.5" fill="#2563eb"/>
+  <text x="462" y="25" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#1e40af">IS 3347 / DIN 42531</text>
+
+  <!-- Central Technical Drawing Area -->
+  <g transform="translate(0, 20)">
+    <!-- HT Bushing (Left) -->
+  <rect x="200" y="60" width="12" height="40" fill="url(#brassGrad)" stroke="#854d0e" stroke-width="1.5"/>
+  <polygon points="195,100 217,100 213,115 199,115" fill="url(#brassGrad)"/>
+  
+  <!-- HT Porcelain Sheds Stack -->
+  <path d="M 180 120 C 180 115, 232 115, 232 120 L 226 140 C 240 145, 172 145, 186 140 Z" fill="url(#porcelainBrown)" stroke="#2c1508" stroke-width="1.5"/>
+  <path d="M 175 145 C 175 140, 237 140, 237 145 L 230 170 C 248 175, 164 175, 182 170 Z" fill="url(#porcelainBrown)" stroke="#2c1508" stroke-width="1.5"/>
+  <path d="M 170 175 C 170 170, 242 170, 242 175 L 234 205 C 255 210, 157 210, 178 205 Z" fill="url(#porcelainBrown)" stroke="#2c1508" stroke-width="1.5"/>
+  <path d="M 165 210 C 165 205, 247 205, 247 210 L 238 245 C 262 250, 150 250, 174 245 Z" fill="url(#porcelainBrown)" stroke="#2c1508" stroke-width="1.5"/>
+  <!-- HT Mounting Flange & Sealing Gasket -->
+  <rect x="180" y="250" width="52" height="15" fill="#334155" stroke="#0f172a" stroke-width="1.5"/>
+  <rect x="175" y="265" width="62" height="6" fill="#1e293b"/>
+  <rect x="200" y="271" width="12" height="45" fill="url(#copperGrad)" stroke="#78350f" stroke-width="1.5"/>
+
+  <!-- LT Bushing (Right) -->
+  <rect x="360" y="110" width="20" height="30" fill="url(#brassGrad)" stroke="#854d0e" stroke-width="1.5"/>
+  <!-- LT Porcelain Body -->
+  <path d="M 340 140 C 340 135, 400 135, 400 140 L 395 180 C 410 185, 330 185, 345 180 Z" fill="#f8fafc" stroke="#64748b" stroke-width="2"/>
+  <path d="M 335 185 C 335 180, 405 180, 405 185 L 400 230 C 420 235, 320 235, 340 230 Z" fill="#f8fafc" stroke="#64748b" stroke-width="2"/>
+  <!-- LT Heavy Copper Terminal Palm -->
+  <rect x="345" y="235" width="50" height="25" fill="#334155" stroke="#0f172a"/>
+  <rect x="364" y="260" width="12" height="55" fill="url(#copperGrad)" stroke="#78350f" stroke-width="1.5"/>
+
+  <text x="60" y="90" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#1e40af">11kV / 33kV HT Bushing</text>
+  <line x1="160" y1="90" x2="195" y2="90" stroke="#2563eb" stroke-dasharray="3,3"/>
+  <text x="440" y="130" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#1e40af">LT Heavy Terminal Palm</text>
+  <line x1="435" y1="130" x2="380" y2="130" stroke="#2563eb" stroke-dasharray="3,3"/>
+  </g>
+
+  <!-- Bottom Title Card Strip -->
+  <rect x="24" y="342" width="552" height="44" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1" filter="url(#cardShadow)"/>
+  <rect x="24" y="342" width="4" height="44" rx="2" fill="#2563eb"/>
+  <text x="40" y="363" font-family="Poppins, Inter, sans-serif" font-size="13" font-weight="700" fill="#0f172a">HT & LT Transformer Porcelain Bushings</text>
+  <text x="40" y="377" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="#64748b">Verified Utility Specification • Secunderabad, Telangana Supply</text>
+  <rect x="490" y="352" width="74" height="24" rx="6" fill="#2563eb"/>
+  <text x="527" y="368" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">PSPL CERT</text>
+</svg>

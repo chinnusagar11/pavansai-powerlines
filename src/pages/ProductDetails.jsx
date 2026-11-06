@@ -26,7 +26,7 @@ export default function ProductDetails() {
 
   const product = getProductById(productId);
 
-  const fallbackImage = "https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&w=800&q=80";
+  const fallbackImage = "/images/products/pin-insulator.svg";
 
   if (!product) {
     return (
