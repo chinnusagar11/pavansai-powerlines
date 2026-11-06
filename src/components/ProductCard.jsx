@@ -11,7 +11,7 @@ export default function ProductCard({ product }) {
 
   return (
     <>
-      <div className="group bg-white rounded-2xl overflow-hidden border border-slate-200/90 hover:border-blue-500/80 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col h-full relative">
+      <div className="group bg-white rounded-2xl overflow-hidden border-2 border-slate-200/90 hover:border-blue-500 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col h-full relative">
         
         {/* Crisp Image Container with Subtle Ambient Background */}
         <div className="relative aspect-[16/11] overflow-hidden bg-gradient-to-b from-slate-50/80 to-white border-b border-slate-100 flex items-center justify-center p-3.5 sm:p-4">
