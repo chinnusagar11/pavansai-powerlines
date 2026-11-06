@@ -27,7 +27,7 @@ export default function Footer() {
                 <Zap size={18} className="fill-current" />
               </div>
               <span className="font-extrabold text-lg text-white font-heading tracking-tight">
-                PAVAN SAI <span className="text-blue-400 text-xs font-semibold">PSPL</span>
+                PAVAN SAI <span className="text-blue-400 font-extrabold">POWER LINES</span>
               </span>
             </Link>
 
