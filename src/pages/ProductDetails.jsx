@@ -283,12 +283,12 @@ export default function ProductDetails() {
                 {Object.entries(product.specifications).map(([key, value]) => (
                   <div 
                     key={key} 
-                    className="flex items-center justify-between p-2.5 sm:p-3 rounded-lg bg-slate-50/80 border border-slate-200 gap-2 text-xs"
+                    className="flex items-center justify-between p-2.5 sm:p-3 rounded-xl bg-slate-50/80 border border-slate-200 gap-2.5 text-xs min-w-0"
                   >
-                    <span className="font-semibold text-slate-600 text-[11px] sm:text-xs">
+                    <span className="font-semibold text-slate-600 text-[11px] sm:text-xs shrink-0">
                       {key}
                     </span>
-                    <span className="font-bold text-slate-900 text-[11px] sm:text-xs text-right">
+                    <span className="font-bold text-slate-900 text-[11px] sm:text-xs text-right break-words min-w-0">
                       {value}
                     </span>
                   </div>

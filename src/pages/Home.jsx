@@ -20,7 +20,8 @@ import {
   FileCheck,
   CheckCircle,
   Clock,
-  Sparkles
+  Sparkles,
+  MapPin
 } from 'lucide-react';
 import { COMPANY_INFO } from '../data/company';
 import { PRODUCTS } from '../data/products';
@@ -111,50 +112,101 @@ export default function Home() {
                 <strong>Pavan Sai Power Lines (PSPL)</strong> is an established supplier and stockist of overhead line hardware, polymer & porcelain insulators, gang-operated AB switches, ACSR conductors, earthing equipment, and GI transmission towers headquartered in Secunderabad, Telangana.
               </p>
 
-              {/* Action Buttons */}
-              <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+              {/* Action Buttons with Clean Cohesive Borders */}
+              <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3">
                 <Link
                   to="/products"
-                  className="inline-flex items-center justify-center gap-2.5 bg-blue-600 hover:bg-blue-700 active:scale-98 text-white font-semibold text-sm px-6 py-3.5 rounded-xl shadow-md hover:shadow-lg transition-all duration-200 text-center"
+                  className="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 active:scale-98 text-white font-bold text-xs sm:text-sm px-5 py-3 rounded-xl shadow-md hover:shadow-lg transition-all text-center border border-blue-600"
                 >
                   <span>Explore Product Catalog</span>
-                  <ArrowRight size={16} />
+                  <ArrowRight size={15} />
                 </Link>
 
                 <button
                   onClick={() => setIsQuoteModalOpen(true)}
-                  className="inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-50 active:scale-98 text-slate-800 border border-slate-300 font-semibold text-sm px-5 py-3.5 rounded-xl shadow-xs hover:border-slate-400 transition-all duration-200 text-center"
+                  className="inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-50 active:scale-98 text-slate-800 border border-slate-300 font-bold text-xs sm:text-sm px-4.5 py-3 rounded-xl shadow-xs hover:border-slate-400 transition-all text-center"
                 >
-                  <MessageSquare size={16} className="text-blue-600" />
+                  <MessageSquare size={15} className="text-blue-600" />
                   <span>Request BOQ Quotation</span>
                 </button>
 
                 <Link
                   to="/contact"
-                  className="inline-flex items-center justify-center gap-1.5 text-slate-600 hover:text-blue-600 font-semibold text-xs sm:text-sm py-2 px-2 text-center transition"
+                  className="inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-50 active:bg-slate-100 text-slate-700 font-bold text-xs sm:text-sm px-4.5 py-3 rounded-xl border border-slate-300 hover:border-slate-400 shadow-xs transition-all text-center"
                 >
                   <PhoneCall size={14} className="text-blue-600" />
                   <span>Contact Sales Desk</span>
                 </Link>
               </div>
 
-              {/* Metrics Highlights Bar */}
-              <div className="pt-6 border-t border-slate-200/90 grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
-                <div className="bg-white p-3 sm:p-3.5 rounded-xl border border-slate-200/80 shadow-2xs">
-                  <p className="text-lg sm:text-2xl font-black text-slate-900 font-heading">11kV - 400kV</p>
-                  <p className="text-[11px] text-slate-500 font-medium mt-0.5">Voltage Scope</p>
+              {/* Metrics Highlights Bar - Zero-Overflow & Balanced Heights */}
+              <div className="pt-6 border-t border-slate-200/90 grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3">
+                <div className="bg-gradient-to-b from-white to-slate-50/80 hover:bg-white p-3 sm:p-3.5 rounded-2xl border border-slate-200/90 hover:border-blue-400/80 shadow-2xs hover:shadow-md transition-all flex flex-col justify-between min-w-0">
+                  <div className="flex items-center justify-between gap-1 mb-1.5">
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 truncate">
+                      Voltage Scope
+                    </span>
+                    <div className="w-5 h-5 rounded-md bg-blue-50 text-blue-600 flex items-center justify-center shrink-0">
+                      <Zap size={11} className="fill-blue-600" />
+                    </div>
+                  </div>
+                  <p className="text-sm sm:text-base lg:text-[15px] xl:text-[17px] font-black text-slate-900 font-heading tracking-tight whitespace-nowrap">
+                    11kV &ndash; 400kV
+                  </p>
+                  <p className="text-[11px] text-slate-500 font-medium mt-0.5 truncate">
+                    HT/LT Grid Class
+                  </p>
                 </div>
-                <div className="bg-white p-3 sm:p-3.5 rounded-xl border border-slate-200/80 shadow-2xs">
-                  <p className="text-lg sm:text-2xl font-black text-slate-900 font-heading">7 Core</p>
-                  <p className="text-[11px] text-slate-500 font-medium mt-0.5">Supply Divisions</p>
+
+                <div className="bg-gradient-to-b from-white to-slate-50/80 hover:bg-white p-3 sm:p-3.5 rounded-2xl border border-slate-200/90 hover:border-blue-400/80 shadow-2xs hover:shadow-md transition-all flex flex-col justify-between min-w-0">
+                  <div className="flex items-center justify-between gap-1 mb-1.5">
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 truncate">
+                      Product Scope
+                    </span>
+                    <div className="w-5 h-5 rounded-md bg-blue-50 text-blue-600 flex items-center justify-center shrink-0">
+                      <Layers size={11} />
+                    </div>
+                  </div>
+                  <p className="text-sm sm:text-base lg:text-[15px] xl:text-[17px] font-black text-slate-900 font-heading tracking-tight whitespace-nowrap">
+                    7 Divisions
+                  </p>
+                  <p className="text-[11px] text-slate-500 font-medium mt-0.5 truncate">
+                    Complete Hardware
+                  </p>
                 </div>
-                <div className="bg-white p-3 sm:p-3.5 rounded-xl border border-slate-200/80 shadow-2xs">
-                  <p className="text-lg sm:text-2xl font-black text-slate-900 font-heading">IS & IEC</p>
-                  <p className="text-[11px] text-slate-500 font-medium mt-0.5">Utility Standards</p>
+
+                <div className="bg-gradient-to-b from-white to-slate-50/80 hover:bg-white p-3 sm:p-3.5 rounded-2xl border border-slate-200/90 hover:border-blue-400/80 shadow-2xs hover:shadow-md transition-all flex flex-col justify-between min-w-0">
+                  <div className="flex items-center justify-between gap-1 mb-1.5">
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 truncate">
+                      Quality Code
+                    </span>
+                    <div className="w-5 h-5 rounded-md bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0">
+                      <ShieldCheck size={11} />
+                    </div>
+                  </div>
+                  <p className="text-sm sm:text-base lg:text-[15px] xl:text-[17px] font-black text-slate-900 font-heading tracking-tight whitespace-nowrap">
+                    IS &bull; IEC &bull; REC
+                  </p>
+                  <p className="text-[11px] text-slate-500 font-medium mt-0.5 truncate">
+                    Utility Standards
+                  </p>
                 </div>
-                <div className="bg-white p-3 sm:p-3.5 rounded-xl border border-slate-200/80 shadow-2xs">
-                  <p className="text-lg sm:text-2xl font-black text-slate-900 font-heading">Secunderabad</p>
-                  <p className="text-[11px] text-slate-500 font-medium mt-0.5">Supply & Logistics Hub</p>
+
+                <div className="bg-gradient-to-b from-white to-slate-50/80 hover:bg-white p-3 sm:p-3.5 rounded-2xl border border-slate-200/90 hover:border-blue-400/80 shadow-2xs hover:shadow-md transition-all flex flex-col justify-between min-w-0">
+                  <div className="flex items-center justify-between gap-1 mb-1.5">
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 truncate">
+                      Supply Hub
+                    </span>
+                    <div className="w-5 h-5 rounded-md bg-blue-50 text-blue-600 flex items-center justify-center shrink-0">
+                      <MapPin size={11} />
+                    </div>
+                  </div>
+                  <p className="text-sm sm:text-base lg:text-[15px] xl:text-[17px] font-black text-slate-900 font-heading tracking-tight whitespace-nowrap">
+                    Secunderabad
+                  </p>
+                  <p className="text-[11px] text-slate-500 font-medium mt-0.5 truncate">
+                    Logistics Dispatch Hub
+                  </p>
                 </div>
               </div>
 
@@ -183,13 +235,13 @@ export default function Home() {
                     </div>
 
                     {/* Glassmorphic Footer Overlay */}
-                    <div className="absolute bottom-3 inset-x-3 bg-white/95 backdrop-blur-md rounded-xl p-2.5 border border-white/40 shadow-lg flex items-center justify-between text-xs">
-                      <div>
-                        <strong className="text-slate-900 block font-bold text-xs">Pavan Sai Power Lines</strong>
-                        <span className="text-[11px] text-slate-600">Secunderabad Supply Base</span>
+                    <div className="absolute bottom-3 inset-x-3 bg-white/95 backdrop-blur-md rounded-xl p-3 border border-white/60 shadow-lg flex items-center justify-between text-xs gap-2">
+                      <div className="min-w-0 flex-1">
+                        <strong className="text-slate-900 block font-bold text-xs truncate">Pavan Sai Power Lines</strong>
+                        <span className="text-[11px] text-slate-600 truncate block">Secunderabad Supply Base</span>
                       </div>
-                      <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-200">
-                        <ShieldCheck size={12} className="text-emerald-600" />
+                      <span className="inline-flex items-center gap-1.5 text-[11px] font-semibold text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-lg border border-emerald-200 shrink-0">
+                        <ShieldCheck size={13} className="text-emerald-600 shrink-0" />
                         <span>Verified Quality</span>
                       </span>
                     </div>
@@ -252,7 +304,7 @@ export default function Home() {
                       <div className="w-8 h-8 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center shrink-0">
                         {categoryIcons[cat.id] || <Zap size={16} />}
                       </div>
-                      <h3 className="font-bold text-sm sm:text-base text-slate-900 group-hover:text-blue-600 transition-colors line-clamp-1">
+                      <h3 className="font-bold text-sm sm:text-base text-slate-900 group-hover:text-blue-600 transition-colors line-clamp-2 min-h-[42px] flex items-center leading-snug">
                         {cat.name}
                       </h3>
                     </div>

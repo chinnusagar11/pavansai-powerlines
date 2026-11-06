@@ -43,7 +43,7 @@ export default function ProductCard({ product }) {
         {/* Content Area */}
         <div className="p-4 sm:p-5 flex-1 flex flex-col justify-between space-y-3">
           <div>
-            <h3 className="font-bold text-sm sm:text-base text-slate-900 group-hover:text-blue-600 transition-colors line-clamp-1 leading-snug">
+            <h3 className="font-bold text-sm sm:text-base text-slate-900 group-hover:text-blue-600 transition-colors line-clamp-2 min-h-[44px] flex items-center leading-snug">
               {product.name}
             </h3>
 
@@ -57,9 +57,10 @@ export default function ProductCard({ product }) {
                 {Object.entries(product.specifications).slice(0, 2).map(([key, val]) => (
                   <span 
                     key={key} 
-                    className="inline-block text-[10px] sm:text-[11px] bg-slate-50 border border-slate-200/70 text-slate-700 px-2.5 py-1 rounded-md font-medium truncate max-w-full"
+                    className="inline-flex items-center text-[10px] sm:text-[11px] bg-slate-50 border border-slate-200/90 text-slate-700 px-2 py-0.5 rounded-md font-medium max-w-full"
                   >
-                    <strong className="text-slate-900">{key}:</strong> {val}
+                    <strong className="text-slate-900 mr-1 shrink-0">{key}:</strong>
+                    <span className="truncate">{val}</span>
                   </span>
                 ))}
               </div>
@@ -70,17 +71,17 @@ export default function ProductCard({ product }) {
           <div className="pt-3 border-t border-slate-100 grid grid-cols-2 gap-2">
             <Link
               to={`/products/${product.id}`}
-              className="inline-flex items-center justify-center gap-1.5 px-3 py-2.5 text-xs font-semibold text-slate-700 bg-slate-50 hover:bg-slate-100 active:bg-slate-200 border border-slate-200 rounded-xl transition-all duration-200"
+              className="inline-flex items-center justify-center gap-1 px-2.5 py-2.5 text-[11px] sm:text-xs font-bold text-slate-700 bg-slate-50 hover:bg-slate-100 active:bg-slate-200 border border-slate-200 hover:border-slate-300 rounded-xl transition-all whitespace-nowrap text-center"
             >
               <span>Specs & Photos</span>
-              <ArrowRight size={13} className="text-blue-600 group-hover:translate-x-0.5 transition-transform" />
+              <ArrowRight size={12} className="text-blue-600 shrink-0 group-hover:translate-x-0.5 transition-transform" />
             </Link>
 
             <button
               onClick={() => setIsModalOpen(true)}
-              className="inline-flex items-center justify-center gap-1.5 px-3 py-2.5 text-xs font-semibold text-white bg-blue-600 hover:bg-blue-700 active:scale-97 rounded-xl shadow-xs hover:shadow transition-all duration-200"
+              className="inline-flex items-center justify-center gap-1 px-2.5 py-2.5 text-[11px] sm:text-xs font-bold text-white bg-blue-600 hover:bg-blue-700 active:scale-97 rounded-xl shadow-xs hover:shadow transition-all whitespace-nowrap text-center"
             >
-              <MessageSquare size={13} />
+              <MessageSquare size={12} className="shrink-0" />
               <span>Instant Quote</span>
             </button>
           </div>

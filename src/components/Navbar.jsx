@@ -112,12 +112,9 @@ export default function Navbar() {
                 <Zap className="w-5 h-5 sm:w-6 sm:h-6 fill-current text-white" />
               </div>
 
-              <div className="flex items-center gap-2 whitespace-nowrap min-w-0">
-                <span className="font-black text-sm sm:text-lg md:text-xl lg:text-[24px] xl:text-[26px] tracking-tight text-slate-900 font-heading whitespace-nowrap uppercase">
+              <div className="flex items-center whitespace-nowrap min-w-0">
+                <span className="font-black text-sm sm:text-lg md:text-xl lg:text-[23px] xl:text-[25px] tracking-tight text-slate-900 font-heading whitespace-nowrap uppercase">
                   PAVAN SAI <span className="text-blue-600">POWER LINES</span>
-                </span>
-                <span className="hidden xl:inline-flex text-[10px] font-extrabold px-1.5 py-0.5 rounded bg-blue-100 text-blue-800 border border-blue-200 shrink-0">
-                  PSPL
                 </span>
               </div>
             </Link>
