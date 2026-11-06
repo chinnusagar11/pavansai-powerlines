@@ -42,34 +42,34 @@ export default function Home() {
     <div className="space-y-14 md:space-y-20 pb-12">
       
       {/* 1. CLEAN & BRIGHT HERO SECTION (White & Blue) */}
-      <section className="bg-gradient-to-b from-blue-50/70 via-white to-white border-b border-slate-200/80 pt-10 pb-16 lg:py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+      <section className="bg-gradient-to-b from-blue-50/70 via-white to-white border-b border-slate-200/80 pt-6 pb-12 sm:pt-10 sm:pb-16 lg:py-20">
+        <div className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
             
             {/* Left Content Column */}
-            <div className="lg:col-span-7 space-y-6 text-left">
+            <div className="lg:col-span-7 space-y-4 sm:space-y-6 text-left">
               
               {/* Clean Tag */}
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-100/80 border border-blue-200 text-xs font-semibold text-blue-800">
-                <span className="w-2 h-2 rounded-full bg-blue-600"></span>
-                <span>Secunderabad, Telangana &bull; Electrical Material Supplier</span>
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-100/80 border border-blue-200 text-[11px] sm:text-xs font-semibold text-blue-800">
+                <span className="w-2 h-2 rounded-full bg-blue-600 shrink-0"></span>
+                <span className="truncate">Secunderabad, Telangana &bull; Electrical Supplier</span>
               </div>
 
               {/* Heading */}
-              <h1 className="text-3xl sm:text-5xl lg:text-5xl font-extrabold tracking-tight text-slate-900 leading-tight font-heading">
+              <h1 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 leading-tight font-heading">
                 Reliable Power Transmission & Distribution <span className="text-blue-600">Materials</span>
               </h1>
 
               {/* Simple Description */}
-              <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-2xl">
+              <p className="text-xs sm:text-base text-slate-600 leading-relaxed max-w-2xl">
                 <strong>Pavan Sai Power Lines (PSPL)</strong> is a trusted supplier of HT/LT overhead line hardware, transformer spares, AB switches, conductors, earthing materials, and GI towers based in Secunderabad, Telangana.
               </p>
 
               {/* Action Buttons */}
-              <div className="pt-2 flex flex-wrap items-center gap-3">
+              <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3">
                 <Link
                   to="/products"
-                  className="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm px-6 py-3 rounded-lg shadow-sm transition active:scale-95"
+                  className="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 active:scale-98 text-white font-semibold text-sm px-6 py-3 rounded-xl shadow-xs transition text-center"
                 >
                   <span>Explore Products</span>
                   <ArrowRight size={16} />
@@ -77,7 +77,7 @@ export default function Home() {
 
                 <Link
                   to="/contact"
-                  className="inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-50 text-slate-700 border border-slate-300 font-semibold text-sm px-5 py-3 rounded-lg shadow-xs transition"
+                  className="inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-50 active:scale-98 text-slate-700 border border-slate-300 font-semibold text-sm px-5 py-3 rounded-xl shadow-xs transition text-center"
                 >
                   <PhoneCall size={16} className="text-blue-600" />
                   <span>Contact Us</span>
@@ -85,7 +85,7 @@ export default function Home() {
 
                 <button
                   onClick={() => setIsQuoteModalOpen(true)}
-                  className="inline-flex items-center justify-center gap-1.5 text-blue-600 hover:text-blue-800 font-semibold text-sm px-3 py-2"
+                  className="inline-flex items-center justify-center gap-1.5 text-blue-600 hover:text-blue-800 font-semibold text-xs sm:text-sm py-2 px-1 text-center"
                 >
                   <span>Quick Quote</span>
                   <ExternalLink size={13} />
@@ -93,18 +93,18 @@ export default function Home() {
               </div>
 
               {/* Clean Key Highlights */}
-              <div className="pt-6 border-t border-slate-200 grid grid-cols-3 gap-4">
-                <div>
-                  <p className="text-xl sm:text-2xl font-bold text-slate-900 font-heading">7 Core</p>
-                  <p className="text-xs text-slate-500">Product Divisions</p>
+              <div className="pt-5 border-t border-slate-200 grid grid-cols-3 gap-2 sm:gap-4">
+                <div className="p-2 sm:p-0 bg-slate-50 sm:bg-transparent rounded-lg">
+                  <p className="text-lg sm:text-2xl font-bold text-slate-900 font-heading">7 Core</p>
+                  <p className="text-[10px] sm:text-xs text-slate-500">Divisions</p>
                 </div>
-                <div>
-                  <p className="text-xl sm:text-2xl font-bold text-slate-900 font-heading">Secunderabad</p>
-                  <p className="text-xs text-slate-500">Central Supply Hub</p>
+                <div className="p-2 sm:p-0 bg-slate-50 sm:bg-transparent rounded-lg">
+                  <p className="text-lg sm:text-2xl font-bold text-slate-900 font-heading">Secunderabad</p>
+                  <p className="text-[10px] sm:text-xs text-slate-500">Supply Hub</p>
                 </div>
-                <div>
-                  <p className="text-xl sm:text-2xl font-bold text-slate-900 font-heading">IS Compliant</p>
-                  <p className="text-xs text-slate-500">Utility Standard</p>
+                <div className="p-2 sm:p-0 bg-slate-50 sm:bg-transparent rounded-lg">
+                  <p className="text-lg sm:text-2xl font-bold text-slate-900 font-heading">IS Compliant</p>
+                  <p className="text-[10px] sm:text-xs text-slate-500">Utility Standard</p>
                 </div>
               </div>
 
@@ -112,7 +112,7 @@ export default function Home() {
 
             {/* Right Image Showcase Column (Using High-Res Local Substation Photo) */}
             <div className="lg:col-span-5">
-              <div className="relative rounded-2xl overflow-hidden border border-slate-200 shadow-md bg-white p-2">
+              <div className="relative rounded-2xl overflow-hidden border border-slate-200 shadow-sm bg-white p-2">
                 <div className="rounded-xl overflow-hidden aspect-[4/3] bg-slate-100">
                   <img
                     src="/images/hero-substation.jpg"
@@ -120,7 +120,7 @@ export default function Home() {
                     className="w-full h-full object-cover object-center"
                   />
                 </div>
-                <div className="p-3 bg-white text-xs text-slate-600 flex items-center justify-between">
+                <div className="p-2.5 sm:p-3 bg-white text-[11px] sm:text-xs text-slate-600 flex items-center justify-between">
                   <span className="font-semibold text-slate-900">Pavan Sai Power Lines</span>
                   <span className="text-blue-600 font-medium">Secunderabad, Telangana</span>
                 </div>

@@ -24,21 +24,21 @@ export default function About() {
   const [isQuoteOpen, setIsQuoteOpen] = useState(false);
 
   return (
-    <div className="space-y-12 md:space-y-16 pb-14">
+    <div className="space-y-8 sm:space-y-14 pb-14">
       
       {/* 1. Clean Page Header */}
-      <section className="bg-gradient-to-b from-blue-50/60 to-white py-10 md:py-14 border-b border-slate-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="bg-gradient-to-b from-blue-50/60 to-white py-8 sm:py-12 border-b border-slate-200">
+        <div className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8">
           <Breadcrumb items={[{ label: 'About Us' }]} />
           
-          <div className="max-w-3xl space-y-3 mt-2">
-            <span className="inline-block text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-100/70 px-2.5 py-1 rounded-md border border-blue-200">
+          <div className="max-w-3xl space-y-2 mt-2">
+            <span className="inline-block text-[11px] font-bold uppercase tracking-wider text-blue-600 bg-blue-100/70 px-2.5 py-1 rounded-md border border-blue-200">
               Company Profile
             </span>
-            <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 font-heading">
+            <h1 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-slate-900 font-heading">
               About Pavan Sai Power Lines
             </h1>
-            <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
+            <p className="text-xs sm:text-base text-slate-600 leading-relaxed">
               Electrical power transmission and distribution materials supplier established in Secunderabad, Telangana.
             </p>
           </div>
@@ -46,14 +46,14 @@ export default function About() {
       </section>
 
       {/* 2. Business Overview */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+      <section className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
           
-          <div className="lg:col-span-7 space-y-4">
+          <div className="lg:col-span-7 space-y-3.5 sm:space-y-4">
             <span className="text-xs font-bold uppercase tracking-wider text-blue-600">
               Overview
             </span>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 font-heading">
+            <h2 className="text-xl sm:text-3xl font-extrabold text-slate-900 font-heading">
               A Dedicated Supply Partner for Electrical Contractors & Utilities
             </h2>
 
@@ -65,7 +65,7 @@ export default function About() {
               We stock and supply verified overhead line materials, insulators, conductors, gang-operated AB switches, earthing electrodes, and galvanized steel towers conforming to Indian Standard (IS) specifications.
             </p>
 
-            <div className="p-4 bg-slate-50 rounded-xl border border-slate-200 text-xs sm:text-sm text-slate-700 flex items-start gap-3">
+            <div className="p-3.5 sm:p-4 bg-slate-50 rounded-xl border border-slate-200 text-xs sm:text-sm text-slate-700 flex items-start gap-2.5">
               <MapPin size={18} className="text-blue-600 shrink-0 mt-0.5" />
               <div>
                 <strong className="text-slate-900 block">Secunderabad Supply Hub</strong>
@@ -79,9 +79,9 @@ export default function About() {
               <img
                 src="/images/hero-substation.jpg"
                 alt="Power Transmission Infrastructure Substation"
-                className="w-full h-64 sm:h-72 object-cover rounded-lg"
+                className="w-full h-56 sm:h-72 object-cover rounded-lg"
               />
-              <div className="p-2.5 bg-white text-xs text-slate-600 flex items-center justify-between">
+              <div className="p-2 sm:p-2.5 bg-white text-[11px] sm:text-xs text-slate-600 flex items-center justify-between">
                 <span className="font-semibold text-slate-900">PSPL Distribution Base</span>
                 <span className="text-blue-600 font-medium">Secunderabad</span>
               </div>
@@ -92,8 +92,8 @@ export default function About() {
       </section>
 
       {/* 3. Products and Supply Capabilities */}
-      <section className="bg-slate-50 py-12 md:py-16 border-y border-slate-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="bg-slate-50 py-10 sm:py-14 border-y border-slate-200">
+        <div className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8">
           
           <div className="max-w-2xl mb-8">
             <span className="text-xs font-bold uppercase tracking-wider text-blue-600">

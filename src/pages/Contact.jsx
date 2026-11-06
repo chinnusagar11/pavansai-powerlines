@@ -67,18 +67,18 @@ export default function Contact() {
   };
 
   return (
-    <div className="space-y-10 md:space-y-14 pb-16">
+    <div className="space-y-8 sm:space-y-12 pb-16">
       
       {/* 1. Page Header */}
-      <section className="bg-gradient-to-b from-blue-50/60 to-white py-10 md:py-12 border-b border-slate-200">
+      <section className="bg-gradient-to-b from-blue-50/60 to-white py-8 sm:py-12 border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumb items={[{ label: 'Contact Us' }]} />
           
           <div className="max-w-3xl space-y-2 mt-2">
-            <span className="inline-block text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-100/70 px-2.5 py-1 rounded-md border border-blue-200">
+            <span className="inline-block text-[11px] font-bold uppercase tracking-wider text-blue-600 bg-blue-100/70 px-2.5 py-1 rounded-md border border-blue-200">
               Commercial Desk
             </span>
-            <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 font-heading">
+            <h1 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-slate-900 font-heading">
               Contact Pavan Sai Power Lines
             </h1>
             <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
@@ -90,10 +90,10 @@ export default function Contact() {
 
       {/* 2. Contact Information Cards */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
           
           {/* Card 1: Office Address */}
-          <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-xs flex flex-col justify-between">
+          <div className="bg-white p-4 sm:p-5 rounded-xl border border-slate-200 shadow-xs flex flex-col justify-between">
             <div>
               <div className="w-10 h-10 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center mb-3">
                 <MapPin size={20} />
@@ -118,7 +118,7 @@ export default function Contact() {
           </div>
 
           {/* Card 2: Phone Numbers */}
-          <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-xs flex flex-col justify-between">
+          <div className="bg-white p-4 sm:p-5 rounded-xl border border-slate-200 shadow-xs flex flex-col justify-between">
             <div>
               <div className="w-10 h-10 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center mb-3">
                 <Phone size={20} />
@@ -157,7 +157,7 @@ export default function Contact() {
           </div>
 
           {/* Card 3: WhatsApp Inquiry */}
-          <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-xs flex flex-col justify-between">
+          <div className="bg-white p-4 sm:p-5 rounded-xl border border-slate-200 shadow-xs flex flex-col justify-between">
             <div>
               <div className="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center mb-3">
                 <MessageCircle size={20} />
@@ -184,7 +184,7 @@ export default function Contact() {
           </div>
 
           {/* Card 4: Business Hours */}
-          <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-xs flex flex-col justify-between">
+          <div className="bg-white p-4 sm:p-5 rounded-xl border border-slate-200 shadow-xs flex flex-col justify-between">
             <div>
               <div className="w-10 h-10 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center mb-3">
                 <Clock size={20} />
@@ -215,19 +215,19 @@ export default function Contact() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
-          {/* Clean Form */}
-          <div className="lg:col-span-6 bg-white rounded-xl border border-slate-200 shadow-xs p-5 sm:p-6 space-y-5">
+          {/* Mobile-Friendly Form */}
+          <div className="lg:col-span-6 bg-white rounded-xl border border-slate-200 shadow-xs p-4 sm:p-6 space-y-4">
             <div>
-              <h2 className="text-xl font-bold text-slate-900 font-heading">
+              <h2 className="text-lg sm:text-xl font-bold text-slate-900 font-heading">
                 Send Material Requirement
               </h2>
               <p className="text-xs text-slate-500 mt-1">
-                Enter your material details below. Select WhatsApp or Email to transmit your requirement directly to our sales staff.
+                Enter your requirement below. Transmit directly to our sales staff via WhatsApp or Email.
               </p>
             </div>
 
             <form className="space-y-3.5">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
                   <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1">
                     Your Name *
@@ -239,7 +239,7 @@ export default function Contact() {
                     value={formData.name}
                     onChange={handleChange}
                     placeholder="e.g. Ramesh Reddy"
-                    className="w-full px-3 py-2 text-xs sm:text-sm rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full px-3.5 py-2.5 text-base sm:text-sm rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
                 </div>
 
@@ -253,12 +253,12 @@ export default function Contact() {
                     value={formData.company}
                     onChange={handleChange}
                     placeholder="e.g. EPC Electricals"
-                    className="w-full px-3 py-2 text-xs sm:text-sm rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full px-3.5 py-2.5 text-base sm:text-sm rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
                   <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1">
                     Mobile Number *
@@ -270,7 +270,7 @@ export default function Contact() {
                     value={formData.phone}
                     onChange={handleChange}
                     placeholder="+91 98490 XXXXX"
-                    className="w-full px-3 py-2 text-xs sm:text-sm rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full px-3.5 py-2.5 text-base sm:text-sm rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
                 </div>
 
@@ -284,7 +284,7 @@ export default function Contact() {
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="name@company.com"
-                    className="w-full px-3 py-2 text-xs sm:text-sm rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full px-3.5 py-2.5 text-base sm:text-sm rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
                 </div>
               </div>
@@ -297,7 +297,7 @@ export default function Contact() {
                   name="category"
                   value={formData.category}
                   onChange={handleChange}
-                  className="w-full px-3 py-2 text-xs sm:text-sm rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white"
+                  className="w-full px-3.5 py-2.5 text-base sm:text-sm rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white"
                 >
                   {COMPANY_INFO.categories.map((cat) => (
                     <option key={cat.id} value={cat.name}>
@@ -318,7 +318,7 @@ export default function Contact() {
                   value={formData.message}
                   onChange={handleChange}
                   placeholder="Specify ratings (e.g. 11kV AB Switches, Dog Conductor 5km, Pin Insulators 500 Nos), site location, and delivery schedule..."
-                  className="w-full px-3 py-2 text-xs sm:text-sm rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
+                  className="w-full px-3.5 py-2.5 text-base sm:text-sm rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
                 />
               </div>
 
@@ -326,18 +326,18 @@ export default function Contact() {
                 <button
                   type="button"
                   onClick={handleWhatsAppSubmit}
-                  className="flex-1 flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20ba59] text-white py-2.5 px-4 rounded-lg font-semibold text-xs sm:text-sm shadow-xs transition active:scale-98"
+                  className="flex-1 flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20ba59] active:scale-98 text-white py-3 px-4 rounded-xl font-semibold text-sm shadow-xs transition"
                 >
-                  <MessageCircle size={16} className="fill-current" />
+                  <MessageCircle size={18} className="fill-current" />
                   <span>Send via WhatsApp</span>
                 </button>
 
                 <button
                   type="button"
                   onClick={handleEmailSubmit}
-                  className="flex-1 flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white py-2.5 px-4 rounded-lg font-semibold text-xs sm:text-sm shadow-xs transition active:scale-98"
+                  className="flex-1 flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 active:scale-98 text-white py-3 px-4 rounded-xl font-semibold text-sm shadow-xs transition"
                 >
-                  <Mail size={16} />
+                  <Mail size={18} />
                   <span>Send via Email</span>
                 </button>
               </div>
@@ -349,7 +349,7 @@ export default function Contact() {
           </div>
 
           {/* Right Column: Google Maps & Commercial Details */}
-          <div className="lg:col-span-6 space-y-5">
+          <div className="lg:col-span-6 space-y-4">
             
             {/* Google Maps Embed */}
             <div className="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-xs">
@@ -391,7 +391,7 @@ export default function Contact() {
                 <span>Visiting Card & Commercial Details</span>
               </div>
               <p className="text-xs text-slate-600 leading-relaxed">
-                Contact information, GSTIN number, and registered address can be referenced directly from the company visiting card. Editable entries in <code className="bg-slate-200 px-1 py-0.5 rounded text-slate-800">src/data/company.js</code> allow easy updates.
+                Contact information, GSTIN number, and registered address can be referenced directly from the company visiting card. Editable entries in <code className="bg-slate-200 px-1 py-0.5 rounded text-slate-800 text-[11px]">src/data/company.js</code> allow easy updates.
               </p>
               <div className="text-[11px] text-slate-500 pt-0.5">
                 <strong>GSTIN:</strong> {COMPANY_INFO.commercial.gstin}

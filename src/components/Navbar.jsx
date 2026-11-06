@@ -21,14 +21,27 @@ export default function Navbar() {
   const [productsDropdown, setProductsDropdown] = useState(false);
   const location = useLocation();
 
+  // Close mobile menu on route change
   useEffect(() => {
     setIsOpen(false);
     setProductsDropdown(false);
   }, [location]);
 
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isOpen]);
+
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
+      setScrolled(window.scrollY > 15);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -42,17 +55,17 @@ export default function Navbar() {
     }`;
 
   const mobileNavLinkClass = ({ isActive }) => 
-    `block text-sm font-semibold py-2.5 px-3.5 rounded-lg transition ${
+    `flex items-center justify-between text-sm font-semibold py-3 px-4 rounded-xl transition ${
       isActive 
         ? 'bg-blue-600 text-white font-bold' 
-        : 'text-slate-700 hover:bg-blue-50 hover:text-blue-700'
+        : 'text-slate-800 hover:bg-blue-50 hover:text-blue-700 active:bg-blue-100'
     }`;
 
   return (
     <>
       <header className="sticky top-0 z-40 w-full bg-white">
         
-        {/* Clean Top Contact Bar (Soft Light Blue / Slate) */}
+        {/* Desktop Top Contact Bar */}
         <div className="bg-slate-100 text-slate-600 text-xs py-2 px-4 border-b border-slate-200 hidden md:block">
           <div className="max-w-7xl mx-auto flex items-center justify-between">
             <div className="flex items-center gap-6">
@@ -85,30 +98,30 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* Clean White Main Navigation Bar */}
+        {/* Main Navigation Bar */}
         <nav className={`w-full transition-all duration-200 bg-white border-b ${
           scrolled 
-            ? 'shadow-sm border-slate-200 py-2.5' 
-            : 'border-slate-200 py-3.5'
+            ? 'shadow-sm border-slate-200 py-2 sm:py-2.5' 
+            : 'border-slate-200 py-2.5 sm:py-3.5'
         }`}>
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+          <div className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 flex items-center justify-between">
             
             {/* Logo & Company Name */}
-            <Link to="/" className="flex items-center gap-3 group focus:outline-none">
-              <div className="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center shadow-md shadow-blue-500/20 group-hover:bg-blue-700 transition">
-                <Zap className="w-5 h-5 fill-current" />
+            <Link to="/" className="flex items-center gap-2.5 sm:gap-3 group focus:outline-none min-w-0">
+              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center shadow-sm group-hover:bg-blue-700 transition shrink-0">
+                <Zap className="w-4 h-4 sm:w-5 sm:h-5 fill-current" />
               </div>
 
-              <div>
-                <div className="flex items-center gap-2">
-                  <span className="font-extrabold text-xl text-slate-900 tracking-tight font-heading">
+              <div className="min-w-0">
+                <div className="flex items-center gap-1.5">
+                  <span className="font-extrabold text-base sm:text-xl text-slate-900 tracking-tight font-heading truncate">
                     PAVAN SAI
                   </span>
-                  <span className="text-[11px] font-bold px-1.5 py-0.5 rounded bg-blue-100 text-blue-800 border border-blue-200">
+                  <span className="text-[10px] sm:text-[11px] font-bold px-1.5 py-0.5 rounded bg-blue-100 text-blue-800 border border-blue-200 shrink-0">
                     PSPL
                   </span>
                 </div>
-                <div className="text-[11px] font-medium text-slate-500 tracking-wide uppercase">
+                <div className="text-[10px] sm:text-[11px] font-medium text-slate-500 tracking-wide uppercase truncate">
                   Power Lines &bull; Secunderabad
                 </div>
               </div>
@@ -124,7 +137,7 @@ export default function Navbar() {
                 About Us
               </NavLink>
 
-              {/* Products dropdown menu */}
+              {/* Products Dropdown */}
               <div 
                 className="relative"
                 onMouseEnter={() => setProductsDropdown(true)}
@@ -167,10 +180,10 @@ export default function Navbar() {
             </div>
 
             {/* Quote Action & Mobile Menu Toggle */}
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2 sm:gap-3">
               <button
                 onClick={() => setIsQuoteModalOpen(true)}
-                className="hidden sm:inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs md:text-sm px-4 py-2.5 rounded-lg shadow-sm transition active:scale-95 focus:outline-none"
+                className="hidden sm:inline-flex items-center gap-1.5 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs md:text-sm px-4 py-2.5 rounded-lg shadow-sm transition active:scale-95 focus:outline-none"
               >
                 <Send size={14} />
                 <span>Get a Quote</span>
@@ -178,7 +191,7 @@ export default function Navbar() {
 
               <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="md:hidden p-2 rounded-lg text-slate-700 hover:text-blue-600 hover:bg-slate-100 focus:outline-none"
+                className="md:hidden p-2 rounded-lg text-slate-700 hover:text-blue-600 hover:bg-slate-100 focus:outline-none active:bg-slate-200"
                 aria-label="Toggle navigation menu"
               >
                 {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -187,56 +200,72 @@ export default function Navbar() {
 
           </div>
 
-          {/* Mobile Menu Dropdown */}
+          {/* Full Mobile Drawer Overlay */}
           {isOpen && (
-            <div className="md:hidden bg-white border-t border-slate-200 px-4 pt-3 pb-6 space-y-1 shadow-lg">
-              <NavLink to="/" className={mobileNavLinkClass}>
-                Home
-              </NavLink>
-              <NavLink to="/about" className={mobileNavLinkClass}>
-                About Us
-              </NavLink>
-              <NavLink to="/products" className={mobileNavLinkClass}>
-                Products & Supplies
-              </NavLink>
-              
-              {/* Mobile Category Sublinks */}
-              <div className="pl-3 py-1 space-y-1 border-l-2 border-blue-200 my-1 ml-2">
-                {COMPANY_INFO.categories.map((cat) => (
-                  <Link
-                    key={cat.id}
-                    to={`/products?category=${cat.id}`}
-                    className="block text-xs text-slate-600 hover:text-blue-600 py-1 font-medium"
+            <div className="md:hidden fixed inset-x-0 top-[53px] bottom-0 bg-slate-900/40 backdrop-blur-xs z-50 flex flex-col justify-between">
+              <div className="bg-white border-b border-slate-200 px-4 pt-3 pb-6 space-y-1.5 shadow-xl max-h-[85vh] overflow-y-auto">
+                <NavLink to="/" className={mobileNavLinkClass}>
+                  <span>Home</span>
+                  <span className="text-xs text-slate-400">&rarr;</span>
+                </NavLink>
+                <NavLink to="/about" className={mobileNavLinkClass}>
+                  <span>About Us</span>
+                  <span className="text-xs text-slate-400">&rarr;</span>
+                </NavLink>
+                <NavLink to="/products" className={mobileNavLinkClass}>
+                  <span>All Products & Materials</span>
+                  <span className="text-xs text-slate-400">&rarr;</span>
+                </NavLink>
+                
+                {/* Mobile Category Sublinks */}
+                <div className="pl-3 py-1 space-y-1 border-l-2 border-blue-200 my-1 ml-2">
+                  <div className="text-[11px] font-bold text-slate-400 uppercase tracking-wider px-2 py-1">
+                    Quick Categories:
+                  </div>
+                  {COMPANY_INFO.categories.map((cat) => (
+                    <Link
+                      key={cat.id}
+                      to={`/products?category=${cat.id}`}
+                      className="block text-xs text-slate-600 hover:text-blue-600 py-1.5 px-2 font-medium rounded hover:bg-blue-50"
+                    >
+                      &bull; {cat.name}
+                    </Link>
+                  ))}
+                </div>
+
+                <NavLink to="/contact" className={mobileNavLinkClass}>
+                  <span>Contact Sales Desk</span>
+                  <span className="text-xs text-slate-400">&rarr;</span>
+                </NavLink>
+
+                {/* Mobile Quick Action Buttons */}
+                <div className="pt-4 border-t border-slate-200 flex flex-col gap-2.5">
+                  <button
+                    onClick={() => {
+                      setIsOpen(false);
+                      setIsQuoteModalOpen(true);
+                    }}
+                    className="w-full flex items-center justify-center gap-2 bg-blue-600 text-white py-3 rounded-xl font-semibold text-sm shadow-sm hover:bg-blue-700 active:scale-98 transition"
                   >
-                    &bull; {cat.name}
-                  </Link>
-                ))}
+                    <Send size={15} />
+                    <span>Request Material Quotation</span>
+                  </button>
+
+                  <a
+                    href={`tel:${COMPANY_INFO.contact.primaryPhoneRaw}`}
+                    className="w-full flex items-center justify-center gap-2 bg-slate-100 text-slate-800 py-2.5 rounded-xl text-xs font-semibold hover:bg-slate-200 active:scale-98 transition"
+                  >
+                    <Phone size={14} className="text-blue-600" />
+                    <span>Call Sales: {COMPANY_INFO.contact.primaryPhone}</span>
+                  </a>
+                </div>
               </div>
 
-              <NavLink to="/contact" className={mobileNavLinkClass}>
-                Contact Us
-              </NavLink>
-
-              <div className="pt-4 border-t border-slate-200 flex flex-col gap-2">
-                <button
-                  onClick={() => {
-                    setIsOpen(false);
-                    setIsQuoteModalOpen(true);
-                  }}
-                  className="w-full flex items-center justify-center gap-2 bg-blue-600 text-white py-2.5 rounded-lg font-semibold text-sm shadow-sm hover:bg-blue-700 transition"
-                >
-                  <Send size={15} />
-                  <span>Request Material Quote</span>
-                </button>
-
-                <a
-                  href={`tel:${COMPANY_INFO.contact.primaryPhoneRaw}`}
-                  className="w-full flex items-center justify-center gap-2 bg-slate-100 text-slate-800 py-2.5 rounded-lg text-xs font-semibold hover:bg-slate-200 transition"
-                >
-                  <Phone size={14} className="text-blue-600" />
-                  <span>Call {COMPANY_INFO.contact.primaryPhone}</span>
-                </a>
-              </div>
+              {/* Click outside to close */}
+              <div 
+                className="flex-1"
+                onClick={() => setIsOpen(false)}
+              ></div>
             </div>
           )}
         </nav>

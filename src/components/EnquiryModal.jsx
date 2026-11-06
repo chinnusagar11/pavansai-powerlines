@@ -59,25 +59,25 @@ export default function EnquiryModal({ isOpen, onClose, product = null }) {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm animate-fade-in">
-      <div className="bg-white rounded-2xl shadow-xl max-w-lg w-full max-h-[92vh] overflow-y-auto border border-slate-200">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-900/60 backdrop-blur-xs animate-fade-in">
+      <div className="bg-white rounded-2xl shadow-2xl max-w-lg w-full max-h-[92vh] flex flex-col border border-slate-200 overflow-hidden">
         
         {/* Clean Header */}
-        <div className="bg-blue-600 text-white p-5 rounded-t-2xl flex items-start justify-between">
+        <div className="bg-blue-600 text-white p-4 sm:p-5 flex items-start justify-between shrink-0">
           <div>
-            <span className="text-[11px] font-bold uppercase tracking-wider text-blue-200">
+            <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-blue-200">
               Commercial Enquiry
             </span>
-            <h3 className="text-lg font-bold mt-0.5">
+            <h3 className="text-base sm:text-lg font-bold mt-0.5 leading-snug">
               Request Price Quote & Availability
             </h3>
-            <p className="text-xs text-blue-100 mt-0.5">
+            <p className="text-[11px] sm:text-xs text-blue-100 mt-0.5">
               Pavan Sai Power Lines &bull; Secunderabad, Telangana
             </p>
           </div>
           <button
             onClick={onClose}
-            className="text-white/80 hover:text-white bg-white/10 hover:bg-white/20 p-1.5 rounded-lg transition"
+            className="text-white/80 hover:text-white bg-white/10 hover:bg-white/20 p-2 rounded-lg transition"
             aria-label="Close modal"
           >
             <X size={18} />
@@ -86,18 +86,18 @@ export default function EnquiryModal({ isOpen, onClose, product = null }) {
 
         {/* Selected Product Banner */}
         {product && (
-          <div className="bg-blue-50 border-b border-blue-100 p-3.5 px-6 flex items-center gap-2.5">
+          <div className="bg-blue-50 border-b border-blue-100 p-3 px-4 sm:px-6 flex items-center gap-2.5 shrink-0">
             <span className="w-2 h-2 rounded-full bg-blue-600 shrink-0"></span>
-            <div>
-              <p className="text-[11px] font-semibold uppercase text-blue-800 tracking-wider">Product:</p>
-              <p className="text-xs sm:text-sm font-bold text-slate-900">{product.name}</p>
+            <div className="min-w-0">
+              <p className="text-[10px] sm:text-[11px] font-semibold uppercase text-blue-800 tracking-wider">Product:</p>
+              <p className="text-xs sm:text-sm font-bold text-slate-900 truncate">{product.name}</p>
             </div>
           </div>
         )}
 
-        {/* Form */}
-        <form className="p-6 space-y-4">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+        {/* Scrollable Form Body */}
+        <form className="p-4 sm:p-6 space-y-3.5 overflow-y-auto flex-1">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div>
               <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1">
                 Your Name *
@@ -109,7 +109,7 @@ export default function EnquiryModal({ isOpen, onClose, product = null }) {
                 value={formData.name}
                 onChange={handleChange}
                 placeholder="e.g. Ramesh Reddy"
-                className="w-full px-3.5 py-2 text-sm rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-3.5 py-2.5 text-base sm:text-sm rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
 
@@ -123,12 +123,12 @@ export default function EnquiryModal({ isOpen, onClose, product = null }) {
                 value={formData.company}
                 onChange={handleChange}
                 placeholder="e.g. EPC Electricals"
-                className="w-full px-3.5 py-2 text-sm rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-3.5 py-2.5 text-base sm:text-sm rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div>
               <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1">
                 Phone Number *
@@ -140,7 +140,7 @@ export default function EnquiryModal({ isOpen, onClose, product = null }) {
                 value={formData.phone}
                 onChange={handleChange}
                 placeholder="+91 98490 XXXXX"
-                className="w-full px-3.5 py-2 text-sm rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-3.5 py-2.5 text-base sm:text-sm rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
 
@@ -154,7 +154,7 @@ export default function EnquiryModal({ isOpen, onClose, product = null }) {
                 value={formData.quantity}
                 onChange={handleChange}
                 placeholder="e.g. 500 Nos / 5 km"
-                className="w-full px-3.5 py-2 text-sm rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-3.5 py-2.5 text-base sm:text-sm rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
           </div>
@@ -169,7 +169,7 @@ export default function EnquiryModal({ isOpen, onClose, product = null }) {
               value={formData.message}
               onChange={handleChange}
               placeholder="State rating, IS standard, or delivery location in Telangana / AP..."
-              className="w-full px-3.5 py-2 text-sm rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
+              className="w-full px-3.5 py-2 text-base sm:text-sm rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
             />
           </div>
 
@@ -178,23 +178,23 @@ export default function EnquiryModal({ isOpen, onClose, product = null }) {
             <button
               type="button"
               onClick={handleWhatsAppSend}
-              className="flex-1 flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20ba59] text-white py-2.5 px-4 rounded-lg font-semibold text-xs sm:text-sm shadow-sm transition active:scale-98"
+              className="flex-1 flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20ba59] active:scale-98 text-white py-3 px-4 rounded-xl font-semibold text-sm shadow-sm transition"
             >
-              <MessageCircle size={16} className="fill-current" />
+              <MessageCircle size={18} className="fill-current" />
               <span>Send via WhatsApp</span>
             </button>
 
             <button
               type="button"
               onClick={handleEmailSend}
-              className="flex-1 flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white py-2.5 px-4 rounded-lg font-semibold text-xs sm:text-sm shadow-sm transition active:scale-98"
+              className="flex-1 flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 active:scale-98 text-white py-3 px-4 rounded-xl font-semibold text-sm shadow-sm transition"
             >
-              <Mail size={16} />
+              <Mail size={18} />
               <span>Send via Email</span>
             </button>
           </div>
 
-          <div className="flex items-center justify-center gap-1.5 text-xs text-slate-500 pt-1">
+          <div className="flex items-center justify-center gap-1.5 text-xs text-slate-500 pt-0.5">
             <CheckCircle2 size={13} className="text-emerald-500" />
             <span>Connects directly to Secunderabad sales desk</span>
           </div>

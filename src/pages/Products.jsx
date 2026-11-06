@@ -54,18 +54,18 @@ export default function Products() {
   };
 
   return (
-    <div className="space-y-8 md:space-y-10 pb-16">
+    <div className="space-y-6 sm:space-y-10 pb-16">
       
       {/* 1. Page Header */}
-      <section className="bg-gradient-to-b from-blue-50/60 to-white py-10 md:py-12 border-b border-slate-200">
+      <section className="bg-gradient-to-b from-blue-50/60 to-white py-8 sm:py-12 border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumb items={[{ label: 'Products & Supplies' }]} />
           
           <div className="max-w-3xl space-y-2 mt-2">
-            <span className="inline-block text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-100/70 px-2.5 py-1 rounded-md border border-blue-200">
+            <span className="inline-block text-[11px] font-bold uppercase tracking-wider text-blue-600 bg-blue-100/70 px-2.5 py-1 rounded-md border border-blue-200">
               Product Catalogue
             </span>
-            <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 font-heading">
+            <h1 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-slate-900 font-heading">
               Electrical Products & Materials
             </h1>
             <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
@@ -76,8 +76,8 @@ export default function Products() {
       </section>
 
       {/* 2. Clean Search & Filter Controls */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-white p-4 sm:p-5 rounded-xl border border-slate-200 shadow-xs space-y-4">
+      <section className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8">
+        <div className="bg-white p-3.5 sm:p-5 rounded-xl border border-slate-200 shadow-xs space-y-3.5">
           
           {/* Top Row: Search input & Status */}
           <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-3">
@@ -86,15 +86,15 @@ export default function Products() {
               <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 w-4 h-4" />
               <input
                 type="text"
-                placeholder="Search products, ratings (e.g. 11kV, ACSR, AB Switch)..."
+                placeholder="Search products (e.g. 11kV, ACSR, AB Switch)..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-9 pr-9 py-2 text-xs sm:text-sm rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white"
+                className="w-full pl-9 pr-9 py-2.5 text-base sm:text-sm rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white"
               />
               {searchQuery && (
                 <button
                   onClick={() => setSearchQuery('')}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 p-0.5"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 p-1"
                 >
                   <X size={15} />
                 </button>
@@ -119,13 +119,13 @@ export default function Products() {
 
           </div>
 
-          {/* Bottom Row: Category Filter Tabs */}
-          <div className="pt-3 border-t border-slate-100">
-            <div className="flex items-center gap-1.5 overflow-x-auto pb-1.5 scrollbar-none">
+          {/* Bottom Row: Category Filter Tabs (Swipeable on Mobile) */}
+          <div className="pt-2 border-t border-slate-100">
+            <div className="flex items-center gap-1.5 overflow-x-auto pb-1.5 scrollbar-none -mx-1 px-1">
               
               <button
                 onClick={() => handleCategorySelect('all')}
-                className={`px-3 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap transition-colors ${
+                className={`px-3 py-2 rounded-lg text-xs font-semibold whitespace-nowrap transition-colors shrink-0 ${
                   selectedCategory === 'all'
                     ? 'bg-blue-600 text-white shadow-xs'
                     : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
@@ -142,7 +142,7 @@ export default function Products() {
                   <button
                     key={cat.id}
                     onClick={() => handleCategorySelect(cat.id)}
-                    className={`px-3 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap transition-colors ${
+                    className={`px-3 py-2 rounded-lg text-xs font-semibold whitespace-nowrap transition-colors shrink-0 ${
                       isSelected
                         ? 'bg-blue-600 text-white shadow-xs'
                         : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
@@ -160,16 +160,16 @@ export default function Products() {
       </section>
 
       {/* 3. Products Grid */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8">
         
         {filteredProducts.length > 0 ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
             {filteredProducts.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
           </div>
         ) : (
-          <div className="bg-white rounded-xl border border-slate-200 p-10 text-center max-w-md mx-auto space-y-3">
+          <div className="bg-white rounded-xl border border-slate-200 p-8 sm:p-10 text-center max-w-md mx-auto space-y-3">
             <div className="w-12 h-12 rounded-xl bg-slate-100 text-slate-400 mx-auto flex items-center justify-center">
               <Search size={22} />
             </div>
@@ -192,7 +192,7 @@ export default function Products() {
       </section>
 
       {/* 4. Commercial Verification Note */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8">
         <div className="bg-blue-50/70 border border-blue-200 rounded-xl p-4 sm:p-5 flex flex-col md:flex-row items-start md:items-center justify-between gap-3">
           <div className="flex items-start gap-2.5">
             <CheckCircle2 size={18} className="text-blue-600 shrink-0 mt-0.5" />
@@ -204,7 +204,7 @@ export default function Products() {
 
           <a
             href={`tel:${COMPANY_INFO.contact.primaryPhoneRaw}`}
-            className="shrink-0 bg-white hover:bg-slate-50 text-slate-800 border border-slate-300 text-xs font-semibold px-3.5 py-2 rounded-lg transition"
+            className="w-full sm:w-auto text-center shrink-0 bg-white hover:bg-slate-50 text-slate-800 border border-slate-300 text-xs font-semibold px-4 py-2.5 rounded-lg transition"
           >
             Sales Desk: {COMPANY_INFO.contact.primaryPhone}
           </a>
