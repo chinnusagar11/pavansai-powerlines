@@ -14,7 +14,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-slate-900 text-slate-300 pt-10 sm:pt-14 pb-8 sm:pb-10 border-t border-slate-800">
+    <footer className="bg-slate-900 text-slate-300 pt-10 sm:pt-14 pb-24 md:pb-10 border-t border-slate-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Responsive Grid */}
