@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { 
   Phone, 
@@ -15,7 +15,8 @@ import {
   X,
   PhoneCall,
   AlertCircle,
-  CheckCircle2
+  CheckCircle2,
+  ChevronDown
 } from 'lucide-react';
 import { COMPANY_INFO } from '../data/company';
 import Breadcrumb from '../components/Breadcrumb';
@@ -33,6 +34,18 @@ export default function Contact() {
   const [errors, setErrors] = useState({});
   const [copiedPhone, setCopiedPhone] = useState(false);
   const [isCardZoomOpen, setIsCardZoomOpen] = useState(false);
+  const [isCategoryOpen, setIsCategoryOpen] = useState(false);
+  const categoryRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (categoryRef.current && !categoryRef.current.contains(event.target)) {
+        setIsCategoryOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -430,23 +443,87 @@ export default function Contact() {
                 </div>
               </div>
 
-              <div>
+              <div className="relative" ref={categoryRef}>
                 <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1">
                   Product Category of Interest
                 </label>
-                <select
-                  name="category"
-                  value={formData.category}
-                  onChange={handleChange}
-                  className="w-full px-3.5 py-2.5 text-base sm:text-sm rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white"
+                
+                {/* Custom Elegant Dropdown Trigger - Strictly Bound to Card Width */}
+                <button
+                  type="button"
+                  onClick={() => setIsCategoryOpen(!isCategoryOpen)}
+                  className={`w-full px-3.5 py-2.5 text-base sm:text-sm rounded-lg border transition-all bg-white flex items-center justify-between text-left ${
+                    isCategoryOpen 
+                      ? 'border-blue-500 ring-2 ring-blue-500/20' 
+                      : 'border-slate-300 hover:border-slate-400'
+                  }`}
+                  aria-haspopup="listbox"
+                  aria-expanded={isCategoryOpen}
                 >
-                  {COMPANY_INFO.categories.map((cat) => (
-                    <option key={cat.id} value={cat.name}>
-                      {cat.name}
-                    </option>
-                  ))}
-                  <option value="General BOQ / Multiple Items">General BOQ / Multiple Items</option>
-                </select>
+                  <span className="font-semibold text-slate-900 truncate pr-2">
+                    {formData.category}
+                  </span>
+                  <ChevronDown 
+                    size={16} 
+                    className={`text-slate-500 shrink-0 transition-transform duration-200 ${
+                      isCategoryOpen ? 'rotate-180 text-blue-600' : ''
+                    }`} 
+                  />
+                </button>
+
+                {/* Custom Dropdown Menu - Never Overflows Mobile Viewport */}
+                {isCategoryOpen && (
+                  <div 
+                    role="listbox"
+                    className="absolute top-full left-0 right-0 w-full mt-1.5 z-40 bg-white rounded-xl border border-blue-200 shadow-xl py-1.5 max-h-64 overflow-y-auto animate-fade-in"
+                  >
+                    {COMPANY_INFO.categories.map((cat) => {
+                      const isSelected = formData.category === cat.name;
+                      return (
+                        <button
+                          key={cat.id}
+                          type="button"
+                          role="option"
+                          aria-selected={isSelected}
+                          onClick={() => {
+                            setFormData(prev => ({ ...prev, category: cat.name }));
+                            setIsCategoryOpen(false);
+                          }}
+                          className={`w-full text-left px-3.5 py-2.5 text-xs sm:text-sm font-semibold transition-colors flex items-center justify-between gap-2 ${
+                            isSelected 
+                              ? 'bg-blue-50 text-blue-700 font-bold' 
+                              : 'text-slate-700 hover:bg-slate-50 hover:text-blue-700'
+                          }`}
+                        >
+                          <span className="truncate">{cat.name}</span>
+                          {isSelected && <Check size={14} className="text-blue-600 shrink-0" />}
+                        </button>
+                      );
+                    })}
+
+                    <div className="border-t border-slate-100 my-1"></div>
+
+                    <button
+                      type="button"
+                      role="option"
+                      aria-selected={formData.category === 'General BOQ / Multiple Items'}
+                      onClick={() => {
+                        setFormData(prev => ({ ...prev, category: 'General BOQ / Multiple Items' }));
+                        setIsCategoryOpen(false);
+                      }}
+                      className={`w-full text-left px-3.5 py-2.5 text-xs sm:text-sm font-semibold transition-colors flex items-center justify-between gap-2 ${
+                        formData.category === 'General BOQ / Multiple Items'
+                          ? 'bg-blue-50 text-blue-700 font-bold' 
+                          : 'text-slate-700 hover:bg-slate-50 hover:text-blue-700'
+                      }`}
+                    >
+                      <span className="truncate">General BOQ / Multiple Items</span>
+                      {formData.category === 'General BOQ / Multiple Items' && (
+                        <Check size={14} className="text-blue-600 shrink-0" />
+                      )}
+                    </button>
+                  </div>
+                )}
               </div>
 
               <div>
