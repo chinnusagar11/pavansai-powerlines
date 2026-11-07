@@ -96,10 +96,10 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-7 lg:gap-10 items-center">
             
             {/* Left Content Column */}
-            <div className="lg:col-span-7 space-y-4 sm:space-y-4.5 text-left">
+            <div className="lg:col-span-7 space-y-4 sm:space-y-5 text-left">
               
               {/* Status Pill Badge */}
-              <div className="inline-flex items-center gap-2.5 px-3 py-1 rounded-full bg-white/95 border border-blue-200/80 shadow-2xs text-xs font-semibold text-slate-800">
+              <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/95 border border-blue-200/80 shadow-2xs text-xs font-semibold text-slate-800">
                 <span className="relative flex h-2.5 w-2.5">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
@@ -119,29 +119,29 @@ export default function Home() {
                 <strong>Pavan Sai Power Lines (PSPL)</strong> is an established supplier and wholesale stockist of overhead line hardware, polymer & porcelain insulators, gang-operated AB switches, ACSR conductors, earthing equipment, and GI transmission towers headquartered in Secunderabad, Telangana.
               </p>
 
-              {/* Action Buttons - Balanced Viewport & Mobile Thumb Targets */}
-              <div className="pt-1 flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3 w-full sm:w-auto">
+              {/* Action Buttons - Perfectly Padded, Symmetrical & Unified */}
+              <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto">
                 <button
                   onClick={() => setIsQuoteModalOpen(true)}
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 hover:from-amber-300 hover:to-orange-400 active:scale-98 text-slate-950 font-black text-xs sm:text-sm px-5.5 py-3 rounded-xl shadow-md shadow-amber-500/20 ring-1 ring-amber-300/40 transition-all text-center"
+                  className="w-full sm:w-auto h-11 sm:h-12 px-6 inline-flex items-center justify-center gap-2.5 bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 hover:from-amber-300 hover:to-orange-400 active:scale-98 text-slate-950 font-bold text-xs sm:text-sm rounded-xl shadow-md shadow-amber-500/20 border border-amber-400/80 transition-all text-center whitespace-nowrap shrink-0"
                 >
-                  <MessageSquare size={16} className="text-slate-950 font-black" />
+                  <MessageSquare size={16} className="text-slate-950 shrink-0" />
                   <span>Request BOQ Quotation</span>
                 </button>
 
                 <Link
                   to="/products"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 active:scale-98 text-white font-bold text-xs sm:text-sm px-5 py-3 rounded-xl shadow-sm hover:shadow-md transition-all text-center"
+                  className="w-full sm:w-auto h-11 sm:h-12 px-6 inline-flex items-center justify-center gap-2.5 bg-blue-600 hover:bg-blue-700 active:scale-98 text-white font-bold text-xs sm:text-sm rounded-xl shadow-sm hover:shadow-md border border-blue-600 transition-all text-center whitespace-nowrap shrink-0"
                 >
                   <span>Explore Product Catalog</span>
-                  <ArrowRight size={15} />
+                  <ArrowRight size={15} className="shrink-0" />
                 </Link>
 
                 <Link
                   to="/contact"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-50 active:bg-slate-100 text-slate-800 font-bold text-xs sm:text-sm px-4.5 py-3 rounded-xl border border-slate-300 hover:border-slate-400 shadow-2xs transition-all text-center"
+                  className="w-full sm:w-auto h-11 sm:h-12 px-6 inline-flex items-center justify-center gap-2.5 bg-white hover:bg-slate-50 active:bg-slate-100 text-slate-800 font-bold text-xs sm:text-sm rounded-xl border border-slate-300 hover:border-slate-400 shadow-2xs transition-all text-center whitespace-nowrap shrink-0"
                 >
-                  <PhoneCall size={14} className="text-blue-600" />
+                  <PhoneCall size={15} className="text-blue-600 shrink-0" />
                   <span>Contact Sales Desk</span>
                 </Link>
               </div>
