@@ -1,15 +1,11 @@
 import React, { useState } from 'react';
-import { X, MessageCircle, Mail, CheckCircle2, AlertCircle } from 'lucide-react';
+import { X, MessageCircle, Mail, CheckCircle2, AlertCircle, Phone, User } from 'lucide-react';
 import { COMPANY_INFO } from '../data/company';
 
 export default function EnquiryModal({ isOpen, onClose, product = null }) {
   const [formData, setFormData] = useState({
     name: '',
-    company: '',
-    phone: '',
-    email: '',
-    quantity: '',
-    message: ''
+    phone: ''
   });
 
   const [errors, setErrors] = useState({});
@@ -33,7 +29,7 @@ export default function EnquiryModal({ isOpen, onClose, product = null }) {
 
   const validatePhoneNumber = (phoneStr) => {
     if (!phoneStr || !phoneStr.trim()) {
-      return { isValid: false, message: 'Phone number is required to receive quote' };
+      return { isValid: false, message: 'Phone number is required' };
     }
     const clean = phoneStr.replace(/[^0-9]/g, '');
     let digits = clean;
@@ -99,12 +95,8 @@ export default function EnquiryModal({ isOpen, onClose, product = null }) {
     if (product) {
       text += `*Category:* ${productCategory}\n`;
     }
-    if (formData.name) text += `*Name:* ${formData.name.trim()}\n`;
-    if (formData.company) text += `*Company/Firm:* ${formData.company.trim()}\n`;
-    if (formData.phone) text += `*Phone:* ${formData.phone.trim()}\n`;
-    if (formData.email) text += `*Email:* ${formData.email.trim()}\n`;
-    if (formData.quantity) text += `*Quantity/Requirement:* ${formData.quantity.trim()}\n`;
-    if (formData.message) text += `*Specifications/Notes:* ${formData.message.trim()}\n`;
+    text += `*Customer Name:* ${formData.name.trim()}\n`;
+    text += `*Contact Number:* ${formData.phone.trim()}\n`;
     text += `------------------------------------\n`;
     text += `Sent from Pavan Sai Power Lines Website (Secunderabad)`;
     return text;
@@ -124,7 +116,7 @@ export default function EnquiryModal({ isOpen, onClose, product = null }) {
     e.preventDefault();
     if (!validateForm()) return;
 
-    const subject = encodeURIComponent(`Product Inquiry: ${productName} - PSPL`);
+    const subject = encodeURIComponent(`Price Quote Request: ${productName} - PSPL`);
     const body = encodeURIComponent(generateEnquiryText());
     window.location.href = `mailto:${COMPANY_INFO.contact.primaryEmail}?cc=${COMPANY_INFO.contact.salesEmail}&subject=${subject}&body=${body}`;
     onClose();
@@ -134,7 +126,7 @@ export default function EnquiryModal({ isOpen, onClose, product = null }) {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-900/60 backdrop-blur-xs animate-fade-in">
-      <div className="bg-white rounded-2xl shadow-2xl max-w-lg w-full max-h-[92vh] flex flex-col border border-slate-200 overflow-hidden">
+      <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full flex flex-col border border-slate-200 overflow-hidden">
         
         {/* Clean Header with Single Close X Button */}
         <div className="bg-blue-600 text-white p-4 sm:p-5 flex items-center justify-between shrink-0">
@@ -168,129 +160,75 @@ export default function EnquiryModal({ isOpen, onClose, product = null }) {
           </div>
         )}
 
-        {/* Scrollable Form Body */}
-        <form className="p-4 sm:p-6 space-y-3.5 overflow-y-auto flex-1">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <div>
-              <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1">
-                Your Name *
-              </label>
-              <input
-                type="text"
-                name="name"
-                required
-                value={formData.name}
-                onChange={handleChange}
-                placeholder="e.g. Ramesh Reddy"
-                className={`w-full px-3.5 py-2.5 text-base sm:text-sm rounded-lg border transition-all ${
-                  errors.name 
-                    ? 'border-red-500 ring-2 ring-red-100 bg-red-50/20 text-slate-900' 
-                    : 'border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500'
-                }`}
-              />
-              {errors.name && (
-                <p className="text-[11px] font-bold text-red-600 flex items-center gap-1 mt-1 animate-fade-in">
-                  <AlertCircle size={12} className="shrink-0 text-red-500" />
-                  <span>{errors.name}</span>
-                </p>
-              )}
-            </div>
-
-            <div>
-              <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1">
-                Firm / Contractor Name
-              </label>
-              <input
-                type="text"
-                name="company"
-                value={formData.company}
-                onChange={handleChange}
-                placeholder="e.g. EPC Electricals"
-                className="w-full px-3.5 py-2.5 text-base sm:text-sm rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <div>
-              <div className="flex items-center justify-between mb-1">
-                <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider">
-                  Phone Number *
-                </label>
-                {phoneStatus.isValid && (
-                  <span className="text-[10px] font-bold text-emerald-600 flex items-center gap-1">
-                    <CheckCircle2 size={11} className="text-emerald-500" />
-                    <span>Valid</span>
-                  </span>
-                )}
-              </div>
-              <input
-                type="tel"
-                name="phone"
-                required
-                value={formData.phone}
-                onChange={handlePhoneChange}
-                placeholder="e.g. 97004 49684"
-                maxLength={16}
-                className={`w-full px-3.5 py-2.5 text-base sm:text-sm rounded-lg border transition-all ${
-                  errors.phone 
-                    ? 'border-red-500 ring-2 ring-red-100 bg-red-50/20 text-slate-900' 
-                    : phoneStatus.isValid 
-                      ? 'border-emerald-500 ring-1 ring-emerald-200 bg-emerald-50/10' 
-                      : 'border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500'
-                }`}
-              />
-              {errors.phone ? (
-                <p className="text-[11px] font-bold text-red-600 flex items-center gap-1 mt-1 animate-fade-in">
-                  <AlertCircle size={12} className="shrink-0 text-red-500" />
-                  <span>{errors.phone}</span>
-                </p>
-              ) : (
-                <p className="text-[10px] text-slate-400 mt-1">10-digit mobile number</p>
-              )}
-            </div>
-
-            <div>
-              <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1">
-                Quantity Needed
-              </label>
-              <input
-                type="text"
-                name="quantity"
-                value={formData.quantity}
-                onChange={handleChange}
-                placeholder="e.g. 500 Nos / 5 km"
-                className="w-full px-3.5 py-2.5 text-base sm:text-sm rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-            </div>
-          </div>
-
+        {/* Streamlined Form Body: ONLY Name & Phone Number */}
+        <form className="p-4 sm:p-6 space-y-4">
+          
+          {/* 1. Name Field */}
           <div>
-            <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1">
-              Email Address (Optional)
+            <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5 flex items-center gap-1.5">
+              <User size={13} className="text-blue-600" />
+              <span>Your Name *</span>
             </label>
             <input
-              type="email"
-              name="email"
-              value={formData.email}
+              type="text"
+              name="name"
+              required
+              autoFocus
+              value={formData.name}
               onChange={handleChange}
-              placeholder="e.g. ramesh@epcpower.com"
-              className="w-full px-3.5 py-2.5 text-base sm:text-sm rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="e.g. Ramesh Reddy"
+              className={`w-full px-3.5 py-2.5 text-base sm:text-sm rounded-xl border transition-all ${
+                errors.name 
+                  ? 'border-red-500 ring-2 ring-red-100 bg-red-50/20 text-slate-900' 
+                  : 'border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500'
+              }`}
             />
+            {errors.name && (
+              <p className="text-[11px] font-bold text-red-600 flex items-center gap-1 mt-1 animate-fade-in">
+                <AlertCircle size={12} className="shrink-0 text-red-500" />
+                <span>{errors.name}</span>
+              </p>
+            )}
           </div>
 
+          {/* 2. Phone Number Field */}
           <div>
-            <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1">
-              Specifications / Location Notes
-            </label>
-            <textarea
-              name="message"
-              rows={2}
-              value={formData.message}
-              onChange={handleChange}
-              placeholder="State rating, IS standard, or delivery location in Telangana / AP..."
-              className="w-full px-3.5 py-2 text-base sm:text-sm rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
+            <div className="flex items-center justify-between mb-1.5">
+              <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider flex items-center gap-1.5">
+                <Phone size={13} className="text-blue-600" />
+                <span>Mobile Number *</span>
+              </label>
+              {phoneStatus.isValid && (
+                <span className="text-[10px] font-bold text-emerald-600 flex items-center gap-1">
+                  <CheckCircle2 size={11} className="text-emerald-500" />
+                  <span>Valid 10-Digit</span>
+                </span>
+              )}
+            </div>
+            <input
+              type="tel"
+              name="phone"
+              required
+              value={formData.phone}
+              onChange={handlePhoneChange}
+              placeholder="e.g. 97004 49684"
+              maxLength={16}
+              className={`w-full px-3.5 py-2.5 text-base sm:text-sm rounded-xl border transition-all ${
+                errors.phone 
+                  ? 'border-red-500 ring-2 ring-red-100 bg-red-50/20 text-slate-900' 
+                  : phoneStatus.isValid 
+                    ? 'border-emerald-500 ring-1 ring-emerald-200 bg-emerald-50/10' 
+                    : 'border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500'
+              }`}
             />
+            {errors.phone ? (
+              <p className="text-[11px] font-bold text-red-600 flex items-center gap-1 mt-1 animate-fade-in">
+                <AlertCircle size={12} className="shrink-0 text-red-500" />
+                <span>{errors.phone}</span>
+              </p>
+            ) : (
+              <p className="text-[10px] text-slate-400 mt-1">Direct callback &amp; pricing quote on this number</p>
+            )}
           </div>
 
           {/* Action buttons */}
@@ -299,7 +237,7 @@ export default function EnquiryModal({ isOpen, onClose, product = null }) {
               <button
                 type="button"
                 onClick={handleWhatsAppSend}
-                className="flex-1 flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20ba59] active:scale-98 text-white py-2.5 px-4 rounded-xl font-semibold text-xs sm:text-sm shadow-xs transition"
+                className="flex-1 flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20ba59] active:scale-98 text-white py-3 px-4 rounded-xl font-bold text-xs sm:text-sm shadow-xs transition"
               >
                 <MessageCircle size={16} className="fill-current" />
                 <span>Send via WhatsApp</span>
@@ -308,7 +246,7 @@ export default function EnquiryModal({ isOpen, onClose, product = null }) {
               <button
                 type="button"
                 onClick={handleEmailSend}
-                className="flex-1 flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 active:scale-98 text-white py-2.5 px-4 rounded-xl font-semibold text-xs sm:text-sm shadow-xs transition"
+                className="flex-1 flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 active:scale-98 text-white py-3 px-4 rounded-xl font-bold text-xs sm:text-sm shadow-xs transition"
               >
                 <Mail size={16} />
                 <span>Send via Email</span>
@@ -317,7 +255,7 @@ export default function EnquiryModal({ isOpen, onClose, product = null }) {
           </div>
 
           <div className="flex items-center justify-center gap-1.5 text-xs text-slate-500 pt-0.5">
-            <CheckCircle2 size={13} className="text-emerald-500" />
+            <CheckCircle2 size={13} className="text-emerald-500 shrink-0" />
             <span>Connects directly to Secunderabad sales desk</span>
           </div>
         </form>

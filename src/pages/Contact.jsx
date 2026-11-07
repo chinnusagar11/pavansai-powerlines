@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { 
   Phone, 
@@ -16,7 +16,7 @@ import {
   PhoneCall,
   AlertCircle,
   CheckCircle2,
-  ChevronDown
+  User
 } from 'lucide-react';
 import { COMPANY_INFO } from '../data/company';
 import Breadcrumb from '../components/Breadcrumb';
@@ -26,28 +26,12 @@ import { getBreadcrumbSchema, getLocalBusinessSchema } from '../utils/schemaGene
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: '',
-    company: '',
-    phone: '',
-    email: '',
-    category: COMPANY_INFO.categories[0].name,
-    message: ''
+    phone: ''
   });
 
   const [errors, setErrors] = useState({});
   const [copiedPhone, setCopiedPhone] = useState(false);
   const [isCardZoomOpen, setIsCardZoomOpen] = useState(false);
-  const [isCategoryOpen, setIsCategoryOpen] = useState(false);
-  const categoryRef = useRef(null);
-
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (categoryRef.current && !categoryRef.current.contains(event.target)) {
-        setIsCategoryOpen(false);
-      }
-    };
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -122,14 +106,10 @@ export default function Contact() {
   };
 
   const buildMessageContent = () => {
-    let msg = `*COMMERCIAL MATERIAL INQUIRY - PSPL*\n`;
+    let msg = `*COMMERCIAL MATERIAL INQUIRY - PSPL SECUNDERABAD*\n`;
     msg += `------------------------------------\n`;
-    msg += `*Name:* ${formData.name.trim() || 'Not specified'}\n`;
-    if (formData.company) msg += `*Company:* ${formData.company.trim()}\n`;
-    msg += `*Phone:* ${formData.phone.trim() || 'Not specified'}\n`;
-    if (formData.email) msg += `*Email:* ${formData.email.trim()}\n`;
-    msg += `*Category:* ${formData.category}\n`;
-    if (formData.message) msg += `*Requirement Details:* ${formData.message.trim()}\n`;
+    msg += `*Customer Name:* ${formData.name.trim()}\n`;
+    msg += `*Contact Number:* ${formData.phone.trim()}\n`;
     msg += `------------------------------------\n`;
     msg += `Sent via Pavan Sai Power Lines Website (Secunderabad)`;
     return msg;
@@ -146,7 +126,7 @@ export default function Contact() {
   const handleEmailSubmit = (e) => {
     e.preventDefault();
     if (!validateForm()) return;
-    const subject = encodeURIComponent(`Material Inquiry: ${formData.category} - PSPL`);
+    const subject = encodeURIComponent(`Material Quote Request: ${formData.name.trim()} - PSPL`);
     const body = encodeURIComponent(buildMessageContent());
     window.location.href = `mailto:${COMPANY_INFO.contact.primaryEmail}?cc=${COMPANY_INFO.contact.salesEmail}&subject=${subject}&body=${body}`;
   };
@@ -359,201 +339,76 @@ export default function Contact() {
                 Send Material Requirement
               </h2>
               <p className="text-xs text-slate-500 mt-1">
-                Enter your requirement below. Transmit directly to our sales staff via WhatsApp or Email.
+                Enter your details below for instant pricing and stock availability from our sales desk.
               </p>
             </div>
 
-            <form className="space-y-3.5">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                <div>
-                  <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1">
-                    Your Name *
-                  </label>
-                  <input
-                    type="text"
-                    name="name"
-                    required
-                    value={formData.name}
-                    onChange={handleChange}
-                    placeholder="e.g. Ramesh Reddy"
-                    className={`w-full px-3.5 py-2.5 text-base sm:text-sm rounded-lg border transition-all ${
-                      errors.name 
-                        ? 'border-red-500 ring-2 ring-red-100 bg-red-50/20 text-slate-900' 
-                        : 'border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500'
-                    }`}
-                  />
-                  {errors.name && (
-                    <p className="text-[11px] font-bold text-red-600 flex items-center gap-1 mt-1 animate-fade-in">
-                      <AlertCircle size={12} className="shrink-0 text-red-500" />
-                      <span>{errors.name}</span>
-                    </p>
-                  )}
-                </div>
-
-                <div>
-                  <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1">
-                    Firm / Contractor Name
-                  </label>
-                  <input
-                    type="text"
-                    name="company"
-                    value={formData.company}
-                    onChange={handleChange}
-                    placeholder="e.g. EPC Electricals"
-                    className="w-full px-3.5 py-2.5 text-base sm:text-sm rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  />
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                <div>
-                  <div className="flex items-center justify-between mb-1">
-                    <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider">
-                      Mobile Number *
-                    </label>
-                    {phoneStatus.isValid && (
-                      <span className="text-[10px] font-bold text-emerald-600 flex items-center gap-1">
-                        <CheckCircle2 size={11} className="text-emerald-500" />
-                        <span>Valid 10-Digit Number</span>
-                      </span>
-                    )}
-                  </div>
-                  <input
-                    type="tel"
-                    name="phone"
-                    required
-                    value={formData.phone}
-                    onChange={handlePhoneChange}
-                    placeholder="e.g. 97004 49684"
-                    maxLength={16}
-                    className={`w-full px-3.5 py-2.5 text-base sm:text-sm rounded-lg border transition-all ${
-                      errors.phone 
-                        ? 'border-red-500 ring-2 ring-red-100 bg-red-50/20 text-slate-900' 
-                        : phoneStatus.isValid 
-                          ? 'border-emerald-500 ring-1 ring-emerald-200 bg-emerald-50/10' 
-                          : 'border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500'
-                    }`}
-                  />
-                  {errors.phone ? (
-                    <p className="text-[11px] font-bold text-red-600 flex items-center gap-1 mt-1 animate-fade-in">
-                      <AlertCircle size={12} className="shrink-0 text-red-500" />
-                      <span>{errors.phone}</span>
-                    </p>
-                  ) : (
-                    <p className="text-[10px] text-slate-400 mt-1">10-digit mobile number</p>
-                  )}
-                </div>
-
-                <div>
-                  <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1">
-                    Email Address
-                  </label>
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    placeholder="name@company.com"
-                    className="w-full px-3.5 py-2.5 text-base sm:text-sm rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  />
-                </div>
-              </div>
-
-              <div className="relative" ref={categoryRef}>
-                <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1">
-                  Product Category of Interest
+            <form className="space-y-4">
+              {/* 1. Name Field */}
+              <div>
+                <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5 flex items-center gap-1.5">
+                  <User size={13} className="text-blue-600" />
+                  <span>Your Name *</span>
                 </label>
-                
-                {/* Custom Elegant Dropdown Trigger - Strictly Bound to Card Width */}
-                <button
-                  type="button"
-                  onClick={() => setIsCategoryOpen(!isCategoryOpen)}
-                  className={`w-full px-3.5 py-2.5 text-base sm:text-sm rounded-lg border transition-all bg-white flex items-center justify-between text-left ${
-                    isCategoryOpen 
-                      ? 'border-blue-500 ring-2 ring-blue-500/20' 
-                      : 'border-slate-300 hover:border-slate-400'
+                <input
+                  type="text"
+                  name="name"
+                  required
+                  value={formData.name}
+                  onChange={handleChange}
+                  placeholder="e.g. Ramesh Reddy"
+                  className={`w-full px-3.5 py-2.5 text-base sm:text-sm rounded-lg border transition-all ${
+                    errors.name 
+                      ? 'border-red-500 ring-2 ring-red-100 bg-red-50/20 text-slate-900' 
+                      : 'border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500'
                   }`}
-                  aria-haspopup="listbox"
-                  aria-expanded={isCategoryOpen}
-                >
-                  <span className="font-semibold text-slate-900 truncate pr-2">
-                    {formData.category}
-                  </span>
-                  <ChevronDown 
-                    size={16} 
-                    className={`text-slate-500 shrink-0 transition-transform duration-200 ${
-                      isCategoryOpen ? 'rotate-180 text-blue-600' : ''
-                    }`} 
-                  />
-                </button>
-
-                {/* Custom Dropdown Menu - Never Overflows Mobile Viewport */}
-                {isCategoryOpen && (
-                  <div 
-                    role="listbox"
-                    className="absolute top-full left-0 right-0 w-full mt-1.5 z-40 bg-white rounded-xl border border-blue-200 shadow-xl py-1.5 max-h-64 overflow-y-auto animate-fade-in"
-                  >
-                    {COMPANY_INFO.categories.map((cat) => {
-                      const isSelected = formData.category === cat.name;
-                      return (
-                        <button
-                          key={cat.id}
-                          type="button"
-                          role="option"
-                          aria-selected={isSelected}
-                          onClick={() => {
-                            setFormData(prev => ({ ...prev, category: cat.name }));
-                            setIsCategoryOpen(false);
-                          }}
-                          className={`w-full text-left px-3.5 py-2.5 text-xs sm:text-sm font-semibold transition-colors flex items-center justify-between gap-2 ${
-                            isSelected 
-                              ? 'bg-blue-50 text-blue-700 font-bold' 
-                              : 'text-slate-700 hover:bg-slate-50 hover:text-blue-700'
-                          }`}
-                        >
-                          <span className="truncate">{cat.name}</span>
-                          {isSelected && <Check size={14} className="text-blue-600 shrink-0" />}
-                        </button>
-                      );
-                    })}
-
-                    <div className="border-t border-slate-100 my-1"></div>
-
-                    <button
-                      type="button"
-                      role="option"
-                      aria-selected={formData.category === 'General BOQ / Multiple Items'}
-                      onClick={() => {
-                        setFormData(prev => ({ ...prev, category: 'General BOQ / Multiple Items' }));
-                        setIsCategoryOpen(false);
-                      }}
-                      className={`w-full text-left px-3.5 py-2.5 text-xs sm:text-sm font-semibold transition-colors flex items-center justify-between gap-2 ${
-                        formData.category === 'General BOQ / Multiple Items'
-                          ? 'bg-blue-50 text-blue-700 font-bold' 
-                          : 'text-slate-700 hover:bg-slate-50 hover:text-blue-700'
-                      }`}
-                    >
-                      <span className="truncate">General BOQ / Multiple Items</span>
-                      {formData.category === 'General BOQ / Multiple Items' && (
-                        <Check size={14} className="text-blue-600 shrink-0" />
-                      )}
-                    </button>
-                  </div>
+                />
+                {errors.name && (
+                  <p className="text-[11px] font-bold text-red-600 flex items-center gap-1 mt-1 animate-fade-in">
+                    <AlertCircle size={12} className="shrink-0 text-red-500" />
+                    <span>{errors.name}</span>
+                  </p>
                 )}
               </div>
 
+              {/* 2. Phone Number Field */}
               <div>
-                <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1">
-                  Requirement Details / Quantities
-                </label>
-                <textarea
-                  name="message"
-                  rows={3}
-                  value={formData.message}
-                  onChange={handleChange}
-                  placeholder="Specify ratings (e.g. 11kV AB Switches, Dog Conductor 5km, Pin Insulators 500 Nos), site location, and delivery schedule..."
-                  className="w-full px-3.5 py-2.5 text-base sm:text-sm rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
+                <div className="flex items-center justify-between mb-1.5">
+                  <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider flex items-center gap-1.5">
+                    <Phone size={13} className="text-blue-600" />
+                    <span>Mobile Number *</span>
+                  </label>
+                  {phoneStatus.isValid && (
+                    <span className="text-[10px] font-bold text-emerald-600 flex items-center gap-1">
+                      <CheckCircle2 size={11} className="text-emerald-500" />
+                      <span>Valid 10-Digit Number</span>
+                    </span>
+                  )}
+                </div>
+                <input
+                  type="tel"
+                  name="phone"
+                  required
+                  value={formData.phone}
+                  onChange={handlePhoneChange}
+                  placeholder="e.g. 97004 49684"
+                  maxLength={16}
+                  className={`w-full px-3.5 py-2.5 text-base sm:text-sm rounded-lg border transition-all ${
+                    errors.phone 
+                      ? 'border-red-500 ring-2 ring-red-100 bg-red-50/20 text-slate-900' 
+                      : phoneStatus.isValid 
+                        ? 'border-emerald-500 ring-1 ring-emerald-200 bg-emerald-50/10' 
+                        : 'border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500'
+                  }`}
                 />
+                {errors.phone ? (
+                  <p className="text-[11px] font-bold text-red-600 flex items-center gap-1 mt-1 animate-fade-in">
+                    <AlertCircle size={12} className="shrink-0 text-red-500" />
+                    <span>{errors.phone}</span>
+                  </p>
+                ) : (
+                  <p className="text-[10px] text-slate-400 mt-1">10-digit mobile number for immediate callback &amp; quote dispatch</p>
+                )}
               </div>
 
               <div className="pt-2 flex flex-col sm:flex-row gap-2.5">
@@ -576,9 +431,10 @@ export default function Contact() {
                 </button>
               </div>
 
-              <p className="text-[11px] text-slate-500 text-center pt-1">
-                Transmits directly to sales staff without saving to external databases.
-              </p>
+              <div className="flex items-center justify-center gap-1.5 text-xs text-slate-500 pt-1">
+                <CheckCircle2 size={13} className="text-emerald-500 shrink-0" />
+                <span>Transmits directly to sales staff without saving to external databases.</span>
+              </div>
             </form>
           </div>
 
