@@ -1,10 +1,10 @@
 # Robots.txt for Pavan Sai Power Lines (PSPL)
-# Production Website: https://www.pavansaipowerlines.com
+# Production Website: https://pavansai-powerlines.vercel.app
 # Supplier of Electrical Power Transmission & Distribution Materials in Hyderabad & Secunderabad, Telangana
 
 User-agent: *
 Allow: /
 
 # Sitemap Index
-Sitemap: https://www.pavansaipowerlines.com/sitemap.xml
+Sitemap: https://pavansai-powerlines.vercel.app/sitemap.xml
 

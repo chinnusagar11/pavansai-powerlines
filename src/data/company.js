@@ -13,7 +13,7 @@ export const COMPANY_INFO = {
   description: "Pavan Sai Power Lines (PSPL) is a premier supplier and stockist of high-quality HT/LT overhead line materials, transformer spares, AB switches, AAAC & ACSR conductors, earthing materials, industrial electricals, and all MS & GI towers based in Secunderabad, Telangana.",
   
   // Official Production Website URL (Configurable for SEO & Canonical links)
-  website: "https://www.pavansaipowerlines.com",
+  website: "https://pavansai-powerlines.vercel.app",
   
   // Primary Location (Exact Registered Address from Official Visiting Card)
   location: {
