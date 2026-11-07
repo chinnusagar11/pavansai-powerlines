@@ -564,87 +564,198 @@ export default function Home() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           
-          <div className="group relative bg-white rounded-2xl border-2 border-blue-200 hover:border-blue-500 overflow-hidden shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col">
+          {/* Card 1: Overhead Power Corridors */}
+          <div className="group relative bg-white rounded-2xl border-2 border-blue-200 hover:border-blue-500 overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col h-full">
             <div className="h-1.5 w-full bg-gradient-to-r from-blue-600 to-sky-500"></div>
-            <div className="aspect-[16/10] bg-slate-900 overflow-hidden">
+            
+            {/* Fixed Height Uniform Image Container */}
+            <div className="relative h-56 w-full overflow-hidden bg-slate-900 shrink-0 border-b border-slate-100">
               <img
                 src="/images/products/transmission-tower.jpg"
                 alt="Overhead Power Transmission Towers"
-                className="w-full h-full object-cover group-hover:scale-106 transition-transform duration-500"
+                className="w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-700 ease-out"
               />
-            </div>
-            <div className="p-5 flex-1 flex flex-col justify-between">
-              <div>
-                <span className="inline-block px-2.5 py-0.5 rounded-md text-[10px] font-extrabold bg-blue-100 text-blue-800 border border-blue-200 mb-2">
-                  11kV – 400kV Grid
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-slate-950/20 to-transparent"></div>
+              
+              <div className="absolute top-3 left-3">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-bold bg-blue-900/85 text-white backdrop-blur-md shadow-md border border-blue-400/40">
+                  <Zap size={12} className="text-amber-400 fill-amber-400" />
+                  <span>11kV &ndash; 400kV Grid</span>
                 </span>
-                <h3 className="font-extrabold text-base text-slate-900 group-hover:text-blue-600 transition-colors">
+              </div>
+
+              <div className="absolute top-3 right-3">
+                <span className="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-black tracking-wider uppercase bg-white/95 text-slate-800 shadow-xs">
+                  IS Standard
+                </span>
+              </div>
+            </div>
+
+            <div className="p-5 sm:p-6 flex-1 flex flex-col justify-between space-y-4">
+              <div className="space-y-2.5">
+                <h3 className="font-extrabold text-base sm:text-lg text-slate-900 group-hover:text-blue-600 transition-colors leading-snug">
                   Overhead Power Corridors (HT/LT)
                 </h3>
-                <p className="text-xs text-slate-600 mt-2 leading-relaxed">
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                   11kV and 33kV distribution lines, ACSR/AAAC conductors, polymer pin insulators, V-cross arms, and guy wire stay sets.
                 </p>
+
+                {/* Material Specification Chips */}
+                <div className="pt-2 flex flex-wrap gap-1.5">
+                  <span className="text-[10px] font-bold px-2 py-0.5 rounded-md bg-blue-50 text-blue-800 border border-blue-200">
+                    ACSR / AAAC
+                  </span>
+                  <span className="text-[10px] font-bold px-2 py-0.5 rounded-md bg-blue-50 text-blue-800 border border-blue-200">
+                    Polymer Pin Insulators
+                  </span>
+                  <span className="text-[10px] font-bold px-2 py-0.5 rounded-md bg-blue-50 text-blue-800 border border-blue-200">
+                    GI Cross Arms
+                  </span>
+                  <span className="text-[10px] font-bold px-2 py-0.5 rounded-md bg-blue-50 text-blue-800 border border-blue-200">
+                    Stay Wire Sets
+                  </span>
+                </div>
               </div>
-              <Link to="/products?category=overhead-lines" className="mt-4 text-xs font-bold text-blue-600 flex items-center gap-1 group-hover:text-blue-700">
-                <span>View Overhead Hardware</span>
-                <ChevronRight size={14} className="group-hover:translate-x-1 transition-transform" />
-              </Link>
+
+              <div className="pt-3 border-t border-slate-100">
+                <Link 
+                  to="/products?category=overhead-lines" 
+                  className="w-full inline-flex items-center justify-between py-2.5 px-4 rounded-xl bg-blue-50 hover:bg-blue-600 text-blue-700 hover:text-white font-extrabold text-xs sm:text-sm transition-all duration-200 group/btn shadow-2xs"
+                >
+                  <span>View Overhead Hardware</span>
+                  <ChevronRight size={15} className="group-hover/btn:translate-x-1 transition-transform" />
+                </Link>
+              </div>
             </div>
           </div>
 
-          <div className="group relative bg-white rounded-2xl border-2 border-amber-200 hover:border-amber-500 overflow-hidden shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col">
+          {/* Card 2: Substations & Switchgear */}
+          <div className="group relative bg-white rounded-2xl border-2 border-amber-200 hover:border-amber-500 overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col h-full">
             <div className="h-1.5 w-full bg-gradient-to-r from-amber-500 to-orange-500"></div>
-            <div className="aspect-[16/10] bg-slate-50 flex items-center justify-center p-3 border-b border-slate-100">
+            
+            {/* Fixed Height Uniform Image Container */}
+            <div className="relative h-56 w-full overflow-hidden bg-slate-900 shrink-0 border-b border-slate-100">
               <img
                 src="/images/products/ab-switch-gang-operated.png"
                 alt="11kV 3-Phase Gang-Operated Air Break Switch"
-                className="w-full h-full object-contain group-hover:scale-106 transition-transform duration-500"
+                className="w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-700 ease-out"
               />
-            </div>
-            <div className="p-5 flex-1 flex flex-col justify-between">
-              <div>
-                <span className="inline-block px-2.5 py-0.5 rounded-md text-[10px] font-extrabold bg-amber-100 text-amber-900 border border-amber-200 mb-2">
-                  Substation Control
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-slate-950/20 to-transparent"></div>
+              
+              <div className="absolute top-3 left-3">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-bold bg-amber-950/85 text-amber-200 backdrop-blur-md shadow-md border border-amber-400/40">
+                  <ToggleRight size={12} className="text-amber-400" />
+                  <span>Substation Control</span>
                 </span>
-                <h3 className="font-extrabold text-base text-slate-900 group-hover:text-amber-700 transition-colors">
+              </div>
+
+              <div className="absolute top-3 right-3">
+                <span className="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-black tracking-wider uppercase bg-white/95 text-slate-800 shadow-xs">
+                  IS Standard
+                </span>
+              </div>
+            </div>
+
+            <div className="p-5 sm:p-6 flex-1 flex flex-col justify-between space-y-4">
+              <div className="space-y-2.5">
+                <h3 className="font-extrabold text-base sm:text-lg text-slate-900 group-hover:text-amber-700 transition-colors leading-snug">
                   Substations & Switchgear
                 </h3>
-                <p className="text-xs text-slate-600 mt-2 leading-relaxed">
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                   3-phase gang operated AB switches, 33kV line disconnector isolators, horn gap fuse units, and transformer spare parts.
                 </p>
+
+                {/* Material Specification Chips */}
+                <div className="pt-2 flex flex-wrap gap-1.5">
+                  <span className="text-[10px] font-bold px-2 py-0.5 rounded-md bg-amber-50 text-amber-900 border border-amber-200">
+                    Gang AB Switches
+                  </span>
+                  <span className="text-[10px] font-bold px-2 py-0.5 rounded-md bg-amber-50 text-amber-900 border border-amber-200">
+                    33kV Isolators
+                  </span>
+                  <span className="text-[10px] font-bold px-2 py-0.5 rounded-md bg-amber-50 text-amber-900 border border-amber-200">
+                    HG Fuse Units
+                  </span>
+                  <span className="text-[10px] font-bold px-2 py-0.5 rounded-md bg-amber-50 text-amber-900 border border-amber-200">
+                    Bushing Spares
+                  </span>
+                </div>
               </div>
-              <Link to="/products?category=ab-switches" className="mt-4 text-xs font-bold text-amber-700 flex items-center gap-1 group-hover:text-amber-800">
-                <span>View Switchgear Supplies</span>
-                <ChevronRight size={14} className="group-hover:translate-x-1 transition-transform" />
-              </Link>
+
+              <div className="pt-3 border-t border-slate-100">
+                <Link 
+                  to="/products?category=ab-switches" 
+                  className="w-full inline-flex items-center justify-between py-2.5 px-4 rounded-xl bg-amber-50 hover:bg-amber-500 text-amber-900 hover:text-slate-950 font-extrabold text-xs sm:text-sm transition-all duration-200 group/btn shadow-2xs"
+                >
+                  <span>View Switchgear Supplies</span>
+                  <ChevronRight size={15} className="group-hover/btn:translate-x-1 transition-transform" />
+                </Link>
+              </div>
             </div>
           </div>
 
-          <div className="group relative bg-white rounded-2xl border-2 border-emerald-200 hover:border-emerald-500 overflow-hidden shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col">
+          {/* Card 3: Substation & Plant Earthing */}
+          <div className="group relative bg-white rounded-2xl border-2 border-emerald-200 hover:border-emerald-500 overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col h-full">
             <div className="h-1.5 w-full bg-gradient-to-r from-emerald-600 to-teal-500"></div>
-            <div className="aspect-[16/10] bg-slate-50 flex items-center justify-center p-3 border-b border-slate-100">
+            
+            {/* Fixed Height Uniform Image Container */}
+            <div className="relative h-56 w-full overflow-hidden bg-slate-900 shrink-0 border-b border-slate-100">
               <img
                 src="/images/products/copper-bonded-earth-rods.jpg"
                 alt="Copper-Bonded Chemical Earth Electrodes"
-                className="w-full h-full object-contain group-hover:scale-106 transition-transform duration-500"
+                className="w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-700 ease-out"
               />
-            </div>
-            <div className="p-5 flex-1 flex flex-col justify-between">
-              <div>
-                <span className="inline-block px-2.5 py-0.5 rounded-md text-[10px] font-extrabold bg-emerald-100 text-emerald-800 border border-emerald-200 mb-2">
-                  Surge & Lightning Protection
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-slate-950/20 to-transparent"></div>
+              
+              <div className="absolute top-3 left-3">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-bold bg-emerald-950/85 text-emerald-200 backdrop-blur-md shadow-md border border-emerald-400/40">
+                  <ShieldCheck size={12} className="text-emerald-400" />
+                  <span>Surge Protection</span>
                 </span>
-                <h3 className="font-extrabold text-base text-slate-900 group-hover:text-emerald-700 transition-colors">
+              </div>
+
+              <div className="absolute top-3 right-3">
+                <span className="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-black tracking-wider uppercase bg-white/95 text-slate-800 shadow-xs">
+                  IS Standard
+                </span>
+              </div>
+            </div>
+
+            <div className="p-5 sm:p-6 flex-1 flex flex-col justify-between space-y-4">
+              <div className="space-y-2.5">
+                <h3 className="font-extrabold text-base sm:text-lg text-slate-900 group-hover:text-emerald-700 transition-colors leading-snug">
                   Substation & Plant Earthing
                 </h3>
-                <p className="text-xs text-slate-600 mt-2 leading-relaxed">
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                   Molecular copper-bonded rods, perforated GI earthing pipes, flanged cast iron pipes, and pure bare copper wire coils.
                 </p>
+
+                {/* Material Specification Chips */}
+                <div className="pt-2 flex flex-wrap gap-1.5">
+                  <span className="text-[10px] font-bold px-2 py-0.5 rounded-md bg-emerald-50 text-emerald-900 border border-emerald-200">
+                    Copper Bonded Rods
+                  </span>
+                  <span className="text-[10px] font-bold px-2 py-0.5 rounded-md bg-emerald-50 text-emerald-900 border border-emerald-200">
+                    GI Pipe Electrodes
+                  </span>
+                  <span className="text-[10px] font-bold px-2 py-0.5 rounded-md bg-emerald-50 text-emerald-900 border border-emerald-200">
+                    Cast Iron Pipes
+                  </span>
+                  <span className="text-[10px] font-bold px-2 py-0.5 rounded-md bg-emerald-50 text-emerald-900 border border-emerald-200">
+                    Bare Copper Wire
+                  </span>
+                </div>
               </div>
-              <Link to="/products?category=earthing" className="mt-4 text-xs font-bold text-emerald-700 flex items-center gap-1 group-hover:text-emerald-800">
-                <span>View Earthing Systems</span>
-                <ChevronRight size={14} className="group-hover:translate-x-1 transition-transform" />
-              </Link>
+
+              <div className="pt-3 border-t border-slate-100">
+                <Link 
+                  to="/products?category=earthing" 
+                  className="w-full inline-flex items-center justify-between py-2.5 px-4 rounded-xl bg-emerald-50 hover:bg-emerald-600 text-emerald-800 hover:text-white font-extrabold text-xs sm:text-sm transition-all duration-200 group/btn shadow-2xs"
+                >
+                  <span>View Earthing Systems</span>
+                  <ChevronRight size={15} className="group-hover/btn:translate-x-1 transition-transform" />
+                </Link>
+              </div>
             </div>
           </div>
 
