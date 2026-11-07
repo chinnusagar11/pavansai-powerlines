@@ -51,3 +51,14 @@
     background: #94a3b8;
   }
 }
+
+/* Safe area padding for modern iPhones and edge-to-edge mobile screens */
+.pb-safe {
+  padding-bottom: max(0.6rem, env(safe-area-inset-bottom, 0px));
+}
+
+/* Smooth mobile touch momentum */
+.touch-pan-x {
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-x;
+}

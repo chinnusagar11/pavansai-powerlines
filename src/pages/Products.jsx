@@ -168,7 +168,7 @@ export default function Products() {
                 placeholder="Search products by name, standard, or rating (e.g. 11kV, ACSR, AB Switch, Copper)..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-9 pr-9 py-2.5 text-xs sm:text-sm rounded-xl border-2 border-slate-200 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 bg-slate-50/50 hover:bg-white transition-all font-medium placeholder:text-slate-400"
+                className="w-full pl-9 pr-9 py-2.5 text-base sm:text-sm rounded-xl border-2 border-slate-200 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 bg-slate-50/50 hover:bg-white transition-all font-medium placeholder:text-slate-400"
               />
               {searchQuery && (
                 <button

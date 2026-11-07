@@ -117,11 +117,11 @@ export default function Home() {
                 <strong>Pavan Sai Power Lines (PSPL)</strong> is an established supplier and wholesale stockist of overhead line hardware, polymer & porcelain insulators, gang-operated AB switches, ACSR conductors, earthing equipment, and GI transmission towers headquartered in Secunderabad, Telangana.
               </p>
 
-              {/* Action Buttons - High-Energy Color Balance */}
-              <div className="pt-2 flex flex-wrap items-center gap-2.5 sm:gap-3">
+              {/* Action Buttons - High-Energy Color Balance & Mobile Friendly */}
+              <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3 w-full sm:w-auto">
                 <button
                   onClick={() => setIsQuoteModalOpen(true)}
-                  className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 hover:from-amber-300 hover:to-orange-400 active:scale-98 text-slate-950 font-black text-xs sm:text-sm px-6 py-3.5 rounded-xl shadow-md shadow-amber-500/20 ring-1 ring-amber-300/40 transition-all text-center"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 hover:from-amber-300 hover:to-orange-400 active:scale-98 text-slate-950 font-black text-xs sm:text-sm px-6 py-3.5 rounded-xl shadow-md shadow-amber-500/20 ring-1 ring-amber-300/40 transition-all text-center"
                 >
                   <MessageSquare size={16} className="text-slate-950 font-black" />
                   <span>Request BOQ Quotation</span>
@@ -129,7 +129,7 @@ export default function Home() {
 
                 <Link
                   to="/products"
-                  className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 active:scale-98 text-white font-bold text-xs sm:text-sm px-5 py-3.5 rounded-xl shadow-sm hover:shadow-md transition-all text-center"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 active:scale-98 text-white font-bold text-xs sm:text-sm px-5 py-3.5 rounded-xl shadow-sm hover:shadow-md transition-all text-center"
                 >
                   <span>Explore Product Catalog</span>
                   <ArrowRight size={15} />
@@ -137,7 +137,7 @@ export default function Home() {
 
                 <Link
                   to="/contact"
-                  className="inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-50 active:bg-slate-100 text-slate-800 font-bold text-xs sm:text-sm px-4.5 py-3.5 rounded-xl border border-slate-300 hover:border-slate-400 shadow-2xs transition-all text-center"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-50 active:bg-slate-100 text-slate-800 font-bold text-xs sm:text-sm px-4.5 py-3.5 rounded-xl border border-slate-300 hover:border-slate-400 shadow-2xs transition-all text-center"
                 >
                   <PhoneCall size={14} className="text-blue-600" />
                   <span>Contact Sales Desk</span>
@@ -145,95 +145,95 @@ export default function Home() {
               </div>
 
               {/* Metrics Highlights Bar - Semantic Purposeful Color Coding */}
-              <div className="pt-6 border-t border-slate-200/90 grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-3.5">
+              <div className="pt-6 border-t border-slate-200/90 grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3.5">
                 
                 {/* 1. Voltage Scope - Electric Blue */}
-                <div className="group relative bg-white hover:bg-blue-50/30 p-4 rounded-2xl border border-blue-200/90 hover:border-blue-500 shadow-xs hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 flex flex-col justify-between min-w-0 overflow-hidden">
+                <div className="group relative bg-white hover:bg-blue-50/30 p-3 sm:p-4 rounded-xl sm:rounded-2xl border border-blue-200/90 hover:border-blue-500 shadow-xs hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 flex flex-col justify-between min-w-0 overflow-hidden">
                   <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-blue-600 to-sky-500"></div>
                   
-                  <div className="flex items-center justify-between gap-1 mb-2 pt-0.5">
+                  <div className="flex items-center justify-between gap-1 mb-1.5 pt-0.5">
                     <span className="text-[10px] font-black uppercase tracking-wider text-blue-700 truncate">
                       Voltage Scope
                     </span>
-                    <div className="w-6 h-6 rounded-md bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white border border-blue-200 flex items-center justify-center shrink-0 transition-all">
-                      <Zap size={12} className="fill-current" />
+                    <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-md bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white border border-blue-200 flex items-center justify-center shrink-0 transition-all">
+                      <Zap size={11} className="fill-current" />
                     </div>
                   </div>
                   
                   <div>
-                    <p className="text-sm sm:text-base lg:text-[15px] xl:text-[17px] font-black text-slate-900 font-heading tracking-tight whitespace-nowrap">
+                    <p className="text-[13px] sm:text-base lg:text-[15px] xl:text-[17px] font-black text-slate-900 font-heading tracking-tight whitespace-nowrap">
                       11kV &ndash; 400kV
                     </p>
-                    <p className="text-[11px] font-bold text-blue-900/80 truncate mt-0.5">
+                    <p className="text-[10px] sm:text-[11px] font-bold text-blue-900/80 truncate mt-0.5">
                       HT / LT Grid Class
                     </p>
                   </div>
                 </div>
 
                 {/* 2. Product Scope - Industrial Indigo */}
-                <div className="group relative bg-white hover:bg-indigo-50/30 p-4 rounded-2xl border border-indigo-200/90 hover:border-indigo-500 shadow-xs hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 flex flex-col justify-between min-w-0 overflow-hidden">
+                <div className="group relative bg-white hover:bg-indigo-50/30 p-3 sm:p-4 rounded-xl sm:rounded-2xl border border-indigo-200/90 hover:border-indigo-500 shadow-xs hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 flex flex-col justify-between min-w-0 overflow-hidden">
                   <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-indigo-600 to-blue-600"></div>
                   
-                  <div className="flex items-center justify-between gap-1 mb-2 pt-0.5">
+                  <div className="flex items-center justify-between gap-1 mb-1.5 pt-0.5">
                     <span className="text-[10px] font-black uppercase tracking-wider text-indigo-700 truncate">
                       Product Scope
                     </span>
-                    <div className="w-6 h-6 rounded-md bg-indigo-50 text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white border border-indigo-200 flex items-center justify-center shrink-0 transition-all">
-                      <Layers size={12} />
+                    <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-md bg-indigo-50 text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white border border-indigo-200 flex items-center justify-center shrink-0 transition-all">
+                      <Layers size={11} />
                     </div>
                   </div>
                   
                   <div>
-                    <p className="text-sm sm:text-base lg:text-[15px] xl:text-[17px] font-black text-slate-900 font-heading tracking-tight whitespace-nowrap">
+                    <p className="text-[13px] sm:text-base lg:text-[15px] xl:text-[17px] font-black text-slate-900 font-heading tracking-tight whitespace-nowrap">
                       7 Divisions
                     </p>
-                    <p className="text-[11px] font-bold text-indigo-900/80 truncate mt-0.5">
+                    <p className="text-[10px] sm:text-[11px] font-bold text-indigo-900/80 truncate mt-0.5">
                       Complete Hardware
                     </p>
                   </div>
                 </div>
 
                 {/* 3. Quality Code - Verified Emerald Green */}
-                <div className="group relative bg-white hover:bg-emerald-50/30 p-4 rounded-2xl border border-emerald-200/90 hover:border-emerald-500 shadow-xs hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 flex flex-col justify-between min-w-0 overflow-hidden">
+                <div className="group relative bg-white hover:bg-emerald-50/30 p-3 sm:p-4 rounded-xl sm:rounded-2xl border border-emerald-200/90 hover:border-emerald-500 shadow-xs hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 flex flex-col justify-between min-w-0 overflow-hidden">
                   <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-emerald-600 to-teal-500"></div>
                   
-                  <div className="flex items-center justify-between gap-1 mb-2 pt-0.5">
+                  <div className="flex items-center justify-between gap-1 mb-1.5 pt-0.5">
                     <span className="text-[10px] font-black uppercase tracking-wider text-emerald-700 truncate">
                       Quality Code
                     </span>
-                    <div className="w-6 h-6 rounded-md bg-emerald-50 text-emerald-600 group-hover:bg-emerald-600 group-hover:text-white border border-emerald-200 flex items-center justify-center shrink-0 transition-all">
-                      <ShieldCheck size={12} />
+                    <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-md bg-emerald-50 text-emerald-600 group-hover:bg-emerald-600 group-hover:text-white border border-emerald-200 flex items-center justify-center shrink-0 transition-all">
+                      <ShieldCheck size={11} />
                     </div>
                   </div>
                   
                   <div>
-                    <p className="text-sm sm:text-base lg:text-[15px] xl:text-[17px] font-black text-slate-900 font-heading tracking-tight whitespace-nowrap">
+                    <p className="text-[13px] sm:text-base lg:text-[15px] xl:text-[17px] font-black text-slate-900 font-heading tracking-tight whitespace-nowrap">
                       IS &bull; IEC &bull; REC
                     </p>
-                    <p className="text-[11px] font-bold text-emerald-900/80 truncate mt-0.5">
+                    <p className="text-[10px] sm:text-[11px] font-bold text-emerald-900/80 truncate mt-0.5">
                       Utility Standards
                     </p>
                   </div>
                 </div>
 
                 {/* 4. Supply Hub - Warm Amber Gold */}
-                <div className="group relative bg-white hover:bg-amber-50/30 p-4 rounded-2xl border border-amber-200/90 hover:border-amber-500 shadow-xs hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 flex flex-col justify-between min-w-0 overflow-hidden">
+                <div className="group relative bg-white hover:bg-amber-50/30 p-3 sm:p-4 rounded-xl sm:rounded-2xl border border-amber-200/90 hover:border-amber-500 shadow-xs hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 flex flex-col justify-between min-w-0 overflow-hidden">
                   <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-amber-500 to-orange-500"></div>
                   
-                  <div className="flex items-center justify-between gap-1 mb-2 pt-0.5">
+                  <div className="flex items-center justify-between gap-1 mb-1.5 pt-0.5">
                     <span className="text-[10px] font-black uppercase tracking-wider text-amber-800 truncate">
                       Supply Hub
                     </span>
-                    <div className="w-6 h-6 rounded-md bg-amber-50 text-amber-700 group-hover:bg-amber-500 group-hover:text-white border border-amber-200 flex items-center justify-center shrink-0 transition-all">
-                      <MapPin size={12} />
+                    <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-md bg-amber-50 text-amber-700 group-hover:bg-amber-500 group-hover:text-white border border-amber-200 flex items-center justify-center shrink-0 transition-all">
+                      <MapPin size={11} />
                     </div>
                   </div>
                   
                   <div>
-                    <p className="text-sm sm:text-base lg:text-[15px] xl:text-[17px] font-black text-slate-900 font-heading tracking-tight whitespace-nowrap">
+                    <p className="text-[13px] sm:text-base lg:text-[15px] xl:text-[17px] font-black text-slate-900 font-heading tracking-tight whitespace-nowrap">
                       Secunderabad
                     </p>
-                    <p className="text-[11px] font-bold text-amber-900/80 truncate mt-0.5">
+                    <p className="text-[10px] sm:text-[11px] font-bold text-amber-900/80 truncate mt-0.5">
                       Logistics Dispatch Hub
                     </p>
                   </div>

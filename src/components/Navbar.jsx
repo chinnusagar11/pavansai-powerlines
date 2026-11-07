@@ -206,10 +206,10 @@ export default function Navbar() {
 
               <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="md:hidden p-2 rounded-xl text-slate-700 hover:text-blue-600 hover:bg-slate-100 focus:outline-none active:bg-slate-200 transition"
+                className="md:hidden p-2 rounded-xl text-slate-700 hover:text-blue-700 bg-white/80 hover:bg-white active:bg-blue-100/60 border border-blue-200/90 shadow-2xs focus:outline-none transition-all flex items-center justify-center shrink-0"
                 aria-label="Toggle navigation menu"
               >
-                {isOpen ? <X size={24} /> : <Menu size={24} />}
+                {isOpen ? <X size={22} className="text-slate-800" /> : <Menu size={22} className="text-slate-800" />}
               </button>
             </div>
 
@@ -217,8 +217,8 @@ export default function Navbar() {
 
           {/* Mobile Drawer Overlay */}
           {isOpen && (
-            <div className="md:hidden fixed inset-x-0 top-[57px] bottom-0 bg-slate-900/40 backdrop-blur-xs z-50 flex flex-col justify-between animate-fade-in">
-              <div className="bg-[#edf4fc] border-b border-blue-200 px-4 pt-3 pb-6 space-y-1.5 shadow-2xl max-h-[85vh] overflow-y-auto">
+            <div className="md:hidden fixed inset-x-0 top-[56px] sm:top-[64px] bottom-0 bg-slate-900/40 backdrop-blur-xs z-50 flex flex-col justify-between animate-fade-in">
+              <div className="bg-[#edf4fc] border-b border-blue-200 px-4 pt-3 pb-8 space-y-1.5 shadow-2xl max-h-[82vh] overflow-y-auto pb-safe">
                 <NavLink to="/" className={mobileNavLinkClass}>
                   <span>Home</span>
                   <span className="text-xs text-blue-600">&rarr;</span>

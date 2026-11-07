@@ -118,7 +118,7 @@ export default function About() {
                   </span>
                 </div>
               </div>
-              <div className="flex items-center justify-between text-xs text-slate-600 pt-0.5">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-1 text-xs text-slate-600 pt-1">
                 <span>Proprietor: <strong className="text-slate-900 font-bold">{COMPANY_INFO.contact.representativeName}</strong></span>
                 <a href={`tel:${COMPANY_INFO.contact.primaryPhoneRaw}`} className="text-blue-600 font-black hover:underline">
                   {COMPANY_INFO.contact.primaryPhone}

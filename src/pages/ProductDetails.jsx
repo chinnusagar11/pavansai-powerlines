@@ -264,7 +264,7 @@ export default function ProductDetails() {
 
       {/* 3. Verified Technical Specifications Section */}
       {product.specifications && Object.keys(product.specifications).length > 0 && (
-        <section className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8">
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-white rounded-2xl border-2 border-blue-200 overflow-hidden shadow-xs hover:shadow-md transition-shadow">
             <div className="h-1.5 w-full bg-gradient-to-r from-blue-600 to-indigo-600"></div>
             <div className="bg-gradient-to-r from-blue-50/90 to-sky-50/70 border-b border-blue-200 p-3.5 sm:p-4 flex items-center justify-between">
