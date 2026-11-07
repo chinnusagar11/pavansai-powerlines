@@ -156,48 +156,50 @@ export default function About() {
 
             {/* Right Column: Official Visiting Card Showcase */}
             <div className="lg:col-span-5">
-              <div className="rounded-2xl overflow-hidden border-2 border-blue-200/90 shadow-xl bg-white p-3 sm:p-3.5 space-y-2.5">
+              <div className="group rounded-2xl overflow-hidden border-2 border-blue-200/90 hover:border-blue-500/80 shadow-xl bg-white p-3 sm:p-4 space-y-3 transition-all duration-300">
                 
                 {/* Premium Top Bar */}
                 <div className="flex items-center justify-between text-xs pb-2 border-b border-blue-100">
                   <span className="font-extrabold text-slate-900 flex items-center gap-1.5">
-                    <ShieldCheck size={15} className="text-blue-600 shrink-0" />
-                    <span>Official Business Credentials</span>
+                    <ShieldCheck size={16} className="text-blue-600 shrink-0" />
+                    <span>Official Visiting Card</span>
                   </span>
-                  <span className="text-[10px] font-extrabold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">
+                  <span className="text-[10px] font-extrabold text-emerald-800 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200">
                     Verified Stockist
                   </span>
                 </div>
 
-                {/* Click-to-Zoom Visiting Card */}
+                {/* Click-to-Zoom Visiting Card Container with Clean Card Surface (No Black Bars) */}
                 <div 
                   onClick={() => setIsCardZoomOpen(true)}
-                  className="rounded-xl overflow-hidden border border-slate-200 bg-slate-950 shadow-inner group relative cursor-pointer"
-                  title="Click to zoom and view official visiting card in high resolution"
+                  className="rounded-xl overflow-hidden border border-slate-200/90 bg-gradient-to-b from-slate-50 to-white p-1.5 shadow-xs relative cursor-pointer group/card"
+                  title="Click to zoom and view official visiting card in full resolution"
                 >
                   <img
                     src="/images/pspl-visiting-card.jpg"
                     alt="Pavan Sai Power Lines Official Visiting Card - V. Nagamalleswara Rao"
-                    className="w-full h-auto max-h-[220px] object-contain group-hover:scale-103 transition-transform duration-300"
+                    className="w-full h-auto aspect-[1024/570] object-contain rounded-lg shadow-2xs group-hover/card:scale-102 transition-transform duration-300"
                   />
-                  <div className="absolute bottom-2 right-2 opacity-90 group-hover:opacity-100 transition-opacity">
-                    <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[10px] font-semibold bg-slate-900/90 text-white backdrop-blur-xs shadow-md border border-white/20">
-                      <Maximize2 size={11} />
-                      <span>Click to Zoom</span>
+
+                  {/* Clean Hover Zoom Overlay - Never covers contact text in default view */}
+                  <div className="absolute inset-0 bg-slate-900/35 backdrop-blur-[2px] opacity-0 group-hover/card:opacity-100 transition-opacity flex items-center justify-center rounded-xl">
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold bg-white text-slate-900 shadow-lg border border-slate-200">
+                      <Maximize2 size={13} className="text-blue-600" />
+                      <span>Click to Enlarge Card</span>
                     </span>
                   </div>
                 </div>
 
                 {/* Contact Footer */}
-                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-1 text-xs text-slate-600 pt-0.5 border-t border-slate-100">
-                  <span className="text-[11px]">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-1.5 text-xs text-slate-600 pt-1 border-t border-slate-100">
+                  <span className="text-xs">
                     Proprietor: <strong className="text-slate-900 font-bold">{COMPANY_INFO.contact.representativeName}</strong>
                   </span>
                   <a 
                     href={`tel:${COMPANY_INFO.contact.primaryPhoneRaw}`} 
-                    className="inline-flex items-center gap-1 text-blue-600 font-black hover:text-blue-800 hover:underline text-[11px]"
+                    className="inline-flex items-center gap-1.5 text-blue-600 hover:text-blue-800 font-bold hover:underline"
                   >
-                    <PhoneCall size={11} />
+                    <PhoneCall size={12} className="text-blue-600 shrink-0" />
                     <span>{COMPANY_INFO.contact.primaryPhone}</span>
                   </a>
                 </div>

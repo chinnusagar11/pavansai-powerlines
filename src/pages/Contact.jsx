@@ -147,31 +147,44 @@ export default function Contact() {
   return (
     <div className="space-y-8 sm:space-y-12 pb-16">
       
-      {/* 1. Page Header */}
-      <section className="bg-gradient-to-b from-blue-50/60 to-white py-8 sm:py-12 border-b border-slate-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between gap-3">
+      {/* 1. Page Header with Architectural Micro-Pattern */}
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#eaf2fc] via-[#f1f6fd] to-white py-6 sm:py-8 border-b border-blue-200/80">
+        <div className="absolute inset-0 bg-[radial-gradient(#3b82f6_1px,transparent_1px)] [background-size:24px_24px] opacity-10 pointer-events-none"></div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
             <Breadcrumb items={[{ label: 'Contact Us' }]} />
 
-            <Link
-              to="/"
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white hover:bg-slate-50 active:bg-slate-100 text-slate-800 text-xs font-bold border border-slate-200 transition shadow-2xs shrink-0"
-              title="Return to Home Page"
-            >
-              <ArrowLeft size={14} className="text-blue-600" />
-              <span>Back to Home</span>
-            </Link>
+            <div className="flex items-center gap-2 sm:gap-2.5">
+              <span className="inline-flex items-center gap-1.5 text-[11px] font-bold text-slate-700 bg-white px-2.5 py-1 rounded-lg border border-blue-200 shadow-2xs">
+                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                <span>Secunderabad Commercial Desk</span>
+              </span>
+
+              <Link
+                to="/"
+                className="inline-flex items-center gap-1.5 px-3 py-1 rounded-xl bg-white hover:bg-slate-50 active:bg-slate-100 text-slate-800 text-xs font-bold border border-slate-300 hover:border-slate-400 transition shadow-2xs shrink-0"
+                title="Return to Home Page"
+              >
+                <ArrowLeft size={13} className="text-blue-600" />
+                <span>Back to Home</span>
+              </Link>
+            </div>
           </div>
           
-          <div className="max-w-3xl space-y-2 mt-2">
-            <span className="inline-block text-[11px] font-bold uppercase tracking-wider text-blue-600 bg-blue-100/70 px-2.5 py-1 rounded-md border border-blue-200">
-              Commercial Desk
-            </span>
+          <div className="max-w-3xl space-y-2 mt-3.5">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-blue-200 shadow-2xs text-[11px] font-bold text-slate-800">
+              <span className="text-blue-700 uppercase tracking-wider">Commercial Desk</span>
+              <span className="text-slate-300">&bull;</span>
+              <span className="text-emerald-700 font-bold">Fast Response Guarantee</span>
+            </div>
+
             <h1 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-slate-900 font-heading">
               Contact Pavan Sai Power Lines
             </h1>
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-              Reach out directly to our Secunderabad office for electrical material pricing, stock availability, and dispatch logistics.
+
+            <p className="text-xs sm:text-sm lg:text-[15px] text-slate-600 leading-relaxed font-normal">
+              Reach out directly to our Secunderabad office for electrical material pricing, stock availability, and dispatch logistics across Telangana, Andhra Pradesh, and PAN-India.
             </p>
           </div>
         </div>
