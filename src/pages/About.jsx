@@ -162,7 +162,7 @@ export default function About() {
             <div className="group relative bg-white hover:bg-slate-50/50 p-5 rounded-2xl border border-slate-200/90 hover:border-blue-500/80 shadow-xs hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden">
               <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-blue-600 to-indigo-600"></div>
               <div className="flex items-center gap-2.5 mb-2.5 pt-0.5">
-                <div className="w-9 h-9 rounded-xl bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white border border-blue-200 flex items-center justify-center shadow-xs group-hover:scale-108 transition-all">
+                <div className="w-9 h-9 rounded-xl bg-indigo-50 text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white border border-indigo-200 flex items-center justify-center shadow-xs group-hover:scale-108 transition-all">
                   <Cpu size={18} />
                 </div>
                 <h3 className="font-extrabold text-sm text-slate-900">Transformer Spares</h3>
@@ -176,7 +176,7 @@ export default function About() {
             <div className="group relative bg-white hover:bg-slate-50/50 p-5 rounded-2xl border border-slate-200/90 hover:border-blue-500/80 shadow-xs hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden">
               <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-blue-600 to-indigo-600"></div>
               <div className="flex items-center gap-2.5 mb-2.5 pt-0.5">
-                <div className="w-9 h-9 rounded-xl bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white border border-blue-200 flex items-center justify-center shadow-xs group-hover:scale-108 transition-all">
+                <div className="w-9 h-9 rounded-xl bg-amber-50 text-amber-600 group-hover:bg-amber-500 group-hover:text-white border border-amber-200 flex items-center justify-center shadow-xs group-hover:scale-108 transition-all">
                   <ToggleRight size={18} />
                 </div>
                 <h3 className="font-extrabold text-sm text-slate-900">AB Switches</h3>
@@ -190,7 +190,7 @@ export default function About() {
             <div className="group relative bg-white hover:bg-slate-50/50 p-5 rounded-2xl border border-slate-200/90 hover:border-blue-500/80 shadow-xs hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden">
               <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-blue-600 to-indigo-600"></div>
               <div className="flex items-center gap-2.5 mb-2.5 pt-0.5">
-                <div className="w-9 h-9 rounded-xl bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white border border-blue-200 flex items-center justify-center shadow-xs group-hover:scale-108 transition-all">
+                <div className="w-9 h-9 rounded-xl bg-sky-50 text-sky-600 group-hover:bg-sky-600 group-hover:text-white border border-sky-200 flex items-center justify-center shadow-xs group-hover:scale-108 transition-all">
                   <Activity size={18} />
                 </div>
                 <h3 className="font-extrabold text-sm text-slate-900">AAAC & ACSR Conductors</h3>
@@ -204,7 +204,7 @@ export default function About() {
             <div className="group relative bg-white hover:bg-slate-50/50 p-5 rounded-2xl border border-slate-200/90 hover:border-blue-500/80 shadow-xs hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden">
               <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-blue-600 to-indigo-600"></div>
               <div className="flex items-center gap-2.5 mb-2.5 pt-0.5">
-                <div className="w-9 h-9 rounded-xl bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white border border-blue-200 flex items-center justify-center shadow-xs group-hover:scale-108 transition-all">
+                <div className="w-9 h-9 rounded-xl bg-emerald-50 text-emerald-600 group-hover:bg-emerald-600 group-hover:text-white border border-emerald-200 flex items-center justify-center shadow-xs group-hover:scale-108 transition-all">
                   <ShieldCheck size={18} />
                 </div>
                 <h3 className="font-extrabold text-sm text-slate-900">Earthing Materials</h3>
@@ -218,7 +218,7 @@ export default function About() {
             <div className="group relative bg-white hover:bg-slate-50/50 p-5 rounded-2xl border border-slate-200/90 hover:border-blue-500/80 shadow-xs hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden">
               <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-blue-600 to-indigo-600"></div>
               <div className="flex items-center gap-2.5 mb-2.5 pt-0.5">
-                <div className="w-9 h-9 rounded-xl bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white border border-blue-200 flex items-center justify-center shadow-xs group-hover:scale-108 transition-all">
+                <div className="w-9 h-9 rounded-xl bg-rose-50 text-rose-600 group-hover:bg-rose-600 group-hover:text-white border border-rose-200 flex items-center justify-center shadow-xs group-hover:scale-108 transition-all">
                   <Sliders size={18} />
                 </div>
                 <h3 className="font-extrabold text-sm text-slate-900">Industrial Electricals & Towers</h3>

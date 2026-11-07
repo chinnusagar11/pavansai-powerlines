@@ -98,13 +98,13 @@ export default function Navbar() {
             </div>
 
             {/* Right Contact Details */}
-            <div className="flex items-center gap-5">
+            <div className="flex items-center gap-4">
               <a 
                 href={`tel:${COMPANY_INFO.contact.primaryPhoneRaw}`} 
-                className="inline-flex items-center gap-1.5 text-slate-800 hover:text-blue-600 font-bold transition-colors py-0.5"
+                className="inline-flex items-center gap-1.5 bg-blue-50 hover:bg-blue-600 text-blue-700 hover:text-white px-2.5 py-1 rounded-lg text-xs font-bold transition-all border border-blue-200/80 shadow-2xs"
                 title="Call PSPL Sales Desk"
               >
-                <Phone size={12} className="text-blue-600 fill-blue-600" />
+                <Phone size={11} className="fill-current" />
                 <span>{COMPANY_INFO.contact.primaryPhone}</span>
               </a>
 
@@ -204,10 +204,10 @@ export default function Navbar() {
             <div className="flex items-center gap-2 sm:gap-3 shrink-0">
               <button
                 onClick={() => setIsQuoteModalOpen(true)}
-                className="hidden sm:inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 text-white font-bold text-xs sm:text-sm px-5 py-2.5 rounded-xl shadow-sm hover:shadow-md active:scale-97 transition-all shrink-0"
+                className="hidden sm:inline-flex items-center gap-2 bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 hover:from-amber-300 hover:to-orange-400 text-slate-950 font-black text-xs sm:text-sm px-5 py-2.5 rounded-xl shadow-xs hover:shadow transition-all active:scale-97 shrink-0 border border-amber-300/60"
               >
-                <Send size={14} className="text-white" />
-                <span className="whitespace-nowrap">Request Quote</span>
+                <Send size={14} className="text-slate-950 font-black" />
+                <span className="whitespace-nowrap">Get a Quote</span>
               </button>
 
               <button
