@@ -140,7 +140,7 @@ export default function Contact() {
   const phoneStatus = validatePhoneNumber(formData.phone);
 
   return (
-    <div className="space-y-10 sm:space-y-14 lg:space-y-16 pb-16">
+    <div className="space-y-10 sm:space-y-14 lg:space-y-16 pb-24 md:pb-16">
       <SEO
         title="Contact Pavan Sai Power Lines | Secunderabad & Hyderabad Sales Desk"
         description="Contact Pavan Sai Power Lines in Bansilalpet Road, Secunderabad. Call +91 97004 49684 or visit our supply base for electrical materials quotes in Hyderabad & Telangana."
@@ -157,37 +157,37 @@ export default function Contact() {
       />
       
       {/* 1. Page Header with Architectural Micro-Pattern */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-[#eaf2fc] via-[#f1f6fd] to-white py-6 sm:py-8 border-b border-blue-200/80">
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#eaf2fc] via-[#f1f6fd] to-white pt-6 pb-8 sm:pt-8 sm:pb-10 lg:pt-10 lg:pb-12 border-b border-blue-200/80">
         <div className="absolute inset-0 bg-[radial-gradient(#3b82f6_1px,transparent_1px)] [background-size:24px_24px] opacity-10 pointer-events-none"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="flex items-center justify-between gap-3 pb-3.5 mb-5 sm:mb-6 border-b border-blue-200/60">
+          <div className="flex items-center justify-between gap-3 pb-3 mb-4 sm:mb-6 border-b border-blue-200/60">
             <div className="hidden sm:block">
               <Breadcrumb items={[{ label: 'Contact Us' }]} />
             </div>
 
-            <div className="flex items-center justify-between sm:justify-end gap-2.5 w-full sm:w-auto">
+            <div className="flex items-center justify-between sm:justify-end gap-2 w-full sm:w-auto">
               <Link
                 to="/"
-                className="group inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-white hover:bg-blue-50/80 active:bg-blue-100 text-slate-800 hover:text-blue-700 text-xs sm:text-[13px] font-bold border border-slate-200/90 hover:border-blue-400 shadow-2xs hover:shadow-xs transition-all duration-200 shrink-0"
+                className="group inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-3.5 py-1.5 rounded-xl bg-white hover:bg-blue-50/80 active:bg-blue-100 text-slate-800 hover:text-blue-700 text-xs sm:text-[13px] font-bold border border-slate-200/90 hover:border-blue-400 shadow-2xs hover:shadow-xs transition-all duration-200 shrink-0"
                 title="Return to Home Page"
               >
-                <ArrowLeft size={14} className="text-blue-600 group-hover:-translate-x-1 transition-transform duration-200" />
+                <ArrowLeft size={13} className="text-blue-600 group-hover:-translate-x-1 transition-transform duration-200" />
                 <span>Back to Home</span>
               </Link>
 
-              <span className="inline-flex items-center gap-1.5 text-[11px] font-bold text-slate-700 bg-white px-2.5 py-1.5 rounded-xl border border-blue-200 shadow-2xs shrink-0">
+              <span className="inline-flex items-center gap-1.5 text-[10px] sm:text-[11px] font-bold text-slate-700 bg-white px-2 sm:px-2.5 py-1.5 rounded-xl border border-blue-200 shadow-2xs shrink-0 whitespace-nowrap">
                 <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                <span>Secunderabad Commercial Desk</span>
+                <span>Secunderabad Desk</span>
               </span>
             </div>
           </div>
           
           <div className="max-w-3xl space-y-2.5">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-blue-200 shadow-2xs text-[11px] font-bold text-slate-800">
-              <span className="text-blue-700 uppercase tracking-wider">Commercial Desk</span>
+            <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-white border border-blue-200 shadow-2xs text-[10px] sm:text-xs font-bold text-slate-800">
+              <span className="text-blue-700 uppercase tracking-wider whitespace-nowrap">Commercial Desk</span>
               <span className="text-slate-300">&bull;</span>
-              <span className="text-emerald-700 font-bold">Fast Response Guarantee</span>
+              <span className="text-emerald-700 font-bold whitespace-nowrap">Fast Response Guarantee</span>
             </div>
 
             <h1 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-slate-900 font-heading">

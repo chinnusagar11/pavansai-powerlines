@@ -117,7 +117,7 @@ export default function Products() {
       ];
 
   return (
-    <div className="space-y-10 sm:space-y-12 lg:space-y-14 pb-16">
+    <div className="space-y-10 sm:space-y-12 lg:space-y-14 pb-24 md:pb-16">
       <SEO
         title={pageTitle}
         description={pageDescription}
@@ -130,28 +130,28 @@ export default function Products() {
       />
       
       {/* 1. Page Header with Symmetrical Alignment & Status Pill */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-[#eaf2fc] via-[#f1f6fd] to-white py-6 sm:py-8 lg:py-9 border-b border-blue-200/80">
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#eaf2fc] via-[#f1f6fd] to-white pt-6 pb-8 sm:pt-8 sm:pb-10 lg:pt-10 lg:pb-12 border-b border-blue-200/80">
         {/* Subtle Architectural Pattern */}
         <div className="absolute inset-0 bg-[radial-gradient(#3b82f6_1px,transparent_1px)] [background-size:24px_24px] opacity-10 pointer-events-none"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
-          <div className="flex items-center justify-between gap-3 pb-3.5 mb-5 sm:mb-6 border-b border-blue-200/60">
+          <div className="flex items-center justify-between gap-3 pb-3 mb-4 sm:mb-6 border-b border-blue-200/60">
             <div className="hidden sm:block">
               <Breadcrumb items={[{ label: 'Products & Materials' }]} />
             </div>
             
-            <div className="flex items-center justify-between sm:justify-end gap-2.5 w-full sm:w-auto">
+            <div className="flex items-center justify-between sm:justify-end gap-2 w-full sm:w-auto">
               <Link
                 to="/"
-                className="group inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-white hover:bg-blue-50/80 active:bg-blue-100 text-slate-800 hover:text-blue-700 text-xs sm:text-[13px] font-bold border border-slate-200/90 hover:border-blue-400 shadow-2xs hover:shadow-xs transition-all duration-200 shrink-0"
+                className="group inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-3.5 py-1.5 rounded-xl bg-white hover:bg-blue-50/80 active:bg-blue-100 text-slate-800 hover:text-blue-700 text-xs sm:text-[13px] font-bold border border-slate-200/90 hover:border-blue-400 shadow-2xs hover:shadow-xs transition-all duration-200 shrink-0"
                 title="Return to Home Page"
               >
-                <ArrowLeft size={14} className="text-blue-600 group-hover:-translate-x-1 transition-transform duration-200" />
+                <ArrowLeft size={13} className="text-blue-600 group-hover:-translate-x-1 transition-transform duration-200" />
                 <span>Back to Home</span>
               </Link>
 
-              <span className="inline-flex items-center gap-1.5 text-[11px] font-bold text-slate-700 bg-white px-2.5 py-1.5 rounded-xl border border-blue-200 shadow-2xs shrink-0">
+              <span className="inline-flex items-center gap-1.5 text-[10px] sm:text-[11px] font-bold text-slate-700 bg-white px-2 sm:px-2.5 py-1.5 rounded-xl border border-blue-200 shadow-2xs shrink-0 whitespace-nowrap">
                 <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
                 <span>Verified Stockist</span>
               </span>
@@ -160,7 +160,7 @@ export default function Products() {
           
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-5 mt-4">
             <div className="max-w-2xl space-y-2">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-blue-200 shadow-2xs text-[11px] font-bold text-slate-800">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-blue-200 shadow-2xs text-[10px] sm:text-[11px] font-bold text-slate-800">
                 <span className="relative flex h-2 w-2 shrink-0">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
@@ -170,8 +170,8 @@ export default function Products() {
                 <span className="text-slate-600 hidden sm:inline whitespace-nowrap">IS &bull; IEC &bull; REC Standard</span>
               </div>
 
-              <h1 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-slate-900 font-heading">
-                Electrical Transmission & Distribution Materials
+              <h1 className="text-xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-slate-900 font-heading leading-tight">
+                Electrical Transmission &amp; Distribution Materials
               </h1>
 
               <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">

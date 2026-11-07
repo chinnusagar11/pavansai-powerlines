@@ -30,7 +30,7 @@ export default function About() {
   const [isCardZoomOpen, setIsCardZoomOpen] = useState(false);
 
   return (
-    <div className="space-y-12 sm:space-y-16 lg:space-y-20 pb-16">
+    <div className="space-y-10 sm:space-y-16 lg:space-y-20 pb-24 md:pb-16">
       <SEO
         title="About Pavan Sai Power Lines | Electrical Equipment Suppliers in Secunderabad"
         description="Learn about Pavan Sai Power Lines (PSPL), an established electrical materials & power transmission hardware stockist in Bansilalpet Road, Secunderabad, Telangana."
@@ -47,7 +47,7 @@ export default function About() {
       />
       
       {/* 1. UNIFIED EXECUTIVE HERO SECTION - 100% VIEWPORT VISIBILITY */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-[#eaf2fc] via-[#f1f6fd] to-white pt-5 pb-8 sm:pt-6 sm:pb-10 lg:pt-7 lg:pb-11 border-b border-blue-200/80">
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#eaf2fc] via-[#f1f6fd] to-white pt-6 pb-8 sm:pt-8 sm:pb-10 lg:pt-10 lg:pb-12 border-b border-blue-200/80">
         
         {/* Subtle Architectural Pattern */}
         <div className="absolute inset-0 bg-[radial-gradient(#3b82f6_1px,transparent_1px)] [background-size:24px_24px] opacity-10 pointer-events-none"></div>
@@ -55,39 +55,39 @@ export default function About() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
           {/* Top Bar: Breadcrumb & Supply Base Status with Crisp Divider */}
-          <div className="flex items-center justify-between gap-3 pb-3.5 mb-5 sm:mb-6 border-b border-blue-200/60">
+          <div className="flex items-center justify-between gap-3 pb-3 mb-4 sm:mb-6 border-b border-blue-200/60">
             <div className="hidden sm:block">
               <Breadcrumb items={[{ label: 'About Us' }]} />
             </div>
 
-            <div className="flex items-center justify-between sm:justify-end gap-2.5 w-full sm:w-auto">
+            <div className="flex items-center justify-between sm:justify-end gap-2 w-full sm:w-auto">
               <Link
                 to="/"
-                className="group inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-white hover:bg-blue-50/80 active:bg-blue-100 text-slate-800 hover:text-blue-700 text-xs sm:text-[13px] font-bold border border-slate-200/90 hover:border-blue-400 shadow-2xs hover:shadow-xs transition-all duration-200 shrink-0"
+                className="group inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-3.5 py-1.5 rounded-xl bg-white hover:bg-blue-50/80 active:bg-blue-100 text-slate-800 hover:text-blue-700 text-xs sm:text-[13px] font-bold border border-slate-200/90 hover:border-blue-400 shadow-2xs hover:shadow-xs transition-all duration-200 shrink-0"
                 title="Return to Home Page"
               >
-                <ArrowLeft size={14} className="text-blue-600 group-hover:-translate-x-1 transition-transform duration-200" />
+                <ArrowLeft size={13} className="text-blue-600 group-hover:-translate-x-1 transition-transform duration-200" />
                 <span>Back to Home</span>
               </Link>
 
-              <span className="inline-flex items-center gap-1.5 text-[11px] font-bold text-slate-700 bg-white px-2.5 py-1.5 rounded-xl border border-blue-200 shadow-2xs shrink-0">
+              <span className="inline-flex items-center gap-1.5 text-[10px] sm:text-[11px] font-bold text-slate-700 bg-white px-2 sm:px-2.5 py-1.5 rounded-xl border border-blue-200 shadow-2xs shrink-0 whitespace-nowrap">
                 <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                <span>Secunderabad Supply Base</span>
+                <span>Secunderabad Base</span>
               </span>
             </div>
           </div>
 
           {/* Unified 2-Column Grid: Corporate Profile + Official Visiting Card (Enlarged & Prominent) */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-7 lg:gap-12 items-center">
             
             {/* Left Content Column */}
             <div className="lg:col-span-6 space-y-3.5 sm:space-y-4 text-left">
               
-              {/* Trust Badge */}
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-blue-200 shadow-2xs text-xs font-bold text-slate-800">
-                <span className="text-blue-700 uppercase tracking-wider">Enterprise Profile</span>
+              {/* Trust Badge - Single Line & No Awkward Wrapping */}
+              <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-white border border-blue-200 shadow-2xs text-[10px] sm:text-xs font-bold text-slate-800 max-w-full overflow-hidden">
+                <span className="text-blue-700 uppercase tracking-wider whitespace-nowrap">Enterprise Profile</span>
                 <span className="text-slate-300">&bull;</span>
-                <span className="text-emerald-700 font-bold">IS / IEC Verified Stockist</span>
+                <span className="text-emerald-700 font-bold whitespace-nowrap">IS / IEC Verified</span>
               </div>
 
               {/* Main Heading */}
@@ -95,8 +95,8 @@ export default function About() {
                 <h1 className="text-2xl sm:text-3xl lg:text-[36px] font-extrabold tracking-tight text-slate-900 font-heading leading-tight">
                   About Pavan Sai Power Lines
                 </h1>
-                <p className="text-xs sm:text-sm lg:text-[15px] font-bold text-blue-700 mt-1.5">
-                  A Dedicated Supply Partner for Electrical Contractors, Utilities &amp; Infrastructure
+                <p className="text-xs sm:text-sm lg:text-[15px] font-bold text-blue-700 mt-1 sm:mt-1.5 leading-snug">
+                  Dedicated Supply Partner for Electrical Contractors &amp; Utilities
                 </p>
               </div>
 
@@ -105,56 +105,56 @@ export default function About() {
                 Headquartered at Bansilalpet Road, Secunderabad (Telangana), <strong>Pavan Sai Power Lines (PSPL)</strong> is an established supplier and wholesale stockist of high-tension overhead line hardware, polymer &amp; porcelain insulators, gang-operated AB switches, ACSR conductors, earthing equipment, and galvanized transmission towers conforming to Indian Standard (IS) and state DISCOM specifications.
               </p>
 
-              {/* 3 Premium Trust Metric Cards */}
-              <div className="grid grid-cols-3 gap-2.5 sm:gap-3.5 pt-1">
+              {/* 3 Premium Trust Metric Cards - Perfectly Sized with Zero Ellipsis Truncation */}
+              <div className="grid grid-cols-3 gap-2 sm:gap-3.5 pt-1">
                 
-                <div className="p-2.5 sm:p-3 rounded-xl bg-white border border-blue-200 shadow-2xs">
-                  <span className="text-[10px] sm:text-[11px] font-extrabold uppercase tracking-wider text-blue-700 block truncate">
-                    Voltage Scope
+                <div className="p-2 sm:p-3 rounded-xl bg-white border border-blue-200 shadow-2xs flex flex-col justify-between text-center sm:text-left">
+                  <span className="text-[9px] sm:text-[11px] font-extrabold uppercase tracking-wider text-blue-700 block leading-tight">
+                    Voltage Class
                   </span>
-                  <strong className="text-sm sm:text-base lg:text-[16px] font-black text-slate-900 block font-heading mt-0.5 whitespace-nowrap">
+                  <strong className="text-xs sm:text-base lg:text-[16px] font-black text-slate-900 block font-heading my-0.5 whitespace-nowrap">
                     11kV &ndash; 400kV
                   </strong>
-                  <span className="text-[10px] sm:text-[11px] text-blue-900/80 font-medium block truncate">
-                    HT / LT Grid Class
+                  <span className="text-[9px] sm:text-[11px] text-slate-500 font-medium block leading-tight">
+                    HT / LT Grid
                   </span>
                 </div>
 
-                <div className="p-2.5 sm:p-3 rounded-xl bg-white border border-indigo-200 shadow-2xs">
-                  <span className="text-[10px] sm:text-[11px] font-extrabold uppercase tracking-wider text-indigo-700 block truncate">
+                <div className="p-2 sm:p-3 rounded-xl bg-white border border-indigo-200 shadow-2xs flex flex-col justify-between text-center sm:text-left">
+                  <span className="text-[9px] sm:text-[11px] font-extrabold uppercase tracking-wider text-indigo-700 block leading-tight">
                     Product Range
                   </span>
-                  <strong className="text-sm sm:text-base lg:text-[16px] font-black text-slate-900 block font-heading mt-0.5 whitespace-nowrap">
+                  <strong className="text-xs sm:text-base lg:text-[16px] font-black text-slate-900 block font-heading my-0.5 whitespace-nowrap">
                     7 Divisions
                   </strong>
-                  <span className="text-[10px] sm:text-[11px] text-indigo-900/80 font-medium block truncate">
-                    Complete BOQ Stock
+                  <span className="text-[9px] sm:text-[11px] text-slate-500 font-medium block leading-tight">
+                    BOQ Stock
                   </span>
                 </div>
 
-                <div className="p-2.5 sm:p-3 rounded-xl bg-white border border-emerald-200 shadow-2xs">
-                  <span className="text-[10px] sm:text-[11px] font-extrabold uppercase tracking-wider text-emerald-700 block truncate">
+                <div className="p-2 sm:p-3 rounded-xl bg-white border border-emerald-200 shadow-2xs flex flex-col justify-between text-center sm:text-left">
+                  <span className="text-[9px] sm:text-[11px] font-extrabold uppercase tracking-wider text-emerald-700 block leading-tight">
                     Standards
                   </span>
-                  <strong className="text-sm sm:text-base lg:text-[16px] font-black text-slate-900 block font-heading mt-0.5 whitespace-nowrap">
+                  <strong className="text-xs sm:text-base lg:text-[16px] font-black text-slate-900 block font-heading my-0.5 whitespace-nowrap">
                     IS &bull; IEC &bull; REC
                   </strong>
-                  <span className="text-[10px] sm:text-[11px] text-emerald-900/80 font-medium block truncate">
-                    Tested Materials
+                  <span className="text-[9px] sm:text-[11px] text-slate-500 font-medium block leading-tight">
+                    Tested
                   </span>
                 </div>
 
               </div>
 
-              {/* Registered Supply Base Card */}
-              <div className="p-3 sm:p-3.5 bg-gradient-to-r from-blue-50/80 via-white to-white rounded-xl border border-blue-200 text-xs sm:text-sm text-slate-700 flex items-center justify-between gap-3 shadow-2xs">
+              {/* Registered Supply Base Card - Full Address Display without Ellipsis */}
+              <div className="p-2.5 sm:p-3.5 bg-gradient-to-r from-blue-50/80 via-white to-white rounded-xl border border-blue-200 text-xs sm:text-sm text-slate-700 flex items-center justify-between gap-2.5 shadow-2xs">
                 <div className="flex items-center gap-2.5 min-w-0">
                   <div className="w-8 h-8 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center shrink-0 border border-blue-200">
                     <MapPin size={15} />
                   </div>
                   <div className="min-w-0">
-                    <p className="text-slate-800 text-xs sm:text-[13px] leading-snug truncate">
-                      <strong>Office:</strong> {COMPANY_INFO.location.fullAddress}
+                    <p className="text-slate-800 text-[11px] sm:text-xs leading-snug">
+                      <strong className="text-slate-900">Office:</strong> 6-6-269/159, Bansilalpet Road, Secunderabad - 500003
                     </p>
                   </div>
                 </div>
@@ -163,7 +163,7 @@ export default function About() {
                   href={COMPANY_INFO.location.googleMapsDirectionsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 text-[11px] sm:text-xs font-bold text-blue-700 hover:text-blue-900 bg-white px-2.5 py-1.5 rounded-lg border border-blue-200 shadow-2xs hover:bg-blue-50 transition shrink-0"
+                  className="inline-flex items-center gap-1 text-[11px] sm:text-xs font-bold text-blue-700 hover:text-blue-900 bg-white px-2.5 py-1.5 rounded-lg border border-blue-200 shadow-2xs hover:bg-blue-50 transition shrink-0 whitespace-nowrap"
                 >
                   <span>Maps</span>
                   <ArrowRight size={12} />
