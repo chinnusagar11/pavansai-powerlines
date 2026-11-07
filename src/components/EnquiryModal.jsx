@@ -145,7 +145,7 @@ export default function EnquiryModal({ isOpen, onClose, product = null }) {
             aria-label="Back / Close"
           >
             <ArrowLeft size={15} />
-            <span>&larr; Back</span>
+            <span>Back</span>
           </button>
 
           <div className="text-center flex-1 px-2 min-w-0">
