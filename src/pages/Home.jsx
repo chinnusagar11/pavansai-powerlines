@@ -109,14 +109,17 @@ export default function Home() {
                 <span className="text-blue-700 font-bold">IS / IEC Certified Supplier</span>
               </div>
 
-              {/* Main Heading with Elegant Gradient Accent */}
-              <h1 className="text-3xl sm:text-4xl lg:text-[42px] xl:text-[46px] font-extrabold tracking-tight text-slate-900 leading-[1.14] font-heading">
-                High-Tension Power Transmission & <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-700 inline-block">Distribution Hardware</span>
+              {/* Main Heading - Perfectly Spaced, Balanced & Collision-Free */}
+              <h1 className="text-3xl sm:text-4xl lg:text-[38px] xl:text-[42px] font-extrabold tracking-tight text-slate-900 leading-[1.24] sm:leading-[1.2] font-heading">
+                <span className="block">High-Tension Power Transmission</span>
+                <span className="block text-slate-900 mt-0.5 sm:mt-1">
+                  &amp; Distribution Hardware
+                </span>
               </h1>
 
-              {/* Lead Paragraph */}
-              <p className="text-xs sm:text-sm lg:text-[15px] text-slate-600 leading-relaxed max-w-2xl font-normal">
-                <strong>Pavan Sai Power Lines (PSPL)</strong> is an established supplier and wholesale stockist of overhead line hardware, polymer & porcelain insulators, gang-operated AB switches, ACSR conductors, earthing equipment, and GI transmission towers headquartered in Secunderabad, Telangana.
+              {/* Lead Paragraph - High Contrast & Optimal Line Reading */}
+              <p className="text-xs sm:text-sm lg:text-[15px] text-slate-600 sm:text-slate-700 leading-relaxed max-w-2xl font-normal">
+                <strong className="font-bold text-slate-900">Pavan Sai Power Lines (PSPL)</strong> is an established supplier and wholesale stockist of overhead line hardware, polymer &amp; porcelain insulators, gang-operated AB switches, ACSR conductors, earthing equipment, and GI transmission towers headquartered in Secunderabad, Telangana.
               </p>
 
               {/* Action Buttons - Perfectly Padded, Symmetrical & Unified */}
