@@ -127,7 +127,7 @@ export default function Navbar() {
         {/* 2. Main Navigation Bar - Plain & Neat Light Corporate Header */}
         <nav className={`w-full transition-all duration-200 bg-[#edf4fc] border-b border-blue-200/80 ${
           scrolled 
-            ? 'py-2 sm:py-2.5 shadow-md bg-[#edf4fc]/98' 
+            ? 'py-2 sm:py-2.5 shadow-md bg-[#edf4fc]' 
             : 'py-2.5 sm:py-3.5 shadow-2xs'
         }`}>
           <div className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 flex items-center justify-between">
@@ -227,13 +227,13 @@ export default function Navbar() {
             <div className="md:hidden">
               {/* Dark Soft Blur Backdrop - Tapping anywhere closes the menu */}
               <div 
-                className="fixed inset-0 top-[54px] sm:top-[62px] bg-slate-950/40 backdrop-blur-2xs z-40 transition-opacity animate-fade-in"
+                className="fixed inset-0 top-[54px] sm:top-[62px] bg-slate-950/50 backdrop-blur-xs z-40 transition-opacity animate-fade-in"
                 onClick={() => setIsOpen(false)}
                 aria-hidden="true"
               />
 
-              {/* Floating Executive Card Anchored Below Header */}
-              <div className="fixed top-[58px] sm:top-[66px] right-3 left-3 sm:left-auto sm:w-[330px] max-w-sm ml-auto z-50 bg-white/98 backdrop-blur-md rounded-2xl border border-blue-200/90 shadow-[0_20px_50px_-10px_rgba(15,23,42,0.3)] p-3 animate-fade-in max-h-[calc(100vh-130px)] overflow-y-auto">
+              {/* Floating Executive Card Anchored Below Header - 100% Solid Opaque White */}
+              <div className="fixed top-[58px] sm:top-[66px] right-3 left-3 sm:left-auto sm:w-[330px] max-w-sm ml-auto z-50 bg-white rounded-2xl border border-blue-200 shadow-2xl p-3.5 animate-fade-in max-h-[calc(100vh-130px)] overflow-y-auto">
                 
                 {/* Header Status Row */}
                 <div className="flex items-center justify-between px-1.5 py-1 mb-1.5 border-b border-slate-100">
