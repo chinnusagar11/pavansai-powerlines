@@ -213,7 +213,7 @@ export default function Products() {
               >
                 {categoryIcons['all']}
                 <span>All Categories</span>
-                <span className={`text-[10px] px-1.5 py-0.2 rounded-md ${selectedCategory === 'all' ? 'bg-white/20 text-white' : 'bg-slate-200/80 text-slate-600'}`}>
+                <span className={`text-[10px] px-1.5 py-0.5 rounded-md ${selectedCategory === 'all' ? 'bg-white/20 text-white' : 'bg-slate-200/80 text-slate-600'}`}>
                   {PRODUCTS.length}
                 </span>
               </button>
@@ -233,7 +233,7 @@ export default function Products() {
                   >
                     {categoryIcons[cat.id] || <Zap size={13} />}
                     <span>{cat.name}</span>
-                    <span className={`text-[10px] px-1.5 py-0.2 rounded-md ${isSelected ? 'bg-white/20 text-white' : 'bg-slate-200/80 text-slate-600'}`}>
+                    <span className={`text-[10px] px-1.5 py-0.5 rounded-md ${isSelected ? 'bg-white/20 text-white' : 'bg-slate-200/80 text-slate-600'}`}>
                       {count}
                     </span>
                   </button>
