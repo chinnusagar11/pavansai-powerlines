@@ -52,52 +52,52 @@ export default function Navbar() {
   const navLinkClass = ({ isActive }) => 
     `text-xs sm:text-sm font-semibold transition-all duration-200 py-2 px-3.5 rounded-xl flex items-center gap-1.5 ${
       isActive 
-        ? 'text-blue-800 bg-blue-100/85 font-bold border border-blue-200/90 shadow-2xs' 
-        : 'text-slate-700 hover:text-blue-700 hover:bg-blue-50/60'
+        ? 'text-blue-700 bg-white font-bold border border-blue-200 shadow-2xs' 
+        : 'text-slate-700 hover:text-blue-700 hover:bg-white/60'
     }`;
 
   const mobileNavLinkClass = ({ isActive }) => 
     `flex items-center justify-between text-sm font-semibold py-3 px-4 rounded-xl transition ${
       isActive 
-        ? 'bg-blue-100/85 text-blue-800 font-bold border border-blue-200 shadow-2xs' 
-        : 'text-slate-700 hover:bg-blue-50/60 hover:text-blue-700'
+        ? 'bg-white text-blue-700 font-bold border border-blue-200 shadow-2xs' 
+        : 'text-slate-700 hover:bg-white/60 hover:text-blue-700'
     }`;
 
   return (
     <>
-      <header className="sticky top-0 z-40 w-full bg-slate-50/95 transition-all duration-200">
+      <header className="sticky top-0 z-40 w-full bg-[#edf4fc] transition-all duration-200">
         
-        {/* Subtle Top Corporate Blue Brand Line */}
-        <div className="h-1 w-full bg-gradient-to-r from-blue-700 via-blue-600 to-indigo-700"></div>
+        {/* Top Corporate Line */}
+        <div className="h-1 w-full bg-blue-600"></div>
 
-        {/* 1. Desktop Top Information & Contact Bar - Professional Light Colors */}
-        <div className="bg-gradient-to-r from-slate-100/90 via-blue-50/50 to-slate-100/90 border-b border-slate-200/80 text-slate-600 text-[11px] sm:text-xs py-2 px-4 hidden md:block">
+        {/* 1. Desktop Top Information Bar - Plain & Neat Light Blue Tone */}
+        <div className="bg-[#e2eefa] border-b border-blue-200/70 text-slate-700 text-[11px] sm:text-xs py-2 px-4 hidden md:block">
           <div className="max-w-7xl mx-auto flex items-center justify-between">
             
-            {/* Left Location & Credentials with Refined Light Tags */}
-            <div className="flex items-center gap-3">
-              <span className="inline-flex items-center gap-1.5 font-semibold text-slate-700 bg-white/90 px-2.5 py-0.5 rounded-md border border-slate-200/80 shadow-2xs">
+            {/* Left Location & Credentials with Clean White Cards */}
+            <div className="flex items-center gap-2.5">
+              <span className="inline-flex items-center gap-1.5 font-semibold text-slate-800 bg-white px-2.5 py-0.5 rounded-md border border-blue-200/70 shadow-2xs">
                 <MapPin size={12} className="text-blue-600 shrink-0" />
                 <span>{COMPANY_INFO.location.city}, {COMPANY_INFO.location.state}</span>
                 <span className="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-pulse ml-0.5 ring-2 ring-emerald-200"></span>
               </span>
 
-              <span className="inline-flex items-center gap-1.5 font-semibold text-emerald-800 bg-emerald-50/90 px-2.5 py-0.5 rounded-md border border-emerald-200/80 shadow-2xs">
+              <span className="inline-flex items-center gap-1.5 font-semibold text-emerald-800 bg-white px-2.5 py-0.5 rounded-md border border-emerald-200 shadow-2xs">
                 <ShieldCheck size={12} className="text-emerald-600 shrink-0" />
                 <span>IS / IEC / REC Standard Stockist</span>
               </span>
 
-              <span className="inline-flex items-center gap-1.5 font-medium text-slate-600 bg-white/90 px-2.5 py-0.5 rounded-md border border-slate-200/80 shadow-2xs">
+              <span className="inline-flex items-center gap-1.5 font-medium text-slate-700 bg-white px-2.5 py-0.5 rounded-md border border-blue-200/70 shadow-2xs">
                 <Clock size={12} className="text-blue-600 shrink-0" />
                 <span>Mon - Sat: 9:30 AM - 7:30 PM IST</span>
               </span>
             </div>
 
-            {/* Right Contact Details with Professional Light Tags */}
-            <div className="flex items-center gap-2.5">
+            {/* Right Contact Details with Clean White Cards */}
+            <div className="flex items-center gap-2">
               <a 
                 href={`tel:${COMPANY_INFO.contact.primaryPhoneRaw}`} 
-                className="inline-flex items-center gap-1.5 bg-blue-100/80 hover:bg-blue-600 text-blue-800 hover:text-white px-2.5 py-1 rounded-lg text-xs font-bold transition-all border border-blue-200/90 shadow-2xs"
+                className="inline-flex items-center gap-1.5 bg-white hover:bg-blue-600 text-blue-700 hover:text-white px-2.5 py-1 rounded-lg text-xs font-bold transition-all border border-blue-200 shadow-2xs"
                 title="Call PSPL Sales Desk"
               >
                 <Phone size={11} className="fill-current" />
@@ -106,7 +106,7 @@ export default function Navbar() {
 
               <a 
                 href={`mailto:${COMPANY_INFO.contact.primaryEmail}`} 
-                className="inline-flex items-center gap-1.5 bg-white/90 hover:bg-blue-50 text-slate-700 hover:text-blue-700 px-2.5 py-1 rounded-lg text-xs font-medium transition-all border border-slate-200/80 shadow-2xs"
+                className="inline-flex items-center gap-1.5 bg-white hover:bg-blue-50 text-slate-700 hover:text-blue-700 px-2.5 py-1 rounded-lg text-xs font-medium transition-all border border-blue-200/70 shadow-2xs"
                 title="Email PSPL Commercial Desk"
               >
                 <Mail size={12} className="text-blue-600" />
@@ -117,17 +117,17 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* 2. Main Navigation Bar - Professional Executive Light Tinted Header */}
-        <nav className={`w-full transition-all duration-200 bg-gradient-to-b from-slate-50/95 via-blue-50/30 to-slate-50/90 backdrop-blur-md border-b border-blue-100/80 ${
+        {/* 2. Main Navigation Bar - Plain & Neat Light Corporate Header */}
+        <nav className={`w-full transition-all duration-200 bg-[#edf4fc] border-b border-blue-200/80 ${
           scrolled 
-            ? 'py-2 sm:py-2.5 shadow-md bg-white/98' 
+            ? 'py-2 sm:py-2.5 shadow-md bg-[#edf4fc]/98' 
             : 'py-2.5 sm:py-3.5 shadow-2xs'
         }`}>
           <div className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 flex items-center justify-between">
             
             {/* Logo & Full Company Name - Strictly One Line */}
             <Link to="/" className="flex items-center gap-2.5 sm:gap-3 group focus:outline-none shrink-0 min-w-0">
-              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-blue-700 via-blue-600 to-indigo-700 text-white flex items-center justify-center shadow-sm border border-blue-600/30 group-hover:scale-105 transition-all shrink-0">
+              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center shadow-xs border border-blue-500/40 group-hover:scale-105 transition-all shrink-0">
                 <Zap className="w-5 h-5 fill-amber-400 text-amber-400" />
               </div>
 
@@ -135,7 +135,7 @@ export default function Navbar() {
                 <span className="font-black text-sm sm:text-lg md:text-xl lg:text-[21px] xl:text-[23px] tracking-tight text-slate-900 font-heading whitespace-nowrap uppercase">
                   PAVAN SAI <span className="text-blue-600 font-black">POWER LINES</span>
                 </span>
-                <span className="hidden sm:inline-flex items-center text-[10px] font-black uppercase tracking-wider bg-blue-100/90 text-blue-800 px-2.5 py-0.5 rounded-md border border-blue-200/90 shadow-2xs shrink-0">
+                <span className="hidden sm:inline-flex items-center text-[10px] font-black uppercase tracking-wider bg-white text-blue-700 px-2.5 py-0.5 rounded-md border border-blue-200 shadow-2xs shrink-0">
                   PSPL
                 </span>
               </div>
@@ -163,7 +163,7 @@ export default function Navbar() {
                 </NavLink>
 
                 {productsDropdown && (
-                  <div className="absolute top-full left-0 w-80 bg-white border border-slate-200 rounded-2xl shadow-xl py-2 mt-1 z-50 animate-fade-in">
+                  <div className="absolute top-full left-0 w-80 bg-white border border-blue-200 rounded-2xl shadow-xl py-2 mt-1 z-50 animate-fade-in">
                     <div className="px-4 py-2 border-b border-slate-100 text-[11px] font-bold text-slate-400 uppercase tracking-wider">
                       7 Core Business Divisions
                     </div>
@@ -198,7 +198,7 @@ export default function Navbar() {
             <div className="flex items-center gap-2 sm:gap-3 shrink-0">
               <button
                 onClick={() => setIsQuoteModalOpen(true)}
-                className="hidden sm:inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 text-white font-bold text-xs sm:text-sm px-5 py-2.5 rounded-xl shadow-xs hover:shadow-md transition-all active:scale-97 shrink-0 border border-blue-500/40"
+                className="hidden sm:inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 active:scale-97 text-white font-bold text-xs sm:text-sm px-5 py-2.5 rounded-xl shadow-xs transition-all shrink-0 border border-blue-500"
               >
                 <Send size={14} className="text-white" />
                 <span className="whitespace-nowrap">Request Quote</span>
@@ -218,7 +218,7 @@ export default function Navbar() {
           {/* Mobile Drawer Overlay */}
           {isOpen && (
             <div className="md:hidden fixed inset-x-0 top-[57px] bottom-0 bg-slate-900/40 backdrop-blur-xs z-50 flex flex-col justify-between animate-fade-in">
-              <div className="bg-white border-b border-slate-200 px-4 pt-3 pb-6 space-y-1.5 shadow-2xl max-h-[85vh] overflow-y-auto">
+              <div className="bg-[#edf4fc] border-b border-blue-200 px-4 pt-3 pb-6 space-y-1.5 shadow-2xl max-h-[85vh] overflow-y-auto">
                 <NavLink to="/" className={mobileNavLinkClass}>
                   <span>Home</span>
                   <span className="text-xs text-blue-600">&rarr;</span>
@@ -241,7 +241,7 @@ export default function Navbar() {
                     <Link
                       key={cat.id}
                       to={`/products?category=${cat.id}`}
-                      className="block text-xs text-slate-700 hover:text-blue-600 py-1.5 px-2 font-medium rounded hover:bg-slate-50"
+                      className="block text-xs text-slate-700 hover:text-blue-600 py-1.5 px-2 font-medium rounded hover:bg-white/60"
                     >
                       &bull; {cat.name}
                     </Link>
@@ -254,13 +254,13 @@ export default function Navbar() {
                 </NavLink>
 
                 {/* Mobile Quick Action Buttons */}
-                <div className="pt-4 border-t border-slate-200 flex flex-col gap-2.5">
+                <div className="pt-4 border-t border-blue-200 flex flex-col gap-2.5">
                   <button
                     onClick={() => {
                       setIsOpen(false);
                       setIsQuoteModalOpen(true);
                     }}
-                    className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 text-white py-3 rounded-xl font-bold text-sm shadow-sm transition"
+                    className="w-full flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl font-bold text-sm shadow-xs transition"
                   >
                     <Send size={15} />
                     <span>Request Material Quotation</span>
@@ -268,7 +268,7 @@ export default function Navbar() {
 
                   <a
                     href={`tel:${COMPANY_INFO.contact.primaryPhoneRaw}`}
-                    className="w-full flex items-center justify-center gap-2 bg-slate-100 hover:bg-slate-200 text-slate-800 py-2.5 rounded-xl text-xs font-bold border border-slate-200 transition"
+                    className="w-full flex items-center justify-center gap-2 bg-white hover:bg-blue-600 text-slate-800 hover:text-white py-2.5 rounded-xl text-xs font-bold border border-blue-200 transition"
                   >
                     <Phone size={14} className="text-blue-600 fill-blue-600" />
                     <span>Call Sales Desk: {COMPANY_INFO.contact.primaryPhone}</span>
