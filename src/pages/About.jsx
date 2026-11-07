@@ -144,12 +144,12 @@ export default function About() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {/* Division 1: Electric Blue */}
-            <div className="group relative bg-gradient-to-br from-blue-50/90 via-sky-50/30 to-white p-5 rounded-2xl border-2 border-blue-200 hover:border-blue-500 shadow-xs hover:shadow-xl transition-all duration-300 overflow-hidden">
-              <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-blue-600 to-sky-500"></div>
+            {/* Division 1 */}
+            <div className="group relative bg-white hover:bg-slate-50/50 p-5 rounded-2xl border-2 border-slate-200/90 hover:border-blue-600 shadow-xs hover:shadow-xl transition-all duration-300 overflow-hidden">
+              <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-blue-600 to-indigo-600"></div>
               <div className="flex items-center gap-2.5 mb-2.5 pt-0.5">
-                <div className="w-9 h-9 rounded-xl bg-blue-600 text-white flex items-center justify-center shadow-md shadow-blue-500/25 group-hover:scale-108 transition-transform">
-                  <Zap size={18} className="fill-white" />
+                <div className="w-9 h-9 rounded-xl bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white border border-blue-200 flex items-center justify-center shadow-xs group-hover:scale-108 transition-all">
+                  <Zap size={18} className="fill-current" />
                 </div>
                 <h3 className="font-extrabold text-sm text-slate-900">HT/LT Overhead Line Materials</h3>
               </div>
@@ -158,11 +158,11 @@ export default function About() {
               </p>
             </div>
 
-            {/* Division 2: Purple */}
-            <div className="group relative bg-gradient-to-br from-purple-50/90 via-indigo-50/30 to-white p-5 rounded-2xl border-2 border-purple-200 hover:border-purple-500 shadow-xs hover:shadow-xl transition-all duration-300 overflow-hidden">
-              <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-purple-600 to-indigo-600"></div>
+            {/* Division 2 */}
+            <div className="group relative bg-white hover:bg-slate-50/50 p-5 rounded-2xl border-2 border-slate-200/90 hover:border-blue-600 shadow-xs hover:shadow-xl transition-all duration-300 overflow-hidden">
+              <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-blue-600 to-indigo-600"></div>
               <div className="flex items-center gap-2.5 mb-2.5 pt-0.5">
-                <div className="w-9 h-9 rounded-xl bg-purple-600 text-white flex items-center justify-center shadow-md shadow-purple-500/25 group-hover:scale-108 transition-transform">
+                <div className="w-9 h-9 rounded-xl bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white border border-blue-200 flex items-center justify-center shadow-xs group-hover:scale-108 transition-all">
                   <Cpu size={18} />
                 </div>
                 <h3 className="font-extrabold text-sm text-slate-900">Transformer Spares</h3>
@@ -172,11 +172,11 @@ export default function About() {
               </p>
             </div>
 
-            {/* Division 3: Amber */}
-            <div className="group relative bg-gradient-to-br from-amber-50/90 via-orange-50/30 to-white p-5 rounded-2xl border-2 border-amber-200 hover:border-amber-500 shadow-xs hover:shadow-xl transition-all duration-300 overflow-hidden">
-              <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-amber-500 to-orange-500"></div>
+            {/* Division 3 */}
+            <div className="group relative bg-white hover:bg-slate-50/50 p-5 rounded-2xl border-2 border-slate-200/90 hover:border-blue-600 shadow-xs hover:shadow-xl transition-all duration-300 overflow-hidden">
+              <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-blue-600 to-indigo-600"></div>
               <div className="flex items-center gap-2.5 mb-2.5 pt-0.5">
-                <div className="w-9 h-9 rounded-xl bg-amber-500 text-white flex items-center justify-center shadow-md shadow-amber-500/25 group-hover:scale-108 transition-transform">
+                <div className="w-9 h-9 rounded-xl bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white border border-blue-200 flex items-center justify-center shadow-xs group-hover:scale-108 transition-all">
                   <ToggleRight size={18} />
                 </div>
                 <h3 className="font-extrabold text-sm text-slate-900">AB Switches</h3>
@@ -186,11 +186,11 @@ export default function About() {
               </p>
             </div>
 
-            {/* Division 4: Sky Blue */}
-            <div className="group relative bg-gradient-to-br from-sky-50/90 via-blue-50/30 to-white p-5 rounded-2xl border-2 border-sky-200 hover:border-sky-500 shadow-xs hover:shadow-xl transition-all duration-300 overflow-hidden">
-              <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-sky-500 to-blue-600"></div>
+            {/* Division 4 */}
+            <div className="group relative bg-white hover:bg-slate-50/50 p-5 rounded-2xl border-2 border-slate-200/90 hover:border-blue-600 shadow-xs hover:shadow-xl transition-all duration-300 overflow-hidden">
+              <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-blue-600 to-indigo-600"></div>
               <div className="flex items-center gap-2.5 mb-2.5 pt-0.5">
-                <div className="w-9 h-9 rounded-xl bg-sky-500 text-white flex items-center justify-center shadow-md shadow-sky-500/25 group-hover:scale-108 transition-transform">
+                <div className="w-9 h-9 rounded-xl bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white border border-blue-200 flex items-center justify-center shadow-xs group-hover:scale-108 transition-all">
                   <Activity size={18} />
                 </div>
                 <h3 className="font-extrabold text-sm text-slate-900">AAAC & ACSR Conductors</h3>
@@ -200,11 +200,11 @@ export default function About() {
               </p>
             </div>
 
-            {/* Division 5: Emerald */}
-            <div className="group relative bg-gradient-to-br from-emerald-50/90 via-teal-50/30 to-white p-5 rounded-2xl border-2 border-emerald-200 hover:border-emerald-500 shadow-xs hover:shadow-xl transition-all duration-300 overflow-hidden">
-              <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-emerald-600 to-teal-500"></div>
+            {/* Division 5 */}
+            <div className="group relative bg-white hover:bg-slate-50/50 p-5 rounded-2xl border-2 border-slate-200/90 hover:border-blue-600 shadow-xs hover:shadow-xl transition-all duration-300 overflow-hidden">
+              <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-blue-600 to-indigo-600"></div>
               <div className="flex items-center gap-2.5 mb-2.5 pt-0.5">
-                <div className="w-9 h-9 rounded-xl bg-emerald-600 text-white flex items-center justify-center shadow-md shadow-emerald-500/25 group-hover:scale-108 transition-transform">
+                <div className="w-9 h-9 rounded-xl bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white border border-blue-200 flex items-center justify-center shadow-xs group-hover:scale-108 transition-all">
                   <ShieldCheck size={18} />
                 </div>
                 <h3 className="font-extrabold text-sm text-slate-900">Earthing Materials</h3>
@@ -214,11 +214,11 @@ export default function About() {
               </p>
             </div>
 
-            {/* Division 6: Rose / Red */}
-            <div className="group relative bg-gradient-to-br from-rose-50/90 via-pink-50/30 to-white p-5 rounded-2xl border-2 border-rose-200 hover:border-rose-500 shadow-xs hover:shadow-xl transition-all duration-300 overflow-hidden">
-              <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-rose-500 to-red-500"></div>
+            {/* Division 6 */}
+            <div className="group relative bg-white hover:bg-slate-50/50 p-5 rounded-2xl border-2 border-slate-200/90 hover:border-blue-600 shadow-xs hover:shadow-xl transition-all duration-300 overflow-hidden">
+              <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-blue-600 to-indigo-600"></div>
               <div className="flex items-center gap-2.5 mb-2.5 pt-0.5">
-                <div className="w-9 h-9 rounded-xl bg-rose-500 text-white flex items-center justify-center shadow-md shadow-rose-500/25 group-hover:scale-108 transition-transform">
+                <div className="w-9 h-9 rounded-xl bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white border border-blue-200 flex items-center justify-center shadow-xs group-hover:scale-108 transition-all">
                   <Sliders size={18} />
                 </div>
                 <h3 className="font-extrabold text-sm text-slate-900">Industrial Electricals & Towers</h3>
@@ -232,13 +232,13 @@ export default function About() {
         </div>
       </section>
 
-      {/* 4. Mission & Vision (High-Impact Enterprise Cards) */}
+      {/* 4. Mission & Vision (Unified Enterprise Cards) */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           
-          <div className="group relative bg-gradient-to-br from-blue-50/90 via-sky-50/30 to-white p-6 sm:p-8 rounded-2xl border-2 border-blue-200 hover:border-blue-500 shadow-xs hover:shadow-xl transition-all duration-300 overflow-hidden">
-            <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-blue-600 to-sky-500"></div>
-            <div className="w-12 h-12 rounded-xl bg-blue-600 text-white flex items-center justify-center mb-4 shadow-md shadow-blue-500/25 group-hover:scale-108 transition-transform">
+          <div className="group relative bg-white hover:bg-slate-50/50 p-6 sm:p-8 rounded-2xl border-2 border-slate-200/90 hover:border-blue-600 shadow-xs hover:shadow-xl transition-all duration-300 overflow-hidden">
+            <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-blue-600 to-indigo-600"></div>
+            <div className="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white border border-blue-200 flex items-center justify-center mb-4 shadow-sm group-hover:scale-108 transition-all">
               <Target size={24} />
             </div>
             <h3 className="text-xl font-bold font-heading text-slate-900 mb-2">Our Mission</h3>
@@ -247,9 +247,9 @@ export default function About() {
             </p>
           </div>
 
-          <div className="group relative bg-gradient-to-br from-emerald-50/90 via-teal-50/30 to-white p-6 sm:p-8 rounded-2xl border-2 border-emerald-200 hover:border-emerald-500 shadow-xs hover:shadow-xl transition-all duration-300 overflow-hidden">
-            <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-emerald-600 to-teal-500"></div>
-            <div className="w-12 h-12 rounded-xl bg-emerald-600 text-white flex items-center justify-center mb-4 shadow-md shadow-emerald-500/25 group-hover:scale-108 transition-transform">
+          <div className="group relative bg-white hover:bg-slate-50/50 p-6 sm:p-8 rounded-2xl border-2 border-slate-200/90 hover:border-blue-600 shadow-xs hover:shadow-xl transition-all duration-300 overflow-hidden">
+            <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-blue-600 to-indigo-600"></div>
+            <div className="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white border border-blue-200 flex items-center justify-center mb-4 shadow-sm group-hover:scale-108 transition-all">
               <Eye size={24} />
             </div>
             <h3 className="text-xl font-bold font-heading text-slate-900 mb-2">Our Vision</h3>

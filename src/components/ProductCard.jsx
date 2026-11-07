@@ -9,32 +9,12 @@ export default function ProductCard({ product }) {
 
   const fallbackImage = "/images/products/pin-insulator-polymer-11kv.png";
 
-  const categoryBadgeColors = {
-    'overhead-lines': 'bg-blue-600 text-white shadow-sm shadow-blue-500/25',
-    'transformer-spares': 'bg-purple-600 text-white shadow-sm shadow-purple-500/25',
-    'ab-switches': 'bg-amber-500 text-white shadow-sm shadow-amber-500/25',
-    'conductors': 'bg-sky-600 text-white shadow-sm shadow-sky-500/25',
-    'earthing': 'bg-emerald-600 text-white shadow-sm shadow-emerald-500/25',
-    'industrial-electricals': 'bg-rose-600 text-white shadow-sm shadow-rose-500/25',
-    'towers': 'bg-slate-700 text-white shadow-sm shadow-slate-600/25',
-  };
-
-  const categoryAccentBar = {
-    'overhead-lines': 'bg-gradient-to-r from-blue-600 to-sky-500',
-    'transformer-spares': 'bg-gradient-to-r from-purple-600 to-indigo-600',
-    'ab-switches': 'bg-gradient-to-r from-amber-500 to-orange-500',
-    'conductors': 'bg-gradient-to-r from-sky-500 to-blue-600',
-    'earthing': 'bg-gradient-to-r from-emerald-600 to-teal-500',
-    'industrial-electricals': 'bg-gradient-to-r from-rose-500 to-red-500',
-    'towers': 'bg-gradient-to-r from-slate-700 to-slate-900',
-  };
-
   return (
     <>
-      <div className="group bg-white rounded-2xl overflow-hidden border-2 border-slate-200/90 hover:border-blue-500 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full relative">
+      <div className="group bg-white rounded-2xl overflow-hidden border-2 border-slate-200/90 hover:border-blue-600 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full relative">
         
-        {/* Top Division Color Accent Bar */}
-        <div className={`h-1.5 w-full ${categoryAccentBar[product.categoryId] || 'bg-blue-600'}`}></div>
+        {/* Unified Corporate Blue Top Accent Stripe */}
+        <div className="h-1.5 w-full bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-700"></div>
 
         {/* Uniform Fixed-Height Image Container (Laser-Aligned Across Rows) */}
         <div className="relative w-full h-52 overflow-hidden bg-gradient-to-b from-slate-50 to-white border-b border-slate-100 flex items-center justify-center p-3.5 sm:p-4 shrink-0">
@@ -46,10 +26,10 @@ export default function ProductCard({ product }) {
             className="w-full h-full object-contain transition-transform duration-500 ease-out group-hover:scale-106 drop-shadow-sm"
           />
           
-          {/* Vibrant Category Badge */}
+          {/* Unified Enterprise Category Badge */}
           <div className="absolute top-3 left-3">
-            <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-[10px] sm:text-[11px] font-bold shadow-xs max-w-[190px] truncate ${categoryBadgeColors[product.categoryId] || 'bg-blue-600 text-white'}`}>
-              <Zap size={11} className="fill-white text-white shrink-0" />
+            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-[10px] sm:text-[11px] font-bold shadow-xs max-w-[190px] truncate bg-blue-900/85 text-white backdrop-blur-xs border border-blue-400/30">
+              <Zap size={11} className="fill-amber-400 text-amber-400 shrink-0" />
               <span className="truncate">{product.category}</span>
             </span>
           </div>
@@ -77,15 +57,15 @@ export default function ProductCard({ product }) {
               {product.shortDescription}
             </p>
 
-            {/* Specifications Chips - Fixed Height Container with Fallbacks for Symmetrical Alignment */}
+            {/* Specifications Chips - Clean Slate Styling */}
             <div className="pt-2 border-t border-slate-100 flex flex-wrap items-center gap-1.5 h-[32px] overflow-hidden">
               {product.specifications && Object.keys(product.specifications).length > 0 ? (
                 Object.entries(product.specifications).slice(0, 2).map(([key, val]) => (
                   <span 
                     key={key} 
-                    className="inline-flex items-center text-[10px] sm:text-[11px] bg-blue-50/80 border border-blue-200/90 text-blue-900 px-2 py-0.5 rounded-md font-semibold max-w-full"
+                    className="inline-flex items-center text-[10px] sm:text-[11px] bg-slate-50 border border-slate-200 text-slate-700 px-2 py-0.5 rounded-md font-semibold max-w-full"
                   >
-                    <strong className="text-blue-950 mr-1 shrink-0">{key}:</strong>
+                    <strong className="text-slate-900 mr-1 shrink-0">{key}:</strong>
                     <span className="truncate">{val}</span>
                   </span>
                 ))

@@ -88,16 +88,8 @@ export default function Products() {
     'towers': <Maximize size={13} />,
   };
 
-  const categoryActiveColors = {
-    'all': 'bg-blue-600 text-white shadow-md shadow-blue-500/30 ring-2 ring-blue-400/40',
-    'overhead-lines': 'bg-blue-600 text-white shadow-md shadow-blue-500/30 ring-2 ring-blue-400/40',
-    'transformer-spares': 'bg-purple-600 text-white shadow-md shadow-purple-500/30 ring-2 ring-purple-400/40',
-    'ab-switches': 'bg-amber-500 text-white shadow-md shadow-amber-500/30 ring-2 ring-amber-400/40',
-    'conductors': 'bg-sky-600 text-white shadow-md shadow-sky-500/30 ring-2 ring-sky-400/40',
-    'earthing': 'bg-emerald-600 text-white shadow-md shadow-emerald-500/30 ring-2 ring-emerald-400/40',
-    'industrial-electricals': 'bg-rose-600 text-white shadow-md shadow-rose-500/30 ring-2 ring-rose-400/40',
-    'towers': 'bg-slate-800 text-white shadow-md shadow-slate-700/30 ring-2 ring-slate-600/40',
-  };
+  const activeTabClass = 'bg-blue-600 text-white shadow-md shadow-blue-500/30 ring-2 ring-blue-400/40';
+  const inactiveTabClass = 'bg-slate-100 text-slate-700 hover:bg-blue-50 hover:text-blue-700 border border-slate-200/90';
 
   return (
     <div className="space-y-6 sm:space-y-8 pb-16">
@@ -216,9 +208,7 @@ export default function Products() {
               <button
                 onClick={() => handleCategorySelect('all')}
                 className={`inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-all duration-200 shrink-0 ${
-                  selectedCategory === 'all'
-                    ? categoryActiveColors['all']
-                    : 'bg-slate-100 text-slate-700 hover:bg-blue-50 hover:text-blue-700 border border-slate-200/90'
+                  selectedCategory === 'all' ? activeTabClass : inactiveTabClass
                 }`}
               >
                 {categoryIcons['all']}
@@ -238,9 +228,7 @@ export default function Products() {
                     key={cat.id}
                     onClick={() => handleCategorySelect(cat.id)}
                     className={`inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-all duration-200 shrink-0 ${
-                      isSelected
-                        ? (categoryActiveColors[cat.id] || 'bg-blue-600 text-white shadow-md')
-                        : 'bg-slate-100 text-slate-700 hover:bg-blue-50 hover:text-blue-700 border border-slate-200/90'
+                      isSelected ? activeTabClass : inactiveTabClass
                     }`}
                   >
                     {categoryIcons[cat.id] || <Zap size={13} />}
