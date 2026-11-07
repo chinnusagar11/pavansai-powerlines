@@ -374,7 +374,7 @@ export default function Home() {
                 <div>
                   {/* Category Image Header */}
                   {preview && (
-                    <div className="relative aspect-[16/10] bg-slate-50/80 border-b border-slate-100 flex items-center justify-center p-3.5 overflow-hidden">
+                    <div className="relative w-full aspect-[16/10] bg-slate-50/80 border-b border-slate-100 flex items-center justify-center p-3.5 overflow-hidden">
                       <img
                         src={preview.image}
                         alt={cat.name}
