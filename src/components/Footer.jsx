@@ -52,7 +52,7 @@ export default function Footer() {
               {COMPANY_INFO.categories.map((cat) => (
                 <li key={cat.id}>
                   <Link 
-                    to={`/products?category=${cat.id}`}
+                    to={`/category/${cat.id}`}
                     className="hover:text-blue-400 transition-colors flex items-center gap-1.5 text-slate-400 py-0.5"
                   >
                     <ChevronRight size={12} className="text-blue-500 shrink-0" />
@@ -96,8 +96,8 @@ export default function Footer() {
             </ul>
 
             <div className="mt-4 pt-3 border-t border-slate-800 text-xs text-slate-400 space-y-1">
-              <p><strong className="text-slate-300">Hours:</strong> Mon - Sat: 9:30 AM - 7:30 PM</p>
-              <p><strong className="text-slate-300">Sunday:</strong> Emergency via WhatsApp</p>
+              <p><strong className="text-slate-300">Desk:</strong> +91 97004 49684</p>
+              <p><strong className="text-slate-300">Email:</strong> pavansaipowerlines@gmail.com</p>
             </div>
           </div>
 

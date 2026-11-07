@@ -95,14 +95,14 @@ export default function Products() {
 
   const pageTitle = activeCategoryObj
     ? `${activeCategoryObj.name} Suppliers in Hyderabad | Pavan Sai Power Lines`
-    : 'Electrical Power Transmission & Distribution Materials | PSPL Hyderabad';
+    : 'All Electrical Materials & Power Line Hardware | Pavan Sai Power Lines Secunderabad';
 
   const pageDescription = activeCategoryObj
     ? `${activeCategoryObj.shortDesc} Supplied and stocked by Pavan Sai Power Lines in Secunderabad & Hyderabad, Telangana. Direct dispatch and commercial BOQ estimates.`
-    : `Browse 37+ IS/IEC certified electrical transmission & distribution products from Pavan Sai Power Lines, Hyderabad & Secunderabad. HT/LT lines, conductors, switches, earthing.`;
+    : 'Browse electrical power transmission and distribution materials from Pavan Sai Power Lines, Secunderabad. Stockist of HT/LT line hardware, conductors, switches, and towers.';
 
   const pageCanonical = activeCategoryObj
-    ? `/products?category=${selectedCategory}`
+    ? `/category/${selectedCategory}`
     : '/products';
 
   const breadcrumbs = activeCategoryObj
@@ -317,7 +317,15 @@ export default function Products() {
               </div>
             </div>
 
-            <div className="flex items-center gap-2.5 shrink-0 w-full sm:w-auto">
+            <div className="flex flex-wrap sm:flex-nowrap items-center gap-2.5 shrink-0 w-full sm:w-auto">
+              <Link
+                to={`/category/${activeCategoryObj.id}`}
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 bg-white hover:bg-blue-50 text-blue-700 font-bold text-xs px-3.5 py-2.5 rounded-xl border border-blue-300 shadow-2xs transition"
+              >
+                <span>Division Page &amp; Tech Specs</span>
+                <ArrowRight size={13} />
+              </Link>
+
               <button
                 onClick={() => setIsQuoteModalOpen(true)}
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 text-slate-950 font-black text-xs px-4 py-2.5 rounded-xl shadow-md ring-2 ring-amber-300/40 hover:scale-102 transition"

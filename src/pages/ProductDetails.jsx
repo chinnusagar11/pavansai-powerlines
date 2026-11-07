@@ -93,7 +93,7 @@ export default function ProductDetails() {
           getBreadcrumbSchema([
             { name: 'Home', url: '/' },
             { name: 'Products & Materials', url: '/products' },
-            { name: product.category, url: `/products?category=${product.categoryId}` },
+            { name: product.category, url: `/category/${product.categoryId}` },
             { name: product.name, url: `/products/${product.id}` }
           ])
         ]}
@@ -107,7 +107,7 @@ export default function ProductDetails() {
               <Breadcrumb 
                 items={[
                   { label: 'Products', href: '/products' },
-                  { label: product.category, href: `/products?category=${product.categoryId}` },
+                  { label: product.category, href: `/category/${product.categoryId}` },
                   { label: product.name }
                 ]} 
               />

@@ -86,9 +86,9 @@ export default function Home() {
   return (
     <div className="space-y-10 sm:space-y-14 md:space-y-16 pb-24 md:pb-16">
       <SEO
-        title="Electrical Materials Suppliers in Hyderabad & Secunderabad | Pavan Sai Power Lines"
-        description="Pavan Sai Power Lines (PSPL) is a premier supplier and wholesale stockist of electrical materials in Hyderabad & Secunderabad. Stockist of HT/LT line hardware, ACSR conductors, AB switches, transformer spares & GI towers."
-        keywords="Electrical materials suppliers in Hyderabad, Electrical equipment suppliers in Hyderabad, Power line materials suppliers in Hyderabad, Electrical suppliers in Secunderabad, HT line materials suppliers in Hyderabad, LT line materials suppliers in Hyderabad, ACSR conductor suppliers in Hyderabad, AAAC conductor suppliers in Hyderabad, AB switch suppliers in Hyderabad, Transformer spares suppliers in Hyderabad, Earthing materials suppliers in Hyderabad, GI tower suppliers in Hyderabad, Industrial electrical materials in Hyderabad"
+        title="Pavan Sai Power Lines | Power Transmission & Electrical Materials, Secunderabad"
+        description="Pavan Sai Power Lines (PSPL), located on Bansilalpet Road, Secunderabad, supplies HT/LT overhead line materials, transformer spares, AB switches, AAAC & ACSR conductors, earthing materials, industrial electricals and MS & GI towers."
+        keywords="Pavan Sai Power Lines, PSPL Secunderabad, Electrical materials suppliers in Hyderabad, Electrical equipment suppliers in Hyderabad, Power transmission materials suppliers in Hyderabad, Power line materials suppliers in Hyderabad, Electrical suppliers in Secunderabad, Industrial materials suppliers in Hyderabad, Overhead line materials suppliers in Telangana, Electrical materials in Bansilalpet, Power line materials near Bansilalpet Road"
         canonical="/"
         ogImage="/images/hero-transmission-sunset.jpg"
         structuredData={[getLocalBusinessSchema(), getWebSiteSchema()]}
@@ -329,7 +329,7 @@ export default function Home() {
             return (
               <Link
                 key={cat.id}
-                to={`/products?category=${cat.id}`}
+                to={`/category/${cat.id}`}
                 className="group relative bg-white rounded-2xl border border-slate-200/90 hover:border-blue-500/80 shadow-xs hover:shadow-[0_16px_35px_-8px_rgba(29,78,216,0.14)] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between overflow-hidden"
               >
                 {/* Unified Corporate Blue Top Accent Stripe */}
@@ -591,7 +591,7 @@ export default function Home() {
 
               <div className="pt-3 border-t border-slate-100">
                 <Link 
-                  to="/products?category=overhead-lines" 
+                  to="/category/overhead-lines" 
                   className="w-full inline-flex items-center justify-between py-2.5 px-4 rounded-xl bg-blue-50 hover:bg-blue-600 text-blue-700 hover:text-white font-extrabold text-xs sm:text-sm transition-all duration-200 group/btn shadow-2xs"
                 >
                   <span>View Overhead Hardware</span>
@@ -659,7 +659,7 @@ export default function Home() {
 
               <div className="pt-3 border-t border-slate-100">
                 <Link 
-                  to="/products?category=ab-switches" 
+                  to="/category/ab-switches" 
                   className="w-full inline-flex items-center justify-between py-2.5 px-4 rounded-xl bg-amber-50 hover:bg-amber-500 text-amber-900 hover:text-white font-extrabold text-xs sm:text-sm transition-all duration-200 group/btn shadow-2xs border border-amber-200/60"
                 >
                   <span>View Switchgear Supplies</span>
@@ -727,7 +727,7 @@ export default function Home() {
 
               <div className="pt-3 border-t border-slate-100">
                 <Link 
-                  to="/products?category=earthing" 
+                  to="/category/earthing" 
                   className="w-full inline-flex items-center justify-between py-2.5 px-4 rounded-xl bg-emerald-50 hover:bg-emerald-600 text-emerald-800 hover:text-white font-extrabold text-xs sm:text-sm transition-all duration-200 group/btn shadow-2xs border border-emerald-200/80"
                 >
                   <span>View Earthing Systems</span>

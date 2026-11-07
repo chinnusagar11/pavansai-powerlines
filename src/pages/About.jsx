@@ -32,9 +32,9 @@ export default function About() {
   return (
     <div className="space-y-10 sm:space-y-16 lg:space-y-20 pb-24 md:pb-16">
       <SEO
-        title="About Pavan Sai Power Lines | Electrical Equipment Suppliers in Secunderabad"
-        description="Learn about Pavan Sai Power Lines (PSPL), an established electrical materials & power transmission hardware stockist in Bansilalpet Road, Secunderabad, Telangana."
-        keywords="About Pavan Sai Power Lines, Electrical suppliers in Secunderabad, Power line materials suppliers in Hyderabad, electrical equipment stockist Telangana, Bansilalpet Road electrical shop"
+        title="About Pavan Sai Power Lines | Electrical Materials Supplier, Secunderabad"
+        description="Learn about Pavan Sai Power Lines (PSPL), an established electrical materials and power line hardware stockist located on Bansilalpet Road, Secunderabad, Telangana."
+        keywords="About Pavan Sai Power Lines, PSPL Secunderabad, Electrical materials suppliers in Hyderabad, Electrical suppliers in Secunderabad, Power transmission materials suppliers in Hyderabad, Bansilalpet Road Secunderabad, HT LT line materials Telangana"
         canonical="/about"
         ogImage={COMPANY_INFO.contact.visitingCardImage}
         structuredData={[

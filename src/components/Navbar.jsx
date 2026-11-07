@@ -96,8 +96,8 @@ export default function Navbar() {
               </span>
 
               <span className="inline-flex items-center gap-1.5 font-medium text-slate-700 bg-white px-2.5 py-0.5 rounded-md border border-blue-200/70 shadow-2xs">
-                <Clock size={12} className="text-blue-600 shrink-0" />
-                <span>Mon - Sat: 9:30 AM - 7:30 PM IST</span>
+                <MapPin size={12} className="text-blue-600 shrink-0" />
+                <span>Bansilalpet Road, Secunderabad - 500003</span>
               </span>
             </div>
 
@@ -176,7 +176,7 @@ export default function Navbar() {
                     {COMPANY_INFO.categories.map((cat) => (
                       <Link
                         key={cat.id}
-                        to={`/products?category=${cat.id}`}
+                        to={`/category/${cat.id}`}
                         className="block px-4 py-2 text-xs font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-700 transition"
                       >
                         {cat.name}
@@ -328,7 +328,8 @@ export default function Navbar() {
                         {COMPANY_INFO.categories.map((cat) => (
                           <Link
                             key={cat.id}
-                            to={`/products?category=${cat.id}`}
+                            to={`/category/${cat.id}`}
+                            onClick={() => setIsOpen(false)}
                             className="flex items-center justify-between text-xs text-slate-700 hover:text-blue-700 py-1.5 px-2 font-medium rounded-md hover:bg-white transition"
                           >
                             <span className="truncate">&bull; {cat.name}</span>

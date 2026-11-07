@@ -26,10 +26,6 @@ export const COMPANY_INFO = {
     fullAddress: "6-6-269/159, Bansilalpet Road, Secunderabad - 500003, Telangana (T.G.), India",
     shortAddress: "6-6-269/159, Bansilalpet Road, Secunderabad - 500003",
     landmark: "Bansilalpet Road Commercial Corridor",
-    geo: {
-      latitude: 17.4360662,
-      longitude: 78.4975513
-    },
     serviceAreas: [
       "Hyderabad",
       "Secunderabad",
@@ -62,11 +58,12 @@ export const COMPANY_INFO = {
     visitingCardImage: "/images/pspl-visiting-card.jpg"
   },
 
-  // Business Hours
-  businessHours: [
-    { days: "Monday - Saturday", hours: "9:30 AM - 7:30 PM IST" },
-    { days: "Sunday", hours: "Emergency / Project Inquiries via WhatsApp" }
-  ],
+  // Owner Confirmation Note (Formal business opening hours pending confirmation from owner)
+  confirmationNotes: {
+    businessHours: "Pending confirmation from owner V. Nagamalleswara Rao; inquiries currently accepted via direct phone and WhatsApp",
+    yearOfEstablishment: "Pending confirmation from company owner",
+    gstinCertificate: "Available on commercial quotation / invoice"
+  },
 
   // Commercial / Regulatory Reference
   commercial: {

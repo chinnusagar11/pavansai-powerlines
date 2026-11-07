@@ -1,14 +1,19 @@
-import { COMPANY_INFO } from '../data/company';
+import { COMPANY_INFO } from '../data/company.js';
 
 /**
- * Generate LocalBusiness / ElectricalSupplyStore JSON-LD Schema
+ * Generate LocalBusiness / WholesaleStore JSON-LD Schema
+ * Strictly conforming to verified company information:
+ * - Real NAP: Pavan Sai Power Lines, 6-6-269/159, Bansilalpet Road, Secunderabad
+ * - Verified Phone: +91 97004 49684
+ * - Verified Email: pavansaipowerlines@gmail.com
+ * - ZERO invented ratings, reviews, opening hours, price ranges, or fake coordinates.
  */
 export function getLocalBusinessSchema() {
   const baseUrl = COMPANY_INFO.website;
 
   return {
     '@context': 'https://schema.org',
-    '@type': ['LocalBusiness', 'ElectricalSupplyStore'],
+    '@type': ['LocalBusiness', 'WholesaleStore'],
     '@id': `${baseUrl}/#localbusiness`,
     name: COMPANY_INFO.name,
     alternateName: COMPANY_INFO.shortName,
@@ -16,7 +21,6 @@ export function getLocalBusinessSchema() {
     url: baseUrl,
     telephone: COMPANY_INFO.contact.primaryPhone,
     email: COMPANY_INFO.contact.primaryEmail,
-    priceRange: '₹₹',
     image: `${baseUrl}/images/hero-transmission-sunset.jpg`,
     logo: `${baseUrl}/favicon.svg`,
     address: {
@@ -27,19 +31,13 @@ export function getLocalBusinessSchema() {
       postalCode: COMPANY_INFO.location.pincode,
       addressCountry: 'IN'
     },
-    geo: {
-      '@type': 'GeoCoordinates',
-      latitude: COMPANY_INFO.location.geo.latitude,
-      longitude: COMPANY_INFO.location.geo.longitude
+    contactPoint: {
+      '@type': 'ContactPoint',
+      telephone: COMPANY_INFO.contact.primaryPhone,
+      contactType: 'sales',
+      areaServed: ['IN', 'Telangana', 'Andhra Pradesh'],
+      availableLanguage: ['English', 'Telugu', 'Hindi']
     },
-    openingHoursSpecification: [
-      {
-        '@type': 'OpeningHoursSpecification',
-        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-        opens: '09:30',
-        closes: '19:30'
-      }
-    ],
     areaServed: [
       { '@type': 'AdministrativeArea', name: 'Hyderabad' },
       { '@type': 'AdministrativeArea', name: 'Secunderabad' },
@@ -55,6 +53,37 @@ export function getLocalBusinessSchema() {
         name: cat.name,
         position: idx + 1
       }))
+    }
+  };
+}
+
+/**
+ * Generate Organization Schema
+ */
+export function getOrganizationSchema() {
+  const baseUrl = COMPANY_INFO.website;
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    '@id': `${baseUrl}/#organization`,
+    name: COMPANY_INFO.name,
+    alternateName: COMPANY_INFO.shortName,
+    url: baseUrl,
+    logo: `${baseUrl}/favicon.svg`,
+    contactPoint: {
+      '@type': 'ContactPoint',
+      telephone: COMPANY_INFO.contact.primaryPhone,
+      contactType: 'commercial desk',
+      areaServed: ['Telangana', 'Andhra Pradesh', 'India']
+    },
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: COMPANY_INFO.location.street,
+      addressLocality: COMPANY_INFO.location.city,
+      addressRegion: COMPANY_INFO.location.state,
+      postalCode: COMPANY_INFO.location.pincode,
+      addressCountry: 'IN'
     }
   };
 }
@@ -109,7 +138,9 @@ export function getProductSchema(product) {
   if (!product) return null;
   const baseUrl = COMPANY_INFO.website;
   const productUrl = `${baseUrl}/products/${product.id}`;
-  const imageUrl = product.image ? (product.image.startsWith('http') ? product.image : `${baseUrl}${product.image}`) : `${baseUrl}/images/hero-transmission-sunset.jpg`;
+  const imageUrl = product.image 
+    ? (product.image.startsWith('http') ? product.image : `${baseUrl}${product.image}`) 
+    : `${baseUrl}/images/hero-transmission-sunset.jpg`;
 
   const additionalProperty = product.specifications
     ? Object.entries(product.specifications).map(([key, val]) => ({
@@ -141,9 +172,7 @@ export function getProductSchema(product) {
       '@type': 'Offer',
       url: productUrl,
       priceCurrency: 'INR',
-      price: '0.00',
-      priceValidUntil: '2027-12-31',
-      availability: 'https://schema.org/InStock',
+      description: 'Commercial project and contractor pricing available upon enquiry',
       itemCondition: 'https://schema.org/NewCondition',
       seller: {
         '@type': 'Organization',
@@ -174,4 +203,3 @@ export function getItemListSchema(products = []) {
     }))
   };
 }
-

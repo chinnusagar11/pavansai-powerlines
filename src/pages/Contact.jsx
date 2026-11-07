@@ -142,9 +142,9 @@ export default function Contact() {
   return (
     <div className="space-y-10 sm:space-y-14 lg:space-y-16 pb-24 md:pb-16">
       <SEO
-        title="Contact Pavan Sai Power Lines | Secunderabad & Hyderabad Sales Desk"
-        description="Contact Pavan Sai Power Lines in Bansilalpet Road, Secunderabad. Call +91 97004 49684 or visit our supply base for electrical materials quotes in Hyderabad & Telangana."
-        keywords="Pavan Sai Power Lines contact, Electrical suppliers in Secunderabad, Electrical materials suppliers in Hyderabad, Bansilalpet Road electrical shop, PSPL phone number, electrical materials Telangana"
+        title="Contact Pavan Sai Power Lines | Electrical Materials Supplier, Bansilalpet Secunderabad"
+        description="Contact Pavan Sai Power Lines (PSPL) at Bansilalpet Road, Secunderabad for electrical power transmission materials. Call +91 97004 49684 or email pavansaipowerlines@gmail.com."
+        keywords="Contact Pavan Sai Power Lines, Electrical suppliers in Secunderabad, Electrical materials suppliers in Hyderabad, Electrical materials in Bansilalpet, Power line materials near Bansilalpet Road, PSPL phone number, V Nagamalleswara Rao"
         canonical="/contact"
         ogImage={COMPANY_INFO.contact.visitingCardImage}
         structuredData={[
