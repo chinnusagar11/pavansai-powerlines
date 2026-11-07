@@ -171,11 +171,11 @@ export default function Home() {
                 <strong>Pavan Sai Power Lines (PSPL)</strong> is an established supplier and stockist of overhead line hardware, polymer & porcelain insulators, gang-operated AB switches, ACSR conductors, earthing equipment, and GI transmission towers headquartered in Secunderabad, Telangana.
               </p>
 
-              {/* Action Buttons with Clean Cohesive Colors & Borders */}
+              {/* Action Buttons with High-Impact Professional Colors */}
               <div className="pt-2 flex flex-wrap items-center gap-2.5 sm:gap-3">
                 <Link
                   to="/products"
-                  className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 active:scale-98 text-white font-bold text-xs sm:text-sm px-5 py-3 rounded-xl shadow-md shadow-blue-600/25 hover:shadow-lg transition-all text-center border border-blue-600"
+                  className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 active:scale-98 text-white font-black text-xs sm:text-sm px-5 py-3 rounded-xl shadow-md shadow-blue-600/30 hover:shadow-lg transition-all text-center"
                 >
                   <span>Explore Product Catalog</span>
                   <ArrowRight size={15} />
@@ -183,15 +183,15 @@ export default function Home() {
 
                 <button
                   onClick={() => setIsQuoteModalOpen(true)}
-                  className="inline-flex items-center justify-center gap-2 bg-blue-50/90 hover:bg-blue-100/90 active:scale-98 text-blue-800 border-2 border-blue-200 hover:border-blue-400 font-bold text-xs sm:text-sm px-4.5 py-3 rounded-xl shadow-xs transition-all text-center"
+                  className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 hover:from-amber-300 hover:to-orange-400 active:scale-98 text-slate-950 font-black text-xs sm:text-sm px-5 py-3 rounded-xl shadow-md shadow-amber-500/25 ring-2 ring-amber-300/40 transition-all text-center"
                 >
-                  <MessageSquare size={15} className="text-blue-600" />
+                  <MessageSquare size={15} className="text-slate-950 font-black" />
                   <span>Request BOQ Quotation</span>
                 </button>
 
                 <Link
                   to="/contact"
-                  className="inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-50 active:bg-slate-100 text-slate-800 font-bold text-xs sm:text-sm px-4.5 py-3 rounded-xl border-2 border-slate-300 hover:border-slate-400 shadow-xs transition-all text-center"
+                  className="inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-50 active:bg-slate-100 text-slate-800 font-extrabold text-xs sm:text-sm px-4.5 py-3 rounded-xl border-2 border-slate-300 hover:border-blue-500 shadow-xs transition-all text-center"
                 >
                   <PhoneCall size={14} className="text-blue-600" />
                   <span>Contact Sales Desk</span>
@@ -215,7 +215,7 @@ export default function Home() {
                   </div>
                   
                   <div>
-                    <p className="text-sm sm:text-base lg:text-[16px] xl:text-lg font-black text-slate-900 font-heading tracking-tight whitespace-nowrap">
+                    <p className="text-sm sm:text-base lg:text-[15px] xl:text-[17px] font-black text-slate-900 font-heading tracking-tight whitespace-nowrap">
                       11kV &ndash; 400kV
                     </p>
                     <p className="text-[11px] font-bold text-blue-900/80 truncate mt-0.5">
@@ -238,7 +238,7 @@ export default function Home() {
                   </div>
                   
                   <div>
-                    <p className="text-sm sm:text-base lg:text-[16px] xl:text-lg font-black text-slate-900 font-heading tracking-tight whitespace-nowrap">
+                    <p className="text-sm sm:text-base lg:text-[15px] xl:text-[17px] font-black text-slate-900 font-heading tracking-tight whitespace-nowrap">
                       7 Divisions
                     </p>
                     <p className="text-[11px] font-bold text-indigo-900/80 truncate mt-0.5">
@@ -261,7 +261,7 @@ export default function Home() {
                   </div>
                   
                   <div>
-                    <p className="text-sm sm:text-base lg:text-[16px] xl:text-lg font-black text-slate-900 font-heading tracking-tight whitespace-nowrap">
+                    <p className="text-sm sm:text-base lg:text-[15px] xl:text-[17px] font-black text-slate-900 font-heading tracking-tight whitespace-nowrap">
                       IS &bull; IEC &bull; REC
                     </p>
                     <p className="text-[11px] font-bold text-emerald-900/80 truncate mt-0.5">
@@ -284,7 +284,7 @@ export default function Home() {
                   </div>
                   
                   <div>
-                    <p className="text-sm sm:text-base lg:text-[16px] xl:text-lg font-black text-slate-900 font-heading tracking-tight whitespace-nowrap">
+                    <p className="text-sm sm:text-base lg:text-[15px] xl:text-[17px] font-black text-slate-900 font-heading tracking-tight whitespace-nowrap">
                       Secunderabad
                     </p>
                     <p className="text-[11px] font-bold text-amber-900/80 truncate mt-0.5">
@@ -301,9 +301,9 @@ export default function Home() {
             <div className="lg:col-span-5">
               <div className="relative group">
                 {/* Ambient Soft Glow Ring */}
-                <div className="absolute -inset-1.5 bg-gradient-to-r from-blue-600 to-sky-400 rounded-3xl blur-md opacity-25 group-hover:opacity-40 transition duration-500"></div>
+                <div className="absolute -inset-1.5 bg-gradient-to-r from-blue-600 via-sky-400 to-indigo-600 rounded-3xl blur-md opacity-30 group-hover:opacity-50 transition duration-500"></div>
 
-                <div className="relative rounded-2xl overflow-hidden border border-slate-200/90 shadow-xl bg-white p-2.5">
+                <div className="relative rounded-2xl overflow-hidden border-2 border-blue-200/90 shadow-2xl bg-white p-2.5">
                   <div className="rounded-xl overflow-hidden aspect-[4/3] bg-slate-900 relative">
                     <img
                       src="/images/hero-transmission-sunset.jpg"
@@ -429,7 +429,7 @@ export default function Home() {
 
             <button
               onClick={() => setIsQuoteModalOpen(true)}
-              className="mt-5 w-full bg-white hover:bg-blue-50 text-blue-700 py-3 px-4 rounded-xl text-xs font-black transition-all shadow-md hover:shadow-lg active:scale-98 flex items-center justify-center gap-1.5"
+              className="mt-5 w-full bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 hover:from-amber-300 hover:to-orange-400 text-slate-950 py-3 px-4 rounded-xl text-xs font-black transition-all shadow-lg shadow-amber-500/25 ring-2 ring-amber-300/40 active:scale-98 flex items-center justify-center gap-1.5"
             >
               <span>Submit Material Schedule</span>
               <span>&rarr;</span>
@@ -684,9 +684,9 @@ export default function Home() {
 
               <button
                 onClick={() => setIsQuoteModalOpen(true)}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-blue-900/60 hover:bg-blue-900/80 border border-white/20 text-white font-bold text-sm px-6 py-3.5 rounded-xl transition-all text-center"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 hover:from-amber-300 hover:to-orange-400 text-slate-950 font-black text-sm px-6 py-3.5 rounded-xl shadow-lg shadow-amber-500/30 ring-2 ring-amber-300/40 transition-all text-center"
               >
-                <MessageSquare size={16} />
+                <MessageSquare size={16} className="text-slate-950 font-black" />
                 <span>Submit BOQ Enquiry</span>
               </button>
             </div>

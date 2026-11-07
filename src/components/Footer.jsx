@@ -14,20 +14,20 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-slate-900 text-slate-300 pt-10 sm:pt-14 pb-24 md:pb-10 border-t border-slate-800">
+    <footer className="bg-[#0a192f] text-slate-300 pt-10 sm:pt-14 pb-24 md:pb-10 border-t-2 border-blue-500">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Responsive Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 pb-8 sm:pb-10 border-b border-slate-800">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 pb-8 sm:pb-10 border-b border-blue-900/60">
           
           {/* Column 1: Company Profile */}
           <div className="space-y-3">
             <Link to="/" className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center text-white shrink-0">
-                <Zap size={18} className="fill-current" />
+              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center text-white shrink-0 shadow-md shadow-blue-500/25 ring-1 ring-blue-400/30">
+                <Zap size={18} className="fill-amber-400 text-amber-400" />
               </div>
-              <span className="font-extrabold text-lg text-white font-heading tracking-tight">
-                PAVAN SAI <span className="text-blue-400 font-extrabold">POWER LINES</span>
+              <span className="font-extrabold text-lg text-white font-heading tracking-tight whitespace-nowrap">
+                PAVAN SAI <span className="text-sky-400 font-extrabold">POWER LINES</span>
               </span>
             </Link>
 
