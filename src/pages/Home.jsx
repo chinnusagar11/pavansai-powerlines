@@ -129,7 +129,7 @@ export default function Home() {
 
               {/* Lead Paragraph - High Contrast & Optimal Line Reading */}
               <p className="text-xs sm:text-sm lg:text-[15px] text-slate-600 sm:text-slate-700 leading-relaxed max-w-2xl font-normal">
-                <strong className="font-bold text-blue-700">Pavan Sai Power Lines (PSPL)</strong> is an established supplier and wholesale stockist of overhead line hardware, polymer &amp; porcelain insulators, gang-operated AB switches, ACSR conductors, earthing equipment, and GI transmission towers headquartered in Secunderabad, Telangana.
+                <strong className="font-bold text-slate-900">Pavan Sai Power Lines (PSPL)</strong> is an established supplier and wholesale stockist of overhead line hardware, polymer &amp; porcelain insulators, gang-operated AB switches, ACSR conductors, earthing equipment, and GI transmission towers headquartered in Secunderabad, Telangana.
               </p>
 
               {/* Action Buttons - Perfectly Padded, Symmetrical & Unified */}
@@ -188,7 +188,7 @@ export default function Home() {
                     {/* Glassmorphic Footer Overlay */}
                     <div className="absolute bottom-2.5 inset-x-2.5 sm:bottom-3 sm:inset-x-3 bg-white/95 backdrop-blur-md rounded-xl p-2.5 sm:p-3 border border-white/60 shadow-lg flex items-center justify-between text-xs gap-2">
                       <div className="min-w-0 flex-1">
-                        <strong className="text-blue-700 block font-bold text-[11px] sm:text-xs truncate">Pavan Sai Power Lines</strong>
+                        <strong className="text-slate-900 block font-bold text-[11px] sm:text-xs truncate">Pavan Sai Power Lines</strong>
                         <span className="text-[10px] sm:text-[11px] text-slate-600 truncate block">Secunderabad Supply Base</span>
                       </div>
                       <span className="inline-flex items-center gap-1.5 text-[10px] sm:text-[11px] font-semibold text-emerald-800 bg-emerald-50 px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-lg border border-emerald-200 shrink-0">
