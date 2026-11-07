@@ -91,19 +91,19 @@ export default function About() {
 
           <div className="lg:col-span-5 space-y-4">
             {/* Official Visiting Card & Verification */}
-            <div className="rounded-2xl overflow-hidden border-2 border-blue-200 shadow-md bg-white p-3.5 space-y-2.5">
-              <div className="flex items-center justify-between text-xs pb-1.5 border-b border-slate-100">
+            <div className="rounded-2xl overflow-hidden border border-slate-200 shadow-lg bg-white p-4 space-y-3">
+              <div className="flex items-center justify-between text-xs pb-2 border-b border-slate-100">
                 <span className="font-extrabold text-slate-900 flex items-center gap-1.5">
-                  <ShieldCheck size={15} className="text-blue-600" />
+                  <ShieldCheck size={16} className="text-blue-600" />
                   <span>Official Business Credentials</span>
                 </span>
-                <span className="text-[10px] font-bold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">
+                <span className="text-[10px] font-bold text-emerald-800 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200">
                   Verified Stockist
                 </span>
               </div>
               <div 
                 onClick={() => setIsCardZoomOpen(true)}
-                className="rounded-xl overflow-hidden border-2 border-slate-200 bg-slate-900 shadow-sm group relative cursor-pointer"
+                className="rounded-xl overflow-hidden border border-slate-200 bg-slate-950 shadow-xs group relative cursor-pointer"
                 title="Click to zoom and view visiting card in high resolution"
               >
                 <img
@@ -118,8 +118,8 @@ export default function About() {
                   </span>
                 </div>
               </div>
-              <div className="flex items-center justify-between text-[11px] text-slate-600 pt-0.5">
-                <span>Proprietor: <strong className="text-slate-900">{COMPANY_INFO.contact.representativeName}</strong></span>
+              <div className="flex items-center justify-between text-xs text-slate-600 pt-0.5">
+                <span>Proprietor: <strong className="text-slate-900 font-bold">{COMPANY_INFO.contact.representativeName}</strong></span>
                 <a href={`tel:${COMPANY_INFO.contact.primaryPhoneRaw}`} className="text-blue-600 font-black hover:underline">
                   {COMPANY_INFO.contact.primaryPhone}
                 </a>
@@ -145,7 +145,7 @@ export default function About() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {/* Division 1 */}
-            <div className="group relative bg-white hover:bg-slate-50/50 p-5 rounded-2xl border-2 border-slate-200/90 hover:border-blue-600 shadow-xs hover:shadow-xl transition-all duration-300 overflow-hidden">
+            <div className="group relative bg-white hover:bg-slate-50/50 p-5 rounded-2xl border border-slate-200/90 hover:border-blue-500/80 shadow-xs hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden">
               <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-blue-600 to-indigo-600"></div>
               <div className="flex items-center gap-2.5 mb-2.5 pt-0.5">
                 <div className="w-9 h-9 rounded-xl bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white border border-blue-200 flex items-center justify-center shadow-xs group-hover:scale-108 transition-all">
@@ -159,7 +159,7 @@ export default function About() {
             </div>
 
             {/* Division 2 */}
-            <div className="group relative bg-white hover:bg-slate-50/50 p-5 rounded-2xl border-2 border-slate-200/90 hover:border-blue-600 shadow-xs hover:shadow-xl transition-all duration-300 overflow-hidden">
+            <div className="group relative bg-white hover:bg-slate-50/50 p-5 rounded-2xl border border-slate-200/90 hover:border-blue-500/80 shadow-xs hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden">
               <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-blue-600 to-indigo-600"></div>
               <div className="flex items-center gap-2.5 mb-2.5 pt-0.5">
                 <div className="w-9 h-9 rounded-xl bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white border border-blue-200 flex items-center justify-center shadow-xs group-hover:scale-108 transition-all">
@@ -173,7 +173,7 @@ export default function About() {
             </div>
 
             {/* Division 3 */}
-            <div className="group relative bg-white hover:bg-slate-50/50 p-5 rounded-2xl border-2 border-slate-200/90 hover:border-blue-600 shadow-xs hover:shadow-xl transition-all duration-300 overflow-hidden">
+            <div className="group relative bg-white hover:bg-slate-50/50 p-5 rounded-2xl border border-slate-200/90 hover:border-blue-500/80 shadow-xs hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden">
               <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-blue-600 to-indigo-600"></div>
               <div className="flex items-center gap-2.5 mb-2.5 pt-0.5">
                 <div className="w-9 h-9 rounded-xl bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white border border-blue-200 flex items-center justify-center shadow-xs group-hover:scale-108 transition-all">
@@ -187,7 +187,7 @@ export default function About() {
             </div>
 
             {/* Division 4 */}
-            <div className="group relative bg-white hover:bg-slate-50/50 p-5 rounded-2xl border-2 border-slate-200/90 hover:border-blue-600 shadow-xs hover:shadow-xl transition-all duration-300 overflow-hidden">
+            <div className="group relative bg-white hover:bg-slate-50/50 p-5 rounded-2xl border border-slate-200/90 hover:border-blue-500/80 shadow-xs hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden">
               <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-blue-600 to-indigo-600"></div>
               <div className="flex items-center gap-2.5 mb-2.5 pt-0.5">
                 <div className="w-9 h-9 rounded-xl bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white border border-blue-200 flex items-center justify-center shadow-xs group-hover:scale-108 transition-all">
@@ -201,7 +201,7 @@ export default function About() {
             </div>
 
             {/* Division 5 */}
-            <div className="group relative bg-white hover:bg-slate-50/50 p-5 rounded-2xl border-2 border-slate-200/90 hover:border-blue-600 shadow-xs hover:shadow-xl transition-all duration-300 overflow-hidden">
+            <div className="group relative bg-white hover:bg-slate-50/50 p-5 rounded-2xl border border-slate-200/90 hover:border-blue-500/80 shadow-xs hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden">
               <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-blue-600 to-indigo-600"></div>
               <div className="flex items-center gap-2.5 mb-2.5 pt-0.5">
                 <div className="w-9 h-9 rounded-xl bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white border border-blue-200 flex items-center justify-center shadow-xs group-hover:scale-108 transition-all">
@@ -215,7 +215,7 @@ export default function About() {
             </div>
 
             {/* Division 6 */}
-            <div className="group relative bg-white hover:bg-slate-50/50 p-5 rounded-2xl border-2 border-slate-200/90 hover:border-blue-600 shadow-xs hover:shadow-xl transition-all duration-300 overflow-hidden">
+            <div className="group relative bg-white hover:bg-slate-50/50 p-5 rounded-2xl border border-slate-200/90 hover:border-blue-500/80 shadow-xs hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden">
               <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-blue-600 to-indigo-600"></div>
               <div className="flex items-center gap-2.5 mb-2.5 pt-0.5">
                 <div className="w-9 h-9 rounded-xl bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white border border-blue-200 flex items-center justify-center shadow-xs group-hover:scale-108 transition-all">

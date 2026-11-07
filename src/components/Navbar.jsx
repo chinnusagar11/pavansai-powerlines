@@ -63,22 +63,22 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="sticky top-0 z-40 w-full shadow-xl">
+      <header className="sticky top-0 z-40 w-full shadow-lg">
         
         {/* Top Electric Power Gradient Accent Ribbon */}
-        <div className="h-1 w-full bg-gradient-to-r from-amber-400 via-sky-400 to-emerald-400"></div>
+        <div className="h-1 w-full bg-gradient-to-r from-blue-700 via-sky-500 to-indigo-600"></div>
 
-        {/* Desktop Top Contact Bar - High-Contrast Light Arctic Pearl Bar (Distinct from Header) */}
-        <div className="bg-gradient-to-r from-slate-100 via-sky-50 to-slate-100 text-slate-800 text-xs py-2 px-4 border-b border-slate-200/90 hidden md:block">
+        {/* Desktop Top Contact Bar - High-End Deep Industrial Navy Bar */}
+        <div className="bg-[#071324] text-slate-300 text-xs py-2 px-4 border-b border-blue-900/40 hidden md:block">
           <div className="max-w-7xl mx-auto flex items-center justify-between">
             <div className="flex items-center gap-6">
-              <span className="flex items-center gap-1.5 font-bold text-slate-800">
-                <MapPin size={13} className="text-amber-600" />
+              <span className="flex items-center gap-1.5 font-medium text-slate-300">
+                <MapPin size={13} className="text-sky-400" />
                 <span>{COMPANY_INFO.location.city}, {COMPANY_INFO.location.state}, India</span>
-                <span className="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-pulse ml-1 ring-2 ring-emerald-200"></span>
+                <span className="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse ml-1 ring-2 ring-emerald-400/20"></span>
               </span>
-              <span className="flex items-center gap-1.5 text-slate-700 font-medium">
-                <Clock size={13} className="text-blue-600" />
+              <span className="flex items-center gap-1.5 text-slate-400 font-medium">
+                <Clock size={13} className="text-sky-400" />
                 <span>Mon - Sat: 9:30 AM - 7:30 PM IST</span>
               </span>
             </div>
@@ -86,26 +86,26 @@ export default function Navbar() {
             <div className="flex items-center gap-5">
               <a 
                 href={`tel:${COMPANY_INFO.contact.primaryPhoneRaw}`} 
-                className="inline-flex items-center gap-1.5 bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-xs px-3.5 py-1 rounded-full shadow-xs hover:shadow transition"
+                className="inline-flex items-center gap-1.5 bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs px-3.5 py-1 rounded-lg shadow-xs transition"
               >
-                <Phone size={12} className="fill-white" />
+                <Phone size={11} className="fill-white" />
                 <span>{COMPANY_INFO.contact.primaryPhone}</span>
               </a>
               <a 
                 href={`mailto:${COMPANY_INFO.contact.primaryEmail}`} 
-                className="flex items-center gap-1.5 text-blue-700 hover:text-blue-900 font-bold transition"
+                className="flex items-center gap-1.5 text-slate-300 hover:text-white transition font-medium"
               >
-                <Mail size={13} className="text-blue-600" />
+                <Mail size={13} className="text-sky-400" />
                 <span>{COMPANY_INFO.contact.primaryEmail}</span>
               </a>
             </div>
           </div>
         </div>
 
-        {/* Main Navigation Bar - Deep Corporate Electric Sapphire Navy (Distinct Colorful Header) */}
-        <nav className={`w-full transition-all duration-200 bg-gradient-to-r from-[#0a192f] via-[#0f274a] to-[#0a192f] border-b-2 border-blue-500/80 shadow-xl text-white ${
+        {/* Main Navigation Bar */}
+        <nav className={`w-full transition-all duration-200 bg-[#0a192f] border-b border-blue-900/50 shadow-xl text-white ${
           scrolled 
-            ? 'py-2 sm:py-2.5 backdrop-blur-md shadow-2xl' 
+            ? 'py-2 sm:py-2.5 backdrop-blur-md shadow-2xl bg-[#0a192f]/95' 
             : 'py-2.5 sm:py-3.5'
         }`}>
           <div className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 flex items-center justify-between">

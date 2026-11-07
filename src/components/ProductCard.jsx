@@ -11,13 +11,13 @@ export default function ProductCard({ product }) {
 
   return (
     <>
-      <div className="group bg-white rounded-2xl overflow-hidden border-2 border-slate-200/90 hover:border-blue-600 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full relative">
+      <div className="group bg-white rounded-2xl overflow-hidden border border-slate-200 hover:border-blue-500/80 shadow-sm hover:shadow-[0_16px_35px_-8px_rgba(29,78,216,0.14)] hover:-translate-y-1 transition-all duration-300 flex flex-col h-full relative">
         
-        {/* Unified Corporate Blue Top Accent Stripe */}
-        <div className="h-1.5 w-full bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-700"></div>
+        {/* Subtle Corporate Blue Top Accent Stripe */}
+        <div className="h-1.5 w-full bg-gradient-to-r from-blue-600 via-sky-500 to-indigo-600"></div>
 
         {/* Uniform Fixed-Height Image Container (Laser-Aligned Across Rows) */}
-        <div className="relative w-full h-52 overflow-hidden bg-gradient-to-b from-slate-50 to-white border-b border-slate-100 flex items-center justify-center p-3.5 sm:p-4 shrink-0">
+        <div className="relative w-full h-52 overflow-hidden bg-gradient-to-b from-slate-50/60 to-white border-b border-slate-100 flex items-center justify-center p-3.5 sm:p-4 shrink-0">
           <img
             src={imageError ? fallbackImage : product.image}
             alt={product.name}
@@ -26,9 +26,9 @@ export default function ProductCard({ product }) {
             className="w-full h-full object-contain transition-transform duration-500 ease-out group-hover:scale-106 drop-shadow-sm"
           />
           
-          {/* Unified Enterprise Category Badge */}
+          {/* Refined Enterprise Category Badge */}
           <div className="absolute top-3 left-3">
-            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-[10px] sm:text-[11px] font-bold shadow-xs max-w-[190px] truncate bg-blue-900/85 text-white backdrop-blur-xs border border-blue-400/30">
+            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-[10px] sm:text-[11px] font-bold shadow-xs max-w-[190px] truncate bg-slate-900/85 text-white backdrop-blur-xs border border-white/20">
               <Zap size={11} className="fill-amber-400 text-amber-400 shrink-0" />
               <span className="truncate">{product.category}</span>
             </span>
@@ -86,7 +86,7 @@ export default function ProductCard({ product }) {
           <div className="pt-3 border-t border-slate-100 grid grid-cols-2 gap-2">
             <Link
               to={`/products/${product.id}`}
-              className="h-10 inline-flex items-center justify-center gap-1 px-2.5 text-xs font-bold text-slate-700 bg-slate-50 hover:bg-slate-100 active:bg-slate-200 border-2 border-slate-200 hover:border-slate-300 rounded-xl transition-all whitespace-nowrap text-center"
+              className="h-10 inline-flex items-center justify-center gap-1 px-2.5 text-xs font-bold text-slate-700 bg-slate-50 hover:bg-slate-100 active:bg-slate-200 border border-slate-200 hover:border-slate-300 rounded-xl transition-all whitespace-nowrap text-center"
             >
               <span>Specs & Photos</span>
               <ArrowRight size={13} className="text-blue-600 shrink-0 group-hover:translate-x-0.5 transition-transform" />
@@ -94,7 +94,7 @@ export default function ProductCard({ product }) {
 
             <button
               onClick={() => setIsModalOpen(true)}
-              className="h-10 inline-flex items-center justify-center gap-1 px-2.5 text-xs font-black text-white bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 active:scale-97 rounded-xl shadow-xs hover:shadow-md transition-all whitespace-nowrap text-center"
+              className="h-10 inline-flex items-center justify-center gap-1 px-2.5 text-xs font-black text-white bg-blue-600 hover:bg-blue-700 active:scale-97 rounded-xl shadow-xs hover:shadow-md transition-all whitespace-nowrap text-center"
             >
               <MessageSquare size={13} className="shrink-0" />
               <span>Instant Quote</span>

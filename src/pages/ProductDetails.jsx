@@ -231,18 +231,18 @@ export default function ProductDetails() {
             <div className="pt-3 border-t border-slate-200 grid grid-cols-1 sm:grid-cols-2 gap-2.5">
               <button
                 onClick={() => setIsModalOpen(true)}
-                className="w-full flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 active:scale-98 text-white font-semibold text-sm py-3 px-4 rounded-xl shadow-xs transition"
+                className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 hover:from-amber-300 hover:to-orange-400 active:scale-98 text-slate-950 font-black text-sm py-3 px-4 rounded-xl shadow-md shadow-amber-500/20 ring-1 ring-amber-300/40 transition"
               >
-                <MessageSquare size={16} />
-                <span>Contact for Enquiry</span>
+                <MessageSquare size={16} className="text-slate-950 font-black" />
+                <span>Request Material Quote</span>
               </button>
 
               <a
                 href={`tel:${COMPANY_INFO.contact.primaryPhoneRaw}`}
-                className="w-full flex items-center justify-center gap-2 bg-white hover:bg-slate-50 active:scale-98 text-slate-800 border border-slate-300 font-semibold text-sm py-3 px-4 rounded-xl transition"
+                className="w-full flex items-center justify-center gap-2 bg-white hover:bg-slate-50 active:scale-98 text-slate-800 border border-slate-300 font-bold text-sm py-3 px-4 rounded-xl shadow-2xs transition"
               >
                 <Phone size={16} className="text-blue-600" />
-                <span>Direct Call Sales</span>
+                <span>Call Sales Desk</span>
               </a>
             </div>
 

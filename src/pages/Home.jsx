@@ -75,10 +75,10 @@ export default function Home() {
     <div className="space-y-16 md:space-y-24 pb-16">
       
       {/* 1. ENTERPRISE HERO SECTION */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-blue-50/70 via-white to-white border-b border-slate-200/80 pt-8 pb-14 sm:pt-14 sm:pb-20 lg:py-24">
+      <section className="relative overflow-hidden bg-gradient-to-b from-blue-50/60 via-slate-50/30 to-white border-b border-slate-200/80 pt-8 pb-14 sm:pt-14 sm:pb-20 lg:py-24">
         
         {/* Subtle Architectural Grid Pattern */}
-        <div className="absolute inset-0 bg-[radial-gradient(#3b82f6_1px,transparent_1px)] [background-size:24px_24px] opacity-15 pointer-events-none"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(#3b82f6_1px,transparent_1px)] [background-size:28px_28px] opacity-10 pointer-events-none"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
@@ -87,19 +87,19 @@ export default function Home() {
             <div className="lg:col-span-7 space-y-5 sm:space-y-6 text-left">
               
               {/* Status Pill Badge */}
-              <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/95 border border-blue-200 shadow-xs text-xs font-semibold text-slate-800">
+              <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/95 border border-blue-200/80 shadow-2xs text-xs font-semibold text-slate-800">
                 <span className="relative flex h-2.5 w-2.5">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
                 </span>
-                <span>Secunderabad, Telangana</span>
+                <span className="font-bold text-slate-900">Secunderabad, Telangana</span>
                 <span className="text-slate-300">&bull;</span>
                 <span className="text-blue-700 font-bold">IS / IEC Certified Supplier</span>
               </div>
 
               {/* Main Heading */}
-              <h1 className="text-3xl sm:text-5xl lg:text-5.5xl font-extrabold tracking-tight text-slate-900 leading-[1.15] font-heading">
-                Reliable Power Transmission & Distribution <span className="text-blue-600 inline-block">Materials</span>
+              <h1 className="text-3xl sm:text-5xl lg:text-[52px] font-extrabold tracking-tight text-slate-900 leading-[1.12] font-heading">
+                High-Tension Power Transmission & <span className="text-blue-600 inline-block">Distribution Hardware</span>
               </h1>
 
               {/* Lead Paragraph */}
@@ -109,36 +109,36 @@ export default function Home() {
 
               {/* Action Buttons - Clean Enterprise Hierarchy */}
               <div className="pt-2 flex flex-wrap items-center gap-2.5 sm:gap-3">
+                <button
+                  onClick={() => setIsQuoteModalOpen(true)}
+                  className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 hover:from-amber-300 hover:to-orange-400 active:scale-98 text-slate-950 font-black text-xs sm:text-sm px-6 py-3.5 rounded-xl shadow-md shadow-amber-500/20 ring-1 ring-amber-300/40 transition-all text-center"
+                >
+                  <MessageSquare size={16} className="text-slate-950 font-black" />
+                  <span>Request BOQ Quotation</span>
+                </button>
+
                 <Link
                   to="/products"
-                  className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 active:scale-98 text-white font-black text-xs sm:text-sm px-5 py-3 rounded-xl shadow-md shadow-blue-600/30 hover:shadow-lg transition-all text-center"
+                  className="inline-flex items-center justify-center gap-2 bg-slate-900 hover:bg-blue-600 active:scale-98 text-white font-bold text-xs sm:text-sm px-5 py-3.5 rounded-xl shadow-sm hover:shadow-md transition-all text-center"
                 >
                   <span>Explore Product Catalog</span>
                   <ArrowRight size={15} />
                 </Link>
 
-                <button
-                  onClick={() => setIsQuoteModalOpen(true)}
-                  className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 hover:from-amber-300 hover:to-orange-400 active:scale-98 text-slate-950 font-black text-xs sm:text-sm px-5 py-3 rounded-xl shadow-md shadow-amber-500/25 ring-2 ring-amber-300/40 transition-all text-center"
-                >
-                  <MessageSquare size={15} className="text-slate-950 font-black" />
-                  <span>Request BOQ Quotation</span>
-                </button>
-
                 <Link
                   to="/contact"
-                  className="inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-50 active:bg-slate-100 text-slate-800 font-extrabold text-xs sm:text-sm px-4.5 py-3 rounded-xl border-2 border-slate-300 hover:border-blue-500 shadow-xs transition-all text-center"
+                  className="inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-50 active:bg-slate-100 text-slate-800 font-bold text-xs sm:text-sm px-4.5 py-3.5 rounded-xl border border-slate-300 hover:border-slate-400 shadow-2xs transition-all text-center"
                 >
                   <PhoneCall size={14} className="text-blue-600" />
                   <span>Contact Sales Desk</span>
                 </Link>
               </div>
 
-              {/* Metrics Highlights Bar - Clean Corporate Dashboard Styling (No Rainbows) */}
+              {/* Metrics Highlights Bar - Clean Modern Dashboard Styling */}
               <div className="pt-6 border-t border-slate-200/90 grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-3.5">
                 
                 {/* 1. Voltage Scope */}
-                <div className="group relative bg-white hover:bg-blue-50/40 p-3.5 rounded-2xl border-2 border-slate-200 hover:border-blue-500 shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between min-w-0 overflow-hidden">
+                <div className="group relative bg-white hover:bg-slate-50/50 p-4 rounded-2xl border border-slate-200 hover:border-blue-500/80 shadow-xs hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 flex flex-col justify-between min-w-0 overflow-hidden">
                   <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-blue-600 to-indigo-600"></div>
                   
                   <div className="flex items-center justify-between gap-1 mb-2 pt-0.5">
@@ -154,14 +154,14 @@ export default function Home() {
                     <p className="text-sm sm:text-base lg:text-[15px] xl:text-[17px] font-black text-slate-900 font-heading tracking-tight whitespace-nowrap">
                       11kV &ndash; 400kV
                     </p>
-                    <p className="text-[11px] font-bold text-slate-600 truncate mt-0.5">
+                    <p className="text-[11px] font-medium text-slate-500 truncate mt-0.5">
                       HT / LT Grid Class
                     </p>
                   </div>
                 </div>
 
                 {/* 2. Product Scope */}
-                <div className="group relative bg-white hover:bg-blue-50/40 p-3.5 rounded-2xl border-2 border-slate-200 hover:border-blue-500 shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between min-w-0 overflow-hidden">
+                <div className="group relative bg-white hover:bg-slate-50/50 p-4 rounded-2xl border border-slate-200 hover:border-blue-500/80 shadow-xs hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 flex flex-col justify-between min-w-0 overflow-hidden">
                   <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-blue-600 to-indigo-600"></div>
                   
                   <div className="flex items-center justify-between gap-1 mb-2 pt-0.5">
@@ -177,14 +177,14 @@ export default function Home() {
                     <p className="text-sm sm:text-base lg:text-[15px] xl:text-[17px] font-black text-slate-900 font-heading tracking-tight whitespace-nowrap">
                       7 Divisions
                     </p>
-                    <p className="text-[11px] font-bold text-slate-600 truncate mt-0.5">
+                    <p className="text-[11px] font-medium text-slate-500 truncate mt-0.5">
                       Complete Hardware
                     </p>
                   </div>
                 </div>
 
                 {/* 3. Quality Code */}
-                <div className="group relative bg-white hover:bg-blue-50/40 p-3.5 rounded-2xl border-2 border-slate-200 hover:border-blue-500 shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between min-w-0 overflow-hidden">
+                <div className="group relative bg-white hover:bg-slate-50/50 p-4 rounded-2xl border border-slate-200 hover:border-blue-500/80 shadow-xs hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 flex flex-col justify-between min-w-0 overflow-hidden">
                   <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-blue-600 to-indigo-600"></div>
                   
                   <div className="flex items-center justify-between gap-1 mb-2 pt-0.5">
@@ -200,14 +200,14 @@ export default function Home() {
                     <p className="text-sm sm:text-base lg:text-[15px] xl:text-[17px] font-black text-slate-900 font-heading tracking-tight whitespace-nowrap">
                       IS &bull; IEC &bull; REC
                     </p>
-                    <p className="text-[11px] font-bold text-slate-600 truncate mt-0.5">
+                    <p className="text-[11px] font-medium text-slate-500 truncate mt-0.5">
                       Utility Standards
                     </p>
                   </div>
                 </div>
 
                 {/* 4. Supply Hub */}
-                <div className="group relative bg-white hover:bg-blue-50/40 p-3.5 rounded-2xl border-2 border-slate-200 hover:border-blue-500 shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between min-w-0 overflow-hidden">
+                <div className="group relative bg-white hover:bg-slate-50/50 p-4 rounded-2xl border border-slate-200 hover:border-blue-500/80 shadow-xs hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 flex flex-col justify-between min-w-0 overflow-hidden">
                   <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-blue-600 to-indigo-600"></div>
                   
                   <div className="flex items-center justify-between gap-1 mb-2 pt-0.5">
@@ -223,7 +223,7 @@ export default function Home() {
                     <p className="text-sm sm:text-base lg:text-[15px] xl:text-[17px] font-black text-slate-900 font-heading tracking-tight whitespace-nowrap">
                       Secunderabad
                     </p>
-                    <p className="text-[11px] font-bold text-slate-600 truncate mt-0.5">
+                    <p className="text-[11px] font-medium text-slate-500 truncate mt-0.5">
                       Logistics Dispatch Hub
                     </p>
                   </div>
@@ -239,7 +239,7 @@ export default function Home() {
                 {/* Ambient Soft Glow Ring */}
                 <div className="absolute -inset-1.5 bg-gradient-to-r from-blue-600 via-sky-400 to-indigo-600 rounded-3xl blur-md opacity-25 group-hover:opacity-40 transition duration-500"></div>
 
-                <div className="relative rounded-2xl overflow-hidden border-2 border-blue-200/90 shadow-2xl bg-white p-2.5">
+                <div className="relative rounded-2xl overflow-hidden border border-slate-200 shadow-2xl bg-white p-2.5">
                   <div className="rounded-xl overflow-hidden aspect-[4/3] bg-slate-900 relative">
                     <img
                       src="/images/hero-transmission-sunset.jpg"
@@ -276,7 +276,7 @@ export default function Home() {
       </section>
 
 
-      {/* 2. PRODUCT CATEGORY HIGHLIGHTS (All 7 Divisions with Unified Professional Corporate Styling) */}
+      {/* 2. PRODUCT CATEGORY HIGHLIGHTS (All 7 Divisions with Modern Card Lift) */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
@@ -284,7 +284,7 @@ export default function Home() {
             <Layers size={13} className="text-blue-600" />
             <span>Product Divisions</span>
           </span>
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 font-heading mt-2">
+          <h2 className="text-2xl sm:text-3.5xl font-extrabold text-slate-900 font-heading mt-2">
             Explore Our 7 Core Business Divisions
           </h2>
           <p className="text-slate-600 text-xs sm:text-sm mt-1.5">
@@ -301,22 +301,22 @@ export default function Home() {
               <Link
                 key={cat.id}
                 to={`/products?category=${cat.id}`}
-                className="group relative bg-white rounded-2xl border-2 border-slate-200/90 hover:border-blue-600 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden"
+                className="group relative bg-white rounded-2xl border border-slate-200/90 hover:border-blue-500/80 shadow-xs hover:shadow-[0_16px_35px_-8px_rgba(29,78,216,0.14)] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between overflow-hidden"
               >
                 {/* Unified Corporate Blue Top Accent Stripe */}
-                <div className="h-1.5 w-full bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-600"></div>
+                <div className="h-1.5 w-full bg-gradient-to-r from-blue-600 via-sky-500 to-indigo-600"></div>
 
                 <div>
                   {/* Category Image Header */}
                   {preview && (
-                    <div className="relative w-full aspect-[16/10] bg-slate-50/80 border-b border-slate-100 flex items-center justify-center p-3.5 overflow-hidden">
+                    <div className="relative w-full aspect-[16/10] bg-slate-50/70 border-b border-slate-100 flex items-center justify-center p-3.5 overflow-hidden">
                       <img
                         src={preview.image}
                         alt={cat.name}
                         className="w-full h-full object-contain group-hover:scale-108 transition-transform duration-500 drop-shadow-2xs"
                       />
                       <div className="absolute top-2.5 right-2.5">
-                        <span className="inline-block text-[10px] font-extrabold px-2 py-0.5 rounded-md shadow-xs border bg-slate-100 text-slate-700 border-slate-200 group-hover:bg-blue-50 group-hover:text-blue-700 group-hover:border-blue-200 transition-colors">
+                        <span className="inline-block text-[10px] font-extrabold px-2 py-0.5 rounded-md shadow-2xs border bg-white/95 text-slate-700 border-slate-200 group-hover:bg-blue-50 group-hover:text-blue-700 group-hover:border-blue-200 transition-colors">
                           {productCount} {productCount === 1 ? 'Product' : 'Products'}
                         </span>
                       </div>
@@ -348,10 +348,10 @@ export default function Home() {
           })}
 
           {/* Quick BOQ Quote Card (High-Impact Enterprise Navy & Gold) */}
-          <div className="relative bg-gradient-to-br from-[#0a192f] via-blue-950 to-[#0f274a] text-white p-5 sm:p-6 rounded-2xl shadow-lg border-2 border-blue-500/80 flex flex-col justify-between overflow-hidden group">
+          <div className="relative bg-[#0a192f] text-white p-5 sm:p-6 rounded-2xl shadow-lg border border-blue-500/60 flex flex-col justify-between overflow-hidden group hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
             <div className="absolute -top-10 -right-10 w-32 h-32 bg-blue-500/10 rounded-full blur-xl pointer-events-none group-hover:scale-125 transition-transform duration-700"></div>
             <div>
-              <div className="w-10 h-10 rounded-xl bg-blue-600/40 backdrop-blur-xs flex items-center justify-center mb-3 shadow-md ring-2 ring-blue-400/30">
+              <div className="w-10 h-10 rounded-xl bg-blue-600/40 backdrop-blur-xs flex items-center justify-center mb-3 shadow-md ring-1 ring-blue-400/40">
                 <FileCheck size={20} className="text-white" />
               </div>
               <h3 className="font-extrabold text-base text-white">
@@ -364,7 +364,7 @@ export default function Home() {
 
             <button
               onClick={() => setIsQuoteModalOpen(true)}
-              className="mt-5 w-full bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 hover:from-amber-300 hover:to-orange-400 text-slate-950 py-3 px-4 rounded-xl text-xs font-black transition-all shadow-lg shadow-amber-500/25 ring-2 ring-amber-300/40 active:scale-98 flex items-center justify-center gap-1.5"
+              className="mt-5 w-full bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 hover:from-amber-300 hover:to-orange-400 text-slate-950 py-3 px-4 rounded-xl text-xs font-black transition-all shadow-md shadow-amber-500/20 ring-1 ring-amber-300/40 active:scale-98 flex items-center justify-center gap-1.5"
             >
               <span>Submit Material Schedule</span>
               <span>&rarr;</span>
@@ -392,7 +392,7 @@ export default function Home() {
 
             <Link
               to="/products"
-              className="inline-flex items-center gap-1.5 text-blue-600 hover:text-blue-800 font-bold text-xs sm:text-sm bg-white px-4 py-2.5 rounded-xl border border-slate-200 shadow-xs hover:shadow transition"
+              className="inline-flex items-center gap-1.5 text-blue-600 hover:text-blue-800 font-bold text-xs sm:text-sm bg-white px-4 py-2.5 rounded-xl border border-slate-200 shadow-2xs hover:shadow transition"
             >
               <span>View All Products ({PRODUCTS.length})</span>
               <ArrowRight size={15} />
@@ -409,7 +409,7 @@ export default function Home() {
       </section>
 
 
-      {/* 4. WHY UTILITIES & CONTRACTORS CHOOSE PSPL (Unified Enterprise Cards) */}
+      {/* 4. WHY UTILITIES & CONTRACTORS CHOOSE PSPL (Modern Enterprise Cards) */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="text-center max-w-2xl mx-auto mb-12">
@@ -426,9 +426,9 @@ export default function Home() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {/* Advantage 1 */}
-          <div className="group relative bg-white hover:bg-slate-50/50 p-6 rounded-2xl border-2 border-slate-200/90 hover:border-blue-600 shadow-xs hover:shadow-xl transition-all duration-300 overflow-hidden">
+          <div className="group relative bg-white hover:bg-slate-50/50 p-6 rounded-2xl border border-slate-200/90 hover:border-blue-500/80 shadow-xs hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden">
             <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-blue-600 to-indigo-600"></div>
-            <div className="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white border border-blue-200 flex items-center justify-center mb-4 shadow-sm transition-all">
+            <div className="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white border border-blue-200 flex items-center justify-center mb-4 shadow-2xs transition-all">
               <ShieldCheck size={24} />
             </div>
             <h3 className="font-extrabold text-base text-slate-900 mb-2">
@@ -440,9 +440,9 @@ export default function Home() {
           </div>
 
           {/* Advantage 2 */}
-          <div className="group relative bg-white hover:bg-slate-50/50 p-6 rounded-2xl border-2 border-slate-200/90 hover:border-blue-600 shadow-xs hover:shadow-xl transition-all duration-300 overflow-hidden">
+          <div className="group relative bg-white hover:bg-slate-50/50 p-6 rounded-2xl border border-slate-200/90 hover:border-blue-500/80 shadow-xs hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden">
             <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-blue-600 to-indigo-600"></div>
-            <div className="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white border border-blue-200 flex items-center justify-center mb-4 shadow-sm transition-all">
+            <div className="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white border border-blue-200 flex items-center justify-center mb-4 shadow-2xs transition-all">
               <Truck size={24} />
             </div>
             <h3 className="font-extrabold text-base text-slate-900 mb-2">
@@ -454,9 +454,9 @@ export default function Home() {
           </div>
 
           {/* Advantage 3 */}
-          <div className="group relative bg-white hover:bg-slate-50/50 p-6 rounded-2xl border-2 border-slate-200/90 hover:border-blue-600 shadow-xs hover:shadow-xl transition-all duration-300 overflow-hidden">
+          <div className="group relative bg-white hover:bg-slate-50/50 p-6 rounded-2xl border border-slate-200/90 hover:border-blue-500/80 shadow-xs hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden">
             <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-blue-600 to-indigo-600"></div>
-            <div className="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white border border-blue-200 flex items-center justify-center mb-4 shadow-sm transition-all">
+            <div className="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white border border-blue-200 flex items-center justify-center mb-4 shadow-2xs transition-all">
               <Layers size={24} />
             </div>
             <h3 className="font-extrabold text-base text-slate-900 mb-2">
@@ -468,9 +468,9 @@ export default function Home() {
           </div>
 
           {/* Advantage 4 */}
-          <div className="group relative bg-white hover:bg-slate-50/50 p-6 rounded-2xl border-2 border-slate-200/90 hover:border-blue-600 shadow-xs hover:shadow-xl transition-all duration-300 overflow-hidden">
+          <div className="group relative bg-white hover:bg-slate-50/50 p-6 rounded-2xl border border-slate-200/90 hover:border-blue-500/80 shadow-xs hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden">
             <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-blue-600 to-indigo-600"></div>
-            <div className="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white border border-blue-200 flex items-center justify-center mb-4 shadow-sm transition-all">
+            <div className="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white border border-blue-200 flex items-center justify-center mb-4 shadow-2xs transition-all">
               <FileCheck size={24} />
             </div>
             <h3 className="font-extrabold text-base text-slate-900 mb-2">
@@ -485,7 +485,7 @@ export default function Home() {
       </section>
 
 
-      {/* 5. WHERE OUR PRODUCTS ARE USED (Unified, Symmetrical Professional Field Applications) */}
+      {/* 5. WHERE OUR PRODUCTS ARE USED (Field Applications) */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="text-center max-w-2xl mx-auto mb-10">
@@ -503,7 +503,7 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           
           {/* Card 1: Overhead Power Corridors */}
-          <div className="group relative bg-white rounded-2xl border-2 border-slate-200/90 hover:border-blue-600 overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col h-full">
+          <div className="group relative bg-white rounded-2xl border border-slate-200/90 hover:border-blue-500/80 overflow-hidden shadow-xs hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col h-full">
             <div className="h-1.5 w-full bg-gradient-to-r from-blue-600 to-indigo-600"></div>
             
             {/* Fixed Height Uniform Image Container */}
@@ -568,7 +568,7 @@ export default function Home() {
           </div>
 
           {/* Card 2: Substations & Switchgear */}
-          <div className="group relative bg-white rounded-2xl border-2 border-slate-200/90 hover:border-blue-600 overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col h-full">
+          <div className="group relative bg-white rounded-2xl border border-slate-200/90 hover:border-blue-500/80 overflow-hidden shadow-xs hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col h-full">
             <div className="h-1.5 w-full bg-gradient-to-r from-blue-600 to-indigo-600"></div>
             
             {/* Fixed Height Uniform Image Container */}
@@ -633,7 +633,7 @@ export default function Home() {
           </div>
 
           {/* Card 3: Substation & Plant Earthing */}
-          <div className="group relative bg-white rounded-2xl border-2 border-slate-200/90 hover:border-blue-600 overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col h-full">
+          <div className="group relative bg-white rounded-2xl border border-slate-200/90 hover:border-blue-500/80 overflow-hidden shadow-xs hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col h-full">
             <div className="h-1.5 w-full bg-gradient-to-r from-blue-600 to-indigo-600"></div>
             
             {/* Fixed Height Uniform Image Container */}
@@ -733,7 +733,7 @@ export default function Home() {
 
               <button
                 onClick={() => setIsQuoteModalOpen(true)}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 hover:from-amber-300 hover:to-orange-400 text-slate-950 font-black text-sm px-6 py-3.5 rounded-xl shadow-lg shadow-amber-500/30 ring-2 ring-amber-300/40 transition-all text-center"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 hover:from-amber-300 hover:to-orange-400 text-slate-950 font-black text-sm px-6 py-3.5 rounded-xl shadow-lg shadow-amber-500/30 ring-1 ring-amber-300/40 transition-all text-center"
               >
                 <MessageSquare size={16} className="text-slate-950 font-black" />
                 <span>Submit BOQ Enquiry</span>
