@@ -93,7 +93,7 @@ export default function About() {
               {/* Main Heading */}
               <div>
                 <h1 className="text-2xl sm:text-3.5xl lg:text-[34px] font-extrabold tracking-tight text-slate-900 font-heading leading-tight">
-                  About Pavan Sai Power Lines
+                  About <span className="text-blue-700">Pavan Sai Power Lines</span>
                 </h1>
                 <p className="text-xs sm:text-sm font-bold text-blue-700 mt-1">
                   A Dedicated Supply Partner for Electrical Contractors, Utilities & Infrastructure
@@ -102,7 +102,7 @@ export default function About() {
 
               {/* Concise Executive Narrative */}
               <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
-                Headquartered at Bansilalpet Road, Secunderabad (Telangana), <strong>Pavan Sai Power Lines (PSPL)</strong> is an established supplier and wholesale stockist of high-tension overhead line hardware, polymer & porcelain insulators, gang-operated AB switches, ACSR conductors, earthing equipment, and galvanized transmission towers conforming to Indian Standard (IS) and state DISCOM specifications.
+                Headquartered at Bansilalpet Road, Secunderabad (Telangana), <strong className="font-bold text-blue-700">Pavan Sai Power Lines (PSPL)</strong> is an established supplier and wholesale stockist of high-tension overhead line hardware, polymer & porcelain insulators, gang-operated AB switches, ACSR conductors, earthing equipment, and galvanized transmission towers conforming to Indian Standard (IS) and state DISCOM specifications.
               </p>
 
               {/* 3 Premium Trust Metric Cards */}

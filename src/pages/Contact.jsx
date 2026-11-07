@@ -211,7 +211,7 @@ export default function Contact() {
             </div>
 
             <h1 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-slate-900 font-heading">
-              Contact Pavan Sai Power Lines
+              Contact <span className="text-blue-700">Pavan Sai Power Lines</span>
             </h1>
 
             <p className="text-xs sm:text-sm lg:text-[15px] text-slate-600 leading-relaxed font-normal">
