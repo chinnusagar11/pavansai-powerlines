@@ -10,6 +10,7 @@ import {
   PhoneCall, 
   Zap, 
   ArrowRight,
+  ArrowLeft,
   Cpu,
   Sliders,
   Maximize,
@@ -204,13 +205,14 @@ export default function About() {
         </div>
       </section>
 
-      {/* 4. Mission & Vision (Clean Cards) */}
+      {/* 4. Mission & Vision (High-Impact Enterprise Cards) */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           
-          <div className="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-xs">
-            <div className="w-10 h-10 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center mb-4">
-              <Target size={22} />
+          <div className="group relative bg-gradient-to-br from-blue-50/90 via-sky-50/30 to-white p-6 sm:p-8 rounded-2xl border-2 border-blue-200 hover:border-blue-500 shadow-xs hover:shadow-xl transition-all duration-300 overflow-hidden">
+            <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-blue-600 to-sky-500"></div>
+            <div className="w-12 h-12 rounded-xl bg-blue-600 text-white flex items-center justify-center mb-4 shadow-md shadow-blue-500/25 group-hover:scale-108 transition-transform">
+              <Target size={24} />
             </div>
             <h3 className="text-xl font-bold font-heading text-slate-900 mb-2">Our Mission</h3>
             <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
@@ -218,9 +220,10 @@ export default function About() {
             </p>
           </div>
 
-          <div className="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-xs">
-            <div className="w-10 h-10 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center mb-4">
-              <Eye size={22} />
+          <div className="group relative bg-gradient-to-br from-emerald-50/90 via-teal-50/30 to-white p-6 sm:p-8 rounded-2xl border-2 border-emerald-200 hover:border-emerald-500 shadow-xs hover:shadow-xl transition-all duration-300 overflow-hidden">
+            <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-emerald-600 to-teal-500"></div>
+            <div className="w-12 h-12 rounded-xl bg-emerald-600 text-white flex items-center justify-center mb-4 shadow-md shadow-emerald-500/25 group-hover:scale-108 transition-transform">
+              <Eye size={24} />
             </div>
             <h3 className="text-xl font-bold font-heading text-slate-900 mb-2">Our Vision</h3>
             <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
@@ -233,23 +236,23 @@ export default function About() {
 
       {/* 5. Contact CTA */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-blue-50 border border-blue-200 rounded-2xl p-6 sm:p-8 text-center max-w-3xl mx-auto space-y-4">
-          <h3 className="text-xl sm:text-2xl font-bold font-heading text-slate-900">
+        <div className="relative overflow-hidden bg-gradient-to-r from-blue-700 via-blue-600 to-indigo-700 text-white rounded-3xl p-8 sm:p-10 text-center max-w-3xl mx-auto space-y-4 shadow-xl">
+          <h3 className="text-xl sm:text-2xl font-extrabold font-heading text-white">
             Have an Inquiry or Need Stock Availability?
           </h3>
-          <p className="text-xs sm:text-sm text-slate-600 max-w-xl mx-auto">
+          <p className="text-xs sm:text-sm text-blue-100 max-w-xl mx-auto leading-relaxed">
             Contact our commercial sales desk in Secunderabad directly for price estimates and product information.
           </p>
           <div className="pt-2 flex flex-wrap items-center justify-center gap-3">
             <button
               onClick={() => setIsQuoteOpen(true)}
-              className="bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs sm:text-sm px-5 py-2.5 rounded-lg shadow-xs transition"
+              className="bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 hover:from-amber-300 hover:to-orange-400 text-slate-950 font-black text-xs sm:text-sm px-6 py-3 rounded-xl shadow-lg shadow-amber-500/30 ring-2 ring-amber-300/40 transition-all active:scale-97"
             >
               Request Quote
             </button>
             <Link
               to="/contact"
-              className="bg-white hover:bg-slate-50 text-slate-800 border border-slate-300 font-semibold text-xs sm:text-sm px-5 py-2.5 rounded-lg transition"
+              className="bg-white hover:bg-slate-50 text-slate-800 font-extrabold text-xs sm:text-sm px-5 py-3 rounded-xl border border-white/20 shadow-md transition-all active:scale-97"
             >
               Contact Sales Desk
             </Link>
