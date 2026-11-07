@@ -514,7 +514,7 @@ export default function Home() {
               Secunderabad Supply Hub
             </h3>
             <p className="text-xs text-slate-600 leading-relaxed">
-              Strategically based in Secunderabad's prime industrial corridor, offering swift dispatch across Telangana, Andhra Pradesh, and South India.
+              Strategically based at Bansilalpet Road, Secunderabad (T.G.), offering swift dispatch across Telangana, Andhra Pradesh, and South India.
             </p>
           </div>
 

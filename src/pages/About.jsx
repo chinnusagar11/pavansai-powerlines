@@ -80,22 +80,36 @@ export default function About() {
             <div className="p-3.5 sm:p-4 bg-slate-50 rounded-xl border border-slate-200 text-xs sm:text-sm text-slate-700 flex items-start gap-2.5">
               <MapPin size={18} className="text-blue-600 shrink-0 mt-0.5" />
               <div>
-                <strong className="text-slate-900 block">Secunderabad Supply Hub</strong>
-                Strategically positioned in Telangana's electrical trading zone with quick road transport access across Telangana and Andhra Pradesh.
+                <strong className="text-slate-900 block">Registered Office & Supply Hub</strong>
+                {COMPANY_INFO.location.fullAddress}
               </div>
             </div>
           </div>
 
-          <div className="lg:col-span-5">
-            <div className="rounded-xl overflow-hidden border border-slate-200 shadow-sm bg-white p-2">
-              <img
-                src="/images/products/psc-pole-installation.jpg"
-                alt="Overhead Power Distribution PSC Pole Installation with Cross Arms and Insulators"
-                className="w-full h-56 sm:h-72 object-cover rounded-lg"
-              />
-              <div className="p-2 sm:p-2.5 bg-white text-[11px] sm:text-xs text-slate-600 flex items-center justify-between">
-                <span className="font-semibold text-slate-900">PSPL Distribution Hardware</span>
-                <span className="text-blue-600 font-medium">Secunderabad</span>
+          <div className="lg:col-span-5 space-y-4">
+            {/* Official Visiting Card & Verification */}
+            <div className="rounded-2xl overflow-hidden border-2 border-blue-200 shadow-md bg-white p-3.5 space-y-2.5">
+              <div className="flex items-center justify-between text-xs pb-1.5 border-b border-slate-100">
+                <span className="font-extrabold text-slate-900 flex items-center gap-1.5">
+                  <ShieldCheck size={15} className="text-blue-600" />
+                  <span>Official Business Credentials</span>
+                </span>
+                <span className="text-[10px] font-bold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">
+                  Verified Stockist
+                </span>
+              </div>
+              <div className="rounded-xl overflow-hidden border-2 border-slate-200 bg-slate-900 shadow-sm group">
+                <img
+                  src="/images/pspl-visiting-card.jpg"
+                  alt="Pavan Sai Power Lines Official Visiting Card - V. Nagamalleswara Rao"
+                  className="w-full h-auto object-contain group-hover:scale-102 transition-transform duration-300"
+                />
+              </div>
+              <div className="flex items-center justify-between text-[11px] text-slate-600 pt-0.5">
+                <span>Proprietor: <strong className="text-slate-900">{COMPANY_INFO.contact.representativeName}</strong></span>
+                <a href={`tel:${COMPANY_INFO.contact.primaryPhoneRaw}`} className="text-blue-600 font-black hover:underline">
+                  {COMPANY_INFO.contact.primaryPhone}
+                </a>
               </div>
             </div>
           </div>

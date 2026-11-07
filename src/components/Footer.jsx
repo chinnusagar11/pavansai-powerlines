@@ -111,6 +111,7 @@ export default function Footer() {
                 <MapPin size={15} className="text-blue-400 shrink-0 mt-0.5" />
                 <span>
                   <strong className="text-white block">Pavan Sai Power Lines</strong>
+                  <span className="text-sky-300 block font-semibold text-[11px]">Prop: {COMPANY_INFO.contact.representativeName}</span>
                   {COMPANY_INFO.location.fullAddress}
                 </span>
               </div>

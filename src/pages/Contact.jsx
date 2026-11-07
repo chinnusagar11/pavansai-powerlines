@@ -401,17 +401,58 @@ export default function Contact() {
               </div>
             </div>
 
-            {/* Note Box */}
-            <div className="p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-1.5">
-              <div className="flex items-center gap-1.5 text-xs font-bold text-slate-900">
-                <Building2 size={15} className="text-blue-600" />
-                <span>Visiting Card & Commercial Details</span>
+            {/* Official Visiting Card Showcase */}
+            <div className="bg-white rounded-2xl border-2 border-blue-200 overflow-hidden shadow-sm p-4 sm:p-5 space-y-3">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <div className="w-8 h-8 rounded-lg bg-blue-600 text-white flex items-center justify-center font-black text-xs">
+                    PSPL
+                  </div>
+                  <div>
+                    <h3 className="font-extrabold text-xs sm:text-sm text-slate-900">Official Business Visiting Card</h3>
+                    <p className="text-[11px] text-slate-500">Proprietor: {COMPANY_INFO.contact.representativeName}</p>
+                  </div>
+                </div>
+
+                <span className="inline-flex items-center gap-1 text-[10px] font-bold bg-emerald-50 text-emerald-800 border border-emerald-200 px-2 py-0.5 rounded-full">
+                  <Check size={11} className="text-emerald-600" />
+                  <span>Verified Credentials</span>
+                </span>
               </div>
-              <p className="text-xs text-slate-600 leading-relaxed">
-                Contact information, GSTIN number, and registered address can be referenced directly from the company visiting card. Editable entries in <code className="bg-slate-200 px-1 py-0.5 rounded text-slate-800 text-[11px]">src/data/company.js</code> allow easy updates.
-              </p>
-              <div className="text-[11px] text-slate-500 pt-0.5">
-                <strong>GSTIN:</strong> {COMPANY_INFO.commercial.gstin}
+
+              {/* High-Resolution Authentic Visiting Card Photo */}
+              <div className="rounded-xl overflow-hidden border-2 border-slate-200 shadow-md bg-slate-900 group relative">
+                <img
+                  src="/images/pspl-visiting-card.jpg"
+                  alt="Pavan Sai Power Lines Official Visiting Card - V. Nagamalleswara Rao"
+                  className="w-full h-auto object-contain group-hover:scale-102 transition-transform duration-300"
+                />
+              </div>
+
+              {/* Quick Details List from Visiting Card */}
+              <div className="bg-slate-50 p-3 rounded-xl border border-slate-200 text-xs text-slate-700 space-y-1.5">
+                <div className="flex items-center justify-between">
+                  <span className="text-slate-500 font-semibold">Proprietor:</span>
+                  <strong className="text-slate-900 font-bold">{COMPANY_INFO.contact.representativeName}</strong>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-slate-500 font-semibold">Direct Mobile:</span>
+                  <a href={`tel:${COMPANY_INFO.contact.primaryPhoneRaw}`} className="text-blue-600 font-extrabold hover:underline">
+                    {COMPANY_INFO.contact.primaryPhone}
+                  </a>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-slate-500 font-semibold">Registered Office:</span>
+                  <span className="text-slate-800 font-medium text-right max-w-[240px] truncate" title={COMPANY_INFO.location.fullAddress}>
+                    {COMPANY_INFO.location.shortAddress}
+                  </span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-slate-500 font-semibold">Official Email:</span>
+                  <a href={`mailto:${COMPANY_INFO.contact.primaryEmail}`} className="text-blue-600 font-bold hover:underline">
+                    {COMPANY_INFO.contact.primaryEmail}
+                  </a>
+                </div>
               </div>
             </div>
 
