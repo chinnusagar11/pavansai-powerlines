@@ -10,7 +10,10 @@ import {
   ExternalLink,
   Copy,
   Check,
-  ArrowLeft
+  ArrowLeft,
+  Maximize2,
+  X,
+  PhoneCall
 } from 'lucide-react';
 import { COMPANY_INFO } from '../data/company';
 import Breadcrumb from '../components/Breadcrumb';
@@ -26,6 +29,7 @@ export default function Contact() {
   });
 
   const [copiedPhone, setCopiedPhone] = useState(false);
+  const [isCardZoomOpen, setIsCardZoomOpen] = useState(false);
 
   const handleChange = (e) => {
     setFormData(prev => ({
@@ -421,12 +425,22 @@ export default function Contact() {
               </div>
 
               {/* High-Resolution Authentic Visiting Card Photo */}
-              <div className="rounded-xl overflow-hidden border-2 border-slate-200 shadow-md bg-slate-900 group relative">
+              <div 
+                onClick={() => setIsCardZoomOpen(true)}
+                className="rounded-xl overflow-hidden border-2 border-slate-200 shadow-md bg-slate-900 group relative cursor-pointer"
+                title="Click to zoom visiting card in high resolution"
+              >
                 <img
                   src="/images/pspl-visiting-card.jpg"
                   alt="Pavan Sai Power Lines Official Visiting Card - V. Nagamalleswara Rao"
                   className="w-full h-auto object-contain group-hover:scale-102 transition-transform duration-300"
                 />
+                <div className="absolute bottom-2.5 right-2.5 opacity-90 group-hover:opacity-100 transition-opacity">
+                  <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-[10px] sm:text-xs font-semibold bg-slate-900/85 text-white backdrop-blur-xs shadow-md border border-white/20">
+                    <Maximize2 size={12} />
+                    <span>Click to Zoom</span>
+                  </span>
+                </div>
               </div>
 
               {/* Quick Details List from Visiting Card */}
@@ -460,6 +474,56 @@ export default function Contact() {
 
         </div>
       </section>
+
+      {/* Official Visiting Card Full-Screen Zoom Lightbox */}
+      {isCardZoomOpen && (
+        <div 
+          className="fixed inset-0 z-50 bg-slate-950/85 backdrop-blur-md flex items-center justify-center p-4 animate-fade-in"
+          onClick={() => setIsCardZoomOpen(false)}
+        >
+          <div 
+            className="relative max-w-2xl w-full bg-white rounded-2xl overflow-hidden shadow-2xl p-2 border-2 border-blue-400/50"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex items-center justify-between p-3 border-b border-slate-100">
+              <div>
+                <h3 className="font-extrabold text-sm sm:text-base text-slate-900 font-heading">
+                  Pavan Sai Power Lines &bull; Official Visiting Card
+                </h3>
+                <p className="text-xs text-slate-500">
+                  Proprietor: {COMPANY_INFO.contact.representativeName} &bull; Secunderabad
+                </p>
+              </div>
+              <button
+                onClick={() => setIsCardZoomOpen(false)}
+                className="p-1.5 rounded-lg text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition"
+                aria-label="Close visiting card preview"
+              >
+                <X size={20} />
+              </button>
+            </div>
+            <div className="p-2 bg-slate-900 rounded-xl overflow-hidden mt-1 shadow-inner">
+              <img
+                src="/images/pspl-visiting-card.jpg"
+                alt="Pavan Sai Power Lines Official Visiting Card High Resolution"
+                className="w-full h-auto object-contain rounded-lg"
+              />
+            </div>
+            <div className="p-3 bg-slate-50 rounded-xl mt-2 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs">
+              <span className="text-slate-700">
+                <strong>Registered Office:</strong> {COMPANY_INFO.location.shortAddress}
+              </span>
+              <a
+                href={`tel:${COMPANY_INFO.contact.primaryPhoneRaw}`}
+                className="inline-flex items-center gap-1.5 bg-blue-600 hover:bg-blue-700 text-white font-extrabold px-3.5 py-1.5 rounded-lg shadow-xs transition"
+              >
+                <PhoneCall size={13} />
+                <span>Call: {COMPANY_INFO.contact.primaryPhone}</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
 
     </div>
   );
