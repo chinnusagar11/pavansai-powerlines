@@ -80,7 +80,7 @@ export default function ProductDetails() {
   const seoDescription = `${productDescription} Verified IS/IEC standard electrical hardware supplied by Pavan Sai Power Lines, Secunderabad, Telangana. Call +91 97004 49684.`;
 
   return (
-    <div className="space-y-8 sm:space-y-12 lg:space-y-14 pb-16">
+    <div className="space-y-8 sm:space-y-12 lg:space-y-14 pb-24 md:pb-16">
       <SEO
         title={seoTitle}
         description={seoDescription}
@@ -113,18 +113,18 @@ export default function ProductDetails() {
               />
             </div>
 
-            <div className="flex items-center justify-between sm:justify-end gap-2.5 w-full sm:w-auto">
+            <div className="flex items-center justify-between sm:justify-end gap-2 w-full sm:w-auto">
               <button
                 onClick={() => navigate('/products')}
-                className="group inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-white sm:bg-slate-50 hover:bg-blue-50 active:bg-blue-100 text-slate-800 hover:text-blue-700 text-xs sm:text-[13px] font-bold border border-slate-200/90 hover:border-blue-400 shadow-2xs hover:shadow-xs transition-all duration-200 shrink-0"
+                className="group inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-3.5 py-1.5 rounded-xl bg-white hover:bg-blue-50/80 active:bg-blue-100 text-slate-800 hover:text-blue-700 text-xs sm:text-[13px] font-bold border border-slate-200/90 hover:border-blue-400 shadow-2xs hover:shadow-xs transition-all duration-200 shrink-0"
                 title="Return to Product Catalogue"
               >
-                <ArrowLeft size={15} className="text-blue-600 group-hover:-translate-x-1 transition-transform duration-200" />
+                <ArrowLeft size={13} className="text-blue-600 group-hover:-translate-x-1 transition-transform duration-200" />
                 <span>Back to Products</span>
               </button>
 
-              <span className="sm:hidden inline-flex items-center gap-1.5 text-[10px] font-bold text-slate-700 bg-slate-100 px-2.5 py-1.5 rounded-lg border border-slate-200 shadow-2xs shrink-0">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+              <span className="inline-flex items-center gap-1.5 text-[10px] sm:text-[11px] font-bold text-slate-700 bg-white px-2 sm:px-2.5 py-1.5 rounded-xl border border-blue-200 shadow-2xs shrink-0 whitespace-nowrap">
+                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
                 <span>In Stock</span>
               </span>
             </div>

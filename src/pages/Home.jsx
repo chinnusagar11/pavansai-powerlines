@@ -84,7 +84,7 @@ export default function Home() {
   };
 
   return (
-    <div className="space-y-10 sm:space-y-14 md:space-y-16 pb-12 sm:pb-16">
+    <div className="space-y-10 sm:space-y-14 md:space-y-16 pb-24 md:pb-16">
       <SEO
         title="Electrical Materials Suppliers in Hyderabad & Secunderabad | Pavan Sai Power Lines"
         description="Pavan Sai Power Lines (PSPL) is a premier supplier and wholesale stockist of electrical materials in Hyderabad & Secunderabad. Stockist of HT/LT line hardware, ACSR conductors, AB switches, transformer spares & GI towers."
@@ -211,7 +211,7 @@ export default function Home() {
               <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-blue-600 to-sky-500"></div>
               
               <div className="flex items-center justify-between gap-1 mb-1.5 pt-0.5">
-                <span className="text-[10px] font-black uppercase tracking-wider text-blue-700 truncate">
+                <span className="text-[10px] font-black uppercase tracking-wider text-blue-700 whitespace-nowrap">
                   Voltage Scope
                 </span>
                 <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-md bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white border border-blue-200 flex items-center justify-center shrink-0 transition-all">
@@ -223,7 +223,7 @@ export default function Home() {
                 <p className="text-sm sm:text-base lg:text-[17px] font-black text-slate-900 font-heading tracking-tight whitespace-nowrap">
                   11kV &ndash; 400kV
                 </p>
-                <p className="text-[10px] sm:text-[11px] font-bold text-blue-900/80 truncate mt-0.5">
+                <p className="text-[10px] sm:text-[11px] font-bold text-blue-900/80 mt-0.5 leading-tight whitespace-nowrap">
                   HT / LT Grid Class
                 </p>
               </div>
@@ -234,7 +234,7 @@ export default function Home() {
               <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-indigo-600 to-blue-600"></div>
               
               <div className="flex items-center justify-between gap-1 mb-1.5 pt-0.5">
-                <span className="text-[10px] font-black uppercase tracking-wider text-indigo-700 truncate">
+                <span className="text-[10px] font-black uppercase tracking-wider text-indigo-700 whitespace-nowrap">
                   Product Scope
                 </span>
                 <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-md bg-indigo-50 text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white border border-indigo-200 flex items-center justify-center shrink-0 transition-all">
@@ -246,7 +246,7 @@ export default function Home() {
                 <p className="text-sm sm:text-base lg:text-[17px] font-black text-slate-900 font-heading tracking-tight whitespace-nowrap">
                   7 Divisions
                 </p>
-                <p className="text-[10px] sm:text-[11px] font-bold text-indigo-900/80 truncate mt-0.5">
+                <p className="text-[10px] sm:text-[11px] font-bold text-indigo-900/80 mt-0.5 leading-tight whitespace-nowrap">
                   Complete Hardware
                 </p>
               </div>
@@ -257,7 +257,7 @@ export default function Home() {
               <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-emerald-600 to-teal-500"></div>
               
               <div className="flex items-center justify-between gap-1 mb-1.5 pt-0.5">
-                <span className="text-[10px] font-black uppercase tracking-wider text-emerald-700 truncate">
+                <span className="text-[10px] font-black uppercase tracking-wider text-emerald-700 whitespace-nowrap">
                   Quality Code
                 </span>
                 <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-md bg-emerald-50 text-emerald-600 group-hover:bg-emerald-600 group-hover:text-white border border-emerald-200 flex items-center justify-center shrink-0 transition-all">
@@ -269,7 +269,7 @@ export default function Home() {
                 <p className="text-sm sm:text-base lg:text-[17px] font-black text-slate-900 font-heading tracking-tight whitespace-nowrap">
                   IS &bull; IEC &bull; REC
                 </p>
-                <p className="text-[10px] sm:text-[11px] font-bold text-emerald-900/80 truncate mt-0.5">
+                <p className="text-[10px] sm:text-[11px] font-bold text-emerald-900/80 mt-0.5 leading-tight whitespace-nowrap">
                   Utility Standards
                 </p>
               </div>
@@ -280,7 +280,7 @@ export default function Home() {
               <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-amber-500 to-orange-500"></div>
               
               <div className="flex items-center justify-between gap-1 mb-1.5 pt-0.5">
-                <span className="text-[10px] font-black uppercase tracking-wider text-amber-800 truncate">
+                <span className="text-[10px] font-black uppercase tracking-wider text-amber-800 whitespace-nowrap">
                   Supply Hub
                 </span>
                 <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-md bg-amber-50 text-amber-700 group-hover:bg-amber-500 group-hover:text-white border border-amber-200 flex items-center justify-center shrink-0 transition-all">
@@ -292,7 +292,7 @@ export default function Home() {
                 <p className="text-sm sm:text-base lg:text-[17px] font-black text-slate-900 font-heading tracking-tight whitespace-nowrap">
                   Secunderabad
                 </p>
-                <p className="text-[10px] sm:text-[11px] font-bold text-amber-900/80 truncate mt-0.5">
+                <p className="text-[10px] sm:text-[11px] font-bold text-amber-900/80 mt-0.5 leading-tight whitespace-nowrap">
                   Logistics Dispatch Hub
                 </p>
               </div>
