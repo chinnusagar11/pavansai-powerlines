@@ -73,7 +73,7 @@ export default function ProductDetails() {
       
       {/* 1. Header & Breadcrumb with Prominent Back Button */}
       <section className="bg-white border-b border-slate-200">
-        <div className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 py-3">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
           <div className="flex items-center justify-between gap-3">
             <div className="min-w-0 flex-1">
               <Breadcrumb 
@@ -98,7 +98,7 @@ export default function ProductDetails() {
       </section>
 
       {/* 2. Main Product Info */}
-      <section className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Mobile Quick Back Link */}
         <div className="sm:hidden mb-3">
           <button
@@ -321,7 +321,7 @@ export default function ProductDetails() {
 
       {/* 5. Related Products */}
       {relatedProducts.length > 0 && (
-        <section className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 pt-4 border-t border-slate-200">
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 border-t border-slate-200">
           <div className="flex items-center justify-between mb-4">
             <div>
               <h2 className="text-base sm:text-xl font-bold text-slate-900 font-heading">

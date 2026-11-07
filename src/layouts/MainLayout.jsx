@@ -19,8 +19,8 @@ export default function MainLayout() {
     <div className="min-h-screen flex flex-col bg-white text-slate-800 font-sans">
       <Navbar />
       
-      {/* Main content with mobile bottom padding to clear the sticky mobile bar */}
-      <main className="flex-grow pb-16 md:pb-0">
+      {/* Main content */}
+      <main className="flex-grow">
         <Outlet />
       </main>
 

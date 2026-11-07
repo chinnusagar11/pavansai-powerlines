@@ -82,10 +82,10 @@ export default function Home() {
   };
 
   return (
-    <div className="space-y-16 md:space-y-24 pb-16">
+    <div className="space-y-12 sm:space-y-16 md:space-y-20 pb-12 sm:pb-16">
       
       {/* 1. ENTERPRISE HERO SECTION */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-blue-50/60 via-slate-50/30 to-white border-b border-slate-200/80 pt-8 pb-14 sm:pt-14 sm:pb-20 lg:py-24">
+      <section className="relative overflow-hidden bg-gradient-to-b from-blue-50/60 via-slate-50/30 to-white border-b border-slate-200/80 pt-8 pb-12 sm:pt-12 sm:pb-16 lg:py-20">
         
         {/* Subtle Architectural Grid Pattern */}
         <div className="absolute inset-0 bg-[radial-gradient(#3b82f6_1px,transparent_1px)] [background-size:28px_28px] opacity-10 pointer-events-none"></div>
@@ -289,7 +289,7 @@ export default function Home() {
       {/* 2. PRODUCT CATEGORY HIGHLIGHTS (All 7 Divisions with Micro-Color Badges) */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
+        <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-10">
           <span className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-blue-700 bg-blue-50 px-3 py-1 rounded-full border border-blue-200">
             <Layers size={13} className="text-blue-600" />
             <span>Product Divisions</span>
@@ -387,10 +387,10 @@ export default function Home() {
 
 
       {/* 3. FEATURED PRODUCTS (Pure Authentic Photos) */}
-      <section className="bg-slate-50/80 py-14 sm:py-20 border-y border-slate-200">
+      <section className="bg-slate-50/80 py-12 sm:py-16 border-y border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-10 gap-3">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-3">
             <div>
               <span className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-100/70 px-2.5 py-1 rounded-md border border-blue-200">
                 <Sparkles size={12} className="text-blue-600" />
@@ -423,7 +423,7 @@ export default function Home() {
       {/* 4. WHY UTILITIES & CONTRACTORS CHOOSE PSPL (Purposeful Color Accent Coding) */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="text-center max-w-2xl mx-auto mb-12">
+        <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-10">
           <span className="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-3 py-1 rounded-full border border-blue-200">
             Enterprise Advantage
           </span>
@@ -435,7 +435,7 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
           {/* Advantage 1: Verified Green for Standards */}
           <div className="group relative bg-white hover:bg-emerald-50/20 p-6 rounded-2xl border border-slate-200/90 hover:border-emerald-500 shadow-xs hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden">
             <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-emerald-600 to-teal-500"></div>
@@ -499,7 +499,7 @@ export default function Home() {
       {/* 5. WHERE OUR PRODUCTS ARE USED (Field Applications) */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="text-center max-w-2xl mx-auto mb-10">
+        <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-10">
           <span className="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-3 py-1 rounded-full border border-blue-200">
             Field Applications
           </span>

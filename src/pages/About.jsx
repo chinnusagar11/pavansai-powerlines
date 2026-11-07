@@ -32,7 +32,7 @@ export default function About() {
       
       {/* 1. Clean Page Header */}
       <section className="bg-gradient-to-b from-blue-50/60 to-white py-8 sm:py-12 border-b border-slate-200">
-        <div className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between gap-3">
             <Breadcrumb items={[{ label: 'About Us' }]} />
 
@@ -61,7 +61,7 @@ export default function About() {
       </section>
 
       {/* 2. Business Overview */}
-      <section className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
           
           <div className="lg:col-span-7 space-y-3.5 sm:space-y-4">
@@ -132,7 +132,7 @@ export default function About() {
 
       {/* 3. Products and Supply Capabilities */}
       <section className="bg-slate-50 py-10 sm:py-14 border-y border-slate-200">
-        <div className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="max-w-2xl mb-8">
             <span className="text-xs font-bold uppercase tracking-wider text-blue-600">
