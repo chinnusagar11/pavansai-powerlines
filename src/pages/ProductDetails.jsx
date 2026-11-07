@@ -80,7 +80,7 @@ export default function ProductDetails() {
   const seoDescription = `${productDescription} Verified IS/IEC standard electrical hardware supplied by Pavan Sai Power Lines, Secunderabad, Telangana. Call +91 97004 49684.`;
 
   return (
-    <div className="space-y-6 sm:space-y-10 pb-16">
+    <div className="space-y-8 sm:space-y-12 lg:space-y-14 pb-16">
       <SEO
         title={seoTitle}
         description={seoDescription}
@@ -99,9 +99,9 @@ export default function ProductDetails() {
         ]}
       />
       
-      {/* 1. Header & Breadcrumb with Prominent Back Button */}
-      <section className="bg-white border-b border-slate-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+      {/* 1. Header & Breadcrumb with Prominent Symmetrical Back Button */}
+      <section className="bg-white border-b border-slate-200 shadow-2xs">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5">
           <div className="flex items-center justify-between gap-3">
             <div className="min-w-0 flex-1 hidden sm:block">
               <Breadcrumb 
@@ -113,14 +113,21 @@ export default function ProductDetails() {
               />
             </div>
 
-            <button
-              onClick={() => navigate('/products')}
-              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 active:bg-blue-100 text-slate-800 text-xs sm:text-sm font-bold border border-slate-300 hover:border-slate-400 transition-all shadow-2xs shrink-0"
-              title="Return to Product Catalogue"
-            >
-              <ArrowLeft size={15} className="text-blue-600" />
-              <span>Back to Catalogue</span>
-            </button>
+            <div className="flex items-center justify-between sm:justify-end gap-2.5 w-full sm:w-auto">
+              <button
+                onClick={() => navigate('/products')}
+                className="group inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-white sm:bg-slate-50 hover:bg-blue-50 active:bg-blue-100 text-slate-800 hover:text-blue-700 text-xs sm:text-[13px] font-bold border border-slate-200/90 hover:border-blue-400 shadow-2xs hover:shadow-xs transition-all duration-200 shrink-0"
+                title="Return to Product Catalogue"
+              >
+                <ArrowLeft size={15} className="text-blue-600 group-hover:-translate-x-1 transition-transform duration-200" />
+                <span>Back to Products</span>
+              </button>
+
+              <span className="sm:hidden inline-flex items-center gap-1.5 text-[10px] font-bold text-slate-700 bg-slate-100 px-2.5 py-1.5 rounded-lg border border-slate-200 shadow-2xs shrink-0">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                <span>In Stock</span>
+              </span>
+            </div>
           </div>
         </div>
       </section>
@@ -387,10 +394,10 @@ export default function ProductDetails() {
             <div className="w-full flex items-center justify-between pb-3 mb-2 border-b border-slate-100 text-xs">
               <button
                 onClick={() => setIsZoomOpen(false)}
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 active:bg-blue-100 text-slate-800 font-bold transition shadow-2xs text-xs"
+                className="group inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 active:bg-blue-100 text-slate-800 hover:text-blue-700 font-bold transition shadow-2xs text-xs"
               >
-                <ArrowLeft size={16} className="text-blue-600" />
-                <span>&larr; Back</span>
+                <ArrowLeft size={15} className="text-blue-600 group-hover:-translate-x-0.5 transition-transform" />
+                <span>Back</span>
               </button>
 
               <span className="font-bold text-slate-900 truncate px-2 text-xs sm:text-sm text-center flex-1">

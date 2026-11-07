@@ -30,7 +30,7 @@ export default function About() {
   const [isCardZoomOpen, setIsCardZoomOpen] = useState(false);
 
   return (
-    <div className="space-y-10 sm:space-y-14 pb-14">
+    <div className="space-y-12 sm:space-y-16 lg:space-y-20 pb-16">
       <SEO
         title="About Pavan Sai Power Lines | Electrical Equipment Suppliers in Secunderabad"
         description="Learn about Pavan Sai Power Lines (PSPL), an established electrical materials & power transmission hardware stockist in Bansilalpet Road, Secunderabad, Telangana."
@@ -52,25 +52,25 @@ export default function About() {
         {/* Subtle Architectural Pattern */}
         <div className="absolute inset-0 bg-[radial-gradient(#3b82f6_1px,transparent_1px)] [background-size:24px_24px] opacity-10 pointer-events-none"></div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-4 sm:space-y-5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
-          {/* Top Bar: Breadcrumb & Supply Base Status */}
-          <div className="flex items-center justify-between gap-2.5">
+          {/* Top Bar: Breadcrumb & Supply Base Status with Crisp Divider */}
+          <div className="flex items-center justify-between gap-3 pb-3.5 mb-5 sm:mb-6 border-b border-blue-200/60">
             <div className="hidden sm:block">
               <Breadcrumb items={[{ label: 'About Us' }]} />
             </div>
 
-            <div className="flex items-center justify-between sm:justify-end gap-2 sm:gap-2.5 w-full sm:w-auto">
+            <div className="flex items-center justify-between sm:justify-end gap-2.5 w-full sm:w-auto">
               <Link
                 to="/"
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white hover:bg-slate-50 active:bg-slate-100 text-slate-800 text-xs font-bold border border-slate-300 hover:border-slate-400 transition shadow-2xs shrink-0"
+                className="group inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-white hover:bg-blue-50/80 active:bg-blue-100 text-slate-800 hover:text-blue-700 text-xs sm:text-[13px] font-bold border border-slate-200/90 hover:border-blue-400 shadow-2xs hover:shadow-xs transition-all duration-200 shrink-0"
                 title="Return to Home Page"
               >
-                <ArrowLeft size={13} className="text-blue-600" />
+                <ArrowLeft size={14} className="text-blue-600 group-hover:-translate-x-1 transition-transform duration-200" />
                 <span>Back to Home</span>
               </Link>
 
-              <span className="inline-flex items-center gap-1.5 text-[11px] font-bold text-slate-700 bg-white px-2.5 py-1 rounded-lg border border-blue-200 shadow-2xs shrink-0">
+              <span className="inline-flex items-center gap-1.5 text-[11px] font-bold text-slate-700 bg-white px-2.5 py-1.5 rounded-xl border border-blue-200 shadow-2xs shrink-0">
                 <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
                 <span>Secunderabad Supply Base</span>
               </span>
@@ -78,7 +78,7 @@ export default function About() {
           </div>
 
           {/* Unified 2-Column Grid: Corporate Profile + Official Visiting Card (Enlarged & Prominent) */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-7 lg:gap-10 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             
             {/* Left Content Column */}
             <div className="lg:col-span-6 space-y-3.5 sm:space-y-4 text-left">

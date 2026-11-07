@@ -117,7 +117,7 @@ export default function Products() {
       ];
 
   return (
-    <div className="space-y-6 sm:space-y-8 pb-16">
+    <div className="space-y-10 sm:space-y-12 lg:space-y-14 pb-16">
       <SEO
         title={pageTitle}
         description={pageDescription}
@@ -136,19 +136,26 @@ export default function Products() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
-          <div className="flex items-center justify-between gap-3">
+          <div className="flex items-center justify-between gap-3 pb-3.5 mb-5 sm:mb-6 border-b border-blue-200/60">
             <div className="hidden sm:block">
               <Breadcrumb items={[{ label: 'Products & Materials' }]} />
             </div>
             
-            <Link
-              to="/"
-              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-white hover:bg-slate-50 active:bg-slate-100 text-slate-800 text-xs font-bold border border-slate-300 hover:border-blue-400 transition-all shadow-2xs shrink-0"
-              title="Return to Home Page"
-            >
-              <ArrowLeft size={14} className="text-blue-600" />
-              <span>Back to Home</span>
-            </Link>
+            <div className="flex items-center justify-between sm:justify-end gap-2.5 w-full sm:w-auto">
+              <Link
+                to="/"
+                className="group inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-white hover:bg-blue-50/80 active:bg-blue-100 text-slate-800 hover:text-blue-700 text-xs sm:text-[13px] font-bold border border-slate-200/90 hover:border-blue-400 shadow-2xs hover:shadow-xs transition-all duration-200 shrink-0"
+                title="Return to Home Page"
+              >
+                <ArrowLeft size={14} className="text-blue-600 group-hover:-translate-x-1 transition-transform duration-200" />
+                <span>Back to Home</span>
+              </Link>
+
+              <span className="inline-flex items-center gap-1.5 text-[11px] font-bold text-slate-700 bg-white px-2.5 py-1.5 rounded-xl border border-blue-200 shadow-2xs shrink-0">
+                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                <span>Verified Stockist</span>
+              </span>
+            </div>
           </div>
           
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-5 mt-4">

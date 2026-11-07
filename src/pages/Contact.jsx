@@ -140,7 +140,7 @@ export default function Contact() {
   const phoneStatus = validatePhoneNumber(formData.phone);
 
   return (
-    <div className="space-y-8 sm:space-y-12 pb-16">
+    <div className="space-y-10 sm:space-y-14 lg:space-y-16 pb-16">
       <SEO
         title="Contact Pavan Sai Power Lines | Secunderabad & Hyderabad Sales Desk"
         description="Contact Pavan Sai Power Lines in Bansilalpet Road, Secunderabad. Call +91 97004 49684 or visit our supply base for electrical materials quotes in Hyderabad & Telangana."
@@ -161,29 +161,29 @@ export default function Contact() {
         <div className="absolute inset-0 bg-[radial-gradient(#3b82f6_1px,transparent_1px)] [background-size:24px_24px] opacity-10 pointer-events-none"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="flex items-center justify-between gap-3">
+          <div className="flex items-center justify-between gap-3 pb-3.5 mb-5 sm:mb-6 border-b border-blue-200/60">
             <div className="hidden sm:block">
               <Breadcrumb items={[{ label: 'Contact Us' }]} />
             </div>
 
-            <div className="flex items-center justify-between sm:justify-end gap-2 sm:gap-2.5 w-full sm:w-auto">
+            <div className="flex items-center justify-between sm:justify-end gap-2.5 w-full sm:w-auto">
               <Link
                 to="/"
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white hover:bg-slate-50 active:bg-slate-100 text-slate-800 text-xs font-bold border border-slate-300 hover:border-slate-400 transition shadow-2xs shrink-0"
+                className="group inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-white hover:bg-blue-50/80 active:bg-blue-100 text-slate-800 hover:text-blue-700 text-xs sm:text-[13px] font-bold border border-slate-200/90 hover:border-blue-400 shadow-2xs hover:shadow-xs transition-all duration-200 shrink-0"
                 title="Return to Home Page"
               >
-                <ArrowLeft size={13} className="text-blue-600" />
+                <ArrowLeft size={14} className="text-blue-600 group-hover:-translate-x-1 transition-transform duration-200" />
                 <span>Back to Home</span>
               </Link>
 
-              <span className="inline-flex items-center gap-1.5 text-[11px] font-bold text-slate-700 bg-white px-2.5 py-1 rounded-lg border border-blue-200 shadow-2xs shrink-0">
+              <span className="inline-flex items-center gap-1.5 text-[11px] font-bold text-slate-700 bg-white px-2.5 py-1.5 rounded-xl border border-blue-200 shadow-2xs shrink-0">
                 <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
                 <span>Secunderabad Commercial Desk</span>
               </span>
             </div>
           </div>
           
-          <div className="max-w-3xl space-y-2 mt-3.5">
+          <div className="max-w-3xl space-y-2.5">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-blue-200 shadow-2xs text-[11px] font-bold text-slate-800">
               <span className="text-blue-700 uppercase tracking-wider">Commercial Desk</span>
               <span className="text-slate-300">&bull;</span>
@@ -203,7 +203,7 @@ export default function Contact() {
 
       {/* 2. Contact Information Cards */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
           
           {/* Card 1: Office Address */}
           <div className="group relative bg-white hover:bg-slate-50/50 p-5 rounded-2xl border border-slate-200/90 hover:border-amber-500 shadow-xs hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between overflow-hidden">
