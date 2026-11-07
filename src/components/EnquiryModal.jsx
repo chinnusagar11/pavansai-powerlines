@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, MessageCircle, Mail, CheckCircle2, ArrowLeft, AlertCircle } from 'lucide-react';
+import { X, MessageCircle, Mail, CheckCircle2, AlertCircle } from 'lucide-react';
 import { COMPANY_INFO } from '../data/company';
 
 export default function EnquiryModal({ isOpen, onClose, product = null }) {
@@ -136,23 +136,13 @@ export default function EnquiryModal({ isOpen, onClose, product = null }) {
     <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-900/60 backdrop-blur-xs animate-fade-in">
       <div className="bg-white rounded-2xl shadow-2xl max-w-lg w-full max-h-[92vh] flex flex-col border border-slate-200 overflow-hidden">
         
-        {/* Clean Header with Back Button */}
+        {/* Clean Header with Single Close X Button */}
         <div className="bg-blue-600 text-white p-4 sm:p-5 flex items-center justify-between shrink-0">
-          <button
-            type="button"
-            onClick={onClose}
-            className="inline-flex items-center gap-1.5 bg-white/15 hover:bg-white/25 active:bg-white/30 text-white px-2.5 py-1.5 rounded-xl text-xs font-bold transition shadow-2xs"
-            aria-label="Back / Close"
-          >
-            <ArrowLeft size={15} />
-            <span>Back</span>
-          </button>
-
-          <div className="text-center flex-1 px-2 min-w-0">
-            <h3 className="text-sm sm:text-base font-bold leading-tight truncate">
+          <div className="flex-1 pr-3 min-w-0">
+            <h3 className="text-base sm:text-lg font-bold leading-tight truncate">
               Request Price Quote
             </h3>
-            <p className="text-[10px] text-blue-200 truncate">
+            <p className="text-[11px] text-blue-200 truncate">
               Pavan Sai Power Lines &bull; Secunderabad
             </p>
           </div>
@@ -160,10 +150,10 @@ export default function EnquiryModal({ isOpen, onClose, product = null }) {
           <button
             type="button"
             onClick={onClose}
-            className="text-white/80 hover:text-white bg-white/10 hover:bg-white/20 p-2 rounded-xl transition shrink-0"
+            className="text-white/90 hover:text-white bg-white/15 hover:bg-white/25 active:bg-white/35 p-2 rounded-xl transition shrink-0"
             aria-label="Close modal"
           >
-            <X size={18} />
+            <X size={20} />
           </button>
         </div>
 
@@ -324,15 +314,6 @@ export default function EnquiryModal({ isOpen, onClose, product = null }) {
                 <span>Send via Email</span>
               </button>
             </div>
-
-            <button
-              type="button"
-              onClick={onClose}
-              className="w-full flex items-center justify-center gap-1.5 py-2 px-3 rounded-xl bg-slate-100 hover:bg-slate-200 active:bg-slate-300 text-slate-700 text-xs font-semibold transition"
-            >
-              <ArrowLeft size={13} />
-              <span>Back / Close</span>
-            </button>
           </div>
 
           <div className="flex items-center justify-center gap-1.5 text-xs text-slate-500 pt-0.5">
