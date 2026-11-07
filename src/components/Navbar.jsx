@@ -139,8 +139,8 @@ export default function Navbar() {
               </div>
 
               <div className="flex items-center gap-2 whitespace-nowrap min-w-0">
-                <span className="font-black text-sm sm:text-lg md:text-xl lg:text-[21px] xl:text-[23px] tracking-tight text-slate-900 font-heading whitespace-nowrap uppercase">
-                  PAVAN SAI <span className="text-blue-600 font-black">POWER LINES</span>
+                <span className="font-black text-sm sm:text-lg md:text-xl lg:text-[21px] xl:text-[23px] tracking-tight text-blue-600 font-heading whitespace-nowrap uppercase">
+                  PAVAN SAI POWER LINES
                 </span>
                 <span className="hidden sm:inline-flex items-center text-[10px] font-black uppercase tracking-wider bg-white text-blue-700 px-2.5 py-0.5 rounded-md border border-blue-200 shadow-2xs shrink-0">
                   PSPL
