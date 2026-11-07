@@ -77,14 +77,14 @@ export default function About() {
             </div>
           </div>
 
-          {/* Unified 2-Column Grid: Corporate Profile + Official Visiting Card */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center">
+          {/* Unified 2-Column Grid: Corporate Profile + Official Visiting Card (Enlarged & Prominent) */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-7 lg:gap-10 items-center">
             
             {/* Left Content Column */}
-            <div className="lg:col-span-7 space-y-3 sm:space-y-3.5 text-left">
+            <div className="lg:col-span-6 space-y-3.5 sm:space-y-4 text-left">
               
               {/* Trust Badge */}
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-blue-200 shadow-2xs text-[11px] font-bold text-slate-800">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-blue-200 shadow-2xs text-xs font-bold text-slate-800">
                 <span className="text-blue-700 uppercase tracking-wider">Enterprise Profile</span>
                 <span className="text-slate-300">&bull;</span>
                 <span className="text-emerald-700 font-bold">IS / IEC Verified Stockist</span>
@@ -92,54 +92,54 @@ export default function About() {
 
               {/* Main Heading */}
               <div>
-                <h1 className="text-2xl sm:text-3.5xl lg:text-[34px] font-extrabold tracking-tight text-slate-900 font-heading leading-tight">
+                <h1 className="text-2xl sm:text-3xl lg:text-[36px] font-extrabold tracking-tight text-slate-900 font-heading leading-tight">
                   About Pavan Sai Power Lines
                 </h1>
-                <p className="text-xs sm:text-sm font-bold text-blue-700 mt-1">
-                  A Dedicated Supply Partner for Electrical Contractors, Utilities & Infrastructure
+                <p className="text-xs sm:text-sm lg:text-[15px] font-bold text-blue-700 mt-1.5">
+                  A Dedicated Supply Partner for Electrical Contractors, Utilities &amp; Infrastructure
                 </p>
               </div>
 
               {/* Concise Executive Narrative */}
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+              <p className="text-xs sm:text-sm lg:text-[15px] text-slate-600 leading-relaxed font-normal">
                 Headquartered at Bansilalpet Road, Secunderabad (Telangana), <strong>Pavan Sai Power Lines (PSPL)</strong> is an established supplier and wholesale stockist of high-tension overhead line hardware, polymer &amp; porcelain insulators, gang-operated AB switches, ACSR conductors, earthing equipment, and galvanized transmission towers conforming to Indian Standard (IS) and state DISCOM specifications.
               </p>
 
               {/* 3 Premium Trust Metric Cards */}
-              <div className="grid grid-cols-3 gap-2 sm:gap-3 pt-0.5">
+              <div className="grid grid-cols-3 gap-2.5 sm:gap-3.5 pt-1">
                 
-                <div className="p-2 sm:p-2.5 rounded-xl bg-white border border-blue-200 shadow-2xs">
-                  <span className="text-[10px] font-extrabold uppercase tracking-wider text-blue-700 block truncate">
+                <div className="p-2.5 sm:p-3 rounded-xl bg-white border border-blue-200 shadow-2xs">
+                  <span className="text-[10px] sm:text-[11px] font-extrabold uppercase tracking-wider text-blue-700 block truncate">
                     Voltage Scope
                   </span>
-                  <strong className="text-xs sm:text-sm lg:text-[15px] font-black text-slate-900 block font-heading mt-0.5 whitespace-nowrap">
+                  <strong className="text-sm sm:text-base lg:text-[16px] font-black text-slate-900 block font-heading mt-0.5 whitespace-nowrap">
                     11kV &ndash; 400kV
                   </strong>
-                  <span className="text-[10px] text-blue-900/80 font-medium block truncate">
+                  <span className="text-[10px] sm:text-[11px] text-blue-900/80 font-medium block truncate">
                     HT / LT Grid Class
                   </span>
                 </div>
 
-                <div className="p-2 sm:p-2.5 rounded-xl bg-white border border-indigo-200 shadow-2xs">
-                  <span className="text-[10px] font-extrabold uppercase tracking-wider text-indigo-700 block truncate">
+                <div className="p-2.5 sm:p-3 rounded-xl bg-white border border-indigo-200 shadow-2xs">
+                  <span className="text-[10px] sm:text-[11px] font-extrabold uppercase tracking-wider text-indigo-700 block truncate">
                     Product Range
                   </span>
-                  <strong className="text-xs sm:text-sm lg:text-[15px] font-black text-slate-900 block font-heading mt-0.5 whitespace-nowrap">
+                  <strong className="text-sm sm:text-base lg:text-[16px] font-black text-slate-900 block font-heading mt-0.5 whitespace-nowrap">
                     7 Divisions
                   </strong>
-                  <span className="text-[10px] text-indigo-900/80 font-medium block truncate">
+                  <span className="text-[10px] sm:text-[11px] text-indigo-900/80 font-medium block truncate">
                     Complete BOQ Stock
                   </span>
                 </div>
 
-                <div className="p-2 sm:p-2.5 rounded-xl bg-white border border-emerald-200 shadow-2xs">
-                  <span className="text-[10px] font-extrabold uppercase tracking-wider text-emerald-700 block truncate">
+                <div className="p-2.5 sm:p-3 rounded-xl bg-white border border-emerald-200 shadow-2xs">
+                  <span className="text-[10px] sm:text-[11px] font-extrabold uppercase tracking-wider text-emerald-700 block truncate">
                     Standards
                   </span>
-                  <strong className="text-xs sm:text-sm lg:text-[15px] font-black text-slate-900 block font-heading mt-0.5 whitespace-nowrap">
+                  <strong className="text-sm sm:text-base lg:text-[16px] font-black text-slate-900 block font-heading mt-0.5 whitespace-nowrap">
                     IS &bull; IEC &bull; REC
                   </strong>
-                  <span className="text-[10px] text-emerald-900/80 font-medium block truncate">
+                  <span className="text-[10px] sm:text-[11px] text-emerald-900/80 font-medium block truncate">
                     Tested Materials
                   </span>
                 </div>
@@ -147,13 +147,13 @@ export default function About() {
               </div>
 
               {/* Registered Supply Base Card */}
-              <div className="p-2.5 sm:p-3 bg-gradient-to-r from-blue-50/80 via-white to-white rounded-xl border border-blue-200 text-xs text-slate-700 flex items-center justify-between gap-3 shadow-2xs">
+              <div className="p-3 sm:p-3.5 bg-gradient-to-r from-blue-50/80 via-white to-white rounded-xl border border-blue-200 text-xs sm:text-sm text-slate-700 flex items-center justify-between gap-3 shadow-2xs">
                 <div className="flex items-center gap-2.5 min-w-0">
-                  <div className="w-7 h-7 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center shrink-0 border border-blue-200">
-                    <MapPin size={14} />
+                  <div className="w-8 h-8 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center shrink-0 border border-blue-200">
+                    <MapPin size={15} />
                   </div>
                   <div className="min-w-0">
-                    <p className="text-slate-800 text-[11px] sm:text-xs leading-snug truncate">
+                    <p className="text-slate-800 text-xs sm:text-[13px] leading-snug truncate">
                       <strong>Office:</strong> {COMPANY_INFO.location.fullAddress}
                     </p>
                   </div>
@@ -163,26 +163,26 @@ export default function About() {
                   href={COMPANY_INFO.location.googleMapsDirectionsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 text-[10px] sm:text-[11px] font-bold text-blue-700 hover:text-blue-900 bg-white px-2 py-1 rounded-md border border-blue-200 shadow-2xs hover:bg-blue-50 transition shrink-0"
+                  className="inline-flex items-center gap-1 text-[11px] sm:text-xs font-bold text-blue-700 hover:text-blue-900 bg-white px-2.5 py-1.5 rounded-lg border border-blue-200 shadow-2xs hover:bg-blue-50 transition shrink-0"
                 >
                   <span>Maps</span>
-                  <ArrowRight size={11} />
+                  <ArrowRight size={12} />
                 </a>
               </div>
 
             </div>
 
-            {/* Right Column: Official Visiting Card Showcase */}
-            <div className="lg:col-span-5">
-              <div className="group rounded-2xl overflow-hidden border-2 border-blue-200/90 hover:border-blue-500/80 shadow-xl bg-white p-3 sm:p-4 space-y-3 transition-all duration-300">
+            {/* Right Column: Official Visiting Card Showcase (Enlarged & Prominent) */}
+            <div className="lg:col-span-6">
+              <div className="group rounded-2xl overflow-hidden border-2 border-blue-200/90 hover:border-blue-500/80 shadow-xl bg-white p-4 sm:p-5 space-y-3.5 transition-all duration-300">
                 
                 {/* Premium Top Bar */}
-                <div className="flex items-center justify-between text-xs pb-2 border-b border-blue-100">
+                <div className="flex items-center justify-between text-xs sm:text-sm pb-2.5 border-b border-blue-100">
                   <span className="font-extrabold text-slate-900 flex items-center gap-1.5">
-                    <ShieldCheck size={16} className="text-blue-600 shrink-0" />
-                    <span>Official Visiting Card</span>
+                    <ShieldCheck size={18} className="text-blue-600 shrink-0" />
+                    <span className="text-xs sm:text-sm">Official Visiting Card</span>
                   </span>
-                  <span className="text-[10px] font-extrabold text-emerald-800 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200">
+                  <span className="text-[11px] sm:text-xs font-extrabold text-emerald-800 bg-emerald-50 px-3 py-0.5 rounded-full border border-emerald-200">
                     Verified Stockist
                   </span>
                 </div>
@@ -190,7 +190,7 @@ export default function About() {
                 {/* Click-to-Zoom Visiting Card Container with Clean Card Surface (No Black Bars) */}
                 <div 
                   onClick={() => setIsCardZoomOpen(true)}
-                  className="rounded-xl overflow-hidden border border-slate-200/90 bg-gradient-to-b from-slate-50 to-white p-1.5 shadow-xs relative cursor-pointer group/card"
+                  className="rounded-xl overflow-hidden border border-slate-200/90 bg-gradient-to-b from-slate-50 to-white p-2 sm:p-2.5 shadow-xs relative cursor-pointer group/card"
                   title="Click to zoom and view official visiting card in full resolution"
                 >
                   <img
@@ -201,25 +201,25 @@ export default function About() {
                     className="w-full h-auto aspect-[1024/570] object-contain rounded-lg shadow-2xs group-hover/card:scale-102 transition-transform duration-300"
                   />
 
-                  {/* Clean Hover Zoom Overlay - Never covers contact text in default view */}
+                  {/* Clean Hover Zoom Overlay */}
                   <div className="absolute inset-0 bg-slate-900/35 backdrop-blur-[2px] opacity-0 group-hover/card:opacity-100 transition-opacity flex items-center justify-center rounded-xl">
-                    <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold bg-white text-slate-900 shadow-lg border border-slate-200">
-                      <Maximize2 size={13} className="text-blue-600" />
+                    <span className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold bg-white text-slate-900 shadow-lg border border-slate-200">
+                      <Maximize2 size={15} className="text-blue-600" />
                       <span>Click to Enlarge Card</span>
                     </span>
                   </div>
                 </div>
 
                 {/* Contact Footer */}
-                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-1.5 text-xs text-slate-600 pt-1 border-t border-slate-100">
-                  <span className="text-xs">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-xs sm:text-sm text-slate-600 pt-1.5 border-t border-slate-100">
+                  <span className="text-xs sm:text-sm">
                     Proprietor: <strong className="text-slate-900 font-bold">{COMPANY_INFO.contact.representativeName}</strong>
                   </span>
                   <a 
                     href={`tel:${COMPANY_INFO.contact.primaryPhoneRaw}`} 
-                    className="inline-flex items-center gap-1.5 text-blue-600 hover:text-blue-800 font-bold hover:underline"
+                    className="inline-flex items-center gap-1.5 text-blue-600 hover:text-blue-800 font-bold hover:underline text-xs sm:text-sm"
                   >
-                    <PhoneCall size={12} className="text-blue-600 shrink-0" />
+                    <PhoneCall size={14} className="text-blue-600 shrink-0" />
                     <span>{COMPANY_INFO.contact.primaryPhone}</span>
                   </a>
                 </div>
