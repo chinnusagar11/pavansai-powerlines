@@ -27,7 +27,7 @@ export default function Footer() {
               <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center text-white shrink-0 shadow-md shadow-blue-500/25 ring-1 ring-blue-400/30">
                 <Zap size={18} className="fill-amber-400 text-amber-400" />
               </div>
-              <span className="font-extrabold text-lg text-sky-400 font-heading tracking-tight whitespace-nowrap">
+              <span className="font-extrabold text-lg text-white font-heading tracking-tight whitespace-nowrap">
                 PAVAN SAI POWER LINES
               </span>
             </Link>
