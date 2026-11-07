@@ -73,7 +73,7 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="sticky top-0 z-40 w-full bg-[#edf4fc] transition-all duration-200">
+      <header className="sticky top-0 z-50 w-full bg-[#edf4fc] transition-all duration-200 shadow-2xs">
         
         {/* Top Corporate Line */}
         <div className="h-1 w-full bg-blue-600"></div>
@@ -125,11 +125,9 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* 2. Main Navigation Bar - Plain & Neat Light Corporate Header */}
-        <nav className={`w-full transition-all duration-200 bg-[#edf4fc] border-b border-blue-200/80 ${
-          scrolled 
-            ? 'py-2 sm:py-2.5 shadow-md bg-[#edf4fc]' 
-            : 'py-2.5 sm:py-3.5 shadow-2xs'
+        {/* 2. Main Navigation Bar - Plain & Neat Light Corporate Header (Rock-Solid Sticky) */}
+        <nav className={`w-full transition-all duration-200 bg-[#edf4fc] border-b border-blue-200/80 py-2.5 sm:py-3 ${
+          scrolled ? 'shadow-md' : 'shadow-2xs'
         }`}>
           <div className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 flex items-center justify-between">
             
@@ -228,24 +226,41 @@ export default function Navbar() {
             <div className="md:hidden">
               {/* Dark Soft Blur Backdrop - Tapping anywhere closes the menu */}
               <div 
-                className="fixed inset-0 top-[54px] sm:top-[62px] bg-slate-950/50 backdrop-blur-xs z-40 transition-opacity animate-fade-in"
+                className="fixed inset-0 bg-slate-950/60 backdrop-blur-xs z-40 transition-opacity animate-fade-in"
                 onClick={() => setIsOpen(false)}
                 aria-hidden="true"
               />
 
-              {/* Floating Executive Card Anchored Below Header - 100% Solid Opaque White */}
-              <div className="fixed top-[58px] sm:top-[66px] right-3 left-3 sm:left-auto sm:w-[330px] max-w-sm ml-auto z-50 bg-white rounded-2xl border border-blue-200 shadow-2xl p-3.5 animate-fade-in max-h-[calc(100vh-130px)] overflow-y-auto">
+              {/* Floating Executive Card Anchored Below Sticky Header - 100% Solid Opaque White */}
+              <div className="fixed top-14 sm:top-16 right-3 left-3 sm:left-auto sm:w-[340px] max-w-sm ml-auto z-50 bg-white rounded-2xl border border-blue-200 shadow-2xl p-3.5 animate-fade-in max-h-[calc(100vh-80px)] overflow-y-auto">
                 
-                {/* Header Status Row */}
-                <div className="flex items-center justify-between px-1.5 py-1 mb-1.5 border-b border-slate-100">
-                  <span className="flex items-center gap-1.5 text-[11px] font-extrabold text-blue-700 uppercase tracking-wider">
-                    <Zap size={12} className="text-amber-500 fill-amber-500" />
-                    Quick Navigation
-                  </span>
-                  <span className="inline-flex items-center gap-1 text-[10px] text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-200 font-bold whitespace-nowrap">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-                    Mon-Sat: 9:30 AM - 7:30 PM
-                  </span>
+                {/* Header Status Row with Prominent Dedicated Close [X] Button */}
+                <div className="flex items-center justify-between pb-2 mb-2 border-b border-slate-100">
+                  <div className="flex items-center gap-2 min-w-0">
+                    <div className="w-7 h-7 rounded-lg bg-blue-50 text-blue-700 flex items-center justify-center shrink-0 border border-blue-100">
+                      <Zap size={14} className="text-amber-500 fill-amber-500" />
+                    </div>
+                    <div className="min-w-0">
+                      <span className="block text-xs font-black text-slate-900 uppercase tracking-wider leading-none truncate">
+                        Quick Navigation
+                      </span>
+                      <span className="text-[10px] font-semibold text-emerald-700 flex items-center gap-1 mt-0.5 truncate">
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse shrink-0"></span>
+                        Mon-Sat: 9:30 AM - 7:30 PM
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Dedicated Close [X] Button on Menu Card */}
+                  <button
+                    type="button"
+                    onClick={() => setIsOpen(false)}
+                    className="w-8 h-8 rounded-xl bg-slate-100 hover:bg-slate-200 active:bg-blue-100 text-slate-700 hover:text-slate-900 flex items-center justify-center transition border border-slate-200 shadow-2xs shrink-0 ml-2"
+                    aria-label="Close navigation menu"
+                    title="Close Navigation Menu"
+                  >
+                    <X size={17} className="text-slate-800 stroke-[2.5]" />
+                  </button>
                 </div>
 
                 {/* Main Links */}
