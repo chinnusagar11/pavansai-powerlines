@@ -22,6 +22,8 @@ import {
 import { COMPANY_INFO } from '../data/company';
 import Breadcrumb from '../components/Breadcrumb';
 import EnquiryModal from '../components/EnquiryModal';
+import SEO from '../components/SEO';
+import { getBreadcrumbSchema, getLocalBusinessSchema } from '../utils/schemaGenerator';
 
 export default function About() {
   const [isQuoteOpen, setIsQuoteOpen] = useState(false);
@@ -29,6 +31,20 @@ export default function About() {
 
   return (
     <div className="space-y-10 sm:space-y-14 pb-14">
+      <SEO
+        title="About Pavan Sai Power Lines | Electrical Equipment Suppliers in Secunderabad"
+        description="Learn about Pavan Sai Power Lines (PSPL), an established electrical materials & power transmission hardware stockist in Bansilalpet Road, Secunderabad, Telangana."
+        keywords="About Pavan Sai Power Lines, Electrical suppliers in Secunderabad, Power line materials suppliers in Hyderabad, electrical equipment stockist Telangana, Bansilalpet Road electrical shop"
+        canonical="/about"
+        ogImage={COMPANY_INFO.contact.visitingCardImage}
+        structuredData={[
+          getBreadcrumbSchema([
+            { name: 'Home', url: '/' },
+            { name: 'About Us', url: '/about' }
+          ]),
+          getLocalBusinessSchema()
+        ]}
+      />
       
       {/* 1. UNIFIED EXECUTIVE HERO SECTION - 100% VIEWPORT VISIBILITY */}
       <section className="relative overflow-hidden bg-gradient-to-b from-[#eaf2fc] via-[#f1f6fd] to-white pt-5 pb-8 sm:pt-6 sm:pb-10 lg:pt-7 lg:pb-11 border-b border-blue-200/80">
@@ -179,7 +195,9 @@ export default function About() {
                 >
                   <img
                     src="/images/pspl-visiting-card.jpg"
-                    alt="Pavan Sai Power Lines Official Visiting Card - V. Nagamalleswara Rao"
+                    alt="Pavan Sai Power Lines Official Visiting Card - V. Nagamalleswara Rao, Secunderabad, Telangana"
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-auto aspect-[1024/570] object-contain rounded-lg shadow-2xs group-hover/card:scale-102 transition-transform duration-300"
                   />
 

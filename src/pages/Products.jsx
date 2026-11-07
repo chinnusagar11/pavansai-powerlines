@@ -25,6 +25,8 @@ import { PRODUCTS } from '../data/products';
 import ProductCard from '../components/ProductCard';
 import Breadcrumb from '../components/Breadcrumb';
 import EnquiryModal from '../components/EnquiryModal';
+import SEO from '../components/SEO';
+import { getBreadcrumbSchema, getItemListSchema } from '../utils/schemaGenerator';
 
 export default function Products() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -91,8 +93,41 @@ export default function Products() {
   const activeTabClass = 'bg-blue-600 text-white shadow-md shadow-blue-500/30 ring-2 ring-blue-400/40';
   const inactiveTabClass = 'bg-slate-100 text-slate-700 hover:bg-blue-50 hover:text-blue-700 border border-slate-200/90';
 
+  const pageTitle = activeCategoryObj
+    ? `${activeCategoryObj.name} Suppliers in Hyderabad | Pavan Sai Power Lines`
+    : 'Electrical Power Transmission & Distribution Materials | PSPL Hyderabad';
+
+  const pageDescription = activeCategoryObj
+    ? `${activeCategoryObj.shortDesc} Supplied and stocked by Pavan Sai Power Lines in Secunderabad & Hyderabad, Telangana. Direct dispatch and commercial BOQ estimates.`
+    : `Browse 37+ IS/IEC certified electrical transmission & distribution products from Pavan Sai Power Lines, Hyderabad & Secunderabad. HT/LT lines, conductors, switches, earthing.`;
+
+  const pageCanonical = activeCategoryObj
+    ? `/products?category=${selectedCategory}`
+    : '/products';
+
+  const breadcrumbs = activeCategoryObj
+    ? [
+        { name: 'Home', url: '/' },
+        { name: 'Products & Materials', url: '/products' },
+        { name: activeCategoryObj.name, url: `/products?category=${selectedCategory}` }
+      ]
+    : [
+        { name: 'Home', url: '/' },
+        { name: 'Products & Materials', url: '/products' }
+      ];
+
   return (
     <div className="space-y-6 sm:space-y-8 pb-16">
+      <SEO
+        title={pageTitle}
+        description={pageDescription}
+        keywords="HT line materials suppliers in Hyderabad, LT line materials suppliers in Hyderabad, ACSR conductor suppliers in Hyderabad, AAAC conductor suppliers in Hyderabad, AB switch suppliers in Hyderabad, Transformer spares suppliers in Hyderabad, Earthing materials suppliers in Hyderabad, GI tower suppliers in Hyderabad, Industrial electrical materials in Hyderabad, Secunderabad electrical suppliers"
+        canonical={pageCanonical}
+        structuredData={[
+          getBreadcrumbSchema(breadcrumbs),
+          getItemListSchema(filteredProducts)
+        ]}
+      />
       
       {/* 1. Page Header with Symmetrical Alignment & Status Pill */}
       <section className="relative overflow-hidden bg-gradient-to-b from-[#eaf2fc] via-[#f1f6fd] to-white py-6 sm:py-8 lg:py-9 border-b border-blue-200/80">

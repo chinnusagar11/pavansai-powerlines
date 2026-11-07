@@ -20,6 +20,8 @@ import {
 } from 'lucide-react';
 import { COMPANY_INFO } from '../data/company';
 import Breadcrumb from '../components/Breadcrumb';
+import SEO from '../components/SEO';
+import { getBreadcrumbSchema, getLocalBusinessSchema } from '../utils/schemaGenerator';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -159,6 +161,20 @@ export default function Contact() {
 
   return (
     <div className="space-y-8 sm:space-y-12 pb-16">
+      <SEO
+        title="Contact Pavan Sai Power Lines | Secunderabad & Hyderabad Sales Desk"
+        description="Contact Pavan Sai Power Lines in Bansilalpet Road, Secunderabad. Call +91 97004 49684 or visit our supply base for electrical materials quotes in Hyderabad & Telangana."
+        keywords="Pavan Sai Power Lines contact, Electrical suppliers in Secunderabad, Electrical materials suppliers in Hyderabad, Bansilalpet Road electrical shop, PSPL phone number, electrical materials Telangana"
+        canonical="/contact"
+        ogImage={COMPANY_INFO.contact.visitingCardImage}
+        structuredData={[
+          getBreadcrumbSchema([
+            { name: 'Home', url: '/' },
+            { name: 'Contact Us', url: '/contact' }
+          ]),
+          getLocalBusinessSchema()
+        ]}
+      />
       
       {/* 1. Page Header with Architectural Micro-Pattern */}
       <section className="relative overflow-hidden bg-gradient-to-b from-[#eaf2fc] via-[#f1f6fd] to-white py-6 sm:py-8 border-b border-blue-200/80">
@@ -629,7 +645,9 @@ export default function Contact() {
               >
                 <img
                   src="/images/pspl-visiting-card.jpg"
-                  alt="Pavan Sai Power Lines Official Visiting Card - V. Nagamalleswara Rao"
+                  alt="Pavan Sai Power Lines Official Visiting Card - V. Nagamalleswara Rao, Bansilalpet Road, Secunderabad"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-auto object-contain group-hover:scale-102 transition-transform duration-300"
                 />
                 <div className="absolute bottom-2.5 right-2.5 opacity-90 group-hover:opacity-100 transition-opacity">
@@ -702,7 +720,9 @@ export default function Contact() {
             <div className="p-2 bg-slate-900 rounded-xl overflow-hidden mt-1 shadow-inner">
               <img
                 src="/images/pspl-visiting-card.jpg"
-                alt="Pavan Sai Power Lines Official Visiting Card High Resolution"
+                alt="Pavan Sai Power Lines Official Visiting Card High Resolution - Bansilalpet Road, Secunderabad"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-auto object-contain rounded-lg"
               />
             </div>

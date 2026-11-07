@@ -18,6 +18,8 @@ import { COMPANY_INFO } from '../data/company';
 import ProductCard from '../components/ProductCard';
 import Breadcrumb from '../components/Breadcrumb';
 import EnquiryModal from '../components/EnquiryModal';
+import SEO from '../components/SEO';
+import { getProductSchema, getBreadcrumbSchema } from '../utils/schemaGenerator';
 
 export default function ProductDetails() {
   const { productId } = useParams();
@@ -43,6 +45,11 @@ export default function ProductDetails() {
   if (!product) {
     return (
       <div className="max-w-4xl mx-auto px-4 py-16 text-center space-y-4">
+        <SEO
+          title="Product Not Found | Pavan Sai Power Lines"
+          description="The requested electrical power transmission product could not be found."
+          noindex={true}
+        />
         <h2 className="text-2xl font-bold text-slate-900">Product Not Found</h2>
         <p className="text-slate-600 text-sm">
           The requested product could not be found.
@@ -68,8 +75,29 @@ export default function ProductDetails() {
     }
   };
 
+  const productDescription = product.shortDescription || product.fullDescription.slice(0, 155);
+  const seoTitle = `${product.name} Supplier in Hyderabad | Pavan Sai Power Lines`;
+  const seoDescription = `${productDescription} Verified IS/IEC standard electrical hardware supplied by Pavan Sai Power Lines, Secunderabad, Telangana. Call +91 97004 49684.`;
+
   return (
     <div className="space-y-6 sm:space-y-10 pb-16">
+      <SEO
+        title={seoTitle}
+        description={seoDescription}
+        keywords={`${product.name}, ${product.name} supplier in Hyderabad, ${product.name} price Hyderabad, ${product.category} Secunderabad, electrical materials Telangana, ${product.id}`}
+        canonical={`/products/${product.id}`}
+        ogImage={product.image}
+        ogType="product"
+        structuredData={[
+          getProductSchema(product),
+          getBreadcrumbSchema([
+            { name: 'Home', url: '/' },
+            { name: 'Products & Materials', url: '/products' },
+            { name: product.category, url: `/products?category=${product.categoryId}` },
+            { name: product.name, url: `/products/${product.id}` }
+          ])
+        ]}
+      />
       
       {/* 1. Header & Breadcrumb with Prominent Back Button */}
       <section className="bg-white border-b border-slate-200">
@@ -111,8 +139,10 @@ export default function ProductDetails() {
             >
               <img
                 src={imageError ? fallbackImage : (selectedImage || product.image)}
-                alt={product.name}
+                alt={`${product.name} - Electrical Materials Supplier Hyderabad`}
                 onError={() => setImageError(true)}
+                fetchPriority="high"
+                decoding="async"
                 className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-102"
               />
               <div className="absolute top-3 left-3">
@@ -152,7 +182,9 @@ export default function ProductDetails() {
                     >
                       <img
                         src={imgUrl}
-                        alt={`${product.name} view ${idx + 1}`}
+                        alt={`${product.name} technical view ${idx + 1}`}
+                        loading="lazy"
+                        decoding="async"
                         className="w-full h-full object-contain p-1"
                       />
                     </button>

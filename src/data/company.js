@@ -12,9 +12,13 @@ export const COMPANY_INFO = {
   tagline: "Reliable Electrical Power Transmission & Distribution Materials Supplier",
   description: "Pavan Sai Power Lines (PSPL) is a premier supplier and stockist of high-quality HT/LT overhead line materials, transformer spares, AB switches, AAAC & ACSR conductors, earthing materials, industrial electricals, and all MS & GI towers based in Secunderabad, Telangana.",
   
+  // Official Production Website URL (Configurable for SEO & Canonical links)
+  website: "https://www.pavansaipowerlines.com",
+  
   // Primary Location (Exact Registered Address from Official Visiting Card)
   location: {
     city: "Secunderabad",
+    district: "Hyderabad",
     state: "Telangana",
     country: "India",
     pincode: "500003",
@@ -22,6 +26,16 @@ export const COMPANY_INFO = {
     fullAddress: "6-6-269/159, Bansilalpet Road, Secunderabad - 500003, Telangana (T.G.), India",
     shortAddress: "6-6-269/159, Bansilalpet Road, Secunderabad - 500003",
     landmark: "Bansilalpet Road Commercial Corridor",
+    geo: {
+      latitude: 17.4360662,
+      longitude: 78.4975513
+    },
+    serviceAreas: [
+      "Hyderabad",
+      "Secunderabad",
+      "Telangana",
+      "Andhra Pradesh"
+    ],
     googleMapsEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.4952445657497!2d78.4975513!3d17.4360662!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9a21e0586e99%3A0x63ea01878893d5f5!2sBansilalpet%2C%20Secunderabad%2C%20Telangana%20500003!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin",
     googleMapsDirectionsUrl: "https://maps.google.com/?q=6-6-269/159,+Bansilalpet+Road,+Secunderabad+500003+Telangana"
   },

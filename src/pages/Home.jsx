@@ -22,6 +22,8 @@ import { COMPANY_INFO } from '../data/company';
 import { PRODUCTS } from '../data/products';
 import ProductCard from '../components/ProductCard';
 import EnquiryModal from '../components/EnquiryModal';
+import SEO from '../components/SEO';
+import { getLocalBusinessSchema, getWebSiteSchema } from '../utils/schemaGenerator';
 
 export default function Home() {
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
@@ -83,6 +85,14 @@ export default function Home() {
 
   return (
     <div className="space-y-10 sm:space-y-14 md:space-y-16 pb-12 sm:pb-16">
+      <SEO
+        title="Electrical Materials Suppliers in Hyderabad & Secunderabad | Pavan Sai Power Lines"
+        description="Pavan Sai Power Lines (PSPL) is a premier supplier and wholesale stockist of electrical materials in Hyderabad & Secunderabad. Stockist of HT/LT line hardware, ACSR conductors, AB switches, transformer spares & GI towers."
+        keywords="Electrical materials suppliers in Hyderabad, Electrical equipment suppliers in Hyderabad, Power line materials suppliers in Hyderabad, Electrical suppliers in Secunderabad, HT line materials suppliers in Hyderabad, LT line materials suppliers in Hyderabad, ACSR conductor suppliers in Hyderabad, AAAC conductor suppliers in Hyderabad, AB switch suppliers in Hyderabad, Transformer spares suppliers in Hyderabad, Earthing materials suppliers in Hyderabad, GI tower suppliers in Hyderabad, Industrial electrical materials in Hyderabad"
+        canonical="/"
+        ogImage="/images/hero-transmission-sunset.jpg"
+        structuredData={[getLocalBusinessSchema(), getWebSiteSchema()]}
+      />
       
       {/* 1. ENTERPRISE HERO SECTION - VIEWPORT & WINDOW OPTIMIZED */}
       <section className="relative overflow-hidden bg-gradient-to-b from-blue-50/60 via-slate-50/30 to-white border-b border-slate-200/80 pt-6 pb-8 sm:pt-8 sm:pb-10 lg:pt-9 lg:pb-11">
@@ -161,8 +171,10 @@ export default function Home() {
                   <div className="rounded-xl overflow-hidden aspect-[4/3] sm:aspect-[16/11] bg-slate-900 relative">
                     <img
                       src="/images/hero-transmission-sunset.jpg"
-                      alt="High Voltage Electrical Power Transmission Infrastructure Tower at Sunset"
+                      alt="High Voltage Electrical Power Transmission Infrastructure Tower at Sunset - Pavan Sai Power Lines Hyderabad"
                       className="w-full h-full object-cover object-center group-hover:scale-104 transition-transform duration-700 ease-out"
+                      fetchPriority="high"
+                      decoding="async"
                     />
                     
                     {/* Glassmorphic Overlay Pill Top */}
@@ -329,8 +341,10 @@ export default function Home() {
                     <div className="relative w-full aspect-[16/10] bg-slate-50/70 border-b border-slate-100 flex items-center justify-center p-3.5 overflow-hidden">
                       <img
                         src={preview.image}
-                        alt={cat.name}
+                        alt={`${cat.name} - Electrical Equipment Supplier in Hyderabad, PSPL`}
                         className="w-full h-full object-contain group-hover:scale-108 transition-transform duration-500 drop-shadow-2xs"
+                        loading="lazy"
+                        decoding="async"
                       />
                       <div className="absolute top-2.5 right-2.5">
                         <span className="inline-block text-[10px] font-extrabold px-2 py-0.5 rounded-md shadow-2xs border bg-blue-50/90 text-blue-700 border-blue-200/80 group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-600 transition-colors">
@@ -527,8 +541,10 @@ export default function Home() {
             <div className="relative h-56 w-full overflow-hidden bg-slate-900 shrink-0 border-b border-slate-100">
               <img
                 src="/images/products/transmission-tower.jpg"
-                alt="Overhead Power Transmission Towers"
+                alt="Overhead Power Transmission Towers & Substation GI Structures - PSPL Hyderabad"
                 className="w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-700 ease-out"
+                loading="lazy"
+                decoding="async"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-slate-950/20 to-transparent"></div>
               
@@ -593,8 +609,10 @@ export default function Home() {
             <div className="relative h-56 w-full overflow-hidden bg-slate-900 shrink-0 border-b border-slate-100">
               <img
                 src="/images/products/ab-switch-gang-operated.png"
-                alt="11kV 3-Phase Gang-Operated Air Break Switch"
+                alt="11kV 3-Phase Gang-Operated Air Break Switch Supplier in Hyderabad"
                 className="w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-700 ease-out"
+                loading="lazy"
+                decoding="async"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-slate-950/20 to-transparent"></div>
               
@@ -659,8 +677,10 @@ export default function Home() {
             <div className="relative h-56 w-full overflow-hidden bg-slate-900 shrink-0 border-b border-slate-100">
               <img
                 src="/images/products/copper-bonded-earth-rods.jpg"
-                alt="Copper-Bonded Chemical Earth Electrodes"
+                alt="Copper-Bonded Chemical Earth Electrodes & Earthing Materials Hyderabad"
                 className="w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-700 ease-out"
+                loading="lazy"
+                decoding="async"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-slate-950/20 to-transparent"></div>
               

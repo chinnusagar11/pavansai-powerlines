@@ -20,9 +20,10 @@ export default function ProductCard({ product }) {
         <div className="relative w-full h-52 overflow-hidden bg-gradient-to-b from-slate-50/60 to-white border-b border-slate-100 flex items-center justify-center p-3.5 sm:p-4 shrink-0">
           <img
             src={imageError ? fallbackImage : product.image}
-            alt={product.name}
+            alt={`${product.name} - Electrical Materials Supplier Hyderabad | PSPL`}
             onError={() => setImageError(true)}
             loading="lazy"
+            decoding="async"
             className="w-full h-full object-contain transition-transform duration-500 ease-out group-hover:scale-106 drop-shadow-sm"
           />
           
