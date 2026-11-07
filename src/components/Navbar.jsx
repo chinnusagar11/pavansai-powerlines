@@ -11,7 +11,12 @@ import {
   Clock, 
   Send,
   ShieldCheck,
-  ArrowRight
+  ArrowRight,
+  ChevronRight,
+  Home,
+  Building2,
+  Layers,
+  PhoneCall
 } from 'lucide-react';
 import { COMPANY_INFO } from '../data/company';
 import EnquiryModal from './EnquiryModal';
@@ -57,10 +62,10 @@ export default function Navbar() {
     }`;
 
   const mobileNavLinkClass = ({ isActive }) => 
-    `flex items-center justify-between text-sm font-semibold py-3 px-4 rounded-xl transition ${
+    `flex items-center justify-between text-sm font-semibold py-3 px-3.5 rounded-xl transition-all ${
       isActive 
         ? 'bg-white text-blue-700 font-bold border border-blue-200 shadow-2xs' 
-        : 'text-slate-700 hover:bg-white/60 hover:text-blue-700'
+        : 'text-slate-700 hover:bg-white/80 hover:text-blue-700 active:bg-blue-50'
     }`;
 
   return (
@@ -206,10 +211,10 @@ export default function Navbar() {
 
               <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="md:hidden p-2 rounded-xl text-slate-700 hover:text-blue-700 bg-white/80 hover:bg-white active:bg-blue-100/60 border border-blue-200/90 shadow-2xs focus:outline-none transition-all flex items-center justify-center shrink-0"
+                className="md:hidden p-2.5 rounded-xl text-slate-800 hover:text-blue-700 bg-white hover:bg-slate-50 active:bg-blue-50 border border-blue-200/90 shadow-2xs focus:outline-none transition-all flex items-center justify-center shrink-0"
                 aria-label="Toggle navigation menu"
               >
-                {isOpen ? <X size={22} className="text-slate-800" /> : <Menu size={22} className="text-slate-800" />}
+                {isOpen ? <X size={22} className="text-slate-900" /> : <Menu size={22} className="text-slate-900" />}
               </button>
             </div>
 
@@ -218,49 +223,93 @@ export default function Navbar() {
           {/* Mobile Drawer Overlay */}
           {isOpen && (
             <div className="md:hidden fixed inset-x-0 top-[56px] sm:top-[64px] bottom-0 bg-slate-900/40 backdrop-blur-xs z-50 flex flex-col justify-between animate-fade-in">
-              <div className="bg-[#edf4fc] border-b border-blue-200 px-4 pt-3 pb-8 space-y-1.5 shadow-2xl max-h-[82vh] overflow-y-auto pb-safe">
+              <div className="bg-[#edf4fc] border-b border-blue-200 px-4 pt-3 pb-8 space-y-2 shadow-2xl max-h-[85vh] overflow-y-auto pb-safe">
+                
+                {/* Mobile Drawer Header Badge */}
+                <div className="flex items-center justify-between px-1 py-1 text-[11px] font-bold text-slate-500 uppercase tracking-wider">
+                  <span className="flex items-center gap-1.5 text-blue-700 font-extrabold">
+                    <Zap size={13} className="text-amber-500 fill-amber-500" />
+                    PSPL Quick Navigation
+                  </span>
+                  <span className="inline-flex items-center gap-1 text-[10px] text-emerald-700 bg-white px-2 py-0.5 rounded-md border border-emerald-200 shadow-2xs font-semibold">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                    Open 9:30 AM - 7:30 PM
+                  </span>
+                </div>
+
                 <NavLink to="/" className={mobileNavLinkClass}>
-                  <span>Home</span>
-                  <span className="text-xs text-blue-600">&rarr;</span>
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center shrink-0">
+                      <Home size={16} />
+                    </div>
+                    <span className="font-bold">Home</span>
+                  </div>
+                  <ChevronRight size={16} className="text-slate-400" />
                 </NavLink>
+
                 <NavLink to="/about" className={mobileNavLinkClass}>
-                  <span>About Us</span>
-                  <span className="text-xs text-blue-600">&rarr;</span>
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center shrink-0">
+                      <Building2 size={16} />
+                    </div>
+                    <span className="font-bold">About Us</span>
+                  </div>
+                  <ChevronRight size={16} className="text-slate-400" />
                 </NavLink>
+
                 <NavLink to="/products" className={mobileNavLinkClass}>
-                  <span>All Products & Materials</span>
-                  <span className="text-xs text-blue-600">&rarr;</span>
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center shrink-0">
+                      <Layers size={16} />
+                    </div>
+                    <div className="text-left">
+                      <span className="font-bold block leading-tight">All Products & Materials</span>
+                      <span className="text-[10px] text-slate-500 font-medium">34 IS / IEC Certified Items</span>
+                    </div>
+                  </div>
+                  <ChevronRight size={16} className="text-slate-400" />
                 </NavLink>
                 
-                {/* Mobile Category Sublinks */}
-                <div className="pl-3 py-1 space-y-1 border-l-2 border-blue-200 my-1 ml-2">
-                  <div className="text-[11px] font-bold text-slate-400 uppercase tracking-wider px-2 py-1">
-                    Product Divisions:
+                {/* Mobile Product Divisions Dedicated Section */}
+                <div className="bg-white/70 rounded-xl p-2.5 border border-blue-200/70 my-1.5 shadow-2xs">
+                  <div className="flex items-center justify-between px-2 py-1 text-[11px] font-bold text-slate-500 uppercase tracking-wider">
+                    <span>7 Product Divisions</span>
+                    <span className="text-[10px] text-blue-600 font-bold bg-blue-50 px-2 py-0.5 rounded border border-blue-200/60">
+                      Direct Stock
+                    </span>
                   </div>
-                  {COMPANY_INFO.categories.map((cat) => (
-                    <Link
-                      key={cat.id}
-                      to={`/products?category=${cat.id}`}
-                      className="block text-xs text-slate-700 hover:text-blue-600 py-1.5 px-2 font-medium rounded hover:bg-white/60"
-                    >
-                      &bull; {cat.name}
-                    </Link>
-                  ))}
+                  <div className="grid grid-cols-1 gap-1 mt-1">
+                    {COMPANY_INFO.categories.map((cat) => (
+                      <Link
+                        key={cat.id}
+                        to={`/products?category=${cat.id}`}
+                        className="flex items-center justify-between text-xs text-slate-700 hover:text-blue-700 py-1.5 px-2.5 font-medium rounded-lg hover:bg-white active:bg-blue-50 transition"
+                      >
+                        <span className="truncate">&bull; {cat.name}</span>
+                        <ChevronRight size={13} className="text-slate-300" />
+                      </Link>
+                    ))}
+                  </div>
                 </div>
 
                 <NavLink to="/contact" className={mobileNavLinkClass}>
-                  <span>Contact Sales Desk</span>
-                  <span className="text-xs text-blue-600">&rarr;</span>
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center shrink-0">
+                      <PhoneCall size={16} />
+                    </div>
+                    <span className="font-bold">Contact Sales Desk</span>
+                  </div>
+                  <ChevronRight size={16} className="text-slate-400" />
                 </NavLink>
 
                 {/* Mobile Quick Action Buttons */}
-                <div className="pt-4 border-t border-blue-200 flex flex-col gap-2.5">
+                <div className="pt-3 border-t border-blue-200 flex flex-col gap-2">
                   <button
                     onClick={() => {
                       setIsOpen(false);
                       setIsQuoteModalOpen(true);
                     }}
-                    className="w-full flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl font-bold text-sm shadow-xs transition"
+                    className="w-full flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 active:scale-[0.98] text-white py-3 rounded-xl font-bold text-sm shadow-xs transition"
                   >
                     <Send size={15} />
                     <span>Request Material Quotation</span>
@@ -268,7 +317,7 @@ export default function Navbar() {
 
                   <a
                     href={`tel:${COMPANY_INFO.contact.primaryPhoneRaw}`}
-                    className="w-full flex items-center justify-center gap-2 bg-white hover:bg-blue-600 text-slate-800 hover:text-white py-2.5 rounded-xl text-xs font-bold border border-blue-200 transition"
+                    className="w-full flex items-center justify-center gap-2 bg-white hover:bg-slate-50 text-slate-800 py-2.5 rounded-xl text-xs font-bold border border-blue-200 shadow-2xs transition"
                   >
                     <Phone size={14} className="text-blue-600 fill-blue-600" />
                     <span>Call Sales Desk: {COMPANY_INFO.contact.primaryPhone}</span>

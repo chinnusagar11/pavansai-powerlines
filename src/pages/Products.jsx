@@ -95,15 +95,20 @@ export default function Products() {
     <div className="space-y-6 sm:space-y-8 pb-16">
       
       {/* 1. Page Header with Symmetrical Alignment & Status Pill */}
-      <section className="bg-gradient-to-b from-blue-50/70 via-white to-slate-50 py-7 sm:py-10 border-b border-slate-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#eaf2fc] via-[#f1f6fd] to-white py-6 sm:py-8 lg:py-9 border-b border-blue-200/80">
+        {/* Subtle Architectural Pattern */}
+        <div className="absolute inset-0 bg-[radial-gradient(#3b82f6_1px,transparent_1px)] [background-size:24px_24px] opacity-10 pointer-events-none"></div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
           <div className="flex items-center justify-between gap-3">
-            <Breadcrumb items={[{ label: 'Products & Materials' }]} />
+            <div className="hidden sm:block">
+              <Breadcrumb items={[{ label: 'Products & Materials' }]} />
+            </div>
             
             <Link
               to="/"
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white hover:bg-slate-50 active:bg-slate-100 text-slate-800 text-xs font-bold border-2 border-slate-200 hover:border-slate-300 transition-all shadow-2xs shrink-0"
+              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-white hover:bg-slate-50 active:bg-slate-100 text-slate-800 text-xs font-bold border border-slate-300 hover:border-blue-400 transition-all shadow-2xs shrink-0"
               title="Return to Home Page"
             >
               <ArrowLeft size={14} className="text-blue-600" />
@@ -114,13 +119,13 @@ export default function Products() {
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-5 mt-4">
             <div className="max-w-2xl space-y-2">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-blue-200 shadow-2xs text-[11px] font-bold text-slate-800">
-                <span className="relative flex h-2 w-2">
+                <span className="relative flex h-2 w-2 shrink-0">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
                 </span>
-                <span className="text-blue-700 uppercase tracking-wider">PSPL Certified Inventory</span>
-                <span className="text-slate-300">&bull;</span>
-                <span className="text-slate-600">IS &bull; IEC &bull; REC Standard</span>
+                <span className="text-blue-700 uppercase tracking-wider whitespace-nowrap">PSPL Certified Inventory</span>
+                <span className="text-slate-300 hidden sm:inline">&bull;</span>
+                <span className="text-slate-600 hidden sm:inline whitespace-nowrap">IS &bull; IEC &bull; REC Standard</span>
               </div>
 
               <h1 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-slate-900 font-heading">

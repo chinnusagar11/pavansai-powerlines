@@ -75,7 +75,7 @@ export default function ProductDetails() {
       <section className="bg-white border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
           <div className="flex items-center justify-between gap-3">
-            <div className="min-w-0 flex-1">
+            <div className="min-w-0 flex-1 hidden sm:block">
               <Breadcrumb 
                 items={[
                   { label: 'Products', href: '/products' },
@@ -87,10 +87,10 @@ export default function ProductDetails() {
 
             <button
               onClick={() => navigate('/products')}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 active:bg-blue-100 text-slate-800 text-xs sm:text-sm font-bold border border-slate-200 transition-all shadow-2xs shrink-0"
+              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 active:bg-blue-100 text-slate-800 text-xs sm:text-sm font-bold border border-slate-300 hover:border-slate-400 transition-all shadow-2xs shrink-0"
               title="Return to Product Catalogue"
             >
-              <ArrowLeft size={16} className="text-blue-600" />
+              <ArrowLeft size={15} className="text-blue-600" />
               <span>Back to Catalogue</span>
             </button>
           </div>
@@ -99,16 +99,6 @@ export default function ProductDetails() {
 
       {/* 2. Main Product Info */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Mobile Quick Back Link */}
-        <div className="sm:hidden mb-3">
-          <button
-            onClick={() => navigate('/products')}
-            className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-slate-100 active:bg-blue-100 text-slate-800 text-xs font-bold border border-slate-200 shadow-2xs transition"
-          >
-            <ArrowLeft size={15} className="text-blue-600" />
-            <span>&larr; Back to All Products Catalogue</span>
-          </button>
-        </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-start">
           

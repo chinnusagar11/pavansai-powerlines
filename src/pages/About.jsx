@@ -39,23 +39,25 @@ export default function About() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-4 sm:space-y-5">
           
           {/* Top Bar: Breadcrumb & Supply Base Status */}
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2.5">
-            <Breadcrumb items={[{ label: 'About Us' }]} />
+          <div className="flex items-center justify-between gap-2.5">
+            <div className="hidden sm:block">
+              <Breadcrumb items={[{ label: 'About Us' }]} />
+            </div>
 
-            <div className="flex items-center gap-2 sm:gap-2.5">
-              <span className="inline-flex items-center gap-1.5 text-[11px] font-bold text-slate-700 bg-white px-2.5 py-1 rounded-lg border border-blue-200 shadow-2xs">
-                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                <span>Secunderabad Supply Base</span>
-              </span>
-
+            <div className="flex items-center justify-between sm:justify-end gap-2 sm:gap-2.5 w-full sm:w-auto">
               <Link
                 to="/"
-                className="inline-flex items-center gap-1.5 px-3 py-1 rounded-xl bg-white hover:bg-slate-50 active:bg-slate-100 text-slate-800 text-xs font-bold border border-slate-300 hover:border-slate-400 transition shadow-2xs shrink-0"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white hover:bg-slate-50 active:bg-slate-100 text-slate-800 text-xs font-bold border border-slate-300 hover:border-slate-400 transition shadow-2xs shrink-0"
                 title="Return to Home Page"
               >
                 <ArrowLeft size={13} className="text-blue-600" />
                 <span>Back to Home</span>
               </Link>
+
+              <span className="inline-flex items-center gap-1.5 text-[11px] font-bold text-slate-700 bg-white px-2.5 py-1 rounded-lg border border-blue-200 shadow-2xs shrink-0">
+                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                <span>Secunderabad Supply Base</span>
+              </span>
             </div>
           </div>
 
