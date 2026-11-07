@@ -141,6 +141,41 @@ export const PRODUCTS = [
     ]
   },
   {
+    id: "aluminium-pg-clamps-connectors",
+    name: "Aluminium Alloy PG Clamps & Substation Power Connectors",
+    category: "HT/LT Overhead Line Materials",
+    categoryId: "overhead-lines",
+    shortDescription: "Heavy-duty bolted aluminium PG clamps, tee connectors, and NEMA 4-hole pad terminal connectors.",
+    fullDescription: "Authentic high-grade aluminium alloy parallel groove (PG) clamps, tee connectors, and equipment terminal connectors supplied by Pavan Sai Power Lines. Manufactured per IS 5561 specifications with precision-cast grooves and hot-dip galvanized grade 8.8 clamping hardware. Engineered to provide high electrical conductivity, low contact resistance, and superior mechanical holding grip on ACSR, AAAC, and busbar conductors without conductor damage.",
+    image: "/images/products/aluminium-pg-clamps-connectors.jpg",
+    gallery: [
+      "/images/products/aluminium-pg-clamps-connectors.jpg",
+      "/images/products/abc-hardware-tension-clamps.jpg",
+      "/images/products/polymer-disc-tension-clamp.jpg"
+    ],
+    features: [
+      "Precision-cast parallel grooves provide maximum electrical contact surface and minimum contact resistance",
+      "Supplied with Grade 8.8 hot-dip galvanized high-tensile steel bolts, nuts, and spring washers",
+      "Spring washers maintain continuous contact pressure under cyclic thermal expansion and load variations",
+      "High-purity corrosion-resistant aluminium alloy casting (LM6 / A6) designed for outdoor substation service",
+      "Includes 4-hole NEMA spade terminal connectors for transformer bushing and switchgear terminations"
+    ],
+    specifications: {
+      "Clamp Material": "High-Strength Aluminium Alloy LM6 / A6",
+      "Hardware Grade": "Grade 8.8 Hot-Dip Galvanized Steel (IS 1367)",
+      "Conductor Compatibility": "ACSR (Weasel to Zebra) & AAAC Conductors",
+      "Rated Voltage": "11kV / 33kV / 66kV / 132kV Grid Class",
+      "Standard Compliance": "IS 5561 / REC Standards",
+      "Configurations": "2-Bolt, 3-Bolt, 4-Bolt PG & 4-Hole NEMA Terminal Pad"
+    },
+    applications: [
+      "Parallel conductor splicing and jumper loop connections on overhead transmission lines",
+      "Distribution transformer HT bushing connections to lightning arresters and drop-out fuses",
+      "Substation busbar tap-offs, gang-operated AB switch terminals, and disconnector connections",
+      "Industrial HT switchyard power connections"
+    ]
+  },
+  {
     id: "abc-hardware-tension-clamps",
     name: "Overhead Line Hardware & Suspension Tension Clamps",
     category: "HT/LT Overhead Line Materials",

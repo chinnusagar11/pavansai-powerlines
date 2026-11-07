@@ -13,7 +13,9 @@ import {
   ArrowLeft,
   Maximize2,
   X,
-  PhoneCall
+  PhoneCall,
+  AlertCircle,
+  CheckCircle2
 } from 'lucide-react';
 import { COMPANY_INFO } from '../data/company';
 import Breadcrumb from '../components/Breadcrumb';
@@ -28,25 +30,91 @@ export default function Contact() {
     message: ''
   });
 
+  const [errors, setErrors] = useState({});
   const [copiedPhone, setCopiedPhone] = useState(false);
   const [isCardZoomOpen, setIsCardZoomOpen] = useState(false);
 
   const handleChange = (e) => {
+    const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
-      [e.target.name]: e.target.value
+      [name]: value
     }));
+
+    if (errors[name]) {
+      setErrors(prev => ({ ...prev, [name]: null }));
+    }
+  };
+
+  const validatePhoneNumber = (phoneStr) => {
+    if (!phoneStr || !phoneStr.trim()) {
+      return { isValid: false, message: 'Phone number is required to submit requirement' };
+    }
+    const clean = phoneStr.replace(/[^0-9]/g, '');
+    let digits = clean;
+    if (clean.startsWith('91') && clean.length === 12) {
+      digits = clean.slice(2);
+    } else if (clean.startsWith('0') && clean.length === 11) {
+      digits = clean.slice(1);
+    }
+
+    if (digits.length !== 10) {
+      return { 
+        isValid: false, 
+        message: `Please enter a valid 10-digit mobile number (${digits.length}/10 digits)` 
+      };
+    }
+
+    if (!/^[6-9]\d{9}$/.test(digits)) {
+      return { 
+        isValid: false, 
+        message: 'Indian mobile numbers must start with 6, 7, 8, or 9' 
+      };
+    }
+
+    return { isValid: true, message: '' };
+  };
+
+  const handlePhoneChange = (e) => {
+    const value = e.target.value.replace(/[^\d\s+-]/g, '');
+    if (value.length <= 16) {
+      setFormData(prev => ({ ...prev, phone: value }));
+      if (errors.phone) {
+        const check = validatePhoneNumber(value);
+        if (check.isValid) {
+          setErrors(prev => ({ ...prev, phone: null }));
+        }
+      }
+    }
+  };
+
+  const validateForm = () => {
+    const newErrors = {};
+
+    if (!formData.name.trim()) {
+      newErrors.name = 'Please enter your name';
+    } else if (formData.name.trim().length < 2) {
+      newErrors.name = 'Name must be at least 2 characters';
+    }
+
+    const phoneValidation = validatePhoneNumber(formData.phone);
+    if (!phoneValidation.isValid) {
+      newErrors.phone = phoneValidation.message;
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
   };
 
   const buildMessageContent = () => {
     let msg = `*COMMERCIAL MATERIAL INQUIRY - PSPL*\n`;
     msg += `------------------------------------\n`;
-    msg += `*Name:* ${formData.name || 'Not specified'}\n`;
-    if (formData.company) msg += `*Company:* ${formData.company}\n`;
-    msg += `*Phone:* ${formData.phone || 'Not specified'}\n`;
-    if (formData.email) msg += `*Email:* ${formData.email}\n`;
+    msg += `*Name:* ${formData.name.trim() || 'Not specified'}\n`;
+    if (formData.company) msg += `*Company:* ${formData.company.trim()}\n`;
+    msg += `*Phone:* ${formData.phone.trim() || 'Not specified'}\n`;
+    if (formData.email) msg += `*Email:* ${formData.email.trim()}\n`;
     msg += `*Category:* ${formData.category}\n`;
-    if (formData.message) msg += `*Requirement Details:* ${formData.message}\n`;
+    if (formData.message) msg += `*Requirement Details:* ${formData.message.trim()}\n`;
     msg += `------------------------------------\n`;
     msg += `Sent via Pavan Sai Power Lines Website (Secunderabad)`;
     return msg;
@@ -54,6 +122,7 @@ export default function Contact() {
 
   const handleWhatsAppSubmit = (e) => {
     e.preventDefault();
+    if (!validateForm()) return;
     const text = encodeURIComponent(buildMessageContent());
     const phone = COMPANY_INFO.contact.whatsappNumber.replace(/[^0-9]/g, '');
     window.open(`https://wa.me/${phone}?text=${text}`, '_blank');
@@ -61,6 +130,7 @@ export default function Contact() {
 
   const handleEmailSubmit = (e) => {
     e.preventDefault();
+    if (!validateForm()) return;
     const subject = encodeURIComponent(`Material Inquiry: ${formData.category} - PSPL`);
     const body = encodeURIComponent(buildMessageContent());
     window.location.href = `mailto:${COMPANY_INFO.contact.primaryEmail}?cc=${COMPANY_INFO.contact.salesEmail}&subject=${subject}&body=${body}`;
@@ -71,6 +141,8 @@ export default function Contact() {
     setCopiedPhone(true);
     setTimeout(() => setCopiedPhone(false), 2000);
   };
+
+  const phoneStatus = validatePhoneNumber(formData.phone);
 
   return (
     <div className="space-y-8 sm:space-y-12 pb-16">
@@ -260,8 +332,18 @@ export default function Contact() {
                     value={formData.name}
                     onChange={handleChange}
                     placeholder="e.g. Ramesh Reddy"
-                    className="w-full px-3.5 py-2.5 text-base sm:text-sm rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className={`w-full px-3.5 py-2.5 text-base sm:text-sm rounded-lg border transition-all ${
+                      errors.name 
+                        ? 'border-red-500 ring-2 ring-red-100 bg-red-50/20 text-slate-900' 
+                        : 'border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500'
+                    }`}
                   />
+                  {errors.name && (
+                    <p className="text-[11px] font-bold text-red-600 flex items-center gap-1 mt-1 animate-fade-in">
+                      <AlertCircle size={12} className="shrink-0 text-red-500" />
+                      <span>{errors.name}</span>
+                    </p>
+                  )}
                 </div>
 
                 <div>
@@ -281,18 +363,41 @@ export default function Contact() {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1">
-                    Mobile Number *
-                  </label>
+                  <div className="flex items-center justify-between mb-1">
+                    <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider">
+                      Mobile Number *
+                    </label>
+                    {phoneStatus.isValid && (
+                      <span className="text-[10px] font-bold text-emerald-600 flex items-center gap-1">
+                        <CheckCircle2 size={11} className="text-emerald-500" />
+                        <span>Valid 10-Digit Number</span>
+                      </span>
+                    )}
+                  </div>
                   <input
                     type="tel"
                     name="phone"
                     required
                     value={formData.phone}
-                    onChange={handleChange}
-                    placeholder="+91 98490 XXXXX"
-                    className="w-full px-3.5 py-2.5 text-base sm:text-sm rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    onChange={handlePhoneChange}
+                    placeholder="e.g. 97004 49684"
+                    maxLength={16}
+                    className={`w-full px-3.5 py-2.5 text-base sm:text-sm rounded-lg border transition-all ${
+                      errors.phone 
+                        ? 'border-red-500 ring-2 ring-red-100 bg-red-50/20 text-slate-900' 
+                        : phoneStatus.isValid 
+                          ? 'border-emerald-500 ring-1 ring-emerald-200 bg-emerald-50/10' 
+                          : 'border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500'
+                    }`}
                   />
+                  {errors.phone ? (
+                    <p className="text-[11px] font-bold text-red-600 flex items-center gap-1 mt-1 animate-fade-in">
+                      <AlertCircle size={12} className="shrink-0 text-red-500" />
+                      <span>{errors.phone}</span>
+                    </p>
+                  ) : (
+                    <p className="text-[10px] text-slate-400 mt-1">10-digit mobile number</p>
+                  )}
                 </div>
 
                 <div>
