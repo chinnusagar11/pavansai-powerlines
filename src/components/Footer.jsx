@@ -158,14 +158,21 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Developer Watermark Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900/90 border-2 border-blue-500/40 text-xs shadow-lg shadow-blue-950/50 backdrop-blur-sm group hover:border-sky-400 transition-all">
-            <Code size={14} className="text-sky-400 group-hover:scale-110 transition-transform" />
-            <span className="text-slate-400 font-medium">Developed by</span>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-blue-300 to-indigo-300 font-black tracking-wider uppercase">
-              PUSALA SIDDHARTHA
+          {/* Developer Credit - Professional, Sleek & Compact */}
+          <a
+            href="https://siddharthapusala.github.io/portfolio/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900/90 hover:bg-slate-800 border border-slate-700/80 hover:border-blue-400/80 text-[11px] sm:text-xs text-slate-400 transition-all duration-200 group shadow-2xs"
+            title="Visit Pusala Siddhartha's Portfolio (opens in new tab)"
+          >
+            <Code size={13} className="text-sky-400 group-hover:scale-110 transition-transform shrink-0" />
+            <span className="text-slate-400 font-normal">Developed by</span>
+            <span className="font-bold text-sky-400 group-hover:text-sky-300 tracking-wide transition-colors">
+              Pusala Siddhartha
             </span>
-          </div>
+            <ExternalLink size={11} className="text-slate-500 group-hover:text-sky-300 transition-colors shrink-0 ml-0.5" />
+          </a>
         </div>
 
       </div>
