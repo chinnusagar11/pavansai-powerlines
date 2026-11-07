@@ -28,102 +28,197 @@ export default function About() {
   const [isCardZoomOpen, setIsCardZoomOpen] = useState(false);
 
   return (
-    <div className="space-y-8 sm:space-y-14 pb-14">
+    <div className="space-y-8 sm:space-y-12 pb-14">
       
-      {/* 1. Clean Page Header */}
-      <section className="bg-gradient-to-b from-blue-50/60 to-white py-8 sm:py-12 border-b border-slate-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between gap-3">
+      {/* 1. Premium Corporate Page Header with Architectural Micro-Pattern */}
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#eaf2fc] via-[#f1f6fd] to-white py-6 sm:py-8 lg:py-9 border-b border-blue-200/80">
+        
+        {/* Subtle Architectural Pattern */}
+        <div className="absolute inset-0 bg-[radial-gradient(#3b82f6_1px,transparent_1px)] [background-size:24px_24px] opacity-10 pointer-events-none"></div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          
+          {/* Top Bar: Breadcrumb & Quick Trust Badges */}
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
             <Breadcrumb items={[{ label: 'About Us' }]} />
 
-            <Link
-              to="/"
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white hover:bg-slate-50 active:bg-slate-100 text-slate-800 text-xs font-bold border border-slate-200 transition shadow-2xs shrink-0"
-              title="Return to Home Page"
-            >
-              <ArrowLeft size={14} className="text-blue-600" />
-              <span>Back to Home</span>
-            </Link>
+            <div className="flex items-center gap-2 sm:gap-2.5">
+              <span className="inline-flex items-center gap-1.5 text-[11px] font-bold text-slate-700 bg-white px-2.5 py-1 rounded-lg border border-blue-200 shadow-2xs">
+                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                <span>Secunderabad Supply Base</span>
+              </span>
+
+              <Link
+                to="/"
+                className="inline-flex items-center gap-1.5 px-3 py-1 rounded-xl bg-white hover:bg-slate-50 active:bg-slate-100 text-slate-800 text-xs font-bold border border-slate-300 hover:border-slate-400 transition shadow-2xs shrink-0"
+                title="Return to Home Page"
+              >
+                <ArrowLeft size={13} className="text-blue-600" />
+                <span>Back to Home</span>
+              </Link>
+            </div>
           </div>
           
-          <div className="max-w-3xl space-y-2 mt-2">
-            <span className="inline-block text-[11px] font-bold uppercase tracking-wider text-blue-600 bg-blue-100/70 px-2.5 py-1 rounded-md border border-blue-200">
-              Company Profile
-            </span>
+          {/* Header Title & Summary */}
+          <div className="max-w-3xl space-y-2 mt-3.5">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-blue-200 shadow-2xs text-[11px] font-bold text-slate-800">
+              <span className="text-blue-600 uppercase tracking-wider">Enterprise Profile</span>
+              <span className="text-slate-300">&bull;</span>
+              <span className="text-emerald-700 font-bold">IS / IEC Verified Stockist</span>
+            </div>
+
             <h1 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-slate-900 font-heading">
               About Pavan Sai Power Lines
             </h1>
-            <p className="text-xs sm:text-base text-slate-600 leading-relaxed">
-              Electrical power transmission and distribution materials supplier established in Secunderabad, Telangana.
+
+            <p className="text-xs sm:text-sm lg:text-[15px] text-slate-600 leading-relaxed font-normal">
+              Wholesale supplier and stockist of high-tension overhead power line hardware, insulators, AB switches, ACSR conductors, transformer spares, earthing materials, and transmission towers headquartered in Secunderabad, Telangana.
             </p>
           </div>
+
         </div>
       </section>
 
-      {/* 2. Business Overview */}
+      {/* 2. Business Overview - Balanced Spacing, Trust Metrics & Authentic Visiting Card */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-7 lg:gap-10 items-start">
           
-          <div className="lg:col-span-7 space-y-3.5 sm:space-y-4">
-            <span className="text-xs font-bold uppercase tracking-wider text-blue-600">
-              Overview
-            </span>
-            <h2 className="text-xl sm:text-3xl font-extrabold text-slate-900 font-heading">
-              A Dedicated Supply Partner for Electrical Contractors & Utilities
-            </h2>
+          {/* Left Column: Narrative & Trust Metrics */}
+          <div className="lg:col-span-7 space-y-4">
+            
+            <div className="space-y-1.5">
+              <span className="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-blue-700 bg-blue-50 px-3 py-0.5 rounded-full border border-blue-200">
+                <Building2 size={12} className="text-blue-600" />
+                <span>Commercial Profile</span>
+              </span>
 
-            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
-              <strong>Pavan Sai Power Lines (PSPL)</strong> operates from Secunderabad, Telangana. The business focuses on the sourcing, stocking, and supply of certified electrical materials used in power transmission corridors, distribution networks, and industrial substations.
-            </p>
-
-            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
-              We stock and supply verified overhead line materials, insulators, conductors, gang-operated AB switches, earthing electrodes, and galvanized steel towers conforming to Indian Standard (IS) specifications.
-            </p>
-
-            <div className="p-3.5 sm:p-4 bg-slate-50 rounded-xl border border-slate-200 text-xs sm:text-sm text-slate-700 flex items-start gap-2.5">
-              <MapPin size={18} className="text-blue-600 shrink-0 mt-0.5" />
-              <div>
-                <strong className="text-slate-900 block">Registered Office & Supply Hub</strong>
-                {COMPANY_INFO.location.fullAddress}
-              </div>
+              <h2 className="text-xl sm:text-2.5xl lg:text-[28px] font-extrabold text-slate-900 font-heading leading-tight">
+                A Dedicated Supply Partner for Electrical Contractors & Utilities
+              </h2>
             </div>
+
+            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
+              <strong>Pavan Sai Power Lines (PSPL)</strong> operates from Bansilalpet Road, Secunderabad, Telangana. The business focuses on the direct sourcing, wholesale stocking, and rapid supply of certified electrical hardware used across power transmission corridors, distribution networks, and industrial substations.
+            </p>
+
+            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
+              We stock standard-tested overhead line fittings, polymer & porcelain insulators, gang-operated AB switches, earthing electrodes, and galvanized steel lattice towers conforming strictly to Indian Standard (IS), IEC, and state DISCOM specifications.
+            </p>
+
+            {/* 3 Premium Trust Metric Cards */}
+            <div className="grid grid-cols-3 gap-2.5 sm:gap-3 pt-1">
+              
+              <div className="p-2.5 sm:p-3 rounded-xl bg-gradient-to-b from-blue-50/80 to-white border border-blue-200 shadow-2xs">
+                <span className="text-[10px] font-extrabold uppercase tracking-wider text-blue-700 block truncate">
+                  Voltage Scope
+                </span>
+                <strong className="text-xs sm:text-sm lg:text-base font-black text-slate-900 block font-heading mt-0.5">
+                  11kV &ndash; 400kV
+                </strong>
+                <span className="text-[10px] text-blue-900/80 font-medium block truncate">
+                  HT / LT Grid Class
+                </span>
+              </div>
+
+              <div className="p-2.5 sm:p-3 rounded-xl bg-gradient-to-b from-indigo-50/80 to-white border border-indigo-200 shadow-2xs">
+                <span className="text-[10px] font-extrabold uppercase tracking-wider text-indigo-700 block truncate">
+                  Product Range
+                </span>
+                <strong className="text-xs sm:text-sm lg:text-base font-black text-slate-900 block font-heading mt-0.5">
+                  7 Divisions
+                </strong>
+                <span className="text-[10px] text-indigo-900/80 font-medium block truncate">
+                  Complete BOQ Scope
+                </span>
+              </div>
+
+              <div className="p-2.5 sm:p-3 rounded-xl bg-gradient-to-b from-emerald-50/80 to-white border border-emerald-200 shadow-2xs">
+                <span className="text-[10px] font-extrabold uppercase tracking-wider text-emerald-700 block truncate">
+                  Standards
+                </span>
+                <strong className="text-xs sm:text-sm lg:text-base font-black text-slate-900 block font-heading mt-0.5">
+                  IS &bull; IEC &bull; REC
+                </strong>
+                <span className="text-[10px] text-emerald-900/80 font-medium block truncate">
+                  Tested Materials
+                </span>
+              </div>
+
+            </div>
+
+            {/* Registered Supply Base Card */}
+            <div className="p-3.5 sm:p-4 bg-gradient-to-r from-blue-50/70 via-white to-white rounded-2xl border border-blue-200/90 text-xs sm:text-sm text-slate-700 flex items-start justify-between gap-3 shadow-2xs">
+              <div className="flex items-start gap-2.5 min-w-0">
+                <div className="w-8 h-8 rounded-lg bg-blue-100/80 text-blue-700 flex items-center justify-center shrink-0 mt-0.5 border border-blue-200">
+                  <MapPin size={16} />
+                </div>
+                <div className="min-w-0">
+                  <strong className="text-slate-900 block font-bold text-xs sm:text-sm">Registered Office & Supply Hub</strong>
+                  <p className="text-slate-600 text-xs leading-relaxed mt-0.5">{COMPANY_INFO.location.fullAddress}</p>
+                </div>
+              </div>
+
+              <a
+                href={COMPANY_INFO.location.googleMapsDirectionsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-[11px] font-bold text-blue-700 hover:text-blue-900 bg-white px-2.5 py-1.5 rounded-lg border border-blue-200 shadow-2xs hover:bg-blue-50 transition shrink-0"
+              >
+                <span>Maps</span>
+                <ArrowRight size={12} />
+              </a>
+            </div>
+
           </div>
 
-          <div className="lg:col-span-5 space-y-4">
-            {/* Official Visiting Card & Verification */}
-            <div className="rounded-2xl overflow-hidden border border-slate-200 shadow-lg bg-white p-4 space-y-3">
-              <div className="flex items-center justify-between text-xs pb-2 border-b border-slate-100">
+          {/* Right Column: Official Visiting Card & Verified Credentials */}
+          <div className="lg:col-span-5">
+            <div className="rounded-2xl overflow-hidden border-2 border-blue-200/90 shadow-xl bg-white p-3.5 sm:p-4 space-y-3">
+              
+              {/* Premium Top Bar */}
+              <div className="flex items-center justify-between text-xs pb-2.5 border-b border-blue-100">
                 <span className="font-extrabold text-slate-900 flex items-center gap-1.5">
-                  <ShieldCheck size={16} className="text-blue-600" />
+                  <ShieldCheck size={16} className="text-blue-600 shrink-0" />
                   <span>Official Business Credentials</span>
                 </span>
-                <span className="text-[10px] font-bold text-emerald-800 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200">
+                <span className="text-[10px] font-extrabold text-emerald-800 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200">
                   Verified Stockist
                 </span>
               </div>
+
+              {/* Click-to-Zoom Visiting Card */}
               <div 
                 onClick={() => setIsCardZoomOpen(true)}
-                className="rounded-xl overflow-hidden border border-slate-200 bg-slate-950 shadow-xs group relative cursor-pointer"
-                title="Click to zoom and view visiting card in high resolution"
+                className="rounded-xl overflow-hidden border border-slate-200 bg-slate-950 shadow-inner group relative cursor-pointer"
+                title="Click to zoom and view official visiting card in high resolution"
               >
                 <img
                   src="/images/pspl-visiting-card.jpg"
                   alt="Pavan Sai Power Lines Official Visiting Card - V. Nagamalleswara Rao"
-                  className="w-full h-auto object-contain group-hover:scale-102 transition-transform duration-300"
+                  className="w-full h-auto object-contain group-hover:scale-103 transition-transform duration-300"
                 />
                 <div className="absolute bottom-2.5 right-2.5 opacity-90 group-hover:opacity-100 transition-opacity">
-                  <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-[10px] sm:text-xs font-semibold bg-slate-900/85 text-white backdrop-blur-xs shadow-md border border-white/20">
+                  <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-[10px] sm:text-xs font-semibold bg-slate-900/90 text-white backdrop-blur-xs shadow-md border border-white/20">
                     <Maximize2 size={12} />
                     <span>Click to Zoom</span>
                   </span>
                 </div>
               </div>
-              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-1 text-xs text-slate-600 pt-1">
-                <span>Proprietor: <strong className="text-slate-900 font-bold">{COMPANY_INFO.contact.representativeName}</strong></span>
-                <a href={`tel:${COMPANY_INFO.contact.primaryPhoneRaw}`} className="text-blue-600 font-black hover:underline">
-                  {COMPANY_INFO.contact.primaryPhone}
+
+              {/* Contact Footer */}
+              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-1 text-xs text-slate-600 pt-1 border-t border-slate-100">
+                <span className="text-[11px] sm:text-xs">
+                  Proprietor: <strong className="text-slate-900 font-bold">{COMPANY_INFO.contact.representativeName}</strong>
+                </span>
+                <a 
+                  href={`tel:${COMPANY_INFO.contact.primaryPhoneRaw}`} 
+                  className="inline-flex items-center gap-1 text-blue-600 font-black hover:text-blue-800 hover:underline"
+                >
+                  <PhoneCall size={12} />
+                  <span>{COMPANY_INFO.contact.primaryPhone}</span>
                 </a>
               </div>
+
             </div>
           </div>
 
@@ -221,10 +316,24 @@ export default function About() {
                 <div className="w-9 h-9 rounded-xl bg-rose-50 text-rose-600 group-hover:bg-rose-600 group-hover:text-white border border-rose-200 flex items-center justify-center shadow-xs group-hover:scale-108 transition-all">
                   <Sliders size={18} />
                 </div>
-                <h3 className="font-extrabold text-sm text-slate-900">Industrial Electricals & Towers</h3>
+                <h3 className="font-extrabold text-sm text-slate-900">Industrial Electricals</h3>
               </div>
               <p className="text-xs text-slate-600 leading-relaxed">
-                LT distribution feeder boxes, cable glands, lugs, HRC fuses, and hot-dip galvanized transmission lattice towers.
+                LT distribution feeder boxes, heavy-duty brass cable glands, copper crimping lugs, HRC fuses, and busbar supports.
+              </p>
+            </div>
+
+            {/* Division 7 */}
+            <div className="group relative bg-white hover:bg-slate-50/50 p-5 rounded-2xl border border-slate-200/90 hover:border-blue-500/80 shadow-xs hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+              <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-blue-600 to-indigo-600"></div>
+              <div className="flex items-center gap-2.5 mb-2.5 pt-0.5">
+                <div className="w-9 h-9 rounded-xl bg-slate-100 text-slate-700 group-hover:bg-slate-800 group-hover:text-white border border-slate-300 flex items-center justify-center shadow-xs group-hover:scale-108 transition-all">
+                  <Maximize size={18} />
+                </div>
+                <h3 className="font-extrabold text-sm text-slate-900">All MS & GI Towers</h3>
+              </div>
+              <p className="text-xs text-slate-600 leading-relaxed">
+                Lattice transmission towers, substation gantry structures, foundation stubs, hot-dip galvanized cleat plates, and step bolts.
               </p>
             </div>
           </div>
