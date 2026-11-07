@@ -526,34 +526,110 @@ export const PRODUCTS = [
   },
   {
     id: "ab-switch-isolator",
-    name: "33kV Gang-Operated AB Switch Disconnector (630A / 800A)",
+    name: "33kV 800A Gang-Operated Air Break (AB) Switch / Isolator",
     category: "AB Switches (Air Break)",
     categoryId: "ab-switches",
-    shortDescription: "Heavy transmission grade 33kV outdoor disconnector isolator with robust gang-operating linkage.",
-    fullDescription: "Engineered for 33kV sub-transmission networks and 33/11kV substations. Designed with reinforced structural galvanized channel base, dual/triple post insulator stacks, self-aligning high-pressure finger contacts, and heavy downpipe operating mechanism with padlock arrangement.",
-    image: "/images/products/ab-switch-isolator.jpg",
+    shortDescription: "Heavy transmission grade 33kV 800A outdoor triple-pole gang-operated disconnector switch with post insulators.",
+    fullDescription: "Outdoor triple-pole gang-operated air break disconnect switch designed for 33kV overhead lines and substation bays. Rated for 800A continuous current carrying capacity, mounted on a rigid hot-dip galvanized base channel. Equipped with high-conductivity electrolytic copper contacts with silver plating, phosphor bronze backup springs, and robust manual gang-operating linkage with padlockable off-position.",
+    image: "/images/products/ab-switch-33kv-800a.jpg",
     gallery: [
+      "/images/products/ab-switch-33kv-800a.jpg",
       "/images/products/ab-switch-isolator.jpg",
       "/images/products/ab-switch-gang-operated.png"
     ],
     features: [
-      "Self-cleaning, high-pressure line contacts to prevent oxidation",
-      "Sturdy hot-dip galvanized steel chassis resists mechanical torsion during operation",
-      "Available with or without integral earthing switch (Earth blade)",
-      "Heavy-duty adjustable turnbuckles and operating linkage"
+      "Heavy-duty 800A rated electrolytic copper jaw and blade contacts with silver plating",
+      "High mechanical strength 33kV post insulators (porcelain / polymer options)",
+      "Torsion-free hot-dip galvanized steel channel base resistant to heavy switching stress",
+      "Adjustable copper arcing horns ensure quick quenching of breaking arcs",
+      "Complete with vertical operating pipe, guide bearings, handle, and padlocking facility"
     ],
     specifications: {
       "Rated Voltage": "33 kV (Max 36 kV)",
-      "Rated Normal Current": "630 A / 800 A",
+      "Rated Normal Current": "800 Amperes (Continuous)",
+      "Configuration": "Triple Pole, Gang-Operated (TPGO)",
+      "Short Time Current": "25 kA for 3 Seconds",
       "Impulse Withstand Voltage": "170 kV Peak",
       "One-Minute Power Frequency": "70 kV rms",
-      "Short Circuit Rating": "25 kA for 3 seconds",
-      "Insulators": "33kV Solid Core / Pin Post Insulators (IS 2544)"
+      "Standard Compliance": "IS 9921 (Parts 1-5) / IEC 62271-102"
     },
     applications: [
-      "33/11kV primary substation line bay isolators",
-      "33kV industrial captive power tapping points",
-      "Rural 33kV express feeder sectionalizers"
+      "33kV line sectionalizing and feeder bay isolation",
+      "33/11kV primary distribution substation incoming/outgoing bays",
+      "Industrial private high-voltage substation incoming lines",
+      "Renewable energy (solar/wind) 33kV grid interconnects"
+    ]
+  },
+  {
+    id: "ab-switch-11kv-800a",
+    name: "11kV 800A Heavy-Duty Gang-Operated Air Break (AB) Switch",
+    category: "AB Switches (Air Break)",
+    categoryId: "ab-switches",
+    shortDescription: "Heavy-duty 11kV 800A outdoor triple-pole air break switch for major distribution feeders and high-load industrial connections.",
+    fullDescription: "High-capacity 11kV 800 Amps outdoor triple-pole gang-operated air break switch designed for heavy current distribution feeders and industrial substations. Constructed with high-pressure silver-plated electrolytic copper contacts, reinforced galvanized channel chassis, and robust operating linkage engineered for reliable isolation under full load conditions.",
+    image: "/images/products/ab-switch-11kv-800a.jpg",
+    gallery: [
+      "/images/products/ab-switch-11kv-800a.jpg",
+      "/images/products/ab-switch-gang-operated.png",
+      "/images/products/ab-switch.jpg"
+    ],
+    features: [
+      "800A continuous current capacity with low temperature rise per IS 9921",
+      "High-pressure wiping action contacts remove surface oxide film during each operation",
+      "Arcing horns made of electrolytic copper wire safely break magnetizing and charging currents",
+      "Heavy ISMC 100x50 mm galvanized channel base prevents pole misalignment",
+      "Supplied complete with downpipe, operating handle, and padlock latch"
+    ],
+    specifications: {
+      "Rated Voltage": "11 kV (Max 12 kV)",
+      "Rated Current": "800 Amperes",
+      "Rated Frequency": "50 Hz",
+      "Short Time Current Rating": "25 kA for 1 sec / 3 sec",
+      "Impulse Withstand Voltage": "75 kV Peak",
+      "Insulation Medium": "Air Break (Atmospheric Air)",
+      "Standard Compliance": "IS 9921 / IS 1818 / DISCOM Specifications"
+    },
+    applications: [
+      "11kV high-density feeder main line sectionalizing",
+      "Industrial HT consumer metering yard and incoming isolation",
+      "Distribution substation 11kV busbar and breaker bypass isolation",
+      "Overhead line junction and ring main tap-off points"
+    ]
+  },
+  {
+    id: "ab-switch-11kv-400a-double-break",
+    name: "11kV 400A Double Break Gang-Operated Air Break (AB) Switch",
+    category: "AB Switches (Air Break)",
+    categoryId: "ab-switches",
+    shortDescription: "11kV 400A double break center-rotating post isolator with dual air gap interruption for enhanced safety.",
+    fullDescription: "Premium 11kV 400 Amps Double Break outdoor gang-operated air break switch featuring three insulator posts per phase (two fixed terminal posts and one rotating center post). The rotating center post swings the central cross-arm blade to create two simultaneous air gaps per phase, doubling the dielectric clearance, halving recovery arc stress, and ensuring maximum safety for maintenance crews.",
+    image: "/images/products/ab-switch-11kv-400a-double-break.jpg",
+    gallery: [
+      "/images/products/ab-switch-11kv-400a-double-break.jpg",
+      "/images/products/ab-switch-gang-operated.png",
+      "/images/products/ab-switch.jpg"
+    ],
+    features: [
+      "Double Break design creates two distinct series air gaps per phase for superior isolation",
+      "Center-rotating post mechanism requires significantly lower operating torque",
+      "Self-aligning high-pressure copper jaw contacts ensure uniform contact pressure",
+      "Dual divergence arcing horns prevent contact burning and pitting",
+      "Heavy hot-dip galvanized steel chassis with ball bearing / bronze bush pivot points"
+    ],
+    specifications: {
+      "Rated Voltage": "11 kV (Max 12 kV)",
+      "Rated Normal Current": "400 Amperes",
+      "Operating Type": "Double Break, Horizontal Center-Rotating Post",
+      "Insulators per Phase": "3 Posts (2 Fixed Outer, 1 Rotating Center)",
+      "Short Time Withstand": "16 kA for 3 Seconds",
+      "Impulse Withstand Voltage": "75 kV Peak (Across Gap: 85 kV)",
+      "Standard Compliance": "IS 9921 / REC Specification 11/1987"
+    },
+    applications: [
+      "11kV critical feeder sectionalizing where double isolation is mandatory",
+      "Substation transformer incoming and line isolation bays",
+      "Industrial infrastructure and railway traction tap-off lines",
+      "Urban distribution grids requiring low-maintenance isolators"
     ]
   },
   {
@@ -683,33 +759,38 @@ export const PRODUCTS = [
   },
   {
     id: "aerial-bundled-cable-abc",
-    name: "LT Aerial Bundled Cables (ABC) with Messenger Neutral",
+    name: "LT Aerial Bunched Cables (16 sqmm - 95 sqmm XLPE Insulated)",
     category: "AAAC & ACSR Conductors",
     categoryId: "conductors",
-    shortDescription: "Weatherproof XLPE insulated self-supporting LT ABC conductors with neutral messenger for safe distribution.",
-    fullDescription: "Supplied for modern theft-proof urban and rural low tension power distribution. Features high-conductivity compact stranded aluminium phase conductors insulated with carbon-black crosslinked polyethylene (XLPE), twisted around an insulated or bare high-tensile aluminium alloy messenger conductor.",
-    image: "/images/products/aerial-bundled-cable-abc.jpg",
+    shortDescription: "1.1kV cross-linked polyethylene (XLPE) insulated self-supporting LT Aerial Bunched Cables from 16 sqmm to 95 sqmm.",
+    fullDescription: "Supplied for modern, safe, and anti-theft low tension overhead power distribution networks. Manufactured with compact circular stranded EC grade aluminium phase conductors insulated with carbon-loaded crosslinked polyethylene (XLPE), twisted around a high-tensile bare or insulated aluminium alloy messenger neutral conductor. Available in all standard sizes from 16 sqmm up to 95 sqmm.",
+    image: "/images/products/lt-aerial-bunched-cable-16-95sqmm.jpg",
     gallery: [
+      "/images/products/lt-aerial-bunched-cable-16-95sqmm.jpg",
       "/images/products/aerial-bundled-cable-abc.jpg",
-      "/images/products/abc-hardware-tension-clamps.jpg",
-      "/images/products/acsr-conductor-drums.jpg"
+      "/images/products/abc-hardware-tension-clamps.jpg"
     ],
     features: [
-      "Completely prevents power theft by unauthorized direct line hooking",
-      "Can be routed safely through dense tree canopies and narrow urban alleyways",
-      "Eliminates short-circuits caused by falling branches or strong gale winds",
-      "Supplied complete with suspension clamps, eye bolts, and piercing connectors"
+      "Available in complete size spectrum: 16 sqmm, 25 sqmm, 35 sqmm, 50 sqmm, 70 sqmm, and 95 sqmm",
+      "Weather-resistant carbon-black XLPE insulation protects against intense UV radiation and atmospheric moisture",
+      "Completely prevents power theft and unauthorized direct hooking on LT distribution corridors",
+      "Eliminates phase-to-phase and phase-to-earth faults caused by high winds or falling tree branches",
+      "Lightweight self-supporting assembly enables longer spans and reduces pole loading"
     ],
     specifications: {
-      "Configurations": "1-Core, 3-Phase + Neutral Messenger + Street Light Core",
-      "Sizes": "3x25+16 mm², 3x35+25 mm², 3x50+35 mm², 3x70+50 mm², 3x95+70 mm²",
-      "Voltage Rating": "1.1 kV Grade",
-      "Standard Compliance": "IS 14255 / REC Specifications"
+      "Voltage Grade": "1.1 kV (1100 Volts) Working Voltage",
+      "Size Range": "16 sqmm, 25 sqmm, 35 sqmm, 50 sqmm, 70 sqmm, 95 sqmm",
+      "Core Configurations": "1-Core, 3-Phase + 1 Messenger, 3-Phase + Messenger + Street Light (16 sqmm)",
+      "Conductor Material": "EC Grade H2/H4 Stranded Aluminium (IS 8130)",
+      "Insulation Material": "Cross-Linked Polyethylene (XLPE) per IS 14255",
+      "Messenger Conductor": "Heat-Treated Aluminium-Magnesium-Silicon Alloy (IS 398 Part 4)",
+      "Standard Compliance": "IS 14255 / REC Specifications / Utility Approved"
     },
     applications: [
-      "Urban low tension distribution in congested residential corridors",
-      "Forest and plantation overhead power distribution",
-      "Rural electrification anti-theft line conversions"
+      "Urban low tension distribution in crowded commercial and residential streets",
+      "Rural electrification anti-theft conversion projects under RDSS schemes",
+      "Forest, orchard, and heavily wooded areas prone to line touching",
+      "Industrial estate internal power distribution networks"
     ]
   },
   {
@@ -1063,7 +1144,7 @@ export const PRODUCTS = [
   {
     id: "galvanized-fasteners-structural",
     name: "Galvanized Structural Tower Fasteners, Step Bolts & Washers",
-    category: "AIMS & GI Towers",
+    category: "All MS & GI Towers",
     categoryId: "towers",
     shortDescription: "Tower step bolts, foundation anchor bolts, anti-theft shear nuts, and spring washers in bulk stock.",
     fullDescription: "Comprehensive inventory of specialized tower accessories. Includes lineman climbing step bolts with non-slip heads, foundation hold-down bolts, Belleville washers, and security shear nuts designed to prevent tower angle metal theft in remote corridors.",
@@ -1088,6 +1169,41 @@ export const PRODUCTS = [
       "Lineman climbing access on transmission tower legs",
       "Anti-theft protection for lower tower lattice panels",
       "Substation structure vibration-proof fastening"
+    ]
+  },
+  {
+    id: "substation-structures-11kv-33kv",
+    name: "11kV / 33kV Substation Gantry Structures & Mounting Hardware",
+    category: "All MS & GI Towers",
+    categoryId: "towers",
+    shortDescription: "Prefabricated hot-dip galvanized steel gantry structures, busbar supports, and equipment mounting frames for 11kV & 33kV substations.",
+    fullDescription: "Pavan Sai Power Lines supplies complete fabricated and hot-dip galvanized structural steel materials for 11kV and 33kV outdoor distribution substations. Sourced to REC and state DISCOM specifications, including transformer mounting beams, isolator/AB switch gantries, busbar support columns, lightning arrester stubs, and CT/PT support structures.",
+    image: "/images/products/substation-structures-11kv-33kv.jpg",
+    gallery: [
+      "/images/products/substation-structures-11kv-33kv.jpg",
+      "/images/products/transmission-tower.jpg",
+      "/images/products/ab-switch-gang-operated.png"
+    ],
+    features: [
+      "Manufactured from high-strength structural steel conforming to IS 2062 Grade E250",
+      "Heavy uniform hot-dip galvanizing per IS 4759 (minimum 610 g/m²) for superior corrosion resistance",
+      "Pre-punched CNC bolt holes ensuring flawless on-site fit without field drilling or welding",
+      "Designed to withstand maximum short-circuit electro-dynamic forces and extreme wind loads",
+      "Supplied complete with galvanized foundation bolts, step bolts, and connecting hardware"
+    ],
+    specifications: {
+      "Voltage Rating": "11 kV & 33 kV Substation Corridors",
+      "Material Grade": "Structural Steel IS 2062 Grade E250 (Fe 410W)",
+      "Galvanizing Standard": "IS 2629 / IS 4759 (Min 86 Microns / 610 g/m²)",
+      "Supported Equipment": "Transformers, AB Switches, Circuit Breakers, CT/PT, LAs",
+      "Wind Zone Compliance": "Zone II, III & IV per IS 802 / IS 875",
+      "Supply Scope": "Gantries, Columns, Beams, Equipment Supports & Hardware"
+    },
+    applications: [
+      "11kV & 33kV rural and urban distribution substations",
+      "Industrial dedicated 33kV incoming power intake switchyards",
+      "Solar power plant evacuation and pooling substations",
+      "Captive power plant gantry yard infrastructure"
     ]
   }
 ];

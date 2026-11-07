@@ -19,6 +19,7 @@ import {
   PhoneCall
 } from 'lucide-react';
 import { COMPANY_INFO } from '../data/company';
+import { PRODUCTS } from '../data/products';
 import EnquiryModal from './EnquiryModal';
 
 export default function Navbar() {
@@ -279,7 +280,7 @@ export default function Navbar() {
                           </div>
                           <div>
                             <span className="font-bold text-xs block leading-tight">Products & Materials</span>
-                            <span className="text-[10px] text-slate-500 font-medium">34 Certified Items</span>
+                            <span className="text-[10px] text-slate-500 font-medium">{PRODUCTS.length} Certified Items</span>
                           </div>
                         </div>
                       </NavLink>
