@@ -6,7 +6,8 @@ import {
   Phone, 
   Mail, 
   ChevronRight, 
-  ExternalLink 
+  ExternalLink,
+  Code
 } from 'lucide-react';
 import { COMPANY_INFO } from '../data/company';
 
@@ -146,14 +147,25 @@ export default function Footer() {
 
         </div>
 
-        {/* Bottom Bar */}
-        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-2 text-center sm:text-left">
-          <p>
-            &copy; {currentYear} <strong className="text-slate-400">Pavan Sai Power Lines (PSPL)</strong>. All rights reserved.
-          </p>
-          <p className="text-[11px] text-slate-500">
-            Electrical Power Transmission & Distribution Materials Supplier &bull; Secunderabad
-          </p>
+        {/* Bottom Bar with Developer Watermark */}
+        <div className="pt-6 flex flex-col md:flex-row items-center justify-between text-xs text-slate-400 gap-3 text-center md:text-left">
+          <div className="space-y-1">
+            <p>
+              &copy; {currentYear} <strong className="text-white font-bold">Pavan Sai Power Lines (PSPL)</strong>. All rights reserved.
+            </p>
+            <p className="text-[11px] text-slate-500">
+              6-6-269/159, Bansilalpet Road, Secunderabad - 500003, Telangana (T.G.), India
+            </p>
+          </div>
+
+          {/* Developer Watermark Badge */}
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900/90 border-2 border-blue-500/40 text-xs shadow-lg shadow-blue-950/50 backdrop-blur-sm group hover:border-sky-400 transition-all">
+            <Code size={14} className="text-sky-400 group-hover:scale-110 transition-transform" />
+            <span className="text-slate-400 font-medium">Developed by</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-blue-300 to-indigo-300 font-black tracking-wider uppercase">
+              PUSALA SIDDHARTHA
+            </span>
+          </div>
         </div>
 
       </div>
