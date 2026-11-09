@@ -96,7 +96,7 @@ export default function SEO({
         document.head.appendChild(scriptElement);
       }
       const dataToInject = Array.isArray(structuredData)
-        ? { '@context': 'https://schema.org', '@graph': structuredData }
+        ? { '@context': 'https://schema.org', '@graph': structuredData.filter(Boolean) }
         : structuredData;
       scriptElement.text = JSON.stringify(dataToInject);
     } else if (scriptElement) {

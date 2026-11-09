@@ -195,20 +195,41 @@ export function getProductSchema(product) {
 /**
  * Generate ItemList Schema for Product Catalog
  */
-export function getItemListSchema(products = []) {
+export function getItemListSchema(products = [], categoryName = 'Electrical Materials') {
   const baseUrl = COMPANY_INFO.website;
 
   return {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
-    name: 'Electrical Transmission & Distribution Materials Catalog',
-    description: 'High-Tension & Low-Tension electrical hardware inventory by Pavan Sai Power Lines, Secunderabad.',
+    name: `${categoryName} Catalog - Pavan Sai Power Lines`,
+    description: `Verified inventory of ${categoryName} supplied by Pavan Sai Power Lines, Secunderabad, Telangana.`,
     numberOfItems: products.length,
     itemListElement: products.map((prod, idx) => ({
       '@type': 'ListItem',
       position: idx + 1,
       name: prod.name,
       url: `${baseUrl}/products/${prod.id}`
+    }))
+  };
+}
+
+/**
+ * Generate FAQPage Schema for Category Procurement FAQs
+ * Validated against Google Search rich results guidelines.
+ */
+export function getFAQSchema(faqs = []) {
+  if (!faqs || !Array.isArray(faqs) || faqs.length === 0) return null;
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map(faq => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer
+      }
     }))
   };
 }

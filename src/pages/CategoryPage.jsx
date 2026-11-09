@@ -11,13 +11,17 @@ import {
   MessageSquare,
   FileText,
   ChevronRight,
+  ChevronDown,
   Layers,
   Send,
   Cpu,
   ToggleRight,
   Activity,
   Sliders,
-  Maximize
+  Maximize,
+  HelpCircle,
+  PackageCheck,
+  CheckCircle2
 } from 'lucide-react';
 import { COMPANY_INFO } from '../data/company';
 import { PRODUCTS } from '../data/products';
@@ -26,12 +30,19 @@ import ProductCard from '../components/ProductCard';
 import Breadcrumb from '../components/Breadcrumb';
 import EnquiryModal from '../components/EnquiryModal';
 import SEO from '../components/SEO';
-import { getBreadcrumbSchema, getItemListSchema, getLocalBusinessSchema } from '../utils/schemaGenerator';
+import { 
+  getBreadcrumbSchema, 
+  getItemListSchema, 
+  getLocalBusinessSchema,
+  getOrganizationSchema,
+  getFAQSchema
+} from '../utils/schemaGenerator';
 
 export default function CategoryPage() {
   const { categoryId } = useParams();
   const navigate = useNavigate();
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
+  const [openFaq, setOpenFaq] = useState(0);
 
   const category = getCategoryData(categoryId);
 
@@ -87,8 +98,10 @@ export default function CategoryPage() {
         canonical={`/category/${category.id}`}
         structuredData={[
           getLocalBusinessSchema(),
+          getOrganizationSchema(),
           getBreadcrumbSchema(breadcrumbs),
-          getItemListSchema(categoryProducts)
+          getItemListSchema(categoryProducts, category.name),
+          getFAQSchema(category.procurementFaqs)
         ]}
       />
 
@@ -231,18 +244,63 @@ export default function CategoryPage() {
 
       </section>
 
-      {/* 3. Technical Scope & Standards Compliance */}
+      {/* 3. Core Material Groups & Electrical Equipment Range */}
+      {category.materialGroups && category.materialGroups.length > 0 && (
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="space-y-4">
+            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2 pb-3 border-b border-slate-200">
+              <div>
+                <span className="text-[11px] font-bold uppercase tracking-wider text-blue-600 block">
+                  Material Breakdown
+                </span>
+                <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900 font-heading">
+                  Core Material Groups &amp; Equipment Range ({category.name})
+                </h2>
+              </div>
+              <span className="text-xs font-medium text-slate-500">
+                Supplied from Bansilalpet Road, Secunderabad
+              </span>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {category.materialGroups.map((group, idx) => (
+                <div 
+                  key={idx} 
+                  className="bg-white p-4 sm:p-5 rounded-2xl border border-slate-200 shadow-2xs hover:border-blue-400 hover:shadow-xs transition-all space-y-2 text-left"
+                >
+                  <div className="flex items-center gap-2">
+                    <PackageCheck size={18} className="text-blue-600 shrink-0" />
+                    <h3 className="font-bold text-sm sm:text-base text-slate-900 font-heading">
+                      {group.title}
+                    </h3>
+                  </div>
+                  <p className="text-xs text-slate-600 leading-relaxed">
+                    {group.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* 4. Technical Scope & Standards Compliance */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-gradient-to-r from-blue-50/60 via-white to-slate-50 p-6 sm:p-8 rounded-2xl border border-blue-200 shadow-2xs space-y-3 text-left">
+        <div className="bg-gradient-to-r from-blue-50/60 via-white to-slate-50 p-6 sm:p-8 rounded-2xl border border-blue-200 shadow-2xs space-y-3.5 text-left">
           <div className="flex items-center gap-2">
             <FileText size={18} className="text-blue-600" />
             <h2 className="text-lg sm:text-xl font-extrabold text-slate-900 font-heading">
-              Technical Scope &amp; Utility Standards Compliance
+              Technical Scope, Standards &amp; Regional Supply Corridor
             </h2>
           </div>
           <p className="text-xs sm:text-sm text-slate-700 leading-relaxed font-normal">
             {category.technicalScope}
           </p>
+          {category.localCoverage && (
+            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <strong className="text-slate-900 font-semibold">Local Coverage:</strong> {category.localCoverage}
+            </p>
+          )}
           <div className="pt-2 flex flex-wrap items-center gap-2 text-xs font-semibold text-slate-600">
             <span className="bg-white px-2.5 py-1 rounded-md border border-blue-200 shadow-2xs">Bansilalpet Warehouse</span>
             <span className="bg-white px-2.5 py-1 rounded-md border border-blue-200 shadow-2xs">Secunderabad / Hyderabad Logistics</span>
@@ -251,15 +309,65 @@ export default function CategoryPage() {
         </div>
       </section>
 
-      {/* 4. Related Business Divisions (Internal Linking Strategy) */}
+      {/* 5. Frequently Asked Procurement Questions (FAQ Accordion with Schema Markup) */}
+      {category.procurementFaqs && category.procurementFaqs.length > 0 && (
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-xs space-y-5 text-left">
+            <div className="flex items-center gap-2 pb-3 border-b border-slate-100">
+              <HelpCircle size={20} className="text-blue-600" />
+              <div>
+                <span className="text-[11px] font-bold uppercase tracking-wider text-blue-600 block">
+                  Procurement Guide
+                </span>
+                <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900 font-heading">
+                  Frequently Asked Questions ({category.name})
+                </h2>
+              </div>
+            </div>
+
+            <div className="space-y-3">
+              {category.procurementFaqs.map((faq, idx) => {
+                const isOpen = openFaq === idx;
+                return (
+                  <div 
+                    key={idx} 
+                    className="rounded-xl border border-slate-200 overflow-hidden transition-all duration-200"
+                  >
+                    <button
+                      onClick={() => setOpenFaq(isOpen ? -1 : idx)}
+                      className="w-full flex items-center justify-between gap-3 p-4 bg-slate-50/70 hover:bg-blue-50/50 text-left transition"
+                      aria-expanded={isOpen}
+                    >
+                      <h3 className="font-bold text-xs sm:text-sm text-slate-900 leading-snug">
+                        {faq.question}
+                      </h3>
+                      <ChevronDown 
+                        size={16} 
+                        className={`text-blue-600 shrink-0 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} 
+                      />
+                    </button>
+                    {isOpen && (
+                      <div className="p-4 bg-white border-t border-slate-100 text-xs sm:text-sm text-slate-600 leading-relaxed">
+                        <p>{faq.answer}</p>
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* 6. Related Business Divisions (Internal Linking Strategy) */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="space-y-4">
+        <div className="space-y-4 text-left">
           <div>
             <span className="text-[11px] font-bold uppercase tracking-wider text-blue-600 block">
               Complete Electrical Supply Scope
             </span>
             <h2 className="text-lg sm:text-xl font-extrabold text-slate-900 font-heading">
-              Related Business Divisions &amp; Materials
+              Explore Related Power Transmission &amp; Distribution Divisions
             </h2>
           </div>
 
@@ -287,18 +395,18 @@ export default function CategoryPage() {
         </div>
       </section>
 
-      {/* 5. Contact Desk & Material Quotation CTA */}
+      {/* 7. Contact Desk & Material Quotation CTA */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-[#0a192f] text-white p-6 sm:p-8 rounded-2xl border border-blue-500/40 shadow-xl space-y-5">
+        <div className="bg-[#0a192f] text-white p-6 sm:p-8 rounded-2xl border border-blue-500/40 shadow-xl space-y-5 text-left">
           <div className="max-w-3xl space-y-2">
             <span className="text-xs font-bold uppercase tracking-wider text-blue-400">
               Commercial Procurement Desk
             </span>
             <h2 className="text-xl sm:text-2xl font-black font-heading">
-              Looking for {category.name} in Hyderabad or Secunderabad?
+              Need a Commercial BOQ Quote for {category.name}?
             </h2>
             <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-              Reach out directly to our Bansilalpet Road sales desk for project BOQ pricing, dispatch logistics, and material availability across Telangana.
+              Reach out directly to our Bansilalpet Road sales desk for project BOQ pricing, dispatch logistics, and material availability across Secunderabad, Hyderabad, and Telangana.
             </p>
           </div>
 
@@ -314,7 +422,7 @@ export default function CategoryPage() {
               </a>
             </div>
             <div className="p-3 bg-slate-900/80 rounded-xl border border-slate-700">
-              <strong className="block text-slate-200 font-bold mb-0.5">Address</strong>
+              <strong className="block text-slate-200 font-bold mb-0.5">Warehouse Address</strong>
               <span className="text-slate-400 line-clamp-2">{COMPANY_INFO.location.shortAddress}</span>
             </div>
           </div>
@@ -348,4 +456,3 @@ export default function CategoryPage() {
     </div>
   );
 }
-
