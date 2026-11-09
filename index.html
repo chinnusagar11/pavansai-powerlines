@@ -2,10 +2,14 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#2563eb" />
+    <meta name="theme-color" content="#1e40af" />
 
     <!-- Primary SEO Meta Tags (Default / Fallback) -->
     <title>Pavan Sai Power Lines | Power Transmission &amp; Electrical Materials, Secunderabad</title>
@@ -43,18 +47,56 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- Structured Data (JSON-LD) for LocalBusiness & WholesaleStore -->
-    <script type="application/ld+json">
+    <!-- Structured Data (JSON-LD) for WebSite, Organization & LocalBusiness -->
+    <script type="application/ld+json" id="pspl-page-structured-data">
     {
       "@context": "https://schema.org",
       "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://pavansai-powerlines.vercel.app/#website",
+          "name": "Pavan Sai Power Lines",
+          "alternateName": "PSPL",
+          "url": "https://pavansai-powerlines.vercel.app/",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://pavansai-powerlines.vercel.app/products?search={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+          }
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://pavansai-powerlines.vercel.app/#organization",
+          "name": "Pavan Sai Power Lines",
+          "alternateName": "PSPL",
+          "url": "https://pavansai-powerlines.vercel.app/",
+          "logo": "https://pavansai-powerlines.vercel.app/favicon.svg",
+          "image": "https://pavansai-powerlines.vercel.app/images/hero-transmission-sunset.jpg",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+91 97004 49684",
+            "contactType": "sales",
+            "areaServed": ["IN", "Telangana", "Andhra Pradesh"]
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "6-6-269/159, Bansilalpet Road",
+            "addressLocality": "Secunderabad",
+            "addressRegion": "Telangana",
+            "postalCode": "500003",
+            "addressCountry": "IN"
+          }
+        },
         {
           "@type": ["LocalBusiness", "WholesaleStore"],
           "@id": "https://pavansai-powerlines.vercel.app/#localbusiness",
           "name": "Pavan Sai Power Lines",
           "alternateName": "PSPL",
-          "description": "Wholesale supplier and stockist of HT/LT overhead line materials, transformer spares, AB switches, AAAC & ACSR conductors, earthing equipment, and MS/GI towers in Secunderabad, Telangana.",
-          "url": "https://pavansai-powerlines.vercel.app",
+          "description": "Wholesale supplier and stockist of HT/LT overhead line materials, transformer spares, AB switches, AAAC & ACSR conductors, earthing materials, industrial electricals, and all MS & GI towers in Secunderabad, Telangana.",
+          "url": "https://pavansai-powerlines.vercel.app/",
           "telephone": "+91 97004 49684",
           "email": "pavansaipowerlines@gmail.com",
           "image": "https://pavansai-powerlines.vercel.app/images/hero-transmission-sunset.jpg",
@@ -80,21 +122,6 @@
             { "@type": "AdministrativeArea", "name": "Andhra Pradesh" },
             { "@type": "Country", "name": "India" }
           ]
-        },
-        {
-          "@type": "WebSite",
-          "@id": "https://pavansai-powerlines.vercel.app/#website",
-          "name": "Pavan Sai Power Lines",
-          "alternateName": "PSPL",
-          "url": "https://pavansai-powerlines.vercel.app",
-          "potentialAction": {
-            "@type": "SearchAction",
-            "target": {
-              "@type": "EntryPoint",
-              "urlTemplate": "https://pavansai-powerlines.vercel.app/products?search={search_term_string}"
-            },
-            "query-input": "required name=search_term_string"
-          }
         }
       ]
     }

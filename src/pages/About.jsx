@@ -106,41 +106,41 @@ export default function About() {
               </p>
 
               {/* 3 Premium Trust Metric Cards - Perfectly Sized with Zero Ellipsis Truncation */}
-              <div className="grid grid-cols-3 gap-2 sm:gap-3.5 pt-1">
+              <div className="grid grid-cols-3 gap-1.5 sm:gap-3 pt-1">
                 
-                <div className="p-2 sm:p-3 rounded-xl bg-white border border-blue-200 shadow-2xs flex flex-col justify-between text-center sm:text-left">
-                  <span className="text-[9px] sm:text-[11px] font-extrabold uppercase tracking-wider text-blue-700 block leading-tight">
-                    Voltage Class
+                <div className="p-2 sm:p-3 rounded-xl bg-white border border-blue-200 shadow-2xs flex flex-col justify-between text-center min-w-0">
+                  <span className="text-[10px] sm:text-xs font-extrabold uppercase tracking-wider text-blue-700 block leading-tight">
+                    Voltage
                   </span>
-                  <strong className="text-xs sm:text-base lg:text-[16px] font-black text-slate-900 block font-heading my-0.5 whitespace-nowrap">
-                    11kV &ndash; 400kV
+                  <strong className="text-xs sm:text-base font-black text-slate-900 block font-heading my-0.5 whitespace-nowrap">
+                    11kV–400kV
                   </strong>
-                  <span className="text-[9px] sm:text-[11px] text-slate-500 font-medium block leading-tight">
+                  <span className="text-[10px] sm:text-xs text-slate-500 font-medium block leading-tight">
                     HT / LT Grid
                   </span>
                 </div>
 
-                <div className="p-2 sm:p-3 rounded-xl bg-white border border-indigo-200 shadow-2xs flex flex-col justify-between text-center sm:text-left">
-                  <span className="text-[9px] sm:text-[11px] font-extrabold uppercase tracking-wider text-indigo-700 block leading-tight">
-                    Product Range
+                <div className="p-2 sm:p-3 rounded-xl bg-white border border-indigo-200 shadow-2xs flex flex-col justify-between text-center min-w-0">
+                  <span className="text-[10px] sm:text-xs font-extrabold uppercase tracking-wider text-indigo-700 block leading-tight">
+                    Portfolio
                   </span>
-                  <strong className="text-xs sm:text-base lg:text-[16px] font-black text-slate-900 block font-heading my-0.5 whitespace-nowrap">
+                  <strong className="text-xs sm:text-base font-black text-slate-900 block font-heading my-0.5 whitespace-nowrap">
                     7 Divisions
                   </strong>
-                  <span className="text-[9px] sm:text-[11px] text-slate-500 font-medium block leading-tight">
+                  <span className="text-[10px] sm:text-xs text-slate-500 font-medium block leading-tight">
                     BOQ Stock
                   </span>
                 </div>
 
-                <div className="p-2 sm:p-3 rounded-xl bg-white border border-emerald-200 shadow-2xs flex flex-col justify-between text-center sm:text-left">
-                  <span className="text-[9px] sm:text-[11px] font-extrabold uppercase tracking-wider text-emerald-700 block leading-tight">
+                <div className="p-2 sm:p-3 rounded-xl bg-white border border-emerald-200 shadow-2xs flex flex-col justify-between text-center min-w-0">
+                  <span className="text-[10px] sm:text-xs font-extrabold uppercase tracking-wider text-emerald-700 block leading-tight">
                     Standards
                   </span>
-                  <strong className="text-xs sm:text-base lg:text-[16px] font-black text-slate-900 block font-heading my-0.5 whitespace-nowrap">
-                    IS &bull; IEC &bull; REC
+                  <strong className="text-xs sm:text-base font-black text-slate-900 block font-heading my-0.5 whitespace-nowrap">
+                    IS &bull; IEC
                   </strong>
-                  <span className="text-[9px] sm:text-[11px] text-slate-500 font-medium block leading-tight">
-                    Tested
+                  <span className="text-[10px] sm:text-xs text-slate-500 font-medium block leading-tight">
+                    DISCOM Spec
                   </span>
                 </div>
 

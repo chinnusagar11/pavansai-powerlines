@@ -23,7 +23,7 @@ import { PRODUCTS } from '../data/products';
 import ProductCard from '../components/ProductCard';
 import EnquiryModal from '../components/EnquiryModal';
 import SEO from '../components/SEO';
-import { getLocalBusinessSchema, getWebSiteSchema } from '../utils/schemaGenerator';
+import { getLocalBusinessSchema, getWebSiteSchema, getOrganizationSchema } from '../utils/schemaGenerator';
 
 export default function Home() {
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
@@ -91,7 +91,7 @@ export default function Home() {
         keywords="Pavan Sai Power Lines, PSPL Secunderabad, Electrical materials suppliers in Hyderabad, Electrical equipment suppliers in Hyderabad, Power transmission materials suppliers in Hyderabad, Power line materials suppliers in Hyderabad, Electrical suppliers in Secunderabad, Industrial materials suppliers in Hyderabad, Overhead line materials suppliers in Telangana, Electrical materials in Bansilalpet, Power line materials near Bansilalpet Road"
         canonical="/"
         ogImage="/images/hero-transmission-sunset.jpg"
-        structuredData={[getLocalBusinessSchema(), getWebSiteSchema()]}
+        structuredData={[getWebSiteSchema(), getOrganizationSchema(), getLocalBusinessSchema()]}
       />
       
       {/* 1. ENTERPRISE HERO SECTION - VIEWPORT & WINDOW OPTIMIZED */}
@@ -430,7 +430,7 @@ export default function Home() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {featuredProducts.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}

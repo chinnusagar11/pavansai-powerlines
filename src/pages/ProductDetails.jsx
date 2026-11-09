@@ -366,7 +366,7 @@ export default function ProductDetails() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-5">
+          <div className="w-full grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-5">
             {relatedProducts.map(rel => (
               <ProductCard key={rel.id} product={rel} />
             ))}

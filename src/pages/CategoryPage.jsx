@@ -156,11 +156,11 @@ export default function CategoryPage() {
               ))}
             </div>
 
-            {/* Direct Action Buttons */}
-            <div className="pt-2 flex flex-wrap items-center gap-3">
+            {/* Direct Action Buttons - Clean Mobile Stack & Desktop Row */}
+            <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3 w-full sm:w-auto">
               <button
                 onClick={() => setIsQuoteModalOpen(true)}
-                className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 active:scale-97 text-white text-xs sm:text-sm font-bold px-4 py-2.5 rounded-xl shadow-xs transition"
+                className="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 active:scale-97 text-white text-xs sm:text-sm font-bold px-4 py-2.5 rounded-xl shadow-xs transition"
               >
                 <Send size={14} />
                 <span>Request Material Quote</span>
@@ -168,7 +168,7 @@ export default function CategoryPage() {
 
               <a
                 href={`tel:${COMPANY_INFO.contact.primaryPhoneRaw}`}
-                className="inline-flex items-center gap-2 bg-white hover:bg-blue-50 text-slate-800 hover:text-blue-700 text-xs sm:text-sm font-bold px-4 py-2.5 rounded-xl border border-slate-200 shadow-2xs transition"
+                className="inline-flex items-center justify-center gap-2 bg-white hover:bg-blue-50 text-slate-800 hover:text-blue-700 text-xs sm:text-sm font-bold px-4 py-2.5 rounded-xl border border-slate-200 shadow-2xs transition"
               >
                 <Phone size={14} className="text-blue-600" />
                 <span>Call: {COMPANY_INFO.contact.primaryPhone}</span>
@@ -178,7 +178,7 @@ export default function CategoryPage() {
                 href={`https://wa.me/${COMPANY_INFO.contact.whatsappNumber}?text=${encodeURIComponent(`Hello PSPL, I am inquiring about ${category.name} from your website.`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white text-xs sm:text-sm font-bold px-4 py-2.5 rounded-xl shadow-xs transition"
+                className="inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white text-xs sm:text-sm font-bold px-4 py-2.5 rounded-xl shadow-xs transition"
               >
                 <MessageSquare size={14} />
                 <span>WhatsApp Desk</span>
@@ -208,7 +208,7 @@ export default function CategoryPage() {
         </div>
 
         {categoryProducts.length > 0 ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 sm:gap-6">
+          <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 sm:gap-6">
             {categoryProducts.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}

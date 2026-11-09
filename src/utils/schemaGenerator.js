@@ -9,20 +9,20 @@ import { COMPANY_INFO } from '../data/company.js';
  * - ZERO invented ratings, reviews, opening hours, price ranges, or fake coordinates.
  */
 export function getLocalBusinessSchema() {
-  const baseUrl = COMPANY_INFO.website;
+  const siteUrl = 'https://pavansai-powerlines.vercel.app/';
 
   return {
     '@context': 'https://schema.org',
     '@type': ['LocalBusiness', 'WholesaleStore'],
-    '@id': `${baseUrl}/#localbusiness`,
-    name: COMPANY_INFO.name,
-    alternateName: COMPANY_INFO.shortName,
+    '@id': `${siteUrl}#localbusiness`,
+    name: 'Pavan Sai Power Lines',
+    alternateName: 'PSPL',
     description: COMPANY_INFO.description,
-    url: baseUrl,
+    url: siteUrl,
     telephone: COMPANY_INFO.contact.primaryPhone,
     email: COMPANY_INFO.contact.primaryEmail,
-    image: `${baseUrl}/images/hero-transmission-sunset.jpg`,
-    logo: `${baseUrl}/favicon.svg`,
+    image: `${siteUrl}images/hero-transmission-sunset.jpg`,
+    logo: `${siteUrl}favicon.svg`,
     address: {
       '@type': 'PostalAddress',
       streetAddress: COMPANY_INFO.location.street,
@@ -59,23 +59,28 @@ export function getLocalBusinessSchema() {
 
 /**
  * Generate Organization Schema
+ * Requirements:
+ * - name: Pavan Sai Power Lines
+ * - alternateName: PSPL
+ * - url: https://pavansai-powerlines.vercel.app/
  */
 export function getOrganizationSchema() {
-  const baseUrl = COMPANY_INFO.website;
+  const siteUrl = 'https://pavansai-powerlines.vercel.app/';
 
   return {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    '@id': `${baseUrl}/#organization`,
-    name: COMPANY_INFO.name,
-    alternateName: COMPANY_INFO.shortName,
-    url: baseUrl,
-    logo: `${baseUrl}/favicon.svg`,
+    '@id': `${siteUrl}#organization`,
+    name: 'Pavan Sai Power Lines',
+    alternateName: 'PSPL',
+    url: siteUrl,
+    logo: `${siteUrl}favicon.svg`,
+    image: `${siteUrl}images/hero-transmission-sunset.jpg`,
     contactPoint: {
       '@type': 'ContactPoint',
       telephone: COMPANY_INFO.contact.primaryPhone,
-      contactType: 'commercial desk',
-      areaServed: ['Telangana', 'Andhra Pradesh', 'India']
+      contactType: 'sales',
+      areaServed: ['IN', 'Telangana', 'Andhra Pradesh']
     },
     address: {
       '@type': 'PostalAddress',
@@ -90,22 +95,26 @@ export function getOrganizationSchema() {
 
 /**
  * Generate WebSite Schema with SearchAction
+ * Requirements:
+ * - name: Pavan Sai Power Lines
+ * - alternateName: PSPL
+ * - url: https://pavansai-powerlines.vercel.app/
  */
 export function getWebSiteSchema() {
-  const baseUrl = COMPANY_INFO.website;
+  const siteUrl = 'https://pavansai-powerlines.vercel.app/';
 
   return {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    '@id': `${baseUrl}/#website`,
-    name: COMPANY_INFO.name,
-    alternateName: COMPANY_INFO.shortName,
-    url: baseUrl,
+    '@id': `${siteUrl}#website`,
+    name: 'Pavan Sai Power Lines',
+    alternateName: 'PSPL',
+    url: siteUrl,
     potentialAction: {
       '@type': 'SearchAction',
       target: {
         '@type': 'EntryPoint',
-        urlTemplate: `${baseUrl}/products?search={search_term_string}`
+        urlTemplate: `${siteUrl}products?search={search_term_string}`
       },
       'query-input': 'required name=search_term_string'
     }
