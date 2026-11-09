@@ -245,7 +245,7 @@ export default function About() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="flex flex-col md:grid md:grid-cols-2 lg:grid-cols-3 gap-5">
             {/* Division 1 */}
             <div className="group relative bg-white hover:bg-slate-50/50 p-5 rounded-2xl border border-slate-200/90 hover:border-blue-500/80 shadow-xs hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden">
               <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-blue-600 to-indigo-600"></div>
@@ -350,7 +350,7 @@ export default function About() {
 
       {/* 4. Mission & Vision (Unified Enterprise Cards) */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="flex flex-col md:grid md:grid-cols-2 gap-6">
           
           <div className="group relative bg-white hover:bg-slate-50/50 p-6 sm:p-8 rounded-2xl border-2 border-slate-200/90 hover:border-blue-600 shadow-xs hover:shadow-xl transition-all duration-300 overflow-hidden">
             <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-blue-600 to-indigo-600"></div>

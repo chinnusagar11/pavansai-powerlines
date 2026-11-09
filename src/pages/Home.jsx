@@ -320,7 +320,7 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="flex flex-col sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {COMPANY_INFO.categories.map((cat) => {
             const preview = categoryPreviews[cat.id];
             const productCount = PRODUCTS.filter(p => p.categoryId === cat.id).length;
@@ -430,7 +430,7 @@ export default function Home() {
             </Link>
           </div>
 
-          <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="w-full flex flex-col sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {featuredProducts.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
@@ -455,7 +455,7 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="flex flex-col md:grid md:grid-cols-2 lg:grid-cols-4 gap-5">
           {/* Advantage 1: Verified Green for Standards */}
           <div className="group relative bg-white hover:bg-emerald-50/20 p-6 rounded-2xl border border-slate-200/90 hover:border-emerald-500 shadow-xs hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden">
             <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-emerald-600 to-teal-500"></div>
@@ -531,7 +531,7 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="flex flex-col md:grid md:grid-cols-3 gap-6">
           
           {/* Card 1: Overhead Power Corridors */}
           <div className="group relative bg-white rounded-2xl border border-slate-200/90 hover:border-blue-500/80 overflow-hidden shadow-xs hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col h-full">

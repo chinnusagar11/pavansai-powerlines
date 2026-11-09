@@ -203,7 +203,7 @@ export default function Contact() {
 
       {/* 2. Contact Information Cards */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
+        <div className="flex flex-col sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
           
           {/* Card 1: Office Address */}
           <div className="group relative bg-white hover:bg-slate-50/50 p-5 rounded-2xl border border-slate-200/90 hover:border-amber-500 shadow-xs hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between overflow-hidden">

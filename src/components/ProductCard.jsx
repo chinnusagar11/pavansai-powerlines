@@ -10,7 +10,10 @@ export default function ProductCard({ product }) {
   const fallbackImage = "/images/products/pin-insulator-polymer-11kv.png";
 
   return (
-    <div className="group w-full h-auto sm:h-full min-h-[440px] flex flex-col justify-between bg-white rounded-2xl overflow-hidden border border-slate-200 hover:border-blue-500/80 shadow-sm hover:shadow-[0_16px_35px_-8px_rgba(29,78,216,0.14)] hover:-translate-y-1 transition-all duration-300 relative isolate">
+    <div 
+      className="group w-full h-auto sm:h-full flex flex-col justify-between bg-white rounded-2xl overflow-hidden border border-slate-200 hover:border-blue-500/80 shadow-sm hover:shadow-[0_16px_35px_-8px_rgba(29,78,216,0.14)] transition-all duration-300 relative isolate"
+      style={{ minHeight: '420px' }}
+    >
       
       {/* Subtle Corporate Blue Top Accent Stripe */}
       <div className="h-1.5 w-full bg-gradient-to-r from-blue-600 via-sky-500 to-indigo-600 shrink-0"></div>

@@ -221,7 +221,7 @@ export default function CategoryPage() {
         </div>
 
         {categoryProducts.length > 0 ? (
-          <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 sm:gap-6">
+          <div className="w-full flex flex-col sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {categoryProducts.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
@@ -262,7 +262,7 @@ export default function CategoryPage() {
               </span>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="flex flex-col sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {category.materialGroups.map((group, idx) => (
                 <div 
                   key={idx} 
@@ -371,7 +371,7 @@ export default function CategoryPage() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5">
+          <div className="flex flex-col sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-3.5">
             {COMPANY_INFO.categories
               .filter(c => c.id !== category.id)
               .map((relCat) => (
