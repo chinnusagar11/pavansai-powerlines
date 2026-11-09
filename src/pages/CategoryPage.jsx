@@ -222,8 +222,8 @@ export default function CategoryPage() {
 
         {categoryProducts.length > 0 ? (
           <div className="w-full flex flex-col sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {categoryProducts.map((product) => (
-              <ProductCard key={product.id} product={product} />
+            {categoryProducts.map((product, idx) => (
+              <ProductCard key={product.id} product={product} priority={idx < 4} />
             ))}
           </div>
         ) : (

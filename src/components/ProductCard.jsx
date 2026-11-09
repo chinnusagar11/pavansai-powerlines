@@ -3,9 +3,10 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, MessageSquare, Zap, ShieldCheck } from 'lucide-react';
 import EnquiryModal from './EnquiryModal';
 
-export default function ProductCard({ product }) {
+export default function ProductCard({ product, priority = false }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [imageError, setImageError] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   const fallbackImage = "/images/products/pin-insulator-polymer-11kv.png";
 
@@ -20,13 +21,26 @@ export default function ProductCard({ product }) {
 
       {/* Uniform Fixed-Height Image Container */}
       <div className="relative w-full h-48 sm:h-52 overflow-hidden bg-gradient-to-b from-slate-50/60 to-white border-b border-slate-100 flex items-center justify-center p-3.5 sm:p-4 shrink-0">
+        
+        {/* Shimmer skeleton while image is loading */}
+        {!isLoaded && !imageError && (
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-100 via-slate-50 to-slate-100 animate-pulse"></div>
+        )}
+
         <img
           src={imageError ? fallbackImage : product.image}
           alt={`${product.name} - Electrical Materials Supplier Hyderabad | PSPL`}
-          onError={() => setImageError(true)}
-          loading="lazy"
+          onLoad={() => setIsLoaded(true)}
+          onError={() => {
+            setImageError(true);
+            setIsLoaded(true);
+          }}
+          loading={priority ? "eager" : "lazy"}
+          fetchPriority={priority ? "high" : "auto"}
           decoding="async"
-          className="w-full h-full object-contain transition-transform duration-500 ease-out group-hover:scale-105 drop-shadow-sm"
+          className={`w-full h-full object-contain transition-opacity duration-300 ${
+            isLoaded ? 'opacity-100' : 'opacity-0'
+          }`}
         />
         
         {/* Refined Enterprise Category Badge */}

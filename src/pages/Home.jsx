@@ -42,7 +42,7 @@ export default function Home() {
       badge: 'Bushing Spares'
     },
     'ab-switches': {
-      image: '/images/products/ab-switch-gang-operated.png',
+      image: '/images/products/ab-switch.jpg',
       badge: 'Gang Operated'
     },
     'conductors': {
@@ -342,7 +342,7 @@ export default function Home() {
                       <img
                         src={preview.image}
                         alt={`${cat.name} - Electrical Equipment Supplier in Hyderabad, PSPL`}
-                        className="w-full h-full object-contain group-hover:scale-108 transition-transform duration-500 drop-shadow-2xs"
+                        className="w-full h-full object-contain group-hover:scale-108 transition-transform duration-500"
                         loading="lazy"
                         decoding="async"
                       />
@@ -431,8 +431,8 @@ export default function Home() {
           </div>
 
           <div className="w-full flex flex-col sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {featuredProducts.map((product) => (
-              <ProductCard key={product.id} product={product} />
+            {featuredProducts.map((product, idx) => (
+              <ProductCard key={product.id} product={product} priority={idx < 3} />
             ))}
           </div>
 
@@ -608,7 +608,7 @@ export default function Home() {
             {/* Fixed Height Uniform Image Container */}
             <div className="relative h-56 w-full overflow-hidden bg-slate-900 shrink-0 border-b border-slate-100">
               <img
-                src="/images/products/ab-switch-gang-operated.png"
+                src="/images/products/ab-switch.jpg"
                 alt="11kV 3-Phase Gang-Operated Air Break Switch Supplier in Hyderabad"
                 className="w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-700 ease-out"
                 loading="lazy"

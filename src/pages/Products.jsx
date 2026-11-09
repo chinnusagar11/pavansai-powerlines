@@ -344,8 +344,8 @@ export default function Products() {
         
         {filteredProducts.length > 0 ? (
           <div className="w-full flex flex-col sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
-            {filteredProducts.map((product) => (
-              <ProductCard key={product.id} product={product} />
+            {filteredProducts.map((product, idx) => (
+              <ProductCard key={product.id} product={product} priority={idx < 4} />
             ))}
           </div>
         ) : (

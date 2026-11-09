@@ -21,6 +21,13 @@
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Poppins', 'Inter', system-ui, sans-serif;
   }
+
+  /* Optimize image rendering and eliminate GPU downsampling blur on mobile displays */
+  img {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+  }
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */

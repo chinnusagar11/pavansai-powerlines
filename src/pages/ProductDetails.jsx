@@ -367,8 +367,8 @@ export default function ProductDetails() {
           </div>
 
           <div className="w-full flex flex-col sm:grid sm:grid-cols-3 gap-4 sm:gap-5">
-            {relatedProducts.map(rel => (
-              <ProductCard key={rel.id} product={rel} />
+            {relatedProducts.map((rel, idx) => (
+              <ProductCard key={rel.id} product={rel} priority={idx < 2} />
             ))}
           </div>
         </section>
