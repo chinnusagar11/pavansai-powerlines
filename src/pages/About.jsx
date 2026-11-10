@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { 
-  Building2, 
   MapPin, 
   ShieldCheck, 
   Target, 
   Eye, 
-  CheckCircle2, 
   PhoneCall, 
   Zap, 
   ArrowRight,
@@ -46,15 +44,11 @@ export default function About() {
         ]}
       />
       
-      {/* 1. UNIFIED EXECUTIVE HERO SECTION - 100% VIEWPORT VISIBILITY */}
+      {/* Company profile hero */}
       <section className="relative overflow-hidden bg-gradient-to-b from-[#eaf2fc] via-[#f1f6fd] to-white pt-6 pb-8 sm:pt-8 sm:pb-10 lg:pt-10 lg:pb-12 border-b border-blue-200/80">
-        
-        {/* Subtle Architectural Pattern */}
         <div className="absolute inset-0 bg-[radial-gradient(#3b82f6_1px,transparent_1px)] [background-size:24px_24px] opacity-10 pointer-events-none"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          
-          {/* Top Bar: Breadcrumb & Supply Base Status with Crisp Divider */}
           <div className="flex items-center justify-between gap-3 pb-3 mb-4 sm:mb-6 border-b border-blue-200/60">
             <div className="hidden sm:block">
               <Breadcrumb items={[{ label: 'About Us' }]} />
@@ -77,20 +71,14 @@ export default function About() {
             </div>
           </div>
 
-          {/* Unified 2-Column Grid: Corporate Profile + Official Visiting Card (Enlarged & Prominent) */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-7 lg:gap-12 items-center">
-            
-            {/* Left Content Column */}
             <div className="lg:col-span-6 space-y-3.5 sm:space-y-4 text-left">
-              
-              {/* Trust Badge - Single Line & No Awkward Wrapping */}
               <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-white border border-blue-200 shadow-2xs text-[10px] sm:text-xs font-bold text-slate-800 max-w-full overflow-hidden">
                 <span className="text-blue-700 uppercase tracking-wider whitespace-nowrap">Enterprise Profile</span>
                 <span className="text-slate-300">&bull;</span>
                 <span className="text-emerald-700 font-bold whitespace-nowrap">IS / IEC Verified</span>
               </div>
 
-              {/* Main Heading */}
               <div>
                 <h1 className="text-2xl sm:text-3xl lg:text-[36px] font-extrabold tracking-tight text-slate-900 font-heading leading-tight">
                   About Pavan Sai Power Lines
@@ -100,12 +88,11 @@ export default function About() {
                 </p>
               </div>
 
-              {/* Concise Executive Narrative */}
               <p className="text-xs sm:text-sm lg:text-[15px] text-slate-600 leading-relaxed font-normal">
                 Headquartered at Bansilalpet Road, Secunderabad (Telangana), <strong>Pavan Sai Power Lines (PSPL)</strong> is an established supplier and wholesale stockist of high-tension overhead line hardware, polymer &amp; porcelain insulators, gang-operated AB switches, ACSR conductors, earthing equipment, and galvanized transmission towers conforming to Indian Standard (IS) and state DISCOM specifications.
               </p>
 
-              {/* 3 Premium Trust Metric Cards - Perfectly Sized with Zero Ellipsis Truncation */}
+              {/* Key metrics */}
               <div className="grid grid-cols-3 gap-1.5 sm:gap-3 pt-1">
                 
                 <div className="p-2 sm:p-3 rounded-xl bg-white border border-blue-200 shadow-2xs flex flex-col justify-between text-center min-w-0">

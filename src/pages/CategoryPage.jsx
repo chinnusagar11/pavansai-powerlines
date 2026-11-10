@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
-import { useParams, Link, useNavigate } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { 
   ArrowLeft, 
   ArrowRight,
   Zap, 
   ShieldCheck, 
-  MapPin, 
   Phone, 
-  Mail, 
   MessageSquare,
   FileText,
   ChevronRight,
@@ -40,7 +38,6 @@ import {
 
 export default function CategoryPage() {
   const { categoryId } = useParams();
-  const navigate = useNavigate();
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
   const [openFaq, setOpenFaq] = useState(0);
 
@@ -139,38 +136,50 @@ export default function CategoryPage() {
             </div>
           </div>
 
-          {/* Division Hero Title & Intro */}
-          <div className="max-w-4xl space-y-3.5 text-left">
+          {/* Division Hero Title & Intro - Clean, Minimalist, Elegant & Professional */}
+          <div className="max-w-4xl space-y-4 text-left">
             
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-blue-200 shadow-2xs text-[10px] sm:text-[11px] font-bold text-slate-800">
-              <span className="text-blue-600">{categoryIcons[category.id] || <Zap size={14} />}</span>
-              <span className="text-blue-700 uppercase tracking-wider">{category.heroTag}</span>
+            {/* Category Verified Pill */}
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-blue-200/90 shadow-2xs text-[11px] font-bold text-slate-800">
+              <span className="text-blue-600">{categoryIcons[category.id] || <Zap size={13} />}</span>
+              <span className="text-blue-700 uppercase tracking-wider">{category.name}</span>
               <span className="text-slate-300">&bull;</span>
-              <span className="text-emerald-700 whitespace-nowrap">IS / IEC Verified</span>
+              <span className="text-emerald-700 font-semibold">IS / IEC Verified Stock</span>
             </div>
 
-            {/* Clear, Targeted H1 Heading */}
-            <h1 className="text-2xl sm:text-4xl lg:text-[40px] font-extrabold tracking-tight text-slate-900 font-heading leading-tight">
-              {category.h1}
-            </h1>
+            {/* Clear, Punchy Main Heading */}
+            <div>
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-slate-900 font-heading leading-tight">
+                {category.name}
+              </h1>
+              <p className="text-xs sm:text-sm font-semibold text-blue-700 mt-1">
+                Wholesale Supplier &amp; Stockist &bull; Secunderabad &amp; Hyderabad
+              </p>
+            </div>
 
-            {/* Helpful Introductory Narrative */}
-            <p className="text-xs sm:text-sm lg:text-[15px] text-slate-600 leading-relaxed font-normal">
-              {category.intro}
+            {/* Concise, Highly Readable Narrative */}
+            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed max-w-3xl font-normal">
+              Supplying standard-compliant {category.name.toLowerCase()} conforming to Indian Standards (IS), REC guidelines, and state DISCOM specifications. Readily available for project dispatch across Secunderabad, Hyderabad, and all districts of Telangana.
             </p>
 
-            {/* Key Division Highlights */}
-            <div className="pt-2 grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-2.5">
-              {category.highlights.map((item, idx) => (
-                <div key={idx} className="flex items-start gap-2 text-xs sm:text-[13px] text-slate-700 bg-white/80 p-2 sm:p-2.5 rounded-xl border border-blue-100 shadow-2xs">
-                  <ShieldCheck size={16} className="text-emerald-600 shrink-0 mt-0.5" />
-                  <span className="leading-snug font-medium">{item}</span>
-                </div>
-              ))}
+            {/* Sleek Capability Tags - Compact & Clean */}
+            <div className="flex flex-wrap items-center gap-2 pt-1 text-xs text-slate-700">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white border border-slate-200 shadow-2xs font-medium">
+                <ShieldCheck size={14} className="text-emerald-600 shrink-0" />
+                <span>IS &bull; IEC &bull; REC Tested</span>
+              </span>
+              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white border border-slate-200 shadow-2xs font-medium">
+                <CheckCircle2 size={14} className="text-blue-600 shrink-0" />
+                <span>Bansilalpet Warehouse Stock</span>
+              </span>
+              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white border border-slate-200 shadow-2xs font-medium">
+                <CheckCircle2 size={14} className="text-blue-600 shrink-0" />
+                <span>Telangana &amp; Pan-India Dispatch</span>
+              </span>
             </div>
 
             {/* Direct Action Buttons - Clean Mobile Stack & Desktop Row */}
-            <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3 w-full sm:w-auto">
+            <div className="pt-2 flex flex-wrap items-center gap-2.5 sm:gap-3 w-full">
               <button
                 onClick={() => setIsQuoteModalOpen(true)}
                 className="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 active:scale-97 text-white text-xs sm:text-sm font-bold px-4 py-2.5 rounded-xl shadow-xs transition"
@@ -181,7 +190,7 @@ export default function CategoryPage() {
 
               <a
                 href={`tel:${COMPANY_INFO.contact.primaryPhoneRaw}`}
-                className="inline-flex items-center justify-center gap-2 bg-white hover:bg-blue-50 text-slate-800 hover:text-blue-700 text-xs sm:text-sm font-bold px-4 py-2.5 rounded-xl border border-slate-200 shadow-2xs transition"
+                className="inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-50 text-slate-800 text-xs sm:text-sm font-bold px-4 py-2.5 rounded-xl border border-slate-200 shadow-2xs transition"
               >
                 <Phone size={14} className="text-blue-600" />
                 <span>Call: {COMPANY_INFO.contact.primaryPhone}</span>
@@ -284,27 +293,37 @@ export default function CategoryPage() {
         </section>
       )}
 
-      {/* 4. Technical Scope & Standards Compliance */}
+      {/* 4. Engineering Standards & Logistics Hub */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-gradient-to-r from-blue-50/60 via-white to-slate-50 p-6 sm:p-8 rounded-2xl border border-blue-200 shadow-2xs space-y-3.5 text-left">
-          <div className="flex items-center gap-2">
+        <div className="bg-white p-5 sm:p-7 rounded-2xl border border-slate-200 shadow-2xs space-y-4 text-left">
+          <div className="flex items-center gap-2 pb-2.5 border-b border-slate-100">
             <FileText size={18} className="text-blue-600" />
-            <h2 className="text-lg sm:text-xl font-extrabold text-slate-900 font-heading">
-              Technical Scope, Standards &amp; Regional Supply Corridor
+            <h2 className="text-base sm:text-lg font-bold text-slate-900 font-heading">
+              Technical Standards &amp; Supply Logistics
             </h2>
           </div>
-          <p className="text-xs sm:text-sm text-slate-700 leading-relaxed font-normal">
-            {category.technicalScope}
-          </p>
-          {category.localCoverage && (
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-              <strong className="text-slate-900 font-semibold">Local Coverage:</strong> {category.localCoverage}
-            </p>
-          )}
-          <div className="pt-2 flex flex-wrap items-center gap-2 text-xs font-semibold text-slate-600">
-            <span className="bg-white px-2.5 py-1 rounded-md border border-blue-200 shadow-2xs">Bansilalpet Warehouse</span>
-            <span className="bg-white px-2.5 py-1 rounded-md border border-blue-200 shadow-2xs">Secunderabad / Hyderabad Logistics</span>
-            <span className="bg-white px-2.5 py-1 rounded-md border border-blue-200 shadow-2xs">Telangana &amp; Pan-India Dispatch</span>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3.5 text-xs sm:text-sm">
+            <div className="p-3.5 rounded-xl bg-slate-50/80 border border-slate-200/80 space-y-1">
+              <strong className="text-slate-900 block font-semibold text-xs sm:text-sm">Technical Compliance</strong>
+              <p className="text-slate-600 text-xs leading-relaxed">
+                Conforming to Indian Standard (IS), REC guidelines, and state utility DISCOM specifications with verified galvanization.
+              </p>
+            </div>
+
+            <div className="p-3.5 rounded-xl bg-slate-50/80 border border-slate-200/80 space-y-1">
+              <strong className="text-slate-900 block font-semibold text-xs sm:text-sm">Warehouse Stock</strong>
+              <p className="text-slate-600 text-xs leading-relaxed">
+                Readily available at 6-6-269/159, Bansilalpet Road, Secunderabad - 500003 for direct pickup and scheduled delivery.
+              </p>
+            </div>
+
+            <div className="p-3.5 rounded-xl bg-slate-50/80 border border-slate-200/80 space-y-1">
+              <strong className="text-slate-900 block font-semibold text-xs sm:text-sm">Regional Dispatch</strong>
+              <p className="text-slate-600 text-xs leading-relaxed">
+                Serving electrical contractors, utilities, and infrastructure sites across Secunderabad, Hyderabad, and all Telangana districts.
+              </p>
+            </div>
           </div>
         </div>
       </section>

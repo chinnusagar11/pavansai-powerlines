@@ -4,7 +4,6 @@ import {
   Search, 
   X, 
   RefreshCw,
-  CheckCircle2,
   ArrowLeft,
   ArrowRight,
   Zap,
@@ -16,7 +15,6 @@ import {
   Maximize,
   Layers,
   PhoneCall,
-  Sparkles,
   MessageSquare,
   FileCheck
 } from 'lucide-react';
@@ -200,14 +198,10 @@ export default function Products() {
       </section>
 
 
-      {/* 2. Elevated Search & Filter Control Command Bar */}
+      {/* Search and category filter bar */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-white p-4 sm:p-5 rounded-2xl border-2 border-slate-200/90 shadow-sm space-y-4">
-          
-          {/* Top Row: Search Input & Product Count Symmetrically Aligned */}
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
-            
-            {/* Search Input Field */}
             <div className="relative flex-1 max-w-lg">
               <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 text-blue-600 w-4 h-4 pointer-events-none" />
               <input
@@ -228,7 +222,6 @@ export default function Products() {
               )}
             </div>
 
-            {/* Results Count & Reset Button */}
             <div className="flex items-center justify-between sm:justify-end gap-3 text-xs text-slate-600 shrink-0">
               <span className="font-medium">
                 Showing <strong className="text-slate-900 font-black">{filteredProducts.length}</strong> of {PRODUCTS.length} Items
@@ -244,14 +237,11 @@ export default function Products() {
                 </button>
               )}
             </div>
-
           </div>
 
-          {/* Bottom Row: Symmetrical Division Filter Tabs with Icons */}
+          {/* Division filter tabs */}
           <div className="pt-3 border-t border-slate-100">
             <div className="flex items-center gap-2 overflow-x-auto pb-1.5 scrollbar-none -mx-1 px-1">
-              
-              {/* "All" Tab */}
               <button
                 onClick={() => handleCategorySelect('all')}
                 className={`inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-all duration-200 shrink-0 ${
@@ -339,7 +329,7 @@ export default function Products() {
       )}
 
 
-      {/* 4. Products Grid - Laser Symmetrical 3-Column Layout */}
+      {/* Product listing */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {filteredProducts.length > 0 ? (

@@ -5,8 +5,6 @@ import {
   Mail, 
   MapPin, 
   MessageCircle, 
-  Clock, 
-  Building2, 
   ExternalLink,
   Copy,
   Check,
@@ -299,19 +297,20 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* Card 4: Business Hours & Email */}
+          {/* Commercial email */}
           <div className="group relative bg-white hover:bg-slate-50/50 p-5 rounded-2xl border border-slate-200/90 hover:border-blue-500/80 shadow-xs hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between overflow-hidden">
             <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-blue-600 to-indigo-600"></div>
             <div>
               <div className="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white border border-blue-200 flex items-center justify-center mb-3 shadow-xs group-hover:scale-108 transition-all">
-                <Clock size={20} />
+                <Mail size={20} />
               </div>
-              <h3 className="font-extrabold text-sm text-slate-900 mb-1">Business Hours</h3>
+              <h3 className="font-extrabold text-sm text-slate-900 mb-1">Email &amp; BOQ Desk</h3>
               <div className="space-y-1 text-xs text-slate-600 leading-relaxed">
-                <p><strong className="text-slate-900">Mon - Sat:</strong> 9:30 AM - 7:30 PM</p>
-                <p><strong className="text-slate-900">Sunday:</strong> Emergency via WhatsApp</p>
-                <p className="text-[11px] text-slate-600 font-semibold pt-0.5 break-all">
+                <p className="text-[11px] text-slate-600 font-semibold break-all">
                   <strong className="text-slate-900">Email:</strong> {COMPANY_INFO.contact.primaryEmail}
+                </p>
+                <p className="text-[11px] text-slate-500">
+                  Direct inquiries accepted via Phone, WhatsApp, and Email.
                 </p>
               </div>
             </div>

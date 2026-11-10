@@ -1,11 +1,4 @@
-/**
- * Products Database for Pavan Sai Power Lines (PSPL)
- * 
- * STRICT DIRECTIVE:
- * 100% powered ONLY by authentic, verified industrial equipment photographs 
- * provided directly by PSPL in Secunderabad, Telangana.
- * ZERO placeholders, ZERO stock images, ZERO vector SVG illustrations.
- */
+// Product catalog for Pavan Sai Power Lines organized across the 7 divisions.
 
 export const PRODUCTS = [
   // =============================================================
@@ -1208,34 +1201,14 @@ export const PRODUCTS = [
   }
 ];
 
-export function getAllProducts() {
-  return PRODUCTS;
-}
-
 export function getProductById(id) {
-  return PRODUCTS.find(p => p.id === id);
-}
-
-export function getProductsByCategory(categoryId) {
-  if (!categoryId || categoryId === 'all') return PRODUCTS;
-  return PRODUCTS.filter(p => p.categoryId === categoryId);
-}
-
-export function searchProducts(query) {
-  if (!query) return PRODUCTS;
-  const q = query.toLowerCase().trim();
-  return PRODUCTS.filter(p => 
-    p.name.toLowerCase().includes(q) ||
-    p.category.toLowerCase().includes(q) ||
-    p.shortDescription.toLowerCase().includes(q) ||
-    p.fullDescription.toLowerCase().includes(q)
-  );
+  return PRODUCTS.find((p) => p.id === id);
 }
 
 export function getRelatedProducts(currentProductId, limit = 3) {
   const current = getProductById(currentProductId);
   if (!current) return [];
-  return PRODUCTS
-    .filter(p => p.id !== currentProductId && p.categoryId === current.categoryId)
-    .slice(0, limit);
+  return PRODUCTS.filter(
+    (p) => p.id !== currentProductId && p.categoryId === current.categoryId
+  ).slice(0, limit);
 }

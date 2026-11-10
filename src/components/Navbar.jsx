@@ -8,7 +8,6 @@ import {
   X, 
   Zap, 
   ChevronDown, 
-  Clock, 
   Send,
   ShieldCheck,
   ArrowRight,
@@ -74,15 +73,11 @@ export default function Navbar() {
   return (
     <>
       <header className="sticky top-0 z-50 w-full bg-[#edf4fc] transition-all duration-200 shadow-2xs">
-        
-        {/* Top Corporate Line */}
         <div className="h-1 w-full bg-blue-600"></div>
 
-        {/* 1. Desktop Top Information Bar - Plain & Neat Light Blue Tone */}
+        {/* Desktop top info bar */}
         <div className="bg-[#e2eefa] border-b border-blue-200/70 text-slate-700 text-[11px] sm:text-xs py-2 px-4 hidden md:block">
           <div className="max-w-7xl mx-auto flex items-center justify-between">
-            
-            {/* Left Location & Credentials with Clean White Cards */}
             <div className="flex items-center gap-2.5">
               <span className="inline-flex items-center gap-1.5 font-semibold text-slate-800 bg-white px-2.5 py-0.5 rounded-md border border-blue-200/70 shadow-2xs">
                 <MapPin size={12} className="text-blue-600 shrink-0" />
@@ -101,7 +96,6 @@ export default function Navbar() {
               </span>
             </div>
 
-            {/* Right Contact Details with Clean White Cards */}
             <div className="flex items-center gap-2">
               <a 
                 href={`tel:${COMPANY_INFO.contact.primaryPhoneRaw}`} 
@@ -125,13 +119,12 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* 2. Main Navigation Bar - Plain & Neat Light Corporate Header (Rock-Solid Sticky) */}
+        {/* Main navigation */}
         <nav className={`w-full transition-all duration-200 bg-[#edf4fc] border-b border-blue-200/80 py-2.5 sm:py-3 ${
           scrolled ? 'shadow-md' : 'shadow-2xs'
         }`}>
           <div className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 flex items-center justify-between">
             
-            {/* Logo & Full Company Name - Strictly One Line */}
             <Link to="/" className="flex items-center gap-2.5 sm:gap-3 group focus:outline-none shrink-0 min-w-0">
               <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center shadow-xs border border-blue-500/40 group-hover:scale-105 transition-all shrink-0">
                 <Zap className="w-5 h-5 fill-amber-400 text-amber-400" />
@@ -221,20 +214,17 @@ export default function Navbar() {
 
           </div>
 
-          {/* Mobile Floating Executive Menu Card & Backdrop */}
+          {/* Mobile navigation drawer */}
           {isOpen && (
             <div className="md:hidden">
-              {/* Dark Soft Blur Backdrop - Tapping anywhere closes the menu */}
               <div 
                 className="fixed inset-0 bg-slate-950/60 backdrop-blur-xs z-40 transition-opacity animate-fade-in"
                 onClick={() => setIsOpen(false)}
                 aria-hidden="true"
               />
 
-              {/* Floating Executive Card Anchored Below Sticky Header - 100% Solid Opaque White */}
               <div className="fixed top-14 sm:top-16 right-3 left-3 sm:left-auto sm:w-[340px] max-w-sm ml-auto z-50 bg-white rounded-2xl border border-blue-200 shadow-2xl p-3.5 animate-fade-in max-h-[calc(100vh-80px)] overflow-y-auto">
                 
-                {/* Header Status Row with Prominent Dedicated Close [X] Button */}
                 <div className="flex items-center justify-between pb-2 mb-2 border-b border-slate-100">
                   <div className="flex items-center gap-2 min-w-0">
                     <div className="w-7 h-7 rounded-lg bg-blue-50 text-blue-700 flex items-center justify-center shrink-0 border border-blue-100">
@@ -246,12 +236,11 @@ export default function Navbar() {
                       </span>
                       <span className="text-[10px] font-semibold text-emerald-700 flex items-center gap-1 mt-0.5 truncate">
                         <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse shrink-0"></span>
-                        Mon-Sat: 9:30 AM - 7:30 PM
+                        Bansilalpet Rd &bull; Secunderabad
                       </span>
                     </div>
                   </div>
 
-                  {/* Dedicated Close [X] Button on Menu Card */}
                   <button
                     type="button"
                     onClick={() => setIsOpen(false)}
@@ -263,7 +252,6 @@ export default function Navbar() {
                   </button>
                 </div>
 
-                {/* Main Links */}
                 <div className="space-y-1">
                   <NavLink to="/" className={mobileNavLinkClass}>
                     <div className="flex items-center gap-2.5">
@@ -285,7 +273,6 @@ export default function Navbar() {
                     <ChevronRight size={14} className="text-slate-400" />
                   </NavLink>
 
-                  {/* Products & Materials with Accordion Toggle */}
                   <div className="rounded-xl border border-transparent hover:border-slate-100 transition">
                     <div className="flex items-center justify-between gap-1">
                       <NavLink to="/products" className={`flex-1 ${mobileNavLinkClass}`}>
@@ -300,7 +287,6 @@ export default function Navbar() {
                         </div>
                       </NavLink>
 
-                      {/* Accordion Expand/Collapse Button */}
                       <button
                         type="button"
                         onClick={(e) => {
@@ -318,7 +304,6 @@ export default function Navbar() {
                       </button>
                     </div>
 
-                    {/* Collapsible Divisions Sub-List */}
                     {isDivisionsOpen && (
                       <div className="bg-slate-50/90 rounded-xl p-2 border border-slate-200 mt-1 mb-1 space-y-0.5 animate-fade-in">
                         <div className="text-[10px] font-bold uppercase tracking-wider text-slate-400 px-2 py-0.5 flex items-center justify-between">

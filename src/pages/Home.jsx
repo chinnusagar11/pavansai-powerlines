@@ -94,21 +94,13 @@ export default function Home() {
         structuredData={[getWebSiteSchema(), getOrganizationSchema(), getLocalBusinessSchema()]}
       />
       
-      {/* 1. ENTERPRISE HERO SECTION - VIEWPORT & WINDOW OPTIMIZED */}
+      {/* Hero section */}
       <section className="relative overflow-hidden bg-gradient-to-b from-blue-50/60 via-slate-50/30 to-white border-b border-slate-200/80 pt-6 pb-8 sm:pt-8 sm:pb-10 lg:pt-9 lg:pb-11">
-        
-        {/* Subtle Architectural Grid Pattern */}
         <div className="absolute inset-0 bg-[radial-gradient(#3b82f6_1px,transparent_1px)] [background-size:28px_28px] opacity-10 pointer-events-none"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          
-          {/* Main Symmetrical Split Grid: Content + Showcase */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-7 lg:gap-10 items-center">
-            
-            {/* Left Content Column */}
             <div className="lg:col-span-7 space-y-4 sm:space-y-5 text-left">
-              
-              {/* Status Pill Badge */}
               <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/95 border border-blue-200/80 shadow-2xs text-xs font-semibold text-slate-800">
                 <span className="relative flex h-2.5 w-2.5">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
@@ -312,7 +304,7 @@ export default function Home() {
             <Layers size={13} className="text-blue-600" />
             <span>Product Divisions</span>
           </span>
-          <h2 className="text-2xl sm:text-3.5xl font-extrabold text-slate-900 font-heading mt-2">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 font-heading mt-2">
             Explore Our 7 Core Business Divisions
           </h2>
           <p className="text-slate-600 text-xs sm:text-sm mt-1.5">
@@ -406,7 +398,7 @@ export default function Home() {
       </section>
 
 
-      {/* 3. FEATURED PRODUCTS (Pure Authentic Photos) */}
+      {/* Featured products */}
       <section className="bg-slate-50/80 py-12 sm:py-16 border-y border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
@@ -416,7 +408,7 @@ export default function Home() {
                 <Sparkles size={12} className="text-blue-600" />
                 <span>Featured Materials</span>
               </span>
-              <h2 className="text-2xl sm:text-3.5xl font-extrabold text-slate-900 font-heading mt-2">
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 font-heading mt-2">
                 Popular Transmission & Distribution Products
               </h2>
             </div>
@@ -439,15 +431,14 @@ export default function Home() {
         </div>
       </section>
 
-
-      {/* 4. WHY UTILITIES & CONTRACTORS CHOOSE PSPL (Purposeful Color Accent Coding) */}
+      {/* Enterprise advantages */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-10">
           <span className="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-3 py-1 rounded-full border border-blue-200">
             Enterprise Advantage
           </span>
-          <h2 className="text-2xl sm:text-3.5xl font-extrabold text-slate-900 font-heading mt-2">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 font-heading mt-2">
             Why Contractors & Utilities Rely On PSPL
           </h2>
           <p className="text-slate-600 text-xs sm:text-sm mt-1.5">
@@ -742,11 +733,9 @@ export default function Home() {
       </section>
 
 
-      {/* 6. HIGH-CONVERTING CORPORATE CTA BANNER */}
+      {/* Bottom CTA banner */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative overflow-hidden bg-gradient-to-r from-blue-700 via-blue-600 to-indigo-700 text-white rounded-3xl p-8 sm:p-12 shadow-xl">
-          
-          {/* Subtle Decorative Circle Overlay */}
           <div className="absolute top-0 right-0 -mt-10 -mr-10 w-72 h-72 rounded-full bg-white/10 blur-2xl pointer-events-none"></div>
 
           <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8">
@@ -754,7 +743,7 @@ export default function Home() {
               <span className="inline-block px-3 py-1 rounded-full bg-white/15 text-xs font-semibold tracking-wider uppercase text-blue-100">
                 Procurement & Supply Desk
               </span>
-              <h2 className="text-2xl sm:text-3.5xl font-extrabold font-heading leading-tight">
+              <h2 className="text-2xl sm:text-3xl font-extrabold font-heading leading-tight">
                 Need Bulk Pricing or an Official Material Quote?
               </h2>
               <p className="text-blue-100 text-xs sm:text-sm leading-relaxed">

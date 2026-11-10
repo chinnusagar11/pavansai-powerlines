@@ -15,7 +15,7 @@ The website showcases PSPL's 7 primary material divisions:
 4. **AAAC & ACSR Conductors** (Weasel, Rabbit, Dog, Panther, Zebra, and All-Aluminium Alloy Conductors)
 5. **Earthing Materials** (Copper Bonded Chemical Earth Electrodes, GI Pipes, Earth Flats, Pit Covers)
 6. **Industrial Electricals** (LT Feeder Pillars, Distribution Boxes, Cable Glands, Lugs, HRC Fuses)
-7. **AIMS & GI Towers** (Hot-Dip Galvanized Lattice Transmission Towers, Substation Gantries, Foundation Stubs)
+7. **All MS & GI Towers** (Hot-Dip Galvanized Lattice Transmission Towers, Substation Gantries, Foundation Stubs)
 
 ---
 

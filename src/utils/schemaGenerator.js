@@ -1,28 +1,21 @@
 import { COMPANY_INFO } from '../data/company.js';
 
-/**
- * Generate LocalBusiness / WholesaleStore JSON-LD Schema
- * Strictly conforming to verified company information:
- * - Real NAP: Pavan Sai Power Lines, 6-6-269/159, Bansilalpet Road, Secunderabad
- * - Verified Phone: +91 97004 49684
- * - Verified Email: pavansaipowerlines@gmail.com
- * - ZERO invented ratings, reviews, opening hours, price ranges, or fake coordinates.
- */
-export function getLocalBusinessSchema() {
-  const siteUrl = 'https://pavansai-powerlines.vercel.app/';
+const SITE_URL = `${COMPANY_INFO.website}/`;
 
+// LocalBusiness / WholesaleStore structured data using verified company details.
+export function getLocalBusinessSchema() {
   return {
     '@context': 'https://schema.org',
     '@type': ['LocalBusiness', 'WholesaleStore'],
-    '@id': `${siteUrl}#localbusiness`,
-    name: 'Pavan Sai Power Lines',
-    alternateName: 'PSPL',
+    '@id': `${SITE_URL}#localbusiness`,
+    name: COMPANY_INFO.name,
+    alternateName: COMPANY_INFO.shortName,
     description: COMPANY_INFO.description,
-    url: siteUrl,
+    url: SITE_URL,
     telephone: COMPANY_INFO.contact.primaryPhone,
     email: COMPANY_INFO.contact.primaryEmail,
-    image: `${siteUrl}images/hero-transmission-sunset.jpg`,
-    logo: `${siteUrl}favicon.svg`,
+    image: `${SITE_URL}images/hero-transmission-sunset.jpg`,
+    logo: `${SITE_URL}favicon.svg`,
     address: {
       '@type': 'PostalAddress',
       streetAddress: COMPANY_INFO.location.street,
@@ -57,25 +50,16 @@ export function getLocalBusinessSchema() {
   };
 }
 
-/**
- * Generate Organization Schema
- * Requirements:
- * - name: Pavan Sai Power Lines
- * - alternateName: PSPL
- * - url: https://pavansai-powerlines.vercel.app/
- */
 export function getOrganizationSchema() {
-  const siteUrl = 'https://pavansai-powerlines.vercel.app/';
-
   return {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    '@id': `${siteUrl}#organization`,
-    name: 'Pavan Sai Power Lines',
-    alternateName: 'PSPL',
-    url: siteUrl,
-    logo: `${siteUrl}favicon.svg`,
-    image: `${siteUrl}images/hero-transmission-sunset.jpg`,
+    '@id': `${SITE_URL}#organization`,
+    name: COMPANY_INFO.name,
+    alternateName: COMPANY_INFO.shortName,
+    url: SITE_URL,
+    logo: `${SITE_URL}favicon.svg`,
+    image: `${SITE_URL}images/hero-transmission-sunset.jpg`,
     contactPoint: {
       '@type': 'ContactPoint',
       telephone: COMPANY_INFO.contact.primaryPhone,
@@ -93,41 +77,26 @@ export function getOrganizationSchema() {
   };
 }
 
-/**
- * Generate WebSite Schema with SearchAction
- * Requirements:
- * - name: Pavan Sai Power Lines
- * - alternateName: PSPL
- * - url: https://pavansai-powerlines.vercel.app/
- */
 export function getWebSiteSchema() {
-  const siteUrl = 'https://pavansai-powerlines.vercel.app/';
-
   return {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    '@id': `${siteUrl}#website`,
-    name: 'Pavan Sai Power Lines',
-    alternateName: 'PSPL',
-    url: siteUrl,
+    '@id': `${SITE_URL}#website`,
+    name: COMPANY_INFO.name,
+    alternateName: COMPANY_INFO.shortName,
+    url: SITE_URL,
     potentialAction: {
       '@type': 'SearchAction',
       target: {
         '@type': 'EntryPoint',
-        urlTemplate: `${siteUrl}products?search={search_term_string}`
+        urlTemplate: `${SITE_URL}products?search={search_term_string}`
       },
       'query-input': 'required name=search_term_string'
     }
   };
 }
 
-/**
- * Generate BreadcrumbList Schema
- * @param {Array<{name: string, url: string}>} items
- */
 export function getBreadcrumbSchema(items = []) {
-  const baseUrl = COMPANY_INFO.website;
-
   return {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -135,21 +104,20 @@ export function getBreadcrumbSchema(items = []) {
       '@type': 'ListItem',
       position: index + 1,
       name: item.name,
-      item: item.url.startsWith('http') ? item.url : `${baseUrl}${item.url}`
+      item: item.url.startsWith('http') ? item.url : `${COMPANY_INFO.website}${item.url}`
     }))
   };
 }
 
-/**
- * Generate Product Schema for individual product pages
- */
 export function getProductSchema(product) {
   if (!product) return null;
-  const baseUrl = COMPANY_INFO.website;
-  const productUrl = `${baseUrl}/products/${product.id}`;
-  const imageUrl = product.image 
-    ? (product.image.startsWith('http') ? product.image : `${baseUrl}${product.image}`) 
-    : `${baseUrl}/images/hero-transmission-sunset.jpg`;
+
+  const productUrl = `${COMPANY_INFO.website}/products/${product.id}`;
+  const imageUrl = product.image
+    ? product.image.startsWith('http')
+      ? product.image
+      : `${COMPANY_INFO.website}${product.image}`
+    : `${SITE_URL}images/hero-transmission-sunset.jpg`;
 
   const additionalProperty = product.specifications
     ? Object.entries(product.specifications).map(([key, val]) => ({
@@ -169,14 +137,6 @@ export function getProductSchema(product) {
     sku: product.id,
     mpn: product.id,
     category: product.category,
-    brand: {
-      '@type': 'Brand',
-      name: COMPANY_INFO.name
-    },
-    manufacturer: {
-      '@type': 'Organization',
-      name: COMPANY_INFO.name
-    },
     offers: {
       '@type': 'Offer',
       url: productUrl,
@@ -192,38 +152,29 @@ export function getProductSchema(product) {
   };
 }
 
-/**
- * Generate ItemList Schema for Product Catalog
- */
 export function getItemListSchema(products = [], categoryName = 'Electrical Materials') {
-  const baseUrl = COMPANY_INFO.website;
-
   return {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
-    name: `${categoryName} Catalog - Pavan Sai Power Lines`,
-    description: `Verified inventory of ${categoryName} supplied by Pavan Sai Power Lines, Secunderabad, Telangana.`,
+    name: `${categoryName} Catalog - ${COMPANY_INFO.name}`,
+    description: `Verified inventory of ${categoryName} supplied by ${COMPANY_INFO.name}, Secunderabad, Telangana.`,
     numberOfItems: products.length,
     itemListElement: products.map((prod, idx) => ({
       '@type': 'ListItem',
       position: idx + 1,
       name: prod.name,
-      url: `${baseUrl}/products/${prod.id}`
+      url: `${COMPANY_INFO.website}/products/${prod.id}`
     }))
   };
 }
 
-/**
- * Generate FAQPage Schema for Category Procurement FAQs
- * Validated against Google Search rich results guidelines.
- */
 export function getFAQSchema(faqs = []) {
-  if (!faqs || !Array.isArray(faqs) || faqs.length === 0) return null;
+  if (!Array.isArray(faqs) || faqs.length === 0) return null;
 
   return {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: faqs.map(faq => ({
+    mainEntity: faqs.map((faq) => ({
       '@type': 'Question',
       name: faq.question,
       acceptedAnswer: {

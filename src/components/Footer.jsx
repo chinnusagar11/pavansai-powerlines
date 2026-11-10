@@ -6,8 +6,7 @@ import {
   Phone, 
   Mail, 
   ChevronRight, 
-  ExternalLink,
-  Code
+  ExternalLink
 } from 'lucide-react';
 import { COMPANY_INFO } from '../data/company';
 
@@ -147,8 +146,8 @@ export default function Footer() {
 
         </div>
 
-        {/* Bottom Bar with Developer Watermark */}
-        <div className="pt-6 flex flex-col md:flex-row items-center justify-between text-xs text-slate-400 gap-3 text-center md:text-left">
+        {/* Copyright and developer link */}
+        <div className="pt-6 flex flex-col md:flex-row items-center justify-between text-xs text-slate-400 gap-3 text-center md:text-left pr-0 md:pr-36">
           <div className="space-y-1">
             <p>
               &copy; {currentYear} <strong className="text-white font-bold">Pavan Sai Power Lines (PSPL)</strong>. All rights reserved.
@@ -158,26 +157,24 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Developer Credit - Professional, Sleek, Compact & LinkedIn Linked */}
           <a
             href="https://www.linkedin.com/in/pusala-siddhartha-a5b042394/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-slate-900/90 hover:bg-slate-800 border border-slate-700/80 hover:border-blue-400/80 text-[10px] sm:text-[11px] text-slate-400 transition-all duration-200 group shadow-2xs"
-            title="Connect with Pusala Siddhartha on LinkedIn (opens in new tab)"
+            className="inline-flex items-center gap-1.5 text-[11px] text-slate-400 hover:text-slate-200 transition-colors py-1"
+            title="Developed by Pusala Siddhartha (LinkedIn)"
           >
             <svg 
-              className="w-3 h-3 text-[#0a66c2] fill-current group-hover:scale-110 transition-transform shrink-0" 
+              className="w-3 h-3 text-[#0a66c2] fill-current shrink-0" 
               viewBox="0 0 24 24"
               aria-hidden="true"
             >
               <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
             </svg>
-            <span className="text-slate-400 font-normal">Developed by</span>
-            <span className="font-semibold text-sky-400 group-hover:text-sky-300 transition-colors">
+            <span>Developed by</span>
+            <span className="font-medium text-slate-300 hover:text-sky-400 hover:underline underline-offset-2 transition-colors">
               Pusala Siddhartha
             </span>
-            <ExternalLink size={10} className="text-slate-500 group-hover:text-sky-300 transition-colors shrink-0 ml-0.5" />
           </a>
         </div>
 

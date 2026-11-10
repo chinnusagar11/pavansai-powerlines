@@ -16,13 +16,10 @@ export default function ProductCard({ product, priority = false }) {
       style={{ minHeight: '420px' }}
     >
       
-      {/* Subtle Corporate Blue Top Accent Stripe */}
       <div className="h-1.5 w-full bg-gradient-to-r from-blue-600 via-sky-500 to-indigo-600 shrink-0"></div>
 
-      {/* Uniform Fixed-Height Image Container */}
+      {/* Product thumbnail */}
       <div className="relative w-full h-48 sm:h-52 overflow-hidden bg-gradient-to-b from-slate-50/60 to-white border-b border-slate-100 flex items-center justify-center p-3.5 sm:p-4 shrink-0">
-        
-        {/* Shimmer skeleton while image is loading */}
         {!isLoaded && !imageError && (
           <div className="absolute inset-0 bg-gradient-to-r from-slate-100 via-slate-50 to-slate-100 animate-pulse"></div>
         )}
@@ -43,7 +40,6 @@ export default function ProductCard({ product, priority = false }) {
           }`}
         />
         
-        {/* Refined Enterprise Category Badge */}
         <div className="absolute top-3 left-3 max-w-[62%]">
           <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-[10px] sm:text-[11px] font-bold shadow-xs truncate bg-slate-900/85 text-white backdrop-blur-xs border border-white/20">
             <Zap size={11} className="fill-amber-400 text-amber-400 shrink-0" />
@@ -51,7 +47,6 @@ export default function ProductCard({ product, priority = false }) {
           </span>
         </div>
 
-        {/* Genuine Verified Quality Tag */}
         <div className="absolute top-3 right-3 opacity-90 group-hover:opacity-100 transition-opacity">
           <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-white/95 text-emerald-800 border border-emerald-200 shadow-2xs whitespace-nowrap">
             <ShieldCheck size={11} className="text-emerald-600 shrink-0" />
@@ -60,21 +55,17 @@ export default function ProductCard({ product, priority = false }) {
         </div>
       </div>
 
-      {/* Content Area - Symmetrically Padded & Strictly Sized for Straight Baselines */}
+      {/* Card body */}
       <div className="p-4 sm:p-5 flex-1 flex flex-col justify-between space-y-3">
         <div className="space-y-2">
-          
-          {/* Title - Min Height so 1-line and 2-line Titles Align Horizontally */}
           <h3 className="font-extrabold text-sm sm:text-base text-slate-900 group-hover:text-blue-600 transition-colors line-clamp-2 min-h-[40px] sm:min-h-[44px] flex items-start leading-snug">
             {product.name}
           </h3>
 
-          {/* Description - Min Height for Symmetrical Vertical Rhythms */}
           <p className="text-slate-600 text-xs line-clamp-2 min-h-[32px] sm:min-h-[34px] leading-relaxed">
             {product.shortDescription}
           </p>
 
-          {/* Specifications Chips - Clean Slate Styling */}
           <div className="pt-2 border-t border-slate-100 flex flex-wrap items-center gap-1.5 min-h-[28px] sm:min-h-[32px] overflow-hidden">
             {product.specifications && Object.keys(product.specifications).length > 0 ? (
               Object.entries(product.specifications).slice(0, 2).map(([key, val]) => (

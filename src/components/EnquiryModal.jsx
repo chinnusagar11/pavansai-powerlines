@@ -128,7 +128,6 @@ export default function EnquiryModal({ isOpen, onClose, product = null }) {
     <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-900/60 backdrop-blur-xs animate-fade-in">
       <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full flex flex-col border border-slate-200 overflow-hidden">
         
-        {/* Clean Header with Single Close X Button */}
         <div className="bg-blue-600 text-white p-4 sm:p-5 flex items-center justify-between shrink-0">
           <div className="flex-1 pr-3 min-w-0">
             <h3 className="text-base sm:text-lg font-bold leading-tight truncate">
