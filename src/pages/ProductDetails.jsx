@@ -379,63 +379,41 @@ export default function ProductDetails() {
         product={product}
       />
 
-      {/* High-Clarity Fullscreen Image Lightbox Modal with Prominent Back Buttons */}
+      {/* Product image lightbox */}
       {isZoomOpen && (
         <div 
-          className="fixed inset-0 z-50 bg-slate-950/90 backdrop-blur-sm flex items-center justify-center p-2.5 sm:p-6 animate-fade-in"
+          className="fixed inset-0 z-50 bg-slate-950/90 backdrop-blur-sm flex items-center justify-center p-3 sm:p-6 animate-fade-in"
           onClick={() => setIsZoomOpen(false)}
         >
           <div 
-            className="relative max-w-4xl w-full bg-white rounded-2xl overflow-hidden p-3.5 sm:p-5 shadow-2xl flex flex-col items-center border border-slate-200"
+            className="relative max-w-4xl w-full bg-white rounded-2xl overflow-hidden p-4 sm:p-5 shadow-2xl flex flex-col border border-slate-200"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Modal Header Bar with Explicit Back Button */}
-            <div className="w-full flex items-center justify-between pb-3 mb-2 border-b border-slate-100 text-xs">
-              <button
-                onClick={() => setIsZoomOpen(false)}
-                className="group inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 active:bg-blue-100 text-slate-800 hover:text-blue-700 font-bold transition shadow-2xs text-xs"
-              >
-                <ArrowLeft size={15} className="text-blue-600 group-hover:-translate-x-0.5 transition-transform" />
-                <span>Back</span>
-              </button>
-
-              <span className="font-bold text-slate-900 truncate px-2 text-xs sm:text-sm text-center flex-1">
+            <div className="w-full flex items-center justify-between gap-3 pb-3 mb-3 border-b border-slate-100">
+              <span className="font-bold text-slate-900 truncate text-xs sm:text-sm">
                 {product.name}
               </span>
 
               <button
                 onClick={() => setIsZoomOpen(false)}
-                className="p-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 transition"
-                aria-label="Close Preview"
-                title="Close Photo Preview"
+                className="p-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 hover:text-slate-900 transition shrink-0"
+                aria-label="Close preview"
               >
                 <X size={18} />
               </button>
             </div>
 
-            {/* High-Resolution Photo Display */}
-            <div className="overflow-auto max-h-[70vh] flex items-center justify-center w-full py-2 bg-slate-50/50 rounded-xl">
+            <div className="overflow-auto max-h-[75vh] flex items-center justify-center w-full py-2 bg-slate-50/50 rounded-xl">
               <img
                 src={imageError ? fallbackImage : (selectedImage || product.image)}
                 alt={product.name}
-                className="max-h-[68vh] w-auto max-w-full object-contain drop-shadow-sm rounded-lg"
+                className="max-h-[72vh] w-auto max-w-full object-contain rounded-lg"
               />
             </div>
 
-            {/* Modal Footer with Confirmation and Back Button */}
-            <div className="w-full pt-3 mt-2 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-2.5">
-              <p className="text-[11px] text-slate-500 text-center sm:text-left">
-                Authentic Equipment Photo &bull; Pavan Sai Power Lines, Secunderabad, Telangana
-              </p>
-              
-              <button
-                onClick={() => setIsZoomOpen(false)}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-5 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs shadow-sm transition"
-              >
-                <ArrowLeft size={14} />
-                <span>Back to Product Details</span>
-              </button>
-            </div>
+            <p className="text-[11px] text-slate-500 text-center pt-3 mt-2 border-t border-slate-100">
+              Pavan Sai Power Lines &bull; Secunderabad, Telangana
+            </p>
           </div>
         </div>
       )}
