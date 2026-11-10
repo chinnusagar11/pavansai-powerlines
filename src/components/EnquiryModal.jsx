@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { X, MessageCircle, Mail, CheckCircle2, AlertCircle, Phone, User } from 'lucide-react';
 import { COMPANY_INFO } from '../data/company';
 
@@ -9,6 +10,15 @@ export default function EnquiryModal({ isOpen, onClose, product = null }) {
   });
 
   const [errors, setErrors] = useState({});
+
+  useEffect(() => {
+    if (!isOpen) return;
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') onClose();
+    };
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen, onClose]);
 
   if (!isOpen) return null;
 
@@ -124,9 +134,15 @@ export default function EnquiryModal({ isOpen, onClose, product = null }) {
 
   const phoneStatus = validatePhoneNumber(formData.phone);
 
-  return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-900/60 backdrop-blur-xs animate-fade-in">
-      <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full flex flex-col border border-slate-200 overflow-hidden">
+  return createPortal(
+    <div
+      className="fixed inset-0 z-[100] flex items-center justify-center p-3 sm:p-4 bg-slate-900/60 backdrop-blur-sm animate-fade-in"
+      onClick={onClose}
+    >
+      <div
+        className="bg-white rounded-2xl shadow-2xl max-w-md w-full flex flex-col border border-slate-200 overflow-hidden"
+        onClick={(e) => e.stopPropagation()}
+      >
         
         <div className="bg-blue-600 text-white p-4 sm:p-5 flex items-center justify-between shrink-0">
           <div className="flex-1 pr-3 min-w-0">
@@ -260,6 +276,7 @@ export default function EnquiryModal({ isOpen, onClose, product = null }) {
         </form>
 
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }

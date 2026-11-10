@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { createPortal } from 'react-dom';
 import { Link } from 'react-router-dom';
 import { 
   MapPin, 
@@ -395,10 +396,10 @@ export default function About() {
         onClose={() => setIsQuoteOpen(false)}
       />
 
-      {/* Official Visiting Card Full-Screen Zoom Lightbox */}
-      {isCardZoomOpen && (
+      {/* Visiting card preview modal */}
+      {isCardZoomOpen && createPortal(
         <div 
-          className="fixed inset-0 z-50 bg-slate-950/85 backdrop-blur-md flex items-center justify-center p-4 animate-fade-in"
+          className="fixed inset-0 z-[100] bg-slate-950/85 backdrop-blur-md flex items-center justify-center p-4 animate-fade-in"
           onClick={() => setIsCardZoomOpen(false)}
         >
           <div 
@@ -442,7 +443,8 @@ export default function About() {
               </a>
             </div>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
 
     </div>

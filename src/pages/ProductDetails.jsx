@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { createPortal } from 'react-dom';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { 
   ArrowLeft, 
@@ -380,9 +381,9 @@ export default function ProductDetails() {
       />
 
       {/* Product image lightbox */}
-      {isZoomOpen && (
+      {isZoomOpen && createPortal(
         <div 
-          className="fixed inset-0 z-50 bg-slate-950/90 backdrop-blur-sm flex items-center justify-center p-3 sm:p-6 animate-fade-in"
+          className="fixed inset-0 z-[100] bg-slate-950/90 backdrop-blur-sm flex items-center justify-center p-3 sm:p-6 animate-fade-in"
           onClick={() => setIsZoomOpen(false)}
         >
           <div 
@@ -415,7 +416,8 @@ export default function ProductDetails() {
               Pavan Sai Power Lines &bull; Secunderabad, Telangana
             </p>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
 
     </div>

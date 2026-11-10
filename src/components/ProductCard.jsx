@@ -12,7 +12,7 @@ export default function ProductCard({ product, priority = false }) {
 
   return (
     <div 
-      className="group w-full h-auto sm:h-full flex flex-col justify-between bg-white rounded-2xl overflow-hidden border border-slate-200 hover:border-blue-500/80 shadow-sm hover:shadow-[0_16px_35px_-8px_rgba(29,78,216,0.14)] transition-all duration-300 relative isolate"
+      className="group w-full h-auto sm:h-full flex flex-col justify-between bg-white rounded-2xl overflow-hidden border border-slate-200 hover:border-blue-500/80 shadow-sm hover:shadow-[0_16px_35px_-8px_rgba(29,78,216,0.14)] transition-all duration-300"
       style={{ minHeight: '420px' }}
     >
       
